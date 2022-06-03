@@ -6,7 +6,18 @@
     <description>Recent content in design on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 12:29:15 +0100</lastBuildDate><atom:link href="https://filpill.github.io/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Front-end Design - Static Site Generator</title>
+      <link>https://filpill.github.io/projects/hugo/</link>
+      <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/hugo/</guid>
+      <description>Summary Building this projects website was driven by a need to have an easy way showcase my projects without devoting a large amount of time to formatting and maintaining HTML code.
+The first iteration of my website was manually written in HTML/CSS. However I decided to port over to a website using Hugo&amp;rsquo;s framework which is fast and versitile.
+As such there exists static site generators available which are able to solve such a problem.</description>
+    </item>
+    
     <item>
       <title>Lithophane Lamp</title>
       <link>https://filpill.github.io/projects/litho/</link>
