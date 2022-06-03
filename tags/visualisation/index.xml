@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>visualisation on Filip Livancic</title>
+    <link>https://filpill.github.io/tags/visualisation/</link>
+    <description>Recent content in visualisation on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 May 2022 00:59:13 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/visualisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Age of Empire 2 API - Data Visualisation</title>
+      <link>https://filpill.github.io/projects/aoe2/</link>
+      <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/aoe2/</guid>
+      <description>Summary  This project was prompted by the fact that I cannot share any data from my personal work. I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. As such I searched out for an API to replicate my data visualisation experience. Although this is only a fraction the the analysis I would typically do. In my work I normally query out of a SQL database for my data ingestion.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Age of Empire 2 API - Data Visualisation | Filip Livancic</title>
+<meta name="keywords" content="programming, python, api, data, visualisation, dashboard, analytics">
+<meta name="description" content="Summary  This project was prompted by the fact that I cannot share any data from my personal work. I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. As such I searched out for an API to replicate my data visualisation experience. Although this is only a fraction the the analysis I would typically do. In my work I normally query out of a SQL database for my data ingestion.">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/projects/aoe2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1740750342264a4e69b84ddf6899fb02cc95465080d85c57c08bb1d110900bf6.css" integrity="sha256-F0B1A0ImSk5puE3faJn7AsyVRlCA2FxXwIux0RCQC/Y=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Age of Empire 2 API - Data Visualisation" />
+<meta property="og:description" content="Summary  This project was prompted by the fact that I cannot share any data from my personal work. I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. As such I searched out for an API to replicate my data visualisation experience. Although this is only a fraction the the analysis I would typically do. In my work I normally query out of a SQL database for my data ingestion." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/aoe2/" />
+<meta property="og:image" content="https://filpill.github.io/img/aoe2/aoe2.jpg" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2022-05-31T00:59:13&#43;01:00" />
+<meta property="article:modified_time" content="2022-05-31T00:59:13&#43;01:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/aoe2/aoe2.jpg" />
+<meta name="twitter:title" content="Age of Empire 2 API - Data Visualisation"/>
+<meta name="twitter:description" content="Summary  This project was prompted by the fact that I cannot share any data from my personal work. I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. As such I searched out for an API to replicate my data visualisation experience. Although this is only a fraction the the analysis I would typically do. In my work I normally query out of a SQL database for my data ingestion."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Age of Empire 2 API - Data Visualisation",
+      "item": "https://filpill.github.io/projects/aoe2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Age of Empire 2 API - Data Visualisation",
+  "name": "Age of Empire 2 API - Data Visualisation",
+  "description": "Summary  This project was prompted by the fact that I cannot share any data from my personal work. I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. As such I searched out for an API to replicate my data visualisation experience. Although this is only a fraction the the analysis I would typically do. In my work I normally query out of a SQL database for my data ingestion.",
+  "keywords": [
+    "programming", "python", "api", "data", "visualisation", "dashboard", "analytics"
+  ],
+  "articleBody": "Summary  This project was prompted by the fact that I cannot share any data from my personal work. I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. As such I searched out for an API to replicate my data visualisation experience. Although this is only a fraction the the analysis I would typically do. In my work I normally query out of a SQL database for my data ingestion. In this case however, this was my first time using an API to extract JSON data, but on interacting with the API, it is very easy to extract the data. The remaining python data processing workflow is still run-of-the-mill by my standards. I only spent time to make a few visualisations here:  AoE2 Data Project: Repository Link on my Github\nData Visualisations  ",
+  "wordCount" : "144",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/aoe2/aoe2.jpg","datePublished": "2022-05-31T00:59:13+01:00",
+  "dateModified": "2022-05-31T00:59:13+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/aoe2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <h1 class="post-title">
+      Age of Empire 2 API - Data Visualisation<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h1>
+    <div class="post-meta"><span title='2022-05-31 00:59:13 +0100 BST'>May 31, 2022</span>
+
+</div>
+  </header> 
+<figure class="entry-cover"><a href="https://filpill.github.io/img/aoe2/aoe2.jpg" target="_blank"
+            rel="noopener noreferrer"><img loading="lazy" src="https://filpill.github.io/img/aoe2/aoe2.jpg" alt="AoE2 Cover"></a>
+        
+</figure>
+  <div class="post-content"><h1 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h1>
+<ul>
+<li>This project was prompted by the fact that I cannot share any data from my personal work.</li>
+<li>I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights.</li>
+<li>As such I searched out for an API to replicate my data visualisation experience. Although this is only a fraction the the analysis I would typically do.</li>
+<li>In my work I normally query out of a SQL database for my data ingestion. In this case however, this was my first time using an API to extract JSON data, but on interacting with the API, it is very easy to extract the data.</li>
+<li>The remaining python data processing workflow is still run-of-the-mill by my standards.</li>
+<li>I only spent time to make a few visualisations here:</li>
+</ul>
+<p><a href="https://github.com/Filpill/AoE2Data">AoE2 Data Project: Repository Link on my Github</a></p>
+<h1 id="data-visualisations">Data Visualisations<a hidden class="anchor" aria-hidden="true" href="#data-visualisations">#</a></h1>
+<p>
+
+	<img src="/img/aoe2/top15Players_leadboard.png" width="720"  />
+
+
+
+
+	<img src="/img/aoe2/AllMatches_civWinrate.png" width="720"  />
+
+
+
+
+	<img src="/img/aoe2/topPlayer_MatchHistory.png" width="720"  />
+
+
+
+
+	<img src="/img/aoe2/topPlayer_civWinrate.png" width="720"  />
+
+</p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/programming/">programming</a></li>
+      <li><a href="https://filpill.github.io/tags/python/">python</a></li>
+      <li><a href="https://filpill.github.io/tags/api/">api</a></li>
+      <li><a href="https://filpill.github.io/tags/data/">data</a></li>
+      <li><a href="https://filpill.github.io/tags/visualisation/">visualisation</a></li>
+      <li><a href="https://filpill.github.io/tags/dashboard/">dashboard</a></li>
+      <li><a href="https://filpill.github.io/tags/analytics/">analytics</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://filpill.github.io/projects/litho/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Lithophane Lamp</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

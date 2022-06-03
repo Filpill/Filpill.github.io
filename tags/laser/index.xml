@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>laser on Filip Livancic</title>
+    <link>https://filpill.github.io/tags/laser/</link>
+    <description>Recent content in laser on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/laser/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Forward Facing Step - Particle Image Velocimetry</title>
+      <link>https://filpill.github.io/projects/piv/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/piv/</guid>
+      <description>Summary   My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.
+  Particle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.
+  In this experiment the height of the boundary layer is similarly proportioned to the height of the step.</description>
+    </item>
+    
+  </channel>
+</rss>

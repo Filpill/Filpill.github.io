@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>design on Filip Livancic</title>
+    <link>https://filpill.github.io/categories/design/</link>
+    <description>Recent content in design on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lithophane Lamp</title>
+      <link>https://filpill.github.io/projects/litho/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/litho/</guid>
+      <description>Summary  Designed a 3D printed lithophane lamp in Soldworks. Main feature: Replaceable lithophanes of chosen standard of aspect ratio/dimension.  Features  Top/Bottom Panels retained with three M3 screws &amp;ndash; Removing the panels gives access to replacing the printed lithophane. Wiring threads through back of assembly and socket leans on back the back panel. Forward attachment clamps the socket and constrains the foward movement of the light socket with screws.</description>
+    </item>
+    
+    <item>
+      <title>3D Printed Car - Bluetooth Controller Interface</title>
+      <link>https://filpill.github.io/projects/3dcar/</link>
+      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/3dcar/</guid>
+      <description>Summary  Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven&amp;rsquo;t had time to iterate over the design due to the complexity and required time investment.  The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects.</description>
+    </item>
+    
+    <item>
+      <title>UAV Aircraft Design</title>
+      <link>https://filpill.github.io/projects/uav/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/uav/</guid>
+      <description>Summary  My elected project for my 4th year in University was to design and build a UAV aircraft. The design requirements were driven out from the 2017 BMFA competition (Payload Challenge). The design had to be capable of flying some circuits with varying volumes of water weighing up to 3.5kg. As project engineer, I was responsible for coordinating the technical requirements and outputs between our sub-teams. Link to Project Report  Aircraft Design Process   The aircraft design process used in this project is an adaptation of the design process learnt in university for commercial passenger aircraft design.</description>
+    </item>
+    
+    <item>
+      <title>Forward Facing Step - Particle Image Velocimetry</title>
+      <link>https://filpill.github.io/projects/piv/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/piv/</guid>
+      <description>Summary   My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.
+  Particle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.
+  In this experiment the height of the boundary layer is similarly proportioned to the height of the step.</description>
+    </item>
+    
+  </channel>
+</rss>

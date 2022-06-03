@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>thermodynamics on Filip Livancic</title>
+    <link>https://filpill.github.io/tags/thermodynamics/</link>
+    <description>Recent content in thermodynamics on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/thermodynamics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2D Heat Transfer Simulation</title>
+      <link>https://filpill.github.io/projects/ht_sim/</link>
+      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/ht_sim/</guid>
+      <description>Summary  Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
+    </item>
+    
+  </channel>
+</rss>

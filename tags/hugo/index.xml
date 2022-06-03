@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>hugo on Filip Livancic</title>
+    <link>https://filpill.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 May 2022 18:15:04 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Profile</title>
+      <link>https://filpill.github.io/profile/</link>
+      <pubDate>Tue, 31 May 2022 18:15:04 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/profile/</guid>
+      <description>About Me  Aeronuatical engineer graduate Self-taught programmer in web-dev/data/engineering Developing data analytics/science skills Highly knowledgable in airline safety domain Hobbyist Glider Pilot Hobbyist 3D Print Designer  Future Potential Projects  Creating a LDA Topic Modelling which can ingest data and analyse groupings of words. Training a machine learning model to automate text classification process of a set of text data.  Work Experience  Link to my CV on github  Projects Directory  Refer to the Projects section for details on the end products of my resulting projects.</description>
+    </item>
+    
+  </channel>
+</rss>
