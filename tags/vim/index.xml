@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>vim on Filip Livancic</title>
+    <link>https://filpill.github.io/tags/vim/</link>
+    <description>Recent content in vim on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Jun 2022 12:29:15 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Front-end Design - Static Site Generator</title>
+      <link>https://filpill.github.io/projects/hugo/</link>
+      <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/hugo/</guid>
+      <description>Summary Building this projects website was driven by a need to have an easy way showcase my projects without devoting a large amount of time to formatting and maintaining HTML code.
+The first iteration of my website was manually written in HTML/CSS. However I decided to port over to a website using Hugo&amp;rsquo;s framework which is fast and versitile.
+As such there exists static site generators available which are able to solve such a problem.</description>
+    </item>
+    
+  </channel>
+</rss>
