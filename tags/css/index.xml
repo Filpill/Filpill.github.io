@@ -13,9 +13,9 @@
       <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
       
       <guid>https://filpill.github.io/projects/hugo/</guid>
-      <description>Summary Building this projects website was driven by a need to have an easy way showcase my projects without devoting a large amount of time to formatting and maintaining HTML code.
-The first iteration of my website was manually written in HTML/CSS. However I decided to port over to a website using Hugo&amp;rsquo;s framework which is fast and versitile.
-As such there exists static site generators available which are able to solve such a problem.</description>
+      <description>Summary I wanted to showcase my projects without devoting a large amount of time to maintaining HTML code and needed a framework to make it easy to share my projects.
+Hugo is a static site generator written in Go and compiles your documents written in markdown into cleanly formatted HTML and CSS files.
+The first iteration of my website was manually written in HTML/CSS. It was a little bit ugly compared to the second iteration which is using hugo framework.</description>
     </item>
     
     <item>
