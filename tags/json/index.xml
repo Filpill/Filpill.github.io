@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>json on Filip Livancic</title>
+    <link>https://filpill.github.io/tags/json/</link>
+    <description>Recent content in json on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web Scraper - Valorant Data Analysis</title>
+      <link>https://filpill.github.io/projects/val_scrp/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/val_scrp/</guid>
+      <description>Summary I was originally looking for a Valorant API to analyse some of my own match data, however Riot games do not hand out personal API keys for this game.
+I figured I could scrape some of my own match data which is publically available on the web client side.
+Though the data is fairly limited due to built in limitations of the Riot Valorant API. The website only pulls 30 matches worth of data.</description>
+    </item>
+    
+  </channel>
+</rss>

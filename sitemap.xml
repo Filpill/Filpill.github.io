@@ -3,15 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://filpill.github.io/categories/</loc>
-    <lastmod>2022-06-03T12:29:15+01:00</lastmod>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/categories/data/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/json/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/programming/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/projects/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/scrapy/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/projects/val_scrp/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/webscraping/</loc>
+    <lastmod>2022-06-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/css/</loc>
     <lastmod>2022-06-03T12:29:15+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/categories/design/</loc>
-    <lastmod>2022-06-03T12:29:15+01:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/</loc>
     <lastmod>2022-06-03T12:29:15+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/projects/hugo/</loc>
@@ -29,16 +53,10 @@
     <loc>https://filpill.github.io/tags/markdown/</loc>
     <lastmod>2022-06-03T12:29:15+01:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/</loc>
-    <lastmod>2022-06-03T12:29:15+01:00</lastmod>
-  </url><url>
     <loc>https://filpill.github.io/tags/scripting/</loc>
     <lastmod>2022-06-03T12:29:15+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/shell/</loc>
-    <lastmod>2022-06-03T12:29:15+01:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/</loc>
     <lastmod>2022-06-03T12:29:15+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/vim/</loc>
@@ -69,12 +87,6 @@
     <lastmod>2022-05-31T00:59:13+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/data/</loc>
-    <lastmod>2022-05-31T00:59:13+01:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/categories/data/</loc>
-    <lastmod>2022-05-31T00:59:13+01:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/programming/</loc>
     <lastmod>2022-05-31T00:59:13+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/python/</loc>
@@ -172,5 +184,8 @@
   </url><url>
     <loc>https://filpill.github.io/tags/wind-tunnel/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/search/</loc>
+    <priority>0.1</priority>
   </url>
 </urlset>

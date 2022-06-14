@@ -5,12 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>web | Filip Livancic</title>
+<title>Search Results | Filip Livancic</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="This file exists solely to respond to /search URL with the related search layout template.
+No content shown here is rendered, all content is based in the template layouts/page/search.html
+Setting a very low sitemap priority will tell search engines this is not important content.
+This implementation uses Fusejs, jquery and mark.js
+Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&ldquo;HTML&rdquo;, &ldquo;JSON&rdquo;] ```">
 <meta name="author" content="">
-<link rel="canonical" href="https://filpill.github.io/tags/web/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.1740750342264a4e69b84ddf6899fb02cc95465080d85c57c08bb1d110900bf6.css" integrity="sha256-F0B1A0ImSk5puE3faJn7AsyVRlCA2FxXwIux0RCQC/Y=" rel="preload stylesheet" as="style">
+<link rel="canonical" href="https://filpill.github.io/search/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1740750342264a4e69b84ddf6899fb02cc95465080d85c57c08bb1d110900bf6.css" integrity="sha256-F0B1A0ImSk5puE3faJn7AsyVRlCA2FxXwIux0RCQC/Y=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+<script defer crossorigin="anonymous" src="/assets/js/search.c26e18ac841c5cfdecf0d5203113c4607dcaca99d920caba652e323c4e4219d5.js" integrity="sha256-wm4YrIQcXP3s8NUgMRPEYH3KypnZIMq6ZS4yPE5CGdU="></script>
 <link rel="icon" href="https://filpill.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
@@ -18,7 +23,6 @@
 <link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://filpill.github.io/tags/web/index.xml">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,15 +59,69 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="web" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://filpill.github.io/tags/web/" />
+</noscript><meta property="og:title" content="Search Results" />
+<meta property="og:description" content="This file exists solely to respond to /search URL with the related search layout template.
+No content shown here is rendered, all content is based in the template layouts/page/search.html
+Setting a very low sitemap priority will tell search engines this is not important content.
+This implementation uses Fusejs, jquery and mark.js
+Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&ldquo;HTML&rdquo;, &ldquo;JSON&rdquo;] ```" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/search/" /><meta property="article:section" content="" />
+
+
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="web"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Search Results"/>
+<meta name="twitter:description" content="This file exists solely to respond to /search URL with the related search layout template.
+No content shown here is rendered, all content is based in the template layouts/page/search.html
+Setting a very low sitemap priority will tell search engines this is not important content.
+This implementation uses Fusejs, jquery and mark.js
+Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&ldquo;HTML&rdquo;, &ldquo;JSON&rdquo;] ```"/>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Search Results",
+      "item": "https://filpill.github.io/search/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Search Results",
+  "name": "Search Results",
+  "description": "This file exists solely to respond to /search URL with the related search layout template.\nNo content shown here is rendered, all content is based in the template layouts/page/search.html\nSetting a very low sitemap priority will tell search engines this is not important content.\nThis implementation uses Fusejs, jquery and mark.js\nInitial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [\u0026ldquo;HTML\u0026rdquo;, \u0026ldquo;JSON\u0026rdquo;] ```",
+  "keywords": [
+    
+  ],
+  "articleBody": "This file exists solely to respond to /search URL with the related search layout template.\nNo content shown here is rendered, all content is based in the template layouts/page/search.html\nSetting a very low sitemap priority will tell search engines this is not important content.\nThis implementation uses Fusejs, jquery and mark.js\nInitial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [“HTML”, “JSON”] ```\nSearching additional fileds To search additional fields defined in front matter, you must add it in 2 places.\nEdit layouts/_default/index.JSON This exposes the values in /index.json i.e. add category ``` … “contents”:{{ .Content | plainify | jsonify }} {{ if .Params.tags }}, “tags”:{{ .Params.tags | jsonify }}{{end}}, “categories” : {{ .Params.categories | jsonify }}, … ```\nEdit fuse.js options to Search static/js/search.js ``` keys: [ “title”, “contents”, “tags”, “categories” ] ```\n",
+  "wordCount" : "142",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/search/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="list" id="top">
@@ -129,26 +187,27 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/tags/">Tags</a></div>
-  <h1>
-    web
-  </h1>
-</header>
-
-<article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/profile/filip_crop.jpg" alt="Filip Livancic Profile">
-</figure>
-  <header class="entry-header">
-    <h2>Profile<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>About Me  Aeronuatical engineer graduate Self-taught programmer in web-dev/data/engineering Developing data analytics/science skills Highly knowledgable in airline safety domain Hobbyist Glider Pilot Hobbyist 3D Print Designer  Future Potential Projects  Creating a LDA Topic Modelling which can ingest data and analyse groupings of words. Training a machine learning model to automate text classification process of a set of text data.  Work Experience  Link to my CV on github  Projects Directory  Refer to the Projects section for details on the end products of my resulting projects....</p>
+<main class="main">
+<section class="resume-section p-3 p-lg-5 d-flex flex-column">
+  <div class="my-auto" >
+    <form action="https://filpill.github.io/search">
+      <input id="search-query" name="s"/>
+    </form>
+    <div id="search-results">
+     <h3>Matching pages</h3>
+    </div>
   </div>
-  <footer class="entry-footer"><span title='2022-05-31 18:15:04 +0100 BST'>May 31, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Profile" href="https://filpill.github.io/profile/"></a>
-</article>
+</section>
+
+<script id="search-result-template" type="text/x-js-template">
+    <div id="summary-${key}">
+      <h4><a href="${link}">${title}</a></h4>
+      <p>${snippet}</p>
+      ${ isset tags }<p>Tags: ${tags}</p>${ end }
+      ${ isset categories }<p>Categories: ${categories}</p>${ end }
+    </div>
+</script>
+
     </main>
     
 <footer class="footer">

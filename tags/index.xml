@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jun 2022 12:29:15 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>json</title>
+      <link>https://filpill.github.io/tags/json/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://filpill.github.io/tags/programming/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scrapy</title>
+      <link>https://filpill.github.io/tags/scrapy/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/scrapy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webscraping</title>
+      <link>https://filpill.github.io/tags/webscraping/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/webscraping/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>css</title>
       <link>https://filpill.github.io/tags/css/</link>
@@ -139,15 +175,6 @@
       <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
       
       <guid>https://filpill.github.io/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://filpill.github.io/tags/programming/</link>
-      <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
-      
-      <guid>https://filpill.github.io/tags/programming/</guid>
       <description></description>
     </item>
     
