@@ -6,7 +6,19 @@
     <description>Recent content in Projects on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codewars - Solving Coding Problems</title>
+      <link>https://filpill.github.io/projects/codewars/</link>
+      <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/codewars/</guid>
+      <description>Codewars Badge Predominantly solving Python and SQL problems
+Codewars profile: Filpill - Codewars Profile
+What is Codewars? A website that provides challenges for you to solve in a variety of programming languages. The higher the rank of the problem, the harder it is to solve.
+Rank System Ranks are used to indicate the proficiency of users and the difficulty of Kata. There are two classes of ranks, Kyu and Dan, which are divided in 8 levels each.</description>
+    </item>
+    
     <item>
       <title>Web Scraper - Valorant Data Analysis</title>
       <link>https://filpill.github.io/projects/val_scrp/</link>
