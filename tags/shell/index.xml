@@ -6,7 +6,16 @@
     <description>Recent content in shell on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jun 2022 12:29:15 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 21:03:20 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github - Command Line Interface Procedures</title>
+      <link>https://filpill.github.io/projects/github/</link>
+      <pubDate>Sun, 17 Jul 2022 21:03:20 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/github/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Front-end Design - Static Site Generator</title>
       <link>https://filpill.github.io/projects/hugo/</link>

@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 21:03:20 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cli</title>
+      <link>https://filpill.github.io/tags/cli/</link>
+      <pubDate>Sun, 17 Jul 2022 21:03:20 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://filpill.github.io/tags/programming/</link>
+      <pubDate>Sun, 17 Jul 2022 21:03:20 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://filpill.github.io/tags/shell/</link>
+      <pubDate>Sun, 17 Jul 2022 21:03:20 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>algorithms</title>
       <link>https://filpill.github.io/tags/algorithms/</link>
@@ -31,15 +58,6 @@
       <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/tags/data-structures/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://filpill.github.io/tags/programming/</link>
-      <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/tags/programming/</guid>
       <description></description>
     </item>
     
@@ -139,15 +157,6 @@
       <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
       
       <guid>https://filpill.github.io/tags/scripting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>https://filpill.github.io/tags/shell/</link>
-      <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
-      
-      <guid>https://filpill.github.io/tags/shell/</guid>
       <description></description>
     </item>
     

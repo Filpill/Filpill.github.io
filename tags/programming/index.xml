@@ -6,7 +6,16 @@
     <description>Recent content in programming on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 21:03:20 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github - Command Line Interface Procedures</title>
+      <link>https://filpill.github.io/projects/github/</link>
+      <pubDate>Sun, 17 Jul 2022 21:03:20 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/github/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Codewars - Solving Coding Problems</title>
       <link>https://filpill.github.io/projects/codewars/</link>
@@ -25,9 +34,9 @@ Rank System Ranks are used to indicate the proficiency of users and the difficul
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/val_scrp/</guid>
-      <description>Summary I was originally looking for a Valorant API to analyse some of my own match data, however Riot games do not hand out personal API keys for this game.
-I figured I could scrape some of my own match data which is publically available on the web client side.
-Though the data is fairly limited due to built in limitations of the Riot Valorant API. The website only pulls 30 matches worth of data.</description>
+      <description>Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
+There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
+Though the volume of data highlighted on the website is limited compared to the actual volume of games I&amp;rsquo;ve played.</description>
     </item>
     
     <item>
@@ -36,7 +45,7 @@ Though the data is fairly limited due to built in limitations of the Riot Valora
       <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
       
       <guid>https://filpill.github.io/projects/aoe2/</guid>
-      <description>Summary  I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
+      <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
     </item>
     
     <item>
@@ -45,7 +54,7 @@ Though the data is fairly limited due to built in limitations of the Riot Valora
       <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/3dcar/</guid>
-      <description>Summary  Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven&amp;rsquo;t had time to iterate over the design due to the complexity and required time investment.  The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects.</description>
+      <description>Summary Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven&amp;rsquo;t had time to iterate over the design due to the complexity and required time investment. The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects. The project requires some simplification for the desired goal of having a robust car design.</description>
     </item>
     
     <item>
@@ -54,7 +63,7 @@ Though the data is fairly limited due to built in limitations of the Riot Valora
       <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/ht_sim/</guid>
-      <description>Summary  Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
+      <description>Summary Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
     </item>
     
   </channel>
