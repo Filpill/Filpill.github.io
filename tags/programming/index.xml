@@ -6,14 +6,16 @@
     <description>Recent content in programming on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jul 2022 21:03:20 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github - Command Line Interface Procedures</title>
       <link>https://filpill.github.io/projects/github/</link>
-      <pubDate>Sun, 17 Jul 2022 21:03:20 +0100</pubDate>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/github/</guid>
-      <description></description>
+      <description>Summary The purpose of this page is to document the most common ways I interact with git and in maintaining my programs. These actions are performed via the command line as per how the tool was originally designed.
+In my opinion the main benefit is the added efficiency of the scripting out the majority of the CLI commands via a series of shell scripts.
+This simply allows you to direct all of your attention on creating better quality work without getting lost in a GUI most of the time.</description>
     </item>
     
     <item>
@@ -22,10 +24,10 @@
       <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/codewars/</guid>
-      <description>Codewars Badge Predominantly solving Python and SQL problems
-Codewars profile: Filpill - Codewars Profile
+      <description>Codewars Profile Filpill - Codewars Profile
 What is Codewars? A website that provides challenges for you to solve in a variety of programming languages. The higher the rank of the problem, the harder it is to solve.
-Rank System Ranks are used to indicate the proficiency of users and the difficulty of Kata. There are two classes of ranks, Kyu and Dan, which are divided in 8 levels each.</description>
+Motivation Recently I was feeling inspired to try and improve my existing programming skills. I am specifically focusing on improving my fundamental knoweldge of Python.
+The majority of my learning process so far has been based on my independant project based learning.</description>
     </item>
     
     <item>
