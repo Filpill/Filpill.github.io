@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>excel on Filip Livancic</title>
+    <link>https://filpill.github.io/tags/excel/</link>
+    <description>Recent content in excel on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Jul 2022 23:21:04 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XlsxWriter - Excel Report Generation via Python</title>
+      <link>https://filpill.github.io/projects/xlsx/</link>
+      <pubDate>Thu, 21 Jul 2022 23:21:04 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/xlsx/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
