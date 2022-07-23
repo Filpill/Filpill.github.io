@@ -5,16 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Search Results | Filip Livancic</title>
+<title>Search | Filip Livancic</title>
 <meta name="keywords" content="">
-<meta name="description" content="This file exists solely to respond to /search URL with the related search layout template.
-No content shown here is rendered, all content is based in the template layouts/page/search.html
-Setting a very low sitemap priority will tell search engines this is not important content.
-This implementation uses Fusejs, jquery and mark.js
-Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&ldquo;HTML&rdquo;, &ldquo;JSON&rdquo;] ```">
+<meta name="description" content="search">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/search/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.cca53b157a42ce7248b0c0e56cc42901b35903b47f467d0f33f290e20c3e0930.css" integrity="sha256-zKU7FXpCznJIsMDlbMQpAbNZA7R/Rn0PM/KQ4gw&#43;CTA=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.003c9d079ab327c0f4d881effa9b0c186b47f63444823d6eff1ad4bc669c1611.css" integrity="sha256-ADydB5qzJ8D02IHv&#43;psMGGtH9jREgj1u/xrUvGacFhE=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
 <script defer crossorigin="anonymous" src="/assets/js/search.70e36f7bbbdb05290ddfd8302cca732afd0f6cab030277ec040ad2ecd678e9df.js" integrity="sha256-cONve7vbBSkN39gwLMpzKv0PbKsDAnfsBArS7NZ46d8="></script>
 <link rel="icon" href="https://filpill.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
@@ -59,24 +55,16 @@ Initial setup Search depends on additional output content type of JSON in config
         }
 
     </style>
-</noscript><meta property="og:title" content="Search Results" />
-<meta property="og:description" content="This file exists solely to respond to /search URL with the related search layout template.
-No content shown here is rendered, all content is based in the template layouts/page/search.html
-Setting a very low sitemap priority will tell search engines this is not important content.
-This implementation uses Fusejs, jquery and mark.js
-Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&ldquo;HTML&rdquo;, &ldquo;JSON&rdquo;] ```" />
+</noscript><meta property="og:title" content="Search" />
+<meta property="og:description" content="search" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://filpill.github.io/search/" /><meta property="article:section" content="" />
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Search Results"/>
-<meta name="twitter:description" content="This file exists solely to respond to /search URL with the related search layout template.
-No content shown here is rendered, all content is based in the template layouts/page/search.html
-Setting a very low sitemap priority will tell search engines this is not important content.
-This implementation uses Fusejs, jquery and mark.js
-Initial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [&ldquo;HTML&rdquo;, &ldquo;JSON&rdquo;] ```"/>
+<meta name="twitter:title" content="Search"/>
+<meta name="twitter:description" content="search"/>
 
 
 <script type="application/ld+json">
@@ -87,7 +75,7 @@ Initial setup Search depends on additional output content type of JSON in config
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Search Results",
+      "name": "Search",
       "item": "https://filpill.github.io/search/"
     }
   ]
@@ -97,14 +85,14 @@ Initial setup Search depends on additional output content type of JSON in config
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Search Results",
-  "name": "Search Results",
-  "description": "This file exists solely to respond to /search URL with the related search layout template.\nNo content shown here is rendered, all content is based in the template layouts/page/search.html\nSetting a very low sitemap priority will tell search engines this is not important content.\nThis implementation uses Fusejs, jquery and mark.js\nInitial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [\u0026ldquo;HTML\u0026rdquo;, \u0026ldquo;JSON\u0026rdquo;] ```",
+  "headline": "Search",
+  "name": "Search",
+  "description": "search",
   "keywords": [
     
   ],
-  "articleBody": "This file exists solely to respond to /search URL with the related search layout template.\nNo content shown here is rendered, all content is based in the template layouts/page/search.html\nSetting a very low sitemap priority will tell search engines this is not important content.\nThis implementation uses Fusejs, jquery and mark.js\nInitial setup Search depends on additional output content type of JSON in config.toml ``` [outputs] home = [“HTML”, “JSON”] ```\nSearching additional fileds To search additional fields defined in front matter, you must add it in 2 places.\nEdit layouts/_default/index.JSON This exposes the values in /index.json i.e. add category ``` … “contents”:{{ .Content | plainify | jsonify }} {{ if .Params.tags }}, “tags”:{{ .Params.tags | jsonify }}{{end}}, “categories” : {{ .Params.categories | jsonify }}, … ```\nEdit fuse.js options to Search static/js/search.js ``` keys: [ “title”, “contents”, “tags”, “categories” ] ```\n",
-  "wordCount" : "142",
+  "articleBody": "",
+  "wordCount" : "0",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -187,30 +175,31 @@ Initial setup Search depends on additional output content type of JSON in config
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="https://filpill.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span class="active">Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main">
-<section class="resume-section p-3 p-lg-5 d-flex flex-column">
-  <div class="my-auto" >
-    <form action="https://filpill.github.io/search">
-      <input id="search-query" name="s"/>
-    </form>
-    <div id="search-results">
-     <h3>Matching pages</h3>
-    </div>
-  </div>
-</section>
 
-<script id="search-result-template" type="text/x-js-template">
-    <div id="summary-${key}">
-      <h4><a href="${link}">${title}</a></h4>
-      <p>${snippet}</p>
-      ${ isset tags }<p>Tags: ${tags}</p>${ end }
-      ${ isset categories }<p>Categories: ${categories}</p>${ end }
-    </div>
-</script>
+<header class="page-header">
+    <h1>Search <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </h1>
+    <div class="post-meta"></div>
+</header>
 
+<div id="searchbox">
+    <input id="searchInput" autofocus placeholder="🔍 Search e.g. &#34;projects&#34;"
+        aria-label="search" type="search" autocomplete="off">
+    <ul id="searchResults" aria-label="search results"></ul>
+</div>
     </main>
     
 <footer class="footer">

@@ -6,7 +6,16 @@
     <description>Recent content on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jul 2022 23:21:04 +0100</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2022 21:12:42 +0100</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Pipelines - A Systems Perspective</title>
+      <link>https://filpill.github.io/projects/data_system/</link>
+      <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/data_system/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Outlook - Email Automation with Python</title>
       <link>https://filpill.github.io/projects/outlook/</link>

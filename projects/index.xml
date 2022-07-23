@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Projects on Filip Livancic</title>
+    <title>List of Projects on Filip Livancic</title>
     <link>https://filpill.github.io/projects/</link>
-    <description>Recent content in Projects on Filip Livancic</description>
+    <description>Recent content in List of Projects on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jul 2022 23:21:04 +0100</lastBuildDate><atom:link href="https://filpill.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2022 21:12:42 +0100</lastBuildDate><atom:link href="https://filpill.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Pipelines - A Systems Perspective</title>
+      <link>https://filpill.github.io/projects/data_system/</link>
+      <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/data_system/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Outlook - Email Automation with Python</title>
       <link>https://filpill.github.io/projects/outlook/</link>
