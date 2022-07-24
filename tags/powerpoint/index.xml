@@ -6,14 +6,17 @@
     <description>Recent content in powerpoint on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jul 2022 23:21:04 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/powerpoint/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2022 21:12:42 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/powerpoint/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Python-Pptx - PowerPoint Generation via Python</title>
-      <link>https://filpill.github.io/projects/pptx/</link>
-      <pubDate>Thu, 21 Jul 2022 23:21:04 +0100</pubDate>
+      <title>Building Data Pipelines With Python: Systems Perspective</title>
+      <link>https://filpill.github.io/projects/data_system/</link>
+      <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/pptx/</guid>
-      <description></description>
+      <guid>https://filpill.github.io/projects/data_system/</guid>
+      <description>Summary I&amp;rsquo;m always suprised by organisations which are not investing resources into automating their processes.
+Yes, large organisations are complex and sprawling in nature. However, I am always spotting oppertunities to streamline processes and alleviate the burden from our day to day work.
+This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
+PyODBC - A SQL Interface For Python The most important setup of the automation process is the data ingestion into Python.</description>
     </item>
     
   </channel>
