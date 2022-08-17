@@ -13,9 +13,9 @@
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/github/</guid>
-      <description>Summary The purpose of this page is to document the most common ways I interact with git and in maintaining my programs. These actions are performed via the command line as per how the tool was originally designed.
-In my opinion the main benefit is the added efficiency of the scripting out the majority of the CLI commands via a series of shell scripts.
-This simply allows you to direct all of your attention on creating better quality work without getting lost in a GUI most of the time.</description>
+      <description>Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
+In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
+This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.</description>
     </item>
     
     <item>

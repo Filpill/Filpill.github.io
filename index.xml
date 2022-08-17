@@ -13,10 +13,10 @@
       <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
       
       <guid>https://filpill.github.io/projects/data_system/</guid>
-      <description>Summary I am always spotting oppertunities to streamline processes and alleviate the burden from our day to day work.
+      <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
 This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Transformation &amp;amp; Processing System These are some of the goals we are trying to achieve:
-To build complete end-to-end data solutions from source to user. We want to minimise manual task inputs during the data processing.</description>
+Data Transformation System These are some of the goals we are trying to achieve:
+To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.</description>
     </item>
     
     <item>
@@ -25,21 +25,9 @@ To build complete end-to-end data solutions from source to user. We want to mini
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/github/</guid>
-      <description>Summary The purpose of this page is to document the most common ways I interact with git and in maintaining my programs. These actions are performed via the command line as per how the tool was originally designed.
-In my opinion the main benefit is the added efficiency of the scripting out the majority of the CLI commands via a series of shell scripts.
-This simply allows you to direct all of your attention on creating better quality work without getting lost in a GUI most of the time.</description>
-    </item>
-    
-    <item>
-      <title>Codewars - Solving Coding Problems</title>
-      <link>https://filpill.github.io/projects/codewars/</link>
-      <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/projects/codewars/</guid>
-      <description>Codewars Profile Filpill - Codewars Profile
-What is Codewars? A website that provides challenges for you to solve in a variety of programming languages. The higher the rank of the problem, the harder it is to solve.
-Motivation Recently I was feeling inspired to try and improve my existing programming skills. I am specifically focusing on improving my fundamental knoweldge of Python.
-The majority of my learning process so far has been based on my independant project based learning.</description>
+      <description>Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
+In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
+This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.</description>
     </item>
     
     <item>
@@ -70,7 +58,7 @@ The first iteration of my website was manually written in HTML/CSS. It was a lit
       <pubDate>Tue, 31 May 2022 18:15:04 +0100</pubDate>
       
       <guid>https://filpill.github.io/profile/</guid>
-      <description>About Me Aeronuatical engineer graduate Self-taught programmer in web-dev/data/engineering Developing data analytics/science skills Currently studying machine learning and AI Highly knowledgable in airline safety domain Hobbyist Glider Pilot Hobbyist 3D Print Designer Work Experience Link to my CV on github Projects Refer to the projects tab for short discussions and displays of my resulting work. Refer to my respective github repo&amp;rsquo;s for the project files. Github Github profile - Filpill Livancic LinkedIn LinkedIn profile - Filip Livancic </description>
+      <description>About Me Aeronuatical engineer graduate Self-taught programmer in web-dev/data/engineering Developing data analytics/science skills Currently studying machine learning and AI Highly knowledgable in airline safety domain Hobbyist Glider Pilot Hobbyist 3D Print Designer Work Experience Link to my CV on github Projects Refer to the projects tab for short discussions and displays of my resulting work. Refer to my respective github repo&amp;rsquo;s for the project files. Filpill - Codewars Profile Solving data structures and algorithmic problems in Python.</description>
     </item>
     
     <item>
