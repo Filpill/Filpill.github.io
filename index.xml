@@ -6,7 +6,19 @@
     <description>Recent content on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jul 2022 21:12:42 +0100</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chess.com API - Data Visaulisation</title>
+      <link>https://filpill.github.io/projects/chess/</link>
+      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/chess/</guid>
+      <description>Summary I&amp;rsquo;ve played a fair amount of chess on the chess.com platform since 2019 and fortunately all my chess data can be explored using the API endpoints documented inside the website.
+I&amp;rsquo;ve was interested in seeing how my rating has changed over time from a graphical perspective.
+Though, I didn&amp;rsquo;t make much improvement given that I was playing chess casuallly and was not learning chess strategy in depth.
+Link to the project here: Chess.</description>
+    </item>
+    
     <item>
       <title>Building Data Pipelines With Python: Systems Perspective</title>
       <link>https://filpill.github.io/projects/data_system/</link>
@@ -31,7 +43,7 @@ This allows you to direct all of your attention on effortless creating work with
     </item>
     
     <item>
-      <title>Web Scraper - Valorant Data Analysis</title>
+      <title>Valorant API - Web Scraping Project</title>
       <link>https://filpill.github.io/projects/val_scrp/</link>
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
@@ -42,7 +54,7 @@ Though the volume of data highlighted on the website is limited compared to the 
     </item>
     
     <item>
-      <title>Front-end Design - Static Site Generator</title>
+      <title>Website Design with Hugo Framework</title>
       <link>https://filpill.github.io/projects/hugo/</link>
       <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
       
@@ -103,7 +115,7 @@ The first iteration of my website was manually written in HTML/CSS. It was a lit
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/uav/</guid>
-      <description>Summary My elected project for my 4th year in University was to design and build a UAV aircraft. The design requirements were driven out from the 2017 BMFA competition (Payload Challenge). The design had to be capable of flying some circuits with varying volumes of water weighing up to 3.5kg. As project engineer, I was responsible for coordinating the technical requirements and outputs between our sub-teams. Link to Project Report Aircraft Design Process The aircraft design process used in this project is an adaptation of the design process learnt in university for commercial passenger aircraft design.</description>
+      <description>Summary My elected project for my 4th year in University was to design and build a UAV aircraft. The design requirements were driven out from the 2017 BMFA competition (Payload Challenge). The design had to be capable of flying some circuits with varying volumes of water weighing up to 3.5kg. As project engineer, I was responsible for coordinating the technical requirements and outputs between our sub-teams. Link to Project Report For UAV Design Process</description>
     </item>
     
     <item>
