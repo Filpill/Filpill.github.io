@@ -8,15 +8,14 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chess.com API - Data Visaulisation</title>
+      <title>Chess.com API - Data Visualisation</title>
       <link>https://filpill.github.io/projects/chess/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/chess/</guid>
-      <description>Summary I&amp;rsquo;ve played a fair amount of chess on the chess.com platform since 2019 and fortunately all my chess data can be explored using the API endpoints documented inside the website.
-I&amp;rsquo;ve was interested in seeing how my rating has changed over time from a graphical perspective.
-Though, I didn&amp;rsquo;t make much improvement given that I was playing chess casuallly and was not learning chess strategy in depth.
-Link to the project here: Chess.</description>
+      <description>Summary I&amp;rsquo;ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.
+I was interested in monitoring how my rating has changed over the cumalative number of games played.
+I was playing chess casually so my improvement was marginal compared to the upper echelon of chess skill. Additionally, I wasn&amp;rsquo;t learning chess strategy or tactics in depth.</description>
     </item>
     
     <item>
@@ -27,7 +26,7 @@ Link to the project here: Chess.</description>
       <guid>https://filpill.github.io/projects/data_system/</guid>
       <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
 This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Transformation System These are some of the goals we are trying to achieve:
+Data Modelling These are some of the goals we are trying to achieve:
 To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.</description>
     </item>
     
