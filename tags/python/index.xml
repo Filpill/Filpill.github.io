@@ -6,13 +6,26 @@
     <description>Recent content in python on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Nov 2022 20:13:56 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codewars API - User Statistics</title>
+      <link>https://filpill.github.io/data_projects/codewars/</link>
+      <pubDate>Wed, 09 Nov 2022 20:13:56 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/codewars/</guid>
+      <description>Summary I&amp;rsquo;ve been very involved in practising my programming skills in python and sql lately on codewars.
+I figured it would be a good idea to visualise my codewars progression.
+I&amp;rsquo;m utilising the codewars public API to pull out my information. The user data is processed in Python with the output being consolidated into a Excel dashboard using Xlsxwriter.
+Link to project: https://github.com/Filpill/codewars-stats
+Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Codewars Username Stats] end subgraph Return JSON A--&gt;C[Username Profile Data] A--&gt;D[List of Compeleted Kata by User] A--&gt;E[Individual Challenge Details] end subgraph Merge Data D--&gt;F[Merge Data via the Kata ID] E--&gt;F F--&gt;G[Re-name Columns to Better Format] end subgraph Count Aggregates G--&gt;H[Categories] G--&gt;I[Monthly Completions] G--&gt;J[Kata Rank] G--&gt;K[Languages] end subgraph Visualisation H--&gt;L[Graphing Cats.</description>
+    </item>
+    
     <item>
       <title>Tableau Client Server API: Extracting Dashboard Images</title>
-      <link>https://filpill.github.io/projects/tableauapi/</link>
+      <link>https://filpill.github.io/data_projects/tableauapi/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/tableauapi/</guid>
+      <guid>https://filpill.github.io/data_projects/tableauapi/</guid>
       <description>Summary I&amp;rsquo;ve been in the process of developing numerous Tableau dashboards across different areas of the airline business to share safety data across the organisation.
 However, there is no easy way to download all the various charts from dashboard views you have produced to recycle for the purpose of a powerpoint presentation.
 Ideally we want to avoid duplicating the data analytics process in other systems such as Python as we don&amp;rsquo;t want to incur uncessary work to present the same information.</description>
@@ -20,10 +33,10 @@ Ideally we want to avoid duplicating the data analytics process in other systems
     
     <item>
       <title>Chess.com API - Data Visualisation</title>
-      <link>https://filpill.github.io/projects/chess/</link>
+      <link>https://filpill.github.io/data_projects/chess/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/chess/</guid>
+      <guid>https://filpill.github.io/data_projects/chess/</guid>
       <description>Summary I&amp;rsquo;ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.
 I was interested in monitoring how my rating has changed over the cumalative number of games played.
 I was playing chess casually so my improvement was marginal compared to the upper echelon of chess skill. Additionally, I wasn&amp;rsquo;t learning chess strategy or tactics in depth.</description>
@@ -31,10 +44,10 @@ I was playing chess casually so my improvement was marginal compared to the uppe
     
     <item>
       <title>Building Data Pipelines With Python: Systems Perspective</title>
-      <link>https://filpill.github.io/projects/data_system/</link>
+      <link>https://filpill.github.io/data_projects/data_system/</link>
       <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/data_system/</guid>
+      <guid>https://filpill.github.io/data_projects/data_system/</guid>
       <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
 This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
 Data Modelling These are some of the goals we are trying to achieve:
@@ -43,28 +56,28 @@ To build complete end-to-end data solutions from the data source to user. We wan
     
     <item>
       <title>Age of Empire 2 API - Data Visualisation</title>
-      <link>https://filpill.github.io/projects/aoe2/</link>
+      <link>https://filpill.github.io/data_projects/aoe2/</link>
       <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/aoe2/</guid>
+      <guid>https://filpill.github.io/data_projects/aoe2/</guid>
       <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
     </item>
     
     <item>
       <title>2D Heat Transfer Simulation</title>
-      <link>https://filpill.github.io/projects/ht_sim/</link>
+      <link>https://filpill.github.io/eng_projects/ht_sim/</link>
       <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/ht_sim/</guid>
+      <guid>https://filpill.github.io/eng_projects/ht_sim/</guid>
       <description>Summary Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
     </item>
     
     <item>
       <title>Forward Facing Step - Particle Image Velocimetry</title>
-      <link>https://filpill.github.io/projects/piv/</link>
+      <link>https://filpill.github.io/eng_projects/piv/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/piv/</guid>
+      <guid>https://filpill.github.io/eng_projects/piv/</guid>
       <description>Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.
 Particle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.
 In this experiment the height of the boundary layer is similarly proportioned to the height of the step.</description>

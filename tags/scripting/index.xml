@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 03 Jun 2022 12:29:15 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Website Design with Hugo Framework</title>
-      <link>https://filpill.github.io/projects/hugo/</link>
+      <link>https://filpill.github.io/data_projects/hugo/</link>
       <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/hugo/</guid>
+      <guid>https://filpill.github.io/data_projects/hugo/</guid>
       <description>Summary I wanted to showcase my projects without devoting a large amount of time to maintaining HTML code and needed a framework to make it easy to share my projects.
 Hugo is a static site generator written in Go and compiles your documents written in markdown into cleanly formatted HTML and CSS files.
 The first iteration of my website was manually written in HTML/CSS. It was a little bit ugly compared to the second iteration which is using hugo framework.</description>

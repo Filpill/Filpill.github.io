@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Building Data Pipelines With Python: Systems Perspective | Filip Livancic</title>
+<meta name="keywords" content="python, sql, powerpoint, outlook, excel, automation, programming">
+<meta name="description" content="Summary There are endless oppertunities to streamline processes and automate our data production tasks.
+This article serves as an example for the wide ranging applications I&rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
+Data Modelling These are some of the goals we are trying to achieve:
+To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/data_projects/data_system/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.003c9d079ab327c0f4d881effa9b0c186b47f63444823d6eff1ad4bc669c1611.css" integrity="sha256-ADydB5qzJ8D02IHv&#43;psMGGtH9jREgj1u/xrUvGacFhE=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Building Data Pipelines With Python: Systems Perspective" />
+<meta property="og:description" content="Summary There are endless oppertunities to streamline processes and automate our data production tasks.
+This article serves as an example for the wide ranging applications I&rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
+Data Modelling These are some of the goals we are trying to achieve:
+To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/data_projects/data_system/" />
+<meta property="og:image" content="https://filpill.github.io/img/auto/python_all_auto.png" /><meta property="article:section" content="data_projects" />
+<meta property="article:published_time" content="2022-07-23T21:12:42&#43;01:00" />
+<meta property="article:modified_time" content="2022-07-23T21:12:42&#43;01:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/auto/python_all_auto.png" />
+<meta name="twitter:title" content="Building Data Pipelines With Python: Systems Perspective"/>
+<meta name="twitter:description" content="Summary There are endless oppertunities to streamline processes and automate our data production tasks.
+This article serves as an example for the wide ranging applications I&rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
+Data Modelling These are some of the goals we are trying to achieve:
+To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "List of Data Projects",
+      "item": "https://filpill.github.io/data_projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Building Data Pipelines With Python: Systems Perspective",
+      "item": "https://filpill.github.io/data_projects/data_system/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building Data Pipelines With Python: Systems Perspective",
+  "name": "Building Data Pipelines With Python: Systems Perspective",
+  "description": "Summary There are endless oppertunities to streamline processes and automate our data production tasks.\nThis article serves as an example for the wide ranging applications I\u0026rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.\nData Modelling These are some of the goals we are trying to achieve:\nTo build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.",
+  "keywords": [
+    "python", "sql", "powerpoint", "outlook", "excel", "automation", "programming"
+  ],
+  "articleBody": "Summary There are endless oppertunities to streamline processes and automate our data production tasks.\nThis article serves as an example for the wide ranging applications I’ve been using Python to automate both simple and complex tasks with high efficiency.\nData Modelling These are some of the goals we are trying to achieve:\nTo build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing. To build tools which are adaptable to the needs of the business. This is a high level view of a data analytics pipeline I’ve built in the past: graph TD; subgraph Process Initiation 0A([Data Analyst Initiates Process])--\u003eA 0A--\u003eB end subgraph Extract, Transform, and Analyse Data A[Shell Scripts]-- exec. via cli tools --\u003eC((Python Scripts)) B[Task Scheduler]-- auto exec. --\u003eC((Python Scripts)) D[(SQL Server)]-- data retrieval --\u003eC-- pyodbc --\u003eD C--\u003e E(Matplotlib charts) C--\u003e F(Pandas tables) E-- saved as .png --\u003e G(Saved In Network Drive) F-- saved as .csv --\u003eG subgraph Create Data Product G-- xlsxwriter --\u003eH(Excel\nDashboards) G-- python-pptx --\u003eI(Powerpoint\nPresentations) end end subgraph Process Termination H--\u003eJ(Emails sent via SMTP) I--\u003eJ J-- smtplib --\u003eK([End User Recieves Data Product]) end Note: Python scripts are chained together to connect the processes together and handle various tasks along the pipeline\nThis is the result of incremental upgrades made gradually over time to optimise my workflow. I’ve saved much time inter-weaving these python libraries together.\nAs long as the tools are well built, you can bridge them across to new processes easily and maintain them with minimal effort. Not to mention you will be saving hundreds (and maybe thousands of) hours as you execute these processes.\nThe idea is not to replicate this system one-to-one, but to demonstate the possibilities for connecting automation tools togther.\nAnd perhaps we can learn to make more elaborate systems…\nPyODBC - A SQL Interface For Python The most important setup of the automation process is the ingestion of data into the Python environment.\nFortunately for myself, our organisation hosts several Microsoft SQL Servers which form part of our data warehouse.\nPyODBC is a python module which can authenticate and connect directly to your desired SQL server. The great thing about it is that you can wrap an entire query written in SQL with a triple quote string directly within your python script. The module will be able to send the query out using the relevant ODBC driver on your machine.\nThe pyodbc set-up can be generalised because you only need two inputs: the server name and the sql query. Therefore I have developed a python utility written which can be imported into any data processing script as a module.\nXlsxWriter - Excel Report Generator For Python The proliferation of Excel as a standard piece of software has enabled much easier sharing and communication of data. There is no office computer in the world that is not supplied with Excel.\nBI tools are also used to communicate and share data accross the business. However, this depends on how much the organisation can stretch the budget to license the majority of individuals.\nWorking inside the Excel ecosystem can help save on the extra overhead. However, we don’t want to be doing any analysis in Excel.\nWhy?…\nBecause it’s extremely computationally expensive to handle large data sets. And its next to useless when stringing together a series of complex formulas to analyse data.\nHow can we solve this issue? Simple – Xlsxwriter.\nXlsxwriter is a python module which allows you to create fresh Excel reports from scratch with analysis conducted in Python. You can turn all your pandas dataframes into Excel tables. Additionally, matplotlib charts can be inserted into the workbook to act as the visualisation component.\nWith a bit of effort, you can easily turn the analysis into a dashboard that mimics the appearance of an Excel spreadsheet. I frequently use this tool to get dashboards into production quickly with python.\nNote: XlsxWriter as the name suggests “writes Excel Workbooks”. To be clear, this is not an API that can directly interact with objects of pre-existing workbooks. Everytime you execute a script with xlsxwriter tools involved, a completely new file will be produced and overwrite the previous version.\nPython-Pptx - PowerPoint Presentation Generator For Python How many hours do you waste making powerpoints? I’ve spent countless hours adjusting trivial features such as formatting or chart positioning.\nBut what if the presentation content and design can be prepared automatically?\nI generate tens of presentations per month to cater to multiple stakeholders. Given that I have fairly standardised slide content, this makes presentations a high value automation target for myself.\nI’ve experimented with markdown presentation tools. However, I run into a lot of issues where I do not have full positional control of the objects.\nStakeholders tend to ask for extra features or to move shapes around the slide. However, this is happens to be the power of python-pptx library.\nPython-pptx is much more powerful in controling the powerpoint design in comparison to letting markdown dictate all the default positions of your powerpoint shapes.\nThe control of the objects is very granular its therefore very important to set up functions to standardise some layouts or shapes you want to insert. This speeds up the presentation building process as usually slides tend to borrow a lot of the same code.\nThe powerpoint functions I write are imported from a seperate .py file. A global function file helps us share the functions to any python script involving presentation automation.\nNote: Python-pptx works in similar fashion to xlsxwriter. Everytime the script is run, a brand new presentation file will be built from sratch.\nSmtplib - Email Automation with Python Routine emails sent on a recurring basis can be automated using the python library smtplib.\nWe can borrow the SMTP protocol to send our emails and we can avoid our GUI email environment entirely. Python acts as the interface and can send the email directly.\nThe script can be designed to have a message template built into itself. Additonally, we can make a list of tuples containing the addresses and attachments you want to send to the respective parties.\nBy looping over these templates and lists, we can entirely bypass the requirement of building all the components for all the emails.\nTens of emails can be sent out in a matter of seconds.\nConclusion Considering the tasks we do daily,weekly and monthly; we can tie our procedures together with an elaborate series of Python tools to save hundreds, if not thousands of hours.\nFor most organisations, the cost benefit ratio is extremely favourable if automation systems are applied (and maintained) correctly.\nThe value of your time increases exponentially as you are able to prioritise resources in creating higher quality work.\n",
+  "wordCount" : "1126",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/auto/python_all_auto.png","datePublished": "2022-07-23T21:12:42+01:00",
+  "dateModified": "2022-07-23T21:12:42+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/data_projects/data_system/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/data_projects/" title="Data Projects">
+                    <span>Data Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/eng_projects/" title="Engineering Projects">
+                    <span>Engineering Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/data_projects/">List of Data Projects</a></div>
+    <h1 class="post-title">
+      Building Data Pipelines With Python: Systems Perspective<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h1>
+    <div class="post-meta"><span title='2022-07-23 21:12:42 +0100 BST'>July 23, 2022</span>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/auto/python_all_auto.png" alt="Python Automating Everything">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#data-modelling" aria-label="Data Modelling">Data Modelling</a><ul>
+                        
+                <li>
+                    <a href="#pyodbc---a-sql-interface-for-python" aria-label="PyODBC - A SQL Interface For Python">PyODBC - A SQL Interface For Python</a></li>
+                <li>
+                    <a href="#xlsxwriter---excel-report-generator-for-python" aria-label="XlsxWriter - Excel Report Generator For Python">XlsxWriter - Excel Report Generator For Python</a></li>
+                <li>
+                    <a href="#python-pptx---powerpoint-presentation-generator-for-python" aria-label="Python-Pptx - PowerPoint Presentation Generator For Python">Python-Pptx - PowerPoint Presentation Generator For Python</a></li>
+                <li>
+                    <a href="#smtplib---email-automation-with-python" aria-label="Smtplib - Email Automation with Python">Smtplib - Email Automation with Python</a></li></ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h1>
+<p>There are endless oppertunities to streamline processes and automate our data production tasks.</p>
+<p>This article serves as an example for the wide ranging applications I&rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.</p>
+<h1 id="data-modelling">Data Modelling<a hidden class="anchor" aria-hidden="true" href="#data-modelling">#</a></h1>
+<p>These are some of the goals we are trying to achieve:</p>
+<ul>
+<li>To build complete end-to-end data solutions from the data source to user.</li>
+<li>We want to minimise manual task interventions during the data processing.</li>
+<li>To build tools which are adaptable to the needs of the business.</li>
+</ul>
+<p>This is a high level view of a data analytics pipeline I&rsquo;ve built in the past:
+<div style="text-align:center;">
+	<div class="mermaid">
+		
+	  
+graph TD;
+    subgraph Process Initiation
+    0A([Data Analyst Initiates Process])-->A
+    0A-->B
+    end
+
+    subgraph Extract, Transform, and Analyse Data
+    A[Shell Scripts]-- exec. via <br>cli tools -->C((Python Scripts))
+    B[Task Scheduler]-- auto exec. -->C((Python Scripts))
+
+    D[(SQL Server)]-- data retrieval -->C-- pyodbc -->D
+    C--> E(Matplotlib charts)
+    C--> F(Pandas tables)
+
+    E-- saved as .png --> G(Saved In Network Drive)
+    F-- saved as .csv -->G
+
+
+    subgraph Create Data Product
+    G-- xlsxwriter -->H(Excel<br>Dashboards)
+    G-- python-pptx -->I(Powerpoint<br>Presentations)
+    end
+    end
+
+    subgraph Process Termination
+    H-->J(Emails sent via SMTP)
+    I-->J
+
+    J-- smtplib -->K([End User Recieves Data Product])
+    end
+
+	</div>
+</div>
+</p>
+<p><em><strong>Note</strong>: Python scripts are chained together to connect the processes together and handle various tasks along the pipeline</em></p>
+<p>This is the result of incremental upgrades made gradually over time to optimise my workflow. I&rsquo;ve saved much time inter-weaving these python libraries together.</p>
+<p>As long as the tools are well built, you can bridge them across to new processes easily and maintain them with minimal effort. Not to mention you will be saving hundreds (and maybe thousands of) hours as you execute these processes.</p>
+<p>The idea is not to replicate this system one-to-one, but to demonstate the possibilities for connecting automation tools togther.</p>
+<p>And perhaps we can learn to make more elaborate systems&hellip;</p>
+<h2 id="pyodbc---a-sql-interface-for-python">PyODBC - A SQL Interface For Python<a hidden class="anchor" aria-hidden="true" href="#pyodbc---a-sql-interface-for-python">#</a></h2>
+<p><img loading="lazy" src="/img/logo/sql.png#center" alt="SQL"  />
+</p>
+<p>The most important setup of the automation process is the ingestion of data into the Python environment.</p>
+<p>Fortunately for myself, our organisation hosts several Microsoft SQL Servers which form part of our data warehouse.</p>
+<p>PyODBC is a python module which can authenticate and connect directly to your desired SQL server. The great thing about it is that you can wrap an entire query written in SQL with a triple quote string directly within your python script. The module will be able to send the query out using the relevant ODBC driver on your machine.</p>
+<p>The pyodbc set-up can be generalised because you only need two inputs: the server name and the sql query. Therefore I have developed a python utility written which can be imported into any data processing script as a module.</p>
+<h2 id="xlsxwriter---excel-report-generator-for-python">XlsxWriter - Excel Report Generator For Python<a hidden class="anchor" aria-hidden="true" href="#xlsxwriter---excel-report-generator-for-python">#</a></h2>
+<p><img loading="lazy" src="/img/logo/excel.jpg#center" alt="Excel"  />
+</p>
+<p>The proliferation of Excel as a standard piece of software has enabled much easier sharing and communication of data. There is no office computer in the world that is not supplied with Excel.</p>
+<p>BI tools are also used to communicate and share data accross the business. However, this depends on how much the organisation can stretch the budget to license the majority of individuals.</p>
+<p>Working inside the Excel ecosystem can help save on the extra overhead. However, <strong>we don&rsquo;t want to be doing any analysis in Excel.</strong></p>
+<p>Why?&hellip;</p>
+<p>Because it&rsquo;s extremely computationally expensive to handle large data sets. And its next to useless when stringing together a series of complex formulas to analyse data.</p>
+<p>How can we solve this issue? Simple &ndash; Xlsxwriter.</p>
+<p>Xlsxwriter is a python module which allows you to create fresh Excel reports from scratch with analysis conducted in Python. You can turn all your pandas dataframes into Excel tables. Additionally, matplotlib charts can be inserted into the workbook to act as the visualisation component.</p>
+<p>With a bit of effort, you can easily turn the analysis into a dashboard that mimics the appearance of an Excel spreadsheet. I frequently use this tool to get dashboards into production quickly with python.</p>
+<p><em><strong>Note:</strong> XlsxWriter as the name suggests &ldquo;writes Excel Workbooks&rdquo;. To be clear, this is not an API that can directly interact with objects of pre-existing workbooks. Everytime you execute a script with xlsxwriter tools involved, a completely new file will be produced and overwrite the previous version.</em></p>
+<h2 id="python-pptx---powerpoint-presentation-generator-for-python">Python-Pptx - PowerPoint Presentation Generator For Python<a hidden class="anchor" aria-hidden="true" href="#python-pptx---powerpoint-presentation-generator-for-python">#</a></h2>
+<p><img loading="lazy" src="/img/logo/pptx.png#center" alt="Powerpoint"  />
+</p>
+<p>How many hours do you waste making powerpoints? I&rsquo;ve spent countless hours adjusting trivial features such as formatting or chart positioning.</p>
+<p><em>But what if the presentation content and design can be prepared automatically?</em></p>
+<p>I generate tens of presentations per month to cater to multiple stakeholders. Given that I have fairly standardised slide content, this makes presentations a high value automation target for myself.</p>
+<p>I&rsquo;ve experimented with markdown presentation tools. However, I run into a lot of issues where I do not have full positional control of the objects.</p>
+<p>Stakeholders tend to ask for extra features or to move shapes around the slide. However, this is happens to be the power of python-pptx library.</p>
+<p>Python-pptx is much more powerful in controling the powerpoint design in comparison to letting markdown dictate all the default positions of your powerpoint shapes.</p>
+<p>The control of the objects is very granular its therefore very important to set up functions to standardise some layouts or shapes you want to insert. This speeds up the presentation building process as usually slides tend to borrow a lot of the same code.</p>
+<p>The powerpoint functions I write are imported from a seperate .py file. A global function file helps us share the functions to any python script involving presentation automation.</p>
+<p><em><strong>Note:</strong> Python-pptx works in similar fashion to xlsxwriter. Everytime the script is run, a brand new presentation file will be built from sratch.</em></p>
+<h2 id="smtplib---email-automation-with-python">Smtplib - Email Automation with Python<a hidden class="anchor" aria-hidden="true" href="#smtplib---email-automation-with-python">#</a></h2>
+<p><img loading="lazy" src="/img/logo/outlook.png#center" alt="Outlook"  />
+</p>
+<p>Routine emails sent on a recurring basis can be automated using the python library smtplib.</p>
+<p>We can borrow the SMTP protocol to send our emails and we can avoid our GUI email environment entirely. Python acts as the interface and can send the email directly.</p>
+<p>The script can be designed to have a message template built into itself. Additonally, we can make a list of tuples containing the addresses and attachments you want to send to the respective parties.</p>
+<p>By looping over these templates and lists, we can entirely bypass the requirement of building all the components for all the emails.</p>
+<p>Tens of emails can be sent out in a matter of seconds.</p>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>Considering the tasks we do daily,weekly and monthly; we can tie our procedures together with an elaborate series of Python tools to save hundreds, if not thousands of hours.</p>
+<p>For most organisations, the cost benefit ratio is extremely favourable if automation systems are applied (and maintained) correctly.</p>
+<p>The value of your time increases exponentially as you are able to prioritise resources in creating higher quality work.</p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/python/">python</a></li>
+      <li><a href="https://filpill.github.io/tags/sql/">sql</a></li>
+      <li><a href="https://filpill.github.io/tags/powerpoint/">powerpoint</a></li>
+      <li><a href="https://filpill.github.io/tags/outlook/">outlook</a></li>
+      <li><a href="https://filpill.github.io/tags/excel/">excel</a></li>
+      <li><a href="https://filpill.github.io/tags/automation/">automation</a></li>
+      <li><a href="https://filpill.github.io/tags/programming/">programming</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://filpill.github.io/data_projects/chess/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Chess.com API - Data Visualisation</span>
+  </a>
+  <a class="next" href="https://filpill.github.io/data_projects/github/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Github - Command Line Interface Procedures</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Valorant API - Web Scraping Project | Filip Livancic</title>
+<meta name="keywords" content="scrapy, json, webscraping, programming">
+<meta name="description" content="Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
+There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
+Though the volume of data highlighted on the website is limited compared to the actual volume of games I&rsquo;ve played.">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/data_projects/val_scrp/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.003c9d079ab327c0f4d881effa9b0c186b47f63444823d6eff1ad4bc669c1611.css" integrity="sha256-ADydB5qzJ8D02IHv&#43;psMGGtH9jREgj1u/xrUvGacFhE=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Valorant API - Web Scraping Project" />
+<meta property="og:description" content="Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
+There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
+Though the volume of data highlighted on the website is limited compared to the actual volume of games I&rsquo;ve played." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/data_projects/val_scrp/" />
+<meta property="og:image" content="https://filpill.github.io/img/val/val_logo.jpg" /><meta property="article:section" content="data_projects" />
+<meta property="article:published_time" content="2022-06-13T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-06-13T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/val/val_logo.jpg" />
+<meta name="twitter:title" content="Valorant API - Web Scraping Project"/>
+<meta name="twitter:description" content="Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
+There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
+Though the volume of data highlighted on the website is limited compared to the actual volume of games I&rsquo;ve played."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "List of Data Projects",
+      "item": "https://filpill.github.io/data_projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Valorant API - Web Scraping Project",
+      "item": "https://filpill.github.io/data_projects/val_scrp/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Valorant API - Web Scraping Project",
+  "name": "Valorant API - Web Scraping Project",
+  "description": "Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.\nThere are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.\nThough the volume of data highlighted on the website is limited compared to the actual volume of games I\u0026rsquo;ve played.",
+  "keywords": [
+    "scrapy", "json", "webscraping", "programming"
+  ],
+  "articleBody": "Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.\nThere are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.\nThough the volume of data highlighted on the website is limited compared to the actual volume of games I’ve played. I was only able to pull 30 matches worth of data.\nHowever, it was worth learning about the overall web-scraping process and adding more capabilities to my toolkit.\nLink to the project here: Valorant Web Scrapping Project\nScrapy - Web Scraper I used a python library called scrapy as my web-crawling tool and the website being interrogated was https://dak.gg/valorant/en/profile/FilPill-EUW\nInitialising Scrapy Project The command below creates all the starting files for building the web-crawler:\nscrapy startproject val_scraper Checking for 200 Response on Target Website I initialised a scrapy shell with the command:\nscrapy shell Inside the shell, I make a request to the website to check that my scraper has permissions to scrape the website.\nfetch ('https://dak.gg/valorant/en/profile/FilPill-EUW](https://dak.gg/valorant/en/profile/FilPill-EUW)a') A successful connection will return a 200 response, otherwise any 4xx reponse code will inidicate an error or a lack of permissions to perform this specific operation.\nIdentifying Target For Scraping My initial approach involved attempting to parse out the HTML classes within the div’s however it did not work successfully. Despite the data being kept inside the HTML tags,I could not access them with my scraper.\nWhen I simulated the webscraper opening the website, it did not return any data at all. Just an empty HTML page with no data. Soonafter, I realised that javascript is being employed to dynamically load the data into the front-end.\nRealising this occurrence, I changed my approach. On the inspect elements page, I naviagted to the XHR/Fetch network tab to view what kind of requests were being made to the website, I found an https request which returns my match data in JSON format.\nThe spider script shown below is what is being ustilised to scrape the match data from the page:\nimport scrapy import json class PlayerState(scrapy.Spider): name = 'playerState' start_urls = ['https://dak.gg/valorant/en/profile/FilPill-EUW'] headers = { \"accept\":\" application/json, text/plain, */*\" } def parse(self, response): url = 'https://val.dakgg.io/api/v1/accounts/JPnyLxsiavseiYbL8xtmWSuFRHdupX43u_hVynD5YScr2_Y32Wt2v5K-NvxvfDRWTL67AHdVSmoLTg/matches' request = scrapy.Request(url, callback = self.parse_api, headers=self.headers) yield request def parse_api(self,response): raw_data = response.body data = json.loads(raw_data) yield { 'matches':data['matches'] } Running the spider To run the spider you run the following command:\nscrapy crawl playerState -O playerState.json The playerState argument in the command is referring to the class defined in my spider.\nThe results are saved in a json file of my choosing.\nData Analysis Since we are only pulling out 30 matches, we are fairly limited in generating valuable data visualisations.\nHowever the goal was mainly to gain an understanding of the overall webscraping process.\nThese are some of the visualisations made using python:\n",
+  "wordCount" : "499",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/val/val_logo.jpg","datePublished": "2022-06-13T00:00:00Z",
+  "dateModified": "2022-06-13T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/data_projects/val_scrp/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/data_projects/" title="Data Projects">
+                    <span>Data Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/eng_projects/" title="Engineering Projects">
+                    <span>Engineering Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/data_projects/">List of Data Projects</a></div>
+    <h1 class="post-title">
+      Valorant API - Web Scraping Project
+    </h1>
+    <div class="post-meta"><span title='2022-06-13 00:00:00 +0000 UTC'>June 13, 2022</span>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/val/val_logo.jpg" alt="Valorant logo">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#scrapy---web-scraper" aria-label="Scrapy - Web Scraper">Scrapy - Web Scraper</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#initialising-scrapy-project" aria-label="Initialising Scrapy Project">Initialising Scrapy Project</a></li>
+                <li>
+                    <a href="#checking-for-200-response-on-target-website" aria-label="Checking for 200 Response on Target Website">Checking for 200 Response on Target Website</a></li>
+                <li>
+                    <a href="#identifying-target-for-scraping" aria-label="Identifying Target For Scraping">Identifying Target For Scraping</a></li>
+                <li>
+                    <a href="#running-the-spider" aria-label="Running the spider">Running the spider</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#data-analysis" aria-label="Data Analysis">Data Analysis</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h1>
+<p>I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.</p>
+<p>There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.</p>
+<p>Though the volume of data highlighted on the website is limited compared to the actual volume of games I&rsquo;ve played. I was only able to pull 30 matches worth of data.</p>
+<p>However, it was worth learning about the overall web-scraping process and adding more capabilities to my toolkit.</p>
+<p>Link to the project here: <a href="https://github.com/Filpill/val_scraper">Valorant Web Scrapping Project</a></p>
+<h1 id="scrapy---web-scraper">Scrapy - Web Scraper<a hidden class="anchor" aria-hidden="true" href="#scrapy---web-scraper">#</a></h1>
+<p>I used a python library called <strong>scrapy</strong> as my web-crawling tool and the website being interrogated was <a href="https://dak.gg/valorant/en/profile/FilPill-EUW">https://dak.gg/valorant/en/profile/FilPill-EUW</a></p>
+<h3 id="initialising-scrapy-project">Initialising Scrapy Project<a hidden class="anchor" aria-hidden="true" href="#initialising-scrapy-project">#</a></h3>
+<p>The command below creates all the starting files for building the web-crawler:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">scrapy startproject val_scraper
+</code></pre><h3 id="checking-for-200-response-on-target-website">Checking for 200 Response on Target Website<a hidden class="anchor" aria-hidden="true" href="#checking-for-200-response-on-target-website">#</a></h3>
+<p>I initialised a scrapy shell with the command:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">scrapy shell
+</code></pre><p>Inside the shell, I make a request to the website to check that my scraper has permissions to scrape the website.</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">fetch (&#39;https://dak.gg/valorant/en/profile/FilPill-EUW](https://dak.gg/valorant/en/profile/FilPill-EUW)a&#39;)
+</code></pre><p>A successful connection will return a 200 response, otherwise any 4xx reponse code will inidicate an error or a lack of permissions to perform this specific operation.</p>
+<h3 id="identifying-target-for-scraping">Identifying Target For Scraping<a hidden class="anchor" aria-hidden="true" href="#identifying-target-for-scraping">#</a></h3>
+<p>My initial approach involved attempting to parse out the HTML classes within the div&rsquo;s however it did not work successfully. Despite the data being kept inside the HTML tags,I could not access them with my scraper.</p>
+<p>When I simulated the webscraper opening the website, it did not return any data at all. Just an empty HTML page with no data. Soonafter, I realised that javascript is being employed to dynamically load the data into the front-end.</p>
+<p>Realising this occurrence, I changed my approach. On the inspect elements page, I naviagted to the XHR/Fetch network tab to view what kind of requests were being made to the website, I found an https request which returns my match data in JSON format.</p>
+<p>The spider script shown below is what is being ustilised to scrape the match data from the page:</p>
+<pre tabindex="0"><code class="language-[python]" data-lang="[python]">import scrapy
+import json
+
+class PlayerState(scrapy.Spider):
+    name = &#39;playerState&#39;
+    start_urls =  [&#39;https://dak.gg/valorant/en/profile/FilPill-EUW&#39;]
+    headers = {
+   &#34;accept&#34;:&#34; application/json, text/plain, */*&#34;
+    }
+
+    def parse(self, response):
+        url = &#39;https://val.dakgg.io/api/v1/accounts/JPnyLxsiavseiYbL8xtmWSuFRHdupX43u_hVynD5YScr2_Y32Wt2v5K-NvxvfDRWTL67AHdVSmoLTg/matches&#39;
+
+        request = scrapy.Request(url,
+                                 callback = self.parse_api,
+                                 headers=self.headers)
+        yield request
+
+    def parse_api(self,response):
+        raw_data = response.body
+        data = json.loads(raw_data)
+        yield {
+               &#39;matches&#39;:data[&#39;matches&#39;]
+        }
+</code></pre><h3 id="running-the-spider">Running the spider<a hidden class="anchor" aria-hidden="true" href="#running-the-spider">#</a></h3>
+<p>To run the spider you run the following command:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">scrapy crawl playerState -O playerState.json
+</code></pre><p>The <strong>playerState</strong> argument in the command is referring to the class defined in my spider.</p>
+<p>The results are saved in a json file of my choosing.</p>
+<h1 id="data-analysis">Data Analysis<a hidden class="anchor" aria-hidden="true" href="#data-analysis">#</a></h1>
+<p>Since we are only pulling out 30 matches, we are fairly limited in generating valuable data visualisations.</p>
+<p>However the goal was mainly to gain an understanding of the overall webscraping process.</p>
+<p>These are some of the visualisations made using python:</p>
+<p>
+
+	<img src="/img/val/kill_death.png" width="720"  />
+
+
+
+
+	<img src="/img/val/map_wins.png" width="720"  />
+
+</p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/scrapy/">scrapy</a></li>
+      <li><a href="https://filpill.github.io/tags/json/">json</a></li>
+      <li><a href="https://filpill.github.io/tags/webscraping/">webscraping</a></li>
+      <li><a href="https://filpill.github.io/tags/programming/">programming</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://filpill.github.io/data_projects/github/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Github - Command Line Interface Procedures</span>
+  </a>
+  <a class="next" href="https://filpill.github.io/data_projects/hugo/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Website Design with Hugo Framework</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

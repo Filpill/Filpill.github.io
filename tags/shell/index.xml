@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 17 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github - Command Line Interface Procedures</title>
-      <link>https://filpill.github.io/projects/github/</link>
+      <link>https://filpill.github.io/data_projects/github/</link>
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/github/</guid>
+      <guid>https://filpill.github.io/data_projects/github/</guid>
       <description>Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
 In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
 This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.</description>
@@ -20,10 +20,10 @@ This allows you to direct all of your attention on effortless creating work with
     
     <item>
       <title>Website Design with Hugo Framework</title>
-      <link>https://filpill.github.io/projects/hugo/</link>
+      <link>https://filpill.github.io/data_projects/hugo/</link>
       <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/hugo/</guid>
+      <guid>https://filpill.github.io/data_projects/hugo/</guid>
       <description>Summary I wanted to showcase my projects without devoting a large amount of time to maintaining HTML code and needed a framework to make it easy to share my projects.
 Hugo is a static site generator written in Go and compiles your documents written in markdown into cleanly formatted HTML and CSS files.
 The first iteration of my website was manually written in HTML/CSS. It was a little bit ugly compared to the second iteration which is using hugo framework.</description>

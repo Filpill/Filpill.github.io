@@ -2,40 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://filpill.github.io/tags/automation/</loc>
-    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
+    <loc>https://filpill.github.io/</loc>
+    <lastmod>2022-11-09T20:14:13+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/data_projects/</loc>
+    <lastmod>2022-11-09T20:14:13+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/data_projects/tableau_public/</loc>
+    <lastmod>2022-11-09T20:14:13+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/categories/</loc>
+    <lastmod>2022-11-09T20:13:56+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/data_projects/codewars/</loc>
+    <lastmod>2022-11-09T20:13:56+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/categories/programming/</loc>
+    <lastmod>2022-11-09T20:13:56+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/python/</loc>
+    <lastmod>2022-11-09T20:13:56+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/sql/</loc>
+    <lastmod>2022-11-09T20:13:56+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/</loc>
+    <lastmod>2022-11-09T20:13:56+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/automation/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/categories/data/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/</loc>
-    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/projects/</loc>
-    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://filpill.github.io/tags/programming/</loc>
-    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/categories/programming/</loc>
-    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/python/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/tableau/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/tableauapi/</loc>
+    <loc>https://filpill.github.io/data_projects/tableauapi/</loc>
     <lastmod>2022-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/tags/</loc>
-    <lastmod>2022-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/projects/chess/</loc>
+    <loc>https://filpill.github.io/data_projects/chess/</loc>
     <lastmod>2022-08-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/data/</loc>
@@ -44,7 +53,7 @@
     <loc>https://filpill.github.io/tags/webscraping/</loc>
     <lastmod>2022-08-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/data_system/</loc>
+    <loc>https://filpill.github.io/data_projects/data_system/</loc>
     <lastmod>2022-07-23T21:12:42+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/excel/</loc>
@@ -56,13 +65,10 @@
     <loc>https://filpill.github.io/tags/powerpoint/</loc>
     <lastmod>2022-07-23T21:12:42+01:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/tags/sql/</loc>
-    <lastmod>2022-07-23T21:12:42+01:00</lastmod>
-  </url><url>
     <loc>https://filpill.github.io/tags/cli/</loc>
     <lastmod>2022-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/github/</loc>
+    <loc>https://filpill.github.io/data_projects/github/</loc>
     <lastmod>2022-07-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/shell/</loc>
@@ -74,7 +80,7 @@
     <loc>https://filpill.github.io/tags/scrapy/</loc>
     <lastmod>2022-06-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/val_scrp/</loc>
+    <loc>https://filpill.github.io/data_projects/val_scrp/</loc>
     <lastmod>2022-06-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/css/</loc>
@@ -104,7 +110,7 @@
     <loc>https://filpill.github.io/tags/website/</loc>
     <lastmod>2022-06-03T12:29:15+01:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/hugo/</loc>
+    <loc>https://filpill.github.io/data_projects/hugo/</loc>
     <lastmod>2022-06-03T12:29:15+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/hugo/</loc>
@@ -116,7 +122,7 @@
     <loc>https://filpill.github.io/tags/web/</loc>
     <lastmod>2022-05-31T18:15:04+01:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/aoe2/</loc>
+    <loc>https://filpill.github.io/data_projects/aoe2/</loc>
     <lastmod>2022-05-31T00:59:13+01:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/analytics/</loc>
@@ -143,16 +149,19 @@
     <loc>https://filpill.github.io/categories/engineering/</loc>
     <lastmod>2021-11-13T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://filpill.github.io/eng_projects/</loc>
+    <lastmod>2021-11-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://filpill.github.io/tags/lithophane/</loc>
     <lastmod>2021-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/litho/</loc>
+    <loc>https://filpill.github.io/eng_projects/litho/</loc>
     <lastmod>2021-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/photoshop/</loc>
     <lastmod>2021-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/3dcar/</loc>
+    <loc>https://filpill.github.io/eng_projects/3dcar/</loc>
     <lastmod>2021-10-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/automotive/</loc>
@@ -170,7 +179,7 @@
     <loc>https://filpill.github.io/tags/processing3/</loc>
     <lastmod>2021-10-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/ht_sim/</loc>
+    <loc>https://filpill.github.io/eng_projects/ht_sim/</loc>
     <lastmod>2021-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/matlab/</loc>
@@ -203,13 +212,13 @@
     <loc>https://filpill.github.io/tags/uav/</loc>
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/uav/</loc>
+    <loc>https://filpill.github.io/eng_projects/uav/</loc>
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/camera/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/piv/</loc>
+    <loc>https://filpill.github.io/eng_projects/piv/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/imagej/</loc>

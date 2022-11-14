@@ -6,13 +6,36 @@
     <description>Recent content on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Nov 2022 20:14:13 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tableau Public Profile - Filip Livancic</title>
+      <link>https://filpill.github.io/data_projects/tableau_public/</link>
+      <pubDate>Wed, 09 Nov 2022 20:14:13 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/tableau_public/</guid>
+      <description>Summary I&amp;rsquo;ve made a Tableau Public profile to showcase any public datasets I&amp;rsquo;ve analysed in Tableau:
+Link to Tableau Public: https://public.tableau.com/app/profile/filip.livancic</description>
+    </item>
+    
+    <item>
+      <title>Codewars API - User Statistics</title>
+      <link>https://filpill.github.io/data_projects/codewars/</link>
+      <pubDate>Wed, 09 Nov 2022 20:13:56 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/codewars/</guid>
+      <description>Summary I&amp;rsquo;ve been very involved in practising my programming skills in python and sql lately on codewars.
+I figured it would be a good idea to visualise my codewars progression.
+I&amp;rsquo;m utilising the codewars public API to pull out my information. The user data is processed in Python with the output being consolidated into a Excel dashboard using Xlsxwriter.
+Link to project: https://github.com/Filpill/codewars-stats
+Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Codewars Username Stats] end subgraph Return JSON A--&gt;C[Username Profile Data] A--&gt;D[List of Compeleted Kata by User] A--&gt;E[Individual Challenge Details] end subgraph Merge Data D--&gt;F[Merge Data via the Kata ID] E--&gt;F F--&gt;G[Re-name Columns to Better Format] end subgraph Count Aggregates G--&gt;H[Categories] G--&gt;I[Monthly Completions] G--&gt;J[Kata Rank] G--&gt;K[Languages] end subgraph Visualisation H--&gt;L[Graphing Cats.</description>
+    </item>
+    
     <item>
       <title>Tableau Client Server API: Extracting Dashboard Images</title>
-      <link>https://filpill.github.io/projects/tableauapi/</link>
+      <link>https://filpill.github.io/data_projects/tableauapi/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/tableauapi/</guid>
+      <guid>https://filpill.github.io/data_projects/tableauapi/</guid>
       <description>Summary I&amp;rsquo;ve been in the process of developing numerous Tableau dashboards across different areas of the airline business to share safety data across the organisation.
 However, there is no easy way to download all the various charts from dashboard views you have produced to recycle for the purpose of a powerpoint presentation.
 Ideally we want to avoid duplicating the data analytics process in other systems such as Python as we don&amp;rsquo;t want to incur uncessary work to present the same information.</description>
@@ -20,10 +43,10 @@ Ideally we want to avoid duplicating the data analytics process in other systems
     
     <item>
       <title>Chess.com API - Data Visualisation</title>
-      <link>https://filpill.github.io/projects/chess/</link>
+      <link>https://filpill.github.io/data_projects/chess/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/chess/</guid>
+      <guid>https://filpill.github.io/data_projects/chess/</guid>
       <description>Summary I&amp;rsquo;ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.
 I was interested in monitoring how my rating has changed over the cumalative number of games played.
 I was playing chess casually so my improvement was marginal compared to the upper echelon of chess skill. Additionally, I wasn&amp;rsquo;t learning chess strategy or tactics in depth.</description>
@@ -31,10 +54,10 @@ I was playing chess casually so my improvement was marginal compared to the uppe
     
     <item>
       <title>Building Data Pipelines With Python: Systems Perspective</title>
-      <link>https://filpill.github.io/projects/data_system/</link>
+      <link>https://filpill.github.io/data_projects/data_system/</link>
       <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/data_system/</guid>
+      <guid>https://filpill.github.io/data_projects/data_system/</guid>
       <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
 This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
 Data Modelling These are some of the goals we are trying to achieve:
@@ -43,10 +66,10 @@ To build complete end-to-end data solutions from the data source to user. We wan
     
     <item>
       <title>Github - Command Line Interface Procedures</title>
-      <link>https://filpill.github.io/projects/github/</link>
+      <link>https://filpill.github.io/data_projects/github/</link>
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/github/</guid>
+      <guid>https://filpill.github.io/data_projects/github/</guid>
       <description>Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
 In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
 This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.</description>
@@ -54,10 +77,10 @@ This allows you to direct all of your attention on effortless creating work with
     
     <item>
       <title>Valorant API - Web Scraping Project</title>
-      <link>https://filpill.github.io/projects/val_scrp/</link>
+      <link>https://filpill.github.io/data_projects/val_scrp/</link>
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/val_scrp/</guid>
+      <guid>https://filpill.github.io/data_projects/val_scrp/</guid>
       <description>Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
 There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
 Though the volume of data highlighted on the website is limited compared to the actual volume of games I&amp;rsquo;ve played.</description>
@@ -65,10 +88,10 @@ Though the volume of data highlighted on the website is limited compared to the 
     
     <item>
       <title>Website Design with Hugo Framework</title>
-      <link>https://filpill.github.io/projects/hugo/</link>
+      <link>https://filpill.github.io/data_projects/hugo/</link>
       <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/hugo/</guid>
+      <guid>https://filpill.github.io/data_projects/hugo/</guid>
       <description>Summary I wanted to showcase my projects without devoting a large amount of time to maintaining HTML code and needed a framework to make it easy to share my projects.
 Hugo is a static site generator written in Go and compiles your documents written in markdown into cleanly formatted HTML and CSS files.
 The first iteration of my website was manually written in HTML/CSS. It was a little bit ugly compared to the second iteration which is using hugo framework.</description>
@@ -80,60 +103,60 @@ The first iteration of my website was manually written in HTML/CSS. It was a lit
       <pubDate>Tue, 31 May 2022 18:15:04 +0100</pubDate>
       
       <guid>https://filpill.github.io/profile/</guid>
-      <description>About Me Aeronuatical engineer graduate Self-taught programmer in web-dev/data/engineering Developing data analytics/science skills Currently studying machine learning and AI Highly knowledgable in airline safety domain Hobbyist Glider Pilot Hobbyist 3D Print Designer Work Experience Link to my CV on github Projects Refer to the projects tab for short discussions and displays of my resulting work. Refer to my respective github repo&amp;rsquo;s for the project files. Filpill - Codewars Profile Solving data structures and algorithmic problems in Python.</description>
+      <description>About Me Aeronautical engineering educational background: Aero/Mechanical + Aircraft Design Self-taught data analytics programmer: Python/Microsoft SQL Server Highly knowledgeable in airline safety management domain Interested in automation of data analytics Hobbyist 3D Print Designer Hobbyist Glider Pilot Links Resume Profile Filip&amp;rsquo;s Data Projects Website Codewars Profile </description>
     </item>
     
     <item>
       <title>Age of Empire 2 API - Data Visualisation</title>
-      <link>https://filpill.github.io/projects/aoe2/</link>
+      <link>https://filpill.github.io/data_projects/aoe2/</link>
       <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/aoe2/</guid>
+      <guid>https://filpill.github.io/data_projects/aoe2/</guid>
       <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
     </item>
     
     <item>
       <title>Lithophane Lamp</title>
-      <link>https://filpill.github.io/projects/litho/</link>
+      <link>https://filpill.github.io/eng_projects/litho/</link>
       <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/litho/</guid>
+      <guid>https://filpill.github.io/eng_projects/litho/</guid>
       <description>Summary Designed a 3D printed lithophane lamp in Soldworks. Main feature: Replaceable lithophanes of chosen standard of aspect ratio/dimension. Features Top/Bottom Panels retained with three M3 screws &amp;ndash; Removing the panels gives access to replacing the printed lithophane. Wiring threads through back of assembly and socket leans on back the back panel. Forward attachment clamps the socket and constrains the foward movement of the light socket with screws. I have two slightly different designs to accomadate either an E14 lamp socket or an E27 lamp socket.</description>
     </item>
     
     <item>
       <title>3D Printed Car - Bluetooth Controller Interface</title>
-      <link>https://filpill.github.io/projects/3dcar/</link>
+      <link>https://filpill.github.io/eng_projects/3dcar/</link>
       <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/3dcar/</guid>
+      <guid>https://filpill.github.io/eng_projects/3dcar/</guid>
       <description>Summary Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven&amp;rsquo;t had time to iterate over the design due to the complexity and required time investment. The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects. The project requires some simplification for the desired goal of having a robust car design.</description>
     </item>
     
     <item>
       <title>2D Heat Transfer Simulation</title>
-      <link>https://filpill.github.io/projects/ht_sim/</link>
+      <link>https://filpill.github.io/eng_projects/ht_sim/</link>
       <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/ht_sim/</guid>
+      <guid>https://filpill.github.io/eng_projects/ht_sim/</guid>
       <description>Summary Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
     </item>
     
     <item>
       <title>UAV Aircraft Design</title>
-      <link>https://filpill.github.io/projects/uav/</link>
+      <link>https://filpill.github.io/eng_projects/uav/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/uav/</guid>
+      <guid>https://filpill.github.io/eng_projects/uav/</guid>
       <description>Summary My elected project for my 4th year in University was to design and build a UAV aircraft. The design requirements were driven out from the 2017 BMFA competition (Payload Challenge). The design had to be capable of flying some circuits with varying volumes of water weighing up to 3.5kg. As project engineer, I was responsible for coordinating the technical requirements and outputs between our sub-teams. Link to Project Report For UAV Design Process</description>
     </item>
     
     <item>
       <title>Forward Facing Step - Particle Image Velocimetry</title>
-      <link>https://filpill.github.io/projects/piv/</link>
+      <link>https://filpill.github.io/eng_projects/piv/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/piv/</guid>
+      <guid>https://filpill.github.io/eng_projects/piv/</guid>
       <description>Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.
 Particle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.
 In this experiment the height of the boundary layer is similarly proportioned to the height of the step.</description>

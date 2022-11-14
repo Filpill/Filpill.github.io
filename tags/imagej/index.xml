@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/imagej/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Forward Facing Step - Particle Image Velocimetry</title>
-      <link>https://filpill.github.io/projects/piv/</link>
+      <link>https://filpill.github.io/eng_projects/piv/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/piv/</guid>
+      <guid>https://filpill.github.io/eng_projects/piv/</guid>
       <description>Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.
 Particle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.
 In this experiment the height of the boundary layer is similarly proportioned to the height of the step.</description>
