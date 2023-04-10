@@ -6,13 +6,25 @@
     <description>Recent content in python on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chess.com API - Data Visualisation</title>
+      <link>https://filpill.github.io/data_projects/chess/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/chess/</guid>
+      <description>Summary I&amp;rsquo;ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.
+I was interested in monitoring my rating change over the cumalative number of games played.
+Link to the project here: Chess.com - Python Analysis
+Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Chess Username Stats] end subgraph Data Extraction A--&gt;B[Requesting List of Month Endpoints] B--&gt;C[Request List Games For Each Month Endpoint] C--&gt;D[Unpack all Games into Dataframe] end subgraph Data Cleaning D--&gt;E[Filtering to Blitz Chess Games] E--&gt;F[Cleaning pgn Chess data</description>
+    </item>
+    
     <item>
       <title>Python Lottery Game</title>
-      <link>https://filpill.github.io/data_projects/lottery/</link>
+      <link>https://filpill.github.io/page_archive/lottery/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/lottery/</guid>
+      <guid>https://filpill.github.io/page_archive/lottery/</guid>
       <description>Summary A game where you test your luck: Pick some numbers and try to win!
 Link to github project: https://github.com/Filpill/lottery-game
 Lottery Algorithm flowchart TD; subgraph Lottery Algorithm start(Pick \nLottery Numbers) --Check--&gt; check{Are the \ninputs valid?} check --Yes--&gt; draw[Generate Randomised\nLottery Draw] check --No--&gt; start draw --&gt; match{Do Picks Match the\n Lottery Draw?} match --Yes--&gt; win(Winner!) match --No--&gt; reroll[Chance to reroll\nthe incorrect numbers] reroll --&gt; check2{Did you hit any\n more correct picks?} check2 --No--&gt; lost(Loser!</description>
@@ -43,17 +55,6 @@ Ideally we want to avoid duplicating the data analytics process in other systems
     </item>
     
     <item>
-      <title>Chess.com API - Data Visualisation</title>
-      <link>https://filpill.github.io/data_projects/chess/</link>
-      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/data_projects/chess/</guid>
-      <description>Summary I&amp;rsquo;ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.
-I was interested in monitoring how my rating has changed over the cumalative number of games played.
-I was playing chess casually so my improvement was marginal compared to the upper echelon of chess skill. Additionally, I wasn&amp;rsquo;t learning chess strategy or tactics in depth.</description>
-    </item>
-    
-    <item>
       <title>Building Data Pipelines With Python: Systems Perspective</title>
       <link>https://filpill.github.io/data_projects/data_system/</link>
       <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
@@ -61,16 +62,16 @@ I was playing chess casually so my improvement was marginal compared to the uppe
       <guid>https://filpill.github.io/data_projects/data_system/</guid>
       <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
 This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Modelling These are some of the goals we are trying to achieve:
+Data Pipelines These are some of the goals we are trying to achieve:
 To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.</description>
     </item>
     
     <item>
       <title>Age of Empire 2 API - Data Visualisation</title>
-      <link>https://filpill.github.io/data_projects/aoe2/</link>
+      <link>https://filpill.github.io/page_archive/aoe2/</link>
       <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/aoe2/</guid>
+      <guid>https://filpill.github.io/page_archive/aoe2/</guid>
       <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
     </item>
     

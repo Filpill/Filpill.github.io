@@ -28,7 +28,7 @@ Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook 
       <guid>https://filpill.github.io/data_projects/data_system/</guid>
       <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
 This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Modelling These are some of the goals we are trying to achieve:
+Data Pipelines These are some of the goals we are trying to achieve:
 To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.</description>
     </item>
     

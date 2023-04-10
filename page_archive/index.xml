@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Page_archives on Filip Livancic</title>
+    <link>https://filpill.github.io/page_archive/</link>
+    <description>Recent content in Page_archives on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/page_archive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Lottery Game</title>
+      <link>https://filpill.github.io/page_archive/lottery/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/page_archive/lottery/</guid>
+      <description>Summary A game where you test your luck: Pick some numbers and try to win!
+Link to github project: https://github.com/Filpill/lottery-game
+Lottery Algorithm flowchart TD; subgraph Lottery Algorithm start(Pick \nLottery Numbers) --Check--&gt; check{Are the \ninputs valid?} check --Yes--&gt; draw[Generate Randomised\nLottery Draw] check --No--&gt; start draw --&gt; match{Do Picks Match the\n Lottery Draw?} match --Yes--&gt; win(Winner!) match --No--&gt; reroll[Chance to reroll\nthe incorrect numbers] reroll --&gt; check2{Did you hit any\n more correct picks?} check2 --No--&gt; lost(Loser!</description>
+    </item>
+    
+    <item>
+      <title>Tableau Public Profile - Filip Livancic</title>
+      <link>https://filpill.github.io/page_archive/tableau_public/</link>
+      <pubDate>Wed, 09 Nov 2022 20:14:13 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/page_archive/tableau_public/</guid>
+      <description>Summary I&amp;rsquo;ve made a Tableau Public profile to showcase any public datasets I&amp;rsquo;ve analysed in Tableau:
+Link to Tableau Public: https://public.tableau.com/app/profile/filip.livancic</description>
+    </item>
+    
+    <item>
+      <title>Valorant API - Web Scraping Project</title>
+      <link>https://filpill.github.io/page_archive/val_scrp/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/page_archive/val_scrp/</guid>
+      <description>Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
+There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
+Though the volume of data highlighted on the website is limited compared to the actual volume of games I&amp;rsquo;ve played.</description>
+    </item>
+    
+    <item>
+      <title>Age of Empire 2 API - Data Visualisation</title>
+      <link>https://filpill.github.io/page_archive/aoe2/</link>
+      <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/page_archive/aoe2/</guid>
+      <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
+    </item>
+    
+  </channel>
+</rss>

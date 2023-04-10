@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 31 May 2022 00:59:13 +0100</lastBuildDate><atom:link href="https://filpill.github.io/tags/visualisation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Age of Empire 2 API - Data Visualisation</title>
-      <link>https://filpill.github.io/data_projects/aoe2/</link>
+      <link>https://filpill.github.io/page_archive/aoe2/</link>
       <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/aoe2/</guid>
+      <guid>https://filpill.github.io/page_archive/aoe2/</guid>
       <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
     </item>
     

@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Lottery Game</title>
-      <link>https://filpill.github.io/data_projects/lottery/</link>
+      <link>https://filpill.github.io/page_archive/lottery/</link>
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/lottery/</guid>
+      <guid>https://filpill.github.io/page_archive/lottery/</guid>
       <description>Summary A game where you test your luck: Pick some numbers and try to win!
 Link to github project: https://github.com/Filpill/lottery-game
 Lottery Algorithm flowchart TD; subgraph Lottery Algorithm start(Pick \nLottery Numbers) --Check--&gt; check{Are the \ninputs valid?} check --Yes--&gt; draw[Generate Randomised\nLottery Draw] check --No--&gt; start draw --&gt; match{Do Picks Match the\n Lottery Draw?} match --Yes--&gt; win(Winner!) match --No--&gt; reroll[Chance to reroll\nthe incorrect numbers] reroll --&gt; check2{Did you hit any\n more correct picks?} check2 --No--&gt; lost(Loser!</description>
@@ -50,7 +50,7 @@ Ideally we want to avoid duplicating the data analytics process in other systems
       <guid>https://filpill.github.io/data_projects/data_system/</guid>
       <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
 This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Modelling These are some of the goals we are trying to achieve:
+Data Pipelines These are some of the goals we are trying to achieve:
 To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.</description>
     </item>
     

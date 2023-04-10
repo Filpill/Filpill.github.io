@@ -150,6 +150,20 @@
 </header>
 
 <article class="post-entry tag-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/chess/chess_gimp.png" alt="Chess Data Analysis Image Cover">
+</figure>
+  <header class="entry-header">
+    <h2>Chess.com API - Data Visualisation<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Summary I’ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website. I was interested in monitoring my rating change over the cumalative number of games played. Link to the project here: Chess.com - Python Analysis Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Chess Username Stats] end subgraph Data Extraction A--&gt;B[Requesting List of Month Endpoints] B--&gt;C[Request List Games For Each Month Endpoint] C--&gt;D[Unpack all Games into Dataframe] end subgraph Data Cleaning D--&gt;E[Filtering to Blitz Chess Games] E--&gt;F[Cleaning pgn Chess data...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-04-10 00:00:00 +0000 UTC'>April 10, 2023</span></footer>
+  <a class="entry-link" aria-label="post link to Chess.com API - Data Visualisation" href="https://filpill.github.io/data_projects/chess/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/lottery/lottery_hugo.png" alt="Lottery Banner">
 </figure>
   <header class="entry-header">
@@ -160,7 +174,7 @@
     <p>Summary A game where you test your luck: Pick some numbers and try to win! Link to github project: https://github.com/Filpill/lottery-game Lottery Algorithm flowchart TD; subgraph Lottery Algorithm start(Pick \nLottery Numbers) --Check--&gt; check{Are the \ninputs valid?} check --Yes--&gt; draw[Generate Randomised\nLottery Draw] check --No--&gt; start draw --&gt; match{Do Picks Match the\n Lottery Draw?} match --Yes--&gt; win(Winner!) match --No--&gt; reroll[Chance to reroll\nthe incorrect numbers] reroll --&gt; check2{Did you hit any\n more correct picks?} check2 --No--&gt; lost(Loser!...</p>
   </div>
   <footer class="entry-footer"><span title='2023-02-18 00:00:00 +0000 UTC'>February 18, 2023</span></footer>
-  <a class="entry-link" aria-label="post link to Python Lottery Game" href="https://filpill.github.io/data_projects/lottery/"></a>
+  <a class="entry-link" aria-label="post link to Python Lottery Game" href="https://filpill.github.io/page_archive/lottery/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -194,22 +208,6 @@ Ideally we want to avoid duplicating the data analytics process in other systems
 </article>
 
 <article class="post-entry tag-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/chess/chess_gimp.png" alt="Chess Data Analysis Image Cover">
-</figure>
-  <header class="entry-header">
-    <h2>Chess.com API - Data Visualisation<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Summary I’ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.
-I was interested in monitoring how my rating has changed over the cumalative number of games played.
-I was playing chess casually so my improvement was marginal compared to the upper echelon of chess skill. Additionally, I wasn’t learning chess strategy or tactics in depth....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-08-22 00:00:00 +0000 UTC'>August 22, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Chess.com API - Data Visualisation" href="https://filpill.github.io/data_projects/chess/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
 <figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/auto/python_all_auto.png" alt="Python Automating Everything">
 </figure>
   <header class="entry-header">
@@ -219,7 +217,7 @@ I was playing chess casually so my improvement was marginal compared to the uppe
   <div class="entry-content">
     <p>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
 This article serves as an example for the wide ranging applications I’ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Modelling These are some of the goals we are trying to achieve:
+Data Pipelines These are some of the goals we are trying to achieve:
 To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing....</p>
   </div>
   <footer class="entry-footer"><span title='2022-07-23 21:12:42 +0100 BST'>July 23, 2022</span></footer>
@@ -237,7 +235,7 @@ To build complete end-to-end data solutions from the data source to user. We wan
     <p>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I’m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe....</p>
   </div>
   <footer class="entry-footer"><span title='2022-05-31 00:59:13 +0100 BST'>May 31, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Age of Empire 2 API - Data Visualisation" href="https://filpill.github.io/data_projects/aoe2/"></a>
+  <a class="entry-link" aria-label="post link to Age of Empire 2 API - Data Visualisation" href="https://filpill.github.io/page_archive/aoe2/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 

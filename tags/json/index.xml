@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Valorant API - Web Scraping Project</title>
-      <link>https://filpill.github.io/data_projects/val_scrp/</link>
+      <link>https://filpill.github.io/page_archive/val_scrp/</link>
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/val_scrp/</guid>
+      <guid>https://filpill.github.io/page_archive/val_scrp/</guid>
       <description>Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
 There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
 Though the volume of data highlighted on the website is limited compared to the actual volume of games I&amp;rsquo;ve played.</description>
