@@ -13,9 +13,9 @@
       <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/data_projects/arch_install/</guid>
-      <description>template
-Summary /img/arch/arch_gimp.png
-Data Visualisations Rating</description>
+      <description>Introduction This guide details the installation procdure of Arch onto a Virtual Machine (VM). Network configuration is not in the scope of this guide if you are installing on bare metal.
+The motivation behind this web page is to keep some guidance material for myself and also for anybody new looking to install Arch from scratch.
+The virtual machine is made with Microsofts Hyper-V program. The steps may differ slightly if you choose to use a another hypervisor such as VirtualBox.</description>
     </item>
     
     <item>
