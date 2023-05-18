@@ -106,8 +106,8 @@ In this experiment the height of the boundary layer is similarly proportioned to
   "keywords": [
     "design", "engineering", "laser", "camera", "imageJ", "matlab", "python", "wind tunnel", "aerodynamics"
   ],
-  "articleBody": "Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.\nParticle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.\nIn this experiment the height of the boundary layer is similarly proportioned to the height of the step. In results shown below you will notice two distinct separation regions on the aerofoil. One at the bottom of the step due to the sudden adverse pressure gradient. And another at the top of the step as the flow is unable to sharply turn the corner.\nLink to dissertation\nLink to PIV Python Code For Results Post Processing\nExperimental Procedure Wind Tunnel Experiment The experimental procedure involves diffusing small oil droplets into the freestream flow and having a sheet of laser light illuminating a cross-section of the airflow. Hundreds of images are caputured in the process a high speed camera. Due to the limited field of vision, the results from the top and bottom of the step were recorded seperately. Image Post-Processing Images need some further preparation to enable reliable PIV results. Usually this involves enhancing contrast of the images to make the particles visible. Additionally any background noise picked up by the camera needs to be subtracted from the image as we want to isolate the airflow as much as possible. OpenPIV and Python Post-Process Scripts Particle displacements on the images can be determined by performing a cross-corrleation on the series of image pairs. In my case, I used OpenPIV software written in Python to extract all the velocity fields at all the times steps recorded. Additionally, I’ve written some post-processing scripts for the velocity data text files in Python to animate experimental results. (I used MATLAB equivalents for my dissertation at the time of the project). Experimental Arangement Illustration of camera and laser positioning to capture wind tunnel data. Raw wind tunnel image with imageJ enhancements - Capturing illuminated particles moving over step within laser plane. Particle Image Velocimetry Results Instantaneous Velocity Streamplot Front Step Top Step Time Averaged Velocity Contours Front Step Top Step Turbulence Intensity Contours Front Step Top Step ",
-  "wordCount" : "375",
+  "articleBody": "Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.\nParticle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.\nIn this experiment the height of the boundary layer is similarly proportioned to the height of the step. In results shown below you will notice two distinct separation regions on the aerofoil. One at the bottom of the step due to the sudden adverse pressure gradient. And another at the top of the step as the flow is unable to sharply turn the corner.\nPrevious Next / [pdf] View the PDF file here. Link to PIV Python Code For Results Post Processing\nExperimental Procedure Wind Tunnel Experiment The experimental procedure involves diffusing small oil droplets into the freestream flow and having a sheet of laser light illuminating a cross-section of the airflow. Hundreds of images are caputured in the process a high speed camera. Due to the limited field of vision, the results from the top and bottom of the step were recorded seperately. Image Post-Processing Images need some further preparation to enable reliable PIV results. Usually this involves enhancing contrast of the images to make the particles visible. Additionally any background noise picked up by the camera needs to be subtracted from the image as we want to isolate the airflow as much as possible. OpenPIV and Python Post-Process Scripts Particle displacements on the images can be determined by performing a cross-corrleation on the series of image pairs. In my case, I used OpenPIV software written in Python to extract all the velocity fields at all the times steps recorded. Additionally, I’ve written some post-processing scripts for the velocity data text files in Python to animate experimental results. (I used MATLAB equivalents for my dissertation at the time of the project). Experimental Arangement Illustration of camera and laser positioning to capture wind tunnel data. Raw wind tunnel image with imageJ enhancements - Capturing illuminated particles moving over step within laser plane. Particle Image Velocimetry Results Instantaneous Velocity Streamplot Front Step Top Step Time Averaged Velocity Contours Front Step Top Step Turbulence Intensity Contours Front Step Top Step ",
+  "wordCount" : "383",
   "inLanguage": "en",
   "image":"https://filpill.github.io/img/piv/ffs-bl-diagram.png","datePublished": "2017-06-01T00:00:00Z",
   "dateModified": "2017-06-01T00:00:00Z",
@@ -288,7 +288,254 @@ In this experiment the height of the boundary layer is similarly proportioned to
 <p>In this experiment the height of the boundary layer is similarly proportioned to the height of the step. In results shown below you will notice two distinct separation regions on the aerofoil. One at the bottom of the step due to the sudden adverse pressure gradient. And another at the top of the step as the flow is unable to sharply turn the corner.</p>
 </li>
 </ul>
-<p><a href="https://drive.google.com/file/d/1jDI40Nh-rvW2NaWesEU0GMw8Fhbb6ypA/view">Link to dissertation</a></p>
+<script type="text/javascript" src= '/js/pdf-js/build/pdf.js'></script>
+
+<style>
+  #embed-pdf-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+     
+  }
+  
+  .pdf-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  
+  #the-canvas {
+    border: 1px solid black;
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  
+  
+  .pdf-loadingWrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+  }
+  
+  .pdf-loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d2d0d0;;
+    border-radius: 50%;
+    border-top-color: #383838;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+  
+  
+  
+  
+  
+  #overlayText {
+    word-wrap: break-word;
+    display: grid;
+    justify-content: end;
+  }
+  
+  #overlayText a {
+    position: relative;
+    top: 10px;
+    right: 4px;
+    color: #000;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 0.3em 1em;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: #00000030;
+    text-decoration: none;
+  }
+  
+  #overlayText svg {
+    height: clamp(1em, 2vw, 1.4em);
+    width:  clamp(1em, 2vw, 1.4em);
+  }
+  
+  
+  
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  </style><div class="embed-pdf-container" id="embed-pdf-container-6a61455e">
+    <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-6a61455e">
+        <div class="pdf-loading" id="pdf-loading-6a61455e"></div>
+    </div>
+    <div id="overlayText">
+      <a href="/files/filip_piv.pdf" aria-label="Download" download>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+            <path d="M9 13c.3 0 .5-.1.7-.3L15.4 7 14 5.6l-4 4V1H8v8.6l-4-4L2.6 7l5.7 5.7c.2.2.4.3.7.3zm-7 2h14v2H2z" />
+        </svg>
+      </a>
+    </div>
+    <canvas class="pdf-canvas" id="pdf-canvas-6a61455e"></canvas>
+</div>
+
+<div class="pdf-paginator" id="pdf-paginator-6a61455e">
+    <button id="pdf-prev-6a61455e">Previous</button>
+    <button id="pdf-next-6a61455e">Next</button> &nbsp; &nbsp;
+    <span>
+      <span class="pdf-pagenum" id="pdf-pagenum-6a61455e"></span> / <span class="pdf-pagecount" id="pdf-pagecount-6a61455e"></span>
+    </span>
+    <a class="pdf-source" id="pdf-source-6a61455e" href="/files/filip_piv.pdf">[pdf]</a>
+</div>
+
+<noscript>
+View the PDF file <a class="pdf-source" id="pdf-source-noscript-6a61455e" href="/files/filip_piv.pdf">here</a>.
+</noscript>
+
+<script type="text/javascript">
+    (function(){
+    var url = '\/files\/filip_piv.pdf';
+
+    var hidePaginator = "" === "true";
+    var hideLoader = "false" === "true";
+    var selectedPageNum = parseInt("1") || 1;
+
+    
+    var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+    
+    if (pdfjsLib.GlobalWorkerOptions.workerSrc == '')
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/filpill.github.io\/" + 'js/pdf-js/build/pdf.worker.js';
+
+    
+    var pdfDoc = null,
+        pageNum = selectedPageNum,
+        pageRendering = false,
+        pageNumPending = null,
+        scale = 3,
+        canvas = document.getElementById('pdf-canvas-6a61455e'),
+        ctx = canvas.getContext('2d'),
+        paginator = document.getElementById("pdf-paginator-6a61455e"),
+        loadingWrapper = document.getElementById('pdf-loadingWrapper-6a61455e');
+
+
+    
+    showPaginator();
+    showLoader();
+
+    
+
+    function renderPage(num) {
+      pageRendering = true;
+      
+      pdfDoc.getPage(num).then(function(page) {
+        var viewport = page.getViewport({scale: scale});
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        
+        var renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        var renderTask = page.render(renderContext);
+
+        
+        renderTask.promise.then(function() {
+          pageRendering = false;
+          showContent();
+
+          if (pageNumPending !== null) {
+            
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+
+      
+      document.getElementById('pdf-pagenum-6a61455e').textContent = num;
+    }
+
+    
+
+    function showContent() {
+      loadingWrapper.style.display = 'none';
+      canvas.style.display = 'block';
+    }
+
+    
+
+    function showLoader() {
+      if(hideLoader) return
+      loadingWrapper.style.display = 'flex';
+      canvas.style.display = 'none';
+    }
+
+    
+
+    function showPaginator() {
+      if(hidePaginator) return
+      paginator.style.display = 'block';
+    }
+
+    
+
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+
+    
+
+    function onPrevPage() {
+      if (pageNum <= 1) {
+        return;
+      }
+      pageNum--;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('pdf-prev-6a61455e').addEventListener('click', onPrevPage);
+
+    
+
+    function onNextPage() {
+      if (pageNum >= pdfDoc.numPages) {
+        return;
+      }
+      pageNum++;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('pdf-next-6a61455e').addEventListener('click', onNextPage);
+
+    
+
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+      pdfDoc = pdfDoc_;
+      var numPages = pdfDoc.numPages;
+      document.getElementById('pdf-pagecount-6a61455e').textContent = numPages;
+
+      
+      if(pageNum > numPages) {
+        pageNum = numPages
+      }
+
+      
+      renderPage(pageNum);
+    });
+    })();
+</script>
+
 <p><a href="https://github.com/Filpill/ffs_pivAero">Link to PIV Python Code For Results Post Processing</a></p>
 <h1 id="experimental-procedure">Experimental Procedure<a hidden class="anchor" aria-hidden="true" href="#experimental-procedure">#</a></h1>
 <h3 id="wind-tunnel-experiment">Wind Tunnel Experiment<a hidden class="anchor" aria-hidden="true" href="#wind-tunnel-experiment">#</a></h3>
