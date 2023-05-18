@@ -6,7 +6,18 @@
     <description>Recent content on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch Linux Installation Guide</title>
+      <link>https://filpill.github.io/data_projects/arch_install/</link>
+      <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/arch_install/</guid>
+      <description>template
+Summary /img/arch/arch_gimp.png
+Data Visualisations Rating</description>
+    </item>
+    
     <item>
       <title>Chess.com API - Data Visualisation</title>
       <link>https://filpill.github.io/data_projects/chess/</link>
