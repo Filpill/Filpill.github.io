@@ -6,7 +6,17 @@
     <description>Recent content in design on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D Printed GoPro Skateboard</title>
+      <link>https://filpill.github.io/eng_projects/gopro/</link>
+      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/eng_projects/gopro/</guid>
+      <description>Summary Designed a skateboard for my GoPro, experimenting with different camera perspectives; in particular with low rolling shots.
+The camera mount point is not ideal as the wheels are caught in the field of view&amp;hellip;It&amp;rsquo;s not too bad, but still a little bit distracting when shooting a wide angle. It&amp;rsquo;s hard to envision this issue when you are designing it. It&amp;rsquo;s easy to get distracted with the other design elements.</description>
+    </item>
+    
     <item>
       <title>Lithophane Lamp</title>
       <link>https://filpill.github.io/eng_projects/litho/</link>
