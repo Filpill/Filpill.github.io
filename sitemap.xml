@@ -2,13 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://filpill.github.io/categories/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/electronics/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/engineering/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/categories/engineering/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/eng_projects/rcsetup/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/eng_projects/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/</loc>
+    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://filpill.github.io/eng_projects/gopro/</loc>
     <lastmod>2023-05-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/3d-printing/</loc>
-    <lastmod>2023-05-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/categories/</loc>
     <lastmod>2023-05-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/design/</loc>
@@ -17,22 +38,7 @@
     <loc>https://filpill.github.io/categories/design/</loc>
     <lastmod>2023-05-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/tags/engineering/</loc>
-    <lastmod>2023-05-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/categories/engineering/</loc>
-    <lastmod>2023-05-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/</loc>
-    <lastmod>2023-05-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/eng_projects/</loc>
-    <lastmod>2023-05-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://filpill.github.io/tags/mechanical/</loc>
-    <lastmod>2023-05-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/</loc>
     <lastmod>2023-05-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/data_projects/arch_install/</loc>
@@ -210,9 +216,6 @@
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/aircraft/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/electronics/</loc>
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/flight-dynamics/</loc>

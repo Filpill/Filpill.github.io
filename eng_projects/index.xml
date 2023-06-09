@@ -6,7 +6,18 @@
     <description>Recent content in List of Engineering Projects on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/eng_projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/eng_projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Set Up Your Radio Controlled System</title>
+      <link>https://filpill.github.io/eng_projects/rcsetup/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/eng_projects/rcsetup/</guid>
+      <description>Summary This article will briefly outline the basic arrangement that can be used as guidance for your DIY RC electronics. Should be relatively plug and play.
+Parts List Any of these specific parts that are mentioned here can be interchanged for your specific needs. The list of parts outlined is the minumum number of components to have a functioning motor and servo.
+Component Part No. Radio Controller/Transmitter FS-GT5 Radio Reciever FS-BS6 Electronic Speed Controller (ESC) KYRC X60 - Brush Battery Eliminary Curcuit (BEC) KYRC X60 - Brush Lipo Voltage Indicator Youmile Battery Tester Brushed/Brushless Motor 550/35T &amp;ldquo;CrazyPony&amp;rdquo; Brushed Servo MG-996R LiPo Battery 11.</description>
+    </item>
+    
     <item>
       <title>3D Printed GoPro Skateboard</title>
       <link>https://filpill.github.io/eng_projects/gopro/</link>
