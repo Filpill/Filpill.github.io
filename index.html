@@ -203,112 +203,121 @@
 </article>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/arch/45.jpg" alt="Arch Linux Neofetch">
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/tractor/rc_tractor.png" alt="Solidworks Render of Tractor">
 </figure>
   <header class="entry-header">
-    <h2>Arch Linux Installation Guide<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    <h2>3D Printed RC Tractor<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
     </h2>
   </header>
   <div class="entry-content">
-    <p>Introduction This guide details the installation procdure of Arch onto a Virtual Machine (VM). Network configuration is not in the scope of this guide if you are installing on bare metal.
-The motivation behind this web page is to keep some guidance material for myself and also for anybody new looking to install Arch from scratch.
-The virtual machine is made with Microsofts Hyper-V program. The steps may differ slightly if you choose to use a another hypervisor such as VirtualBox....</p>
+    <p>Summary Finshed designing and building a functional RC car (which now appears to be more akin to a tractor) which is mostly 3D Printed.
+The reason for the large wheels in the back is because of how I started my design process. The design was built around the gearbox. Since the gearbox ended up being very tall, I figured I would just mount some very large wheels to clear the ground....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-05-18 00:00:00 +0000 UTC'>May 18, 2023</span></footer>
-  <a class="entry-link" aria-label="post link to Arch Linux Installation Guide" href="https://filpill.github.io/data_projects/arch_install/"></a>
+  <footer class="entry-footer"><span title='2023-06-12 00:00:00 +0000 UTC'>June 12, 2023</span></footer>
+  <a class="entry-link" aria-label="post link to 3D Printed RC Tractor" href="https://filpill.github.io/eng_projects/rctractor/"></a>
 </article>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/chess/chess_gimp.png" alt="Chess Data Analysis Image Cover">
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/rcSetUp/rc_system.jpg" alt="Image of RC Electronics">
 </figure>
   <header class="entry-header">
-    <h2>Chess.com API - Data Visualisation<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    <h2>How to Set Up Your Radio Controlled System<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
     </h2>
   </header>
   <div class="entry-content">
-    <p>Summary I’ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website. I was interested in monitoring my rating change over the cumalative number of games played. Link to the project here: Chess.com - Python Analysis Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Chess Username Stats] end subgraph Data Extraction A--&gt;B[Requesting List of Month Endpoints] B--&gt;C[Request List Games For Each Month Endpoint] C--&gt;D[Unpack all Games into Dataframe] end subgraph Data Cleaning D--&gt;E[Filtering to Blitz Chess Games] E--&gt;F[Cleaning pgn Chess data...</p>
+    <p>Summary This article will briefly outline the basic arrangement that can be used as guidance for your DIY RC electronics. Should be relatively plug and play.
+Parts List Any of these specific parts that are mentioned here can be interchanged for your specific needs. The list of parts outlined is the minumum number of components to have a functioning motor and servo.
+Component Part No. Radio Controller/Transmitter FS-GT5 Radio Reciever FS-BS6 Electronic Speed Controller (ESC) KYRC X60 - Brush Battery Eliminary Curcuit (BEC) KYRC X60 - Brush Lipo Voltage Indicator Youmile Battery Tester Brushed/Brushless Motor 550/35T “CrazyPony” Brushed Servo MG-996R LiPo Battery 11....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-04-10 00:00:00 +0000 UTC'>April 10, 2023</span></footer>
-  <a class="entry-link" aria-label="post link to Chess.com API - Data Visualisation" href="https://filpill.github.io/data_projects/chess/"></a>
+  <footer class="entry-footer"><span title='2023-06-07 00:00:00 +0000 UTC'>June 7, 2023</span></footer>
+  <a class="entry-link" aria-label="post link to How to Set Up Your Radio Controlled System" href="https://filpill.github.io/eng_projects/rcsetup/"></a>
 </article>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/codewars/codewars-stats.png" alt="Codewars Stats Image">
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/goPro/goProCar.png" alt="Solidworks Render of Skateboard">
 </figure>
   <header class="entry-header">
-    <h2>Codewars API - User Statistics<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    <h2>3D Printed GoPro Skateboard<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
     </h2>
   </header>
   <div class="entry-content">
-    <p>Summary I’ve been very involved in practising my programming skills in python and sql lately on codewars. I figured it would be a good idea to visualise my codewars progression. I’m utilising the codewars public API to pull out my information. The user data is processed in Python with the output being consolidated into a Excel dashboard using Xlsxwriter. Link to github project: https://github.com/Filpill/codewars-stats Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Codewars Username Stats] end subgraph Return JSON A--&gt;C[Username Profile Data] A--&gt;D[List of Compeleted Kata by User] A--&gt;E[Individual Challenge Details] end subgraph Merge Data D--&gt;F[Merge Data via the Kata ID] E--&gt;F F--&gt;G[Re-name Columns to Better Format] end subgraph Count Aggregates G--&gt;H[Categories] G--&gt;I[Monthly Completions] G--&gt;J[Kata Rank] G--&gt;K[Languages] end subgraph Visualisation H--&gt;L[Graphing Cats....</p>
+    <p>Summary Designed a skateboard for my GoPro, experimenting with different camera perspectives; in particular with low rolling shots.
+The camera mount point is not ideal as the wheels are caught in the field of view…It’s not too bad, but still a little bit distracting when shooting a wide angle. It’s hard to envision this issue when you are designing it. It’s easy to get distracted with the other design elements....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-11-09 20:13:56 +0000 UTC'>November 9, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Codewars API - User Statistics" href="https://filpill.github.io/data_projects/codewars/"></a>
+  <footer class="entry-footer"><span title='2023-05-22 00:00:00 +0000 UTC'>May 22, 2023</span></footer>
+  <a class="entry-link" aria-label="post link to 3D Printed GoPro Skateboard" href="https://filpill.github.io/eng_projects/gopro/"></a>
 </article>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/tableau/tableau_py.png" alt="Tableau Client Server API with Python">
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/litho/sw-litho.jpg" alt="Lithophane SW Model">
 </figure>
   <header class="entry-header">
-    <h2>Tableau Client Server API: Extracting Dashboard Images<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    <h2>Lithophane Lamp
     </h2>
   </header>
   <div class="entry-content">
-    <p>Summary I’ve been in the process of developing numerous Tableau dashboards across different areas of the airline business to share safety data across the organisation.
-However, there is no easy way to download all the various charts from dashboard views you have produced to recycle for the purpose of a powerpoint presentation.
-Ideally we want to avoid duplicating the data analytics process in other systems such as Python as we don’t want to incur uncessary work to present the same information....</p>
+    <p>Summary Designed a 3D printed lithophane lamp in Soldworks. Main feature: Replaceable lithophanes of chosen standard of aspect ratio/dimension. Features Top/Bottom Panels retained with three M3 screws – Removing the panels gives access to replacing the printed lithophane. Wiring threads through back of assembly and socket leans on back the back panel. Forward attachment clamps the socket and constrains the foward movement of the light socket with screws. I have two slightly different designs to accomadate either an E14 lamp socket or an E27 lamp socket....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-16 00:00:00 +0000 UTC'>September 16, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Tableau Client Server API: Extracting Dashboard Images" href="https://filpill.github.io/data_projects/tableauapi/"></a>
+  <footer class="entry-footer"><span title='2021-11-13 00:00:00 +0000 UTC'>November 13, 2021</span></footer>
+  <a class="entry-link" aria-label="post link to Lithophane Lamp" href="https://filpill.github.io/eng_projects/litho/"></a>
 </article>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/auto/python_all_auto.png" alt="Python Automating Everything">
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/3dcar/iso-render.png" alt="Isometric View Car">
 </figure>
   <header class="entry-header">
-    <h2>Building Data Pipelines With Python: Systems Perspective<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    <h2>3D Printed Car - Bluetooth Controller Interface
     </h2>
   </header>
   <div class="entry-content">
-    <p>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
-This article serves as an example for the wide ranging applications I’ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Pipelines These are some of the goals we are trying to achieve:
-To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing....</p>
+    <p>Summary Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven’t had time to iterate over the design due to the complexity and required time investment. The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects. The project requires some simplification for the desired goal of having a robust car design....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-07-23 21:12:42 +0100 +0100'>July 23, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Building Data Pipelines With Python: Systems Perspective" href="https://filpill.github.io/data_projects/data_system/"></a>
+  <footer class="entry-footer"><span title='2021-10-21 00:00:00 +0000 UTC'>October 21, 2021</span></footer>
+  <a class="entry-link" aria-label="post link to 3D Printed Car - Bluetooth Controller Interface" href="https://filpill.github.io/eng_projects/3dcar/"></a>
 </article>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/github/github_terminal.png" alt="Github Logo">
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/ht/bc.png" alt="Boundary Conditions">
 </figure>
   <header class="entry-header">
-    <h2>Github - Command Line Interface Procedures
+    <h2>2D Heat Transfer Simulation
     </h2>
   </header>
   <div class="entry-content">
-    <p>Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
-In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
-This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit....</p>
+    <p>Summary Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-07-17 00:00:00 +0000 UTC'>July 17, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Github - Command Line Interface Procedures" href="https://filpill.github.io/data_projects/github/"></a>
+  <footer class="entry-footer"><span title='2021-07-10 00:00:00 +0000 UTC'>July 10, 2021</span></footer>
+  <a class="entry-link" aria-label="post link to 2D Heat Transfer Simulation" href="https://filpill.github.io/eng_projects/ht_sim/"></a>
 </article>
 
 <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/hugo/hugologo.png" alt="Hugo Logo">
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/uav/windtunnel.jpg" alt="Wind Tunnel Test">
 </figure>
   <header class="entry-header">
-    <h2>Website Design with Hugo Framework
+    <h2>UAV Aircraft Design
     </h2>
   </header>
   <div class="entry-content">
-    <p>Summary I wanted to showcase my projects without devoting a large amount of time to maintaining HTML code and needed a framework to make it easy to share my projects.
-Hugo is a static site generator written in Go and compiles your documents written in markdown into cleanly formatted HTML and CSS files.
-The first iteration of my website was manually written in HTML/CSS. It was a little bit ugly compared to the second iteration which is using hugo framework....</p>
+    <p>Summary My elected project for my 4th year in University was to design and build a UAV aircraft. The design requirements were driven out from the 2017 BMFA competition (Payload Challenge). The design had to be capable of flying some circuits with varying volumes of water weighing up to 3.5kg. As project engineer, I was responsible for coordinating the technical requirements and outputs between our sub-teams. Previous Next     / [pdf] View the PDF file here....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-06-03 12:29:15 +0100 +0100'>June 3, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to Website Design with Hugo Framework" href="https://filpill.github.io/data_projects/hugo/"></a>
+  <footer class="entry-footer"><span title='2018-06-17 00:00:00 +0000 UTC'>June 17, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to UAV Aircraft Design" href="https://filpill.github.io/eng_projects/uav/"></a>
+</article>
+
+<article class="post-entry"> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/piv/ffs-bl-diagram.png" alt="PIV BL Diagram">
+</figure>
+  <header class="entry-header">
+    <h2>Forward Facing Step - Particle Image Velocimetry
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.
+Particle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.
+In this experiment the height of the boundary layer is similarly proportioned to the height of the step....</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-06-01 00:00:00 +0000 UTC'>June 1, 2017</span></footer>
+  <a class="entry-link" aria-label="post link to Forward Facing Step - Particle Image Velocimetry" href="https://filpill.github.io/eng_projects/piv/"></a>
 </article>
     </main>
     

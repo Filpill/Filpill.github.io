@@ -6,7 +6,17 @@
     <description>Recent content in design on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D Printed RC Tractor</title>
+      <link>https://filpill.github.io/eng_projects/rctractor/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/eng_projects/rctractor/</guid>
+      <description>Summary Finshed designing and building a functional RC car (which now appears to be more akin to a tractor) which is mostly 3D Printed.
+The reason for the large wheels in the back is because of how I started my design process. The design was built around the gearbox. Since the gearbox ended up being very tall, I figured I would just mount some very large wheels to clear the ground.</description>
+    </item>
+    
     <item>
       <title>3D Printed GoPro Skateboard</title>
       <link>https://filpill.github.io/eng_projects/gopro/</link>

@@ -6,29 +6,11 @@
     <description>Recent content in Tags on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>electronics</title>
-      <link>https://filpill.github.io/tags/electronics/</link>
-      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/tags/electronics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>engineering</title>
-      <link>https://filpill.github.io/tags/engineering/</link>
-      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/tags/engineering/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>3d-printing</title>
       <link>https://filpill.github.io/tags/3d-printing/</link>
-      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/tags/3d-printing/</guid>
       <description></description>
@@ -37,18 +19,36 @@
     <item>
       <title>design</title>
       <link>https://filpill.github.io/tags/design/</link>
-      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/tags/design/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>engineering</title>
+      <link>https://filpill.github.io/tags/engineering/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>mechanical</title>
       <link>https://filpill.github.io/tags/mechanical/</link>
-      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/tags/mechanical/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>electronics</title>
+      <link>https://filpill.github.io/tags/electronics/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/electronics/</guid>
       <description></description>
     </item>
     
