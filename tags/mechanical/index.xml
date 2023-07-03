@@ -6,7 +6,18 @@
     <description>Recent content in mechanical on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/mechanical/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/mechanical/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Servo Turret Control</title>
+      <link>https://filpill.github.io/eng_projects/servoturret/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/eng_projects/servoturret/</guid>
+      <description>Summary This project has been made to practise the use of sending instructions to various electronics via serial communications.
+I&amp;rsquo;ve segmented this project into two parts/versions:
+Arduino - Manual Control with Mouse via Serial Comms Port Raspberry Pi - AI Face Tracking with Python and Camera Module Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial comminications.</description>
+    </item>
+    
     <item>
       <title>3D Printed RC Tractor</title>
       <link>https://filpill.github.io/eng_projects/rctractor/</link>

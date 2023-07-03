@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>raspberry pi on Filip Livancic</title>
+    <link>https://filpill.github.io/tags/raspberry-pi/</link>
+    <description>Recent content in raspberry pi on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Servo Turret Control</title>
+      <link>https://filpill.github.io/eng_projects/servoturret/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/eng_projects/servoturret/</guid>
+      <description>Summary This project has been made to practise the use of sending instructions to various electronics via serial communications.
+I&amp;rsquo;ve segmented this project into two parts/versions:
+Arduino - Manual Control with Mouse via Serial Comms Port Raspberry Pi - AI Face Tracking with Python and Camera Module Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial comminications.</description>
+    </item>
+    
+  </channel>
+</rss>
