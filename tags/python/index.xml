@@ -77,10 +77,10 @@ To build complete end-to-end data solutions from the data source to user. We wan
     
     <item>
       <title>2D Heat Transfer Simulation</title>
-      <link>https://filpill.github.io/eng_projects/ht_sim/</link>
+      <link>https://filpill.github.io/page_archive/ht_sim/</link>
       <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/ht_sim/</guid>
+      <guid>https://filpill.github.io/page_archive/ht_sim/</guid>
       <description>Summary Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
     </item>
     

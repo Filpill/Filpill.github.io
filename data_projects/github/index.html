@@ -7,9 +7,9 @@
 <meta name="robots" content="index, follow">
 <title>Github - Command Line Interface Procedures | Filip Livancic</title>
 <meta name="keywords" content="cli, shell, programming">
-<meta name="description" content="Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
-In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
-This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.">
+<meta name="description" content="Summary This article documents the most common ways I interact with git and in maintaining my programs.
+graph LR; subgraph High-Level Process direction LR 0[Installation]--&gt;1[SSH] 1 --&gt; 2[Git Configuration] 2 --&gt; 3[New Repository] 3 --&gt; 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it&rsquo;s considered the de-facto way to interact with Git&rsquo;s tools.
+Any other versions of Git are just wrappers for what Git does on the command-line.">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/data_projects/github/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.003c9d079ab327c0f4d881effa9b0c186b47f63444823d6eff1ad4bc669c1611.css" integrity="sha256-ADydB5qzJ8D02IHv&#43;psMGGtH9jREgj1u/xrUvGacFhE=" rel="preload stylesheet" as="style">
@@ -59,9 +59,9 @@ This allows you to direct all of your attention on effortless creating work with
 
     </style>
 </noscript><meta property="og:title" content="Github - Command Line Interface Procedures" />
-<meta property="og:description" content="Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
-In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
-This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit." />
+<meta property="og:description" content="Summary This article documents the most common ways I interact with git and in maintaining my programs.
+graph LR; subgraph High-Level Process direction LR 0[Installation]--&gt;1[SSH] 1 --&gt; 2[Git Configuration] 2 --&gt; 3[New Repository] 3 --&gt; 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it&rsquo;s considered the de-facto way to interact with Git&rsquo;s tools.
+Any other versions of Git are just wrappers for what Git does on the command-line." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://filpill.github.io/data_projects/github/" />
 <meta property="og:image" content="https://filpill.github.io/img/github/github_terminal.png" /><meta property="article:section" content="data_projects" />
@@ -71,9 +71,9 @@ This allows you to direct all of your attention on effortless creating work with
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://filpill.github.io/img/github/github_terminal.png" />
 <meta name="twitter:title" content="Github - Command Line Interface Procedures"/>
-<meta name="twitter:description" content="Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
-In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
-This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit."/>
+<meta name="twitter:description" content="Summary This article documents the most common ways I interact with git and in maintaining my programs.
+graph LR; subgraph High-Level Process direction LR 0[Installation]--&gt;1[SSH] 1 --&gt; 2[Git Configuration] 2 --&gt; 3[New Repository] 3 --&gt; 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it&rsquo;s considered the de-facto way to interact with Git&rsquo;s tools.
+Any other versions of Git are just wrappers for what Git does on the command-line."/>
 
 
 <script type="application/ld+json">
@@ -102,12 +102,12 @@ This allows you to direct all of your attention on effortless creating work with
   "@type": "BlogPosting",
   "headline": "Github - Command Line Interface Procedures",
   "name": "Github - Command Line Interface Procedures",
-  "description": "Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.\nIn my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.\nThis allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.",
+  "description": "Summary This article documents the most common ways I interact with git and in maintaining my programs. graph LR; subgraph High-Level Process direction LR 0[Installation]--\u003e1[SSH] 1 --\u003e 2[Git Configuration] 2 --\u003e 3[New Repository] 3 --\u003e 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it\u0026rsquo;s considered the de-facto way to interact with Git\u0026rsquo;s tools. Any other versions of Git are just wrappers for what Git does on the command-line.",
   "keywords": [
     "cli", "shell", "programming"
   ],
-  "articleBody": "Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.\nIn my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.\nThis allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.\nConnections and Authentication There are 2 main ways to connect to a git repository. We can either use the HTTPS or SSH protocols respectively.\nSSH has the advantage of having passwordless interactions with git which I strongly recommended when pushing code. Its very easy to set-up an SSH key-pair; it saves time and its very secure. (Assuming you take the right precautions to protect your ssh-keys!)\nI would only use HTTPS if I am cloning someone-elses public repository but not for maintaining my personal repos'.\nI won’t discuss the methods of generating access tokens which can be used to authenticate an https connection. In my experience this is the inferior way to authenticate your connection unless you have some sort of specific reasons to use https with an access token.\nCreate Local Repo and Connect to Remote Repository Go to Github and create a new repository Go to the working directory of your machine and initialise the local repo by typing: git init Connect local repo to remote repo by typing: git remote set-url origin repo_ssh_address Cloning a Github Repo Go to Github and copy ssh address of repository Go to the directory where you want to clone the repository into and type: git clone repo_ssh_address Or if you don’t have an ssh key-pair set-up ,you can just switch the address with the HTTPS version which works just the same: git clone repo_https_address Creating SSH Keys for Authentication Protocol Go to your dot ssh directory which is storing ssh-keys Type this command to generate an SSH Keypair: ssh-keygen -t rsa -b 4096 -C youremail@yourdomain.com Name your SSH keys, and skip password prompts Copy the public key of the two that were generated and paste into the Github settings where you are saving your public keys Initialise SSH-Agent and Add Private SSH Key To Key Chain This only lasts as long as your terminal instance is open. If you close the terminal, you need to re-type the commands to restart the ssh-agent for the next terminal you spawn.\nNote: The ssh agent process only linked to the terminal you typed it in. So you will need to initialise the ssh-agent for every terminal instance you spawn (if you working on multiple terminals).\nI’ve already saved this as an shell script to save the effort of writing these commands all the time.\nTo start ssh-agent type: eval `ssh-agent` To add the private key to the ssh agent type: ssh-add path/to/your/private/ssh/key Commit Changes to Github Repository Pull the most recent version from the repo by typing: git pull origin main Make ammendments to your work and save it locally To queue up ALL changes to upload, type: git add . To commit the changes type: git commit -m ”add some comments here” “To push the committed changes onto the main branch type:\ngit push origin main ",
-  "wordCount" : "551",
+  "articleBody": "Summary This article documents the most common ways I interact with git and in maintaining my programs.\ngraph LR; subgraph High-Level Process direction LR 0[Installation]--\u003e1[SSH] 1 --\u003e 2[Git Configuration] 2 --\u003e 3[New Repository] 3 --\u003e 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it’s considered the de-facto way to interact with Git’s tools.\nAny other versions of Git are just wrappers for what Git does on the command-line. GUI type Software built “around Git” has tendencies to introduce bugs which are difficult to resolve.\nYou are abstracted away from what Git is actually doing, so it’s not possible to tell if the error was with action performed in Git or if the software was somehow glitched.\nOther tools may also rebrand some git commands to other names which can present communication issues if people are using different flavours of Git.\nBut its worth building some knowledge around the concept of how to use the Shell. Bash (shell) scripting is worth its weight it gold if leveraged correctly. It’s great for task automation and shell is a transferable skill to other command-line type programs, e.g. bq command-line tool for GCP.\nConnections and Authentication There are 2 main ways to connect to a git repository. We can either use the HTTPS or SSH protocols respectively.\nSSH has the advantage of having passwordless interactions with git which I strongly recommended when pushing code. Its trivial to set-up an SSH key-pair; it saves time and its very secure. (Assuming you take the right precautions to protect your ssh-keys!)\nMy deep personal recommendation is to use the SSH Method and avoid using the access tokens and avoid using the access tokens.\nSomething worth noting is that Git will search the path for the ssh-key file ~/.ssh/id_rsa by default. Make you name your file id_rsa otherwise it will not work.\nCreating SSH Keys Using ssh-keygen Go to your ~/.ssh directory which is storing ssh-keys Type this command to generate an SSH Keypair: ssh-keygen -t rsa -b 4096 -C emailnae@domain.com Name your SSH keys (preferably “id_rsa” for the default filename), and skip password prompts “Cat” out the public key (suffixed .pub) that was generated and paste into the Github settings for SSH Keys For security purposes, permissions need to be changed for the keys, you can change them using the below command prevent external read/write access: chmod 600 ~/.ssh/id_rsa chmod 600 ~/.ssh/id_rsa.pub Handling Multiple SSH Keys Using Keychain If you happen to decide to put your keys outside the default path (~/.ssh/id_rsa), git won’t search for them.\nI’m using a program called Keychain which can help manage your SSH Keys more easily. Its driving the underlying ssh-add and ssh-agent commands.\nI’ve added this line (shown below) to my .bashrc in order to add the relevant SSH key to the keychain.\nWhen I spawn a terminal, it will activate this command automatically and start a new process.\neval $(keychain --eval ~/.ssh_id_rsa/arch_vm) #2\u003e/dev/null In order to do the same process manually, these are the following commands:\neval `ssh-agent` ssh-add path/to/your/private/ssh/key Git Basic Setup Setting Up Git Config Inside your home directory you should have a file called .gitconfig which should be empty on a fresh install.\nYou can define the username and email of your github account in here with the following commands:\ngit config --global user.name \"github_user_name\" git config --global user.email \"emailname@domain.com\" Create Git Repository This is the overall process of creating a repo on the CLI: graph LR; subgraph Creating Git Repository 0[Create README with Repo Name]--\u003e2[Initialise Git] 2 --\u003e 3[Stage Changes] 3 --\u003e 4[Link Local Repo to Remote Repo] 4 --\u003e 5[Commit Changes] end Create a README and initialise git with these commands: echo \"# repository_name\" \u003e\u003e README.md git init By default the branch is called “master”, however this can be renamed to anything you desire.\nLets rename “master” to “main” for example using this command:\ngit branch -m main Staging is the process of preparing the changed files for the next commit.\nYou can stage the files with add; the full stop will include all files that have changed. Or you can explictly write which files you want to add to the commit.\nThe commit command will create the commit, (the -m flag allows you to add a commit message inline):\ngit add. git commit -m \"first commit msg\" To connect the remote repository to the the github server, you can write this command:\ngit remote add origin git@github.com:github.com:github_username/repo_name.git To push your first commit into github, write this command (the -u flag sets a tracking reference upstream for the git pull command):\ngit push -u origin main Cloning a Github Repo Go to Github and copy ssh address of repository Go to the directory where you want to clone the repository into and type: git clone git@github.com:github_username/repository_to_be_cloned.git Commit Changes to Github Repository After using Git for much time on personal projects it’s become very ritualistic for me to fall into this pattern:\ngraph LR; subgraph Basic Workflow direction LR 0[Pull]--\u003e1[Add] 1 --\u003e 2[Commit] 2 --\u003e 3[Push] end git pull origin main git add . git commit -m ”add some comments here” git push origin main Pull the most recent changes from repo Make ammendments to your work and save it locally Queue up changes to upload Commit the changes Push the changes onto the checked out branch If you are working with other development branches you will need to use the git checkout command to change the branch you are working on and modify the routine accordingly.\nConclusion This guide is designed to get you up and running with git on the CLI and understand the fundamentals of interacting with git.\nWith respect to the git’s numerous other features, it’s recommended to read the documentation to understand how they function and how to use those tools.\n",
+  "wordCount" : "973",
   "inLanguage": "en",
   "image":"https://filpill.github.io/img/github/github_terminal.png","datePublished": "2022-07-17T00:00:00Z",
   "dateModified": "2022-07-17T00:00:00Z",
@@ -226,97 +226,168 @@ This allows you to direct all of your attention on effortless creating work with
         <div class="inner"><ul>
                 <li>
                     <a href="#summary" aria-label="Summary">Summary</a><ul>
-                        <ul>
                         
                 <li>
-                    <a href="#connections-and-authentication" aria-label="Connections and Authentication">Connections and Authentication</a></li>
+                    <a href="#why-should-i-use-git-with-the-command-line" aria-label="Why should I use Git with the Command Line?">Why should I use Git with the Command Line?</a></li></ul>
+                </li>
                 <li>
-                    <a href="#create-local-repo-and-connect-to-remote-repository" aria-label="Create Local Repo and Connect to Remote Repository">Create Local Repo and Connect to Remote Repository</a></li>
+                    <a href="#connections-and-authentication" aria-label="Connections and Authentication">Connections and Authentication</a><ul>
+                        
+                <li>
+                    <a href="#creating-ssh-keys-using-ssh-keygen" aria-label="Creating SSH Keys Using ssh-keygen">Creating SSH Keys Using ssh-keygen</a></li>
+                <li>
+                    <a href="#handling-multiple-ssh-keys-using-keychain" aria-label="Handling Multiple SSH Keys Using Keychain">Handling Multiple SSH Keys Using Keychain</a></li></ul>
+                </li>
+                <li>
+                    <a href="#git-basic-setup" aria-label="Git Basic Setup">Git Basic Setup</a><ul>
+                        
+                <li>
+                    <a href="#setting-up-git-config" aria-label="Setting Up Git Config">Setting Up Git Config</a></li>
+                <li>
+                    <a href="#create-git-repository" aria-label="Create Git Repository">Create Git Repository</a></li>
                 <li>
                     <a href="#cloning-a-github-repo" aria-label="Cloning a Github Repo">Cloning a Github Repo</a></li>
                 <li>
-                    <a href="#creating-ssh-keys-for-authentication-protocol" aria-label="Creating SSH Keys for Authentication Protocol">Creating SSH Keys for Authentication Protocol</a></li>
-                <li>
-                    <a href="#initialise-ssh-agent-and-add-private-ssh-key-to-key-chain" aria-label="Initialise SSH-Agent and Add Private SSH Key To Key Chain">Initialise SSH-Agent and Add Private SSH Key To Key Chain</a></li>
-                <li>
-                    <a href="#commit-changes-to-github-repository" aria-label="Commit Changes to Github Repository">Commit Changes to Github Repository</a>
+                    <a href="#commit-changes-to-github-repository" aria-label="Commit Changes to Github Repository">Commit Changes to Github Repository</a></li></ul>
                 </li>
-            </ul>
-            </ul>
-            </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
             </ul>
         </div>
     </details>
 </div>
 
   <div class="post-content"><h1 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h1>
-<p>Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.</p>
-<p>In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.</p>
-<p>This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.</p>
-<h3 id="connections-and-authentication">Connections and Authentication<a hidden class="anchor" aria-hidden="true" href="#connections-and-authentication">#</a></h3>
+<p>This article documents the most common ways I interact with git and in maintaining my programs.</p>
+<div style="text-align:center;">
+	<div class="mermaid">
+		
+	  
+graph LR;
+    subgraph High-Level Process
+    direction LR
+    0[Installation]-->1[SSH]
+    1 --> 2[Git Configuration]
+    2 --> 3[New Repository]
+    3 --> 4[Commit Changes]
+    end
+
+	</div>
+</div>
+
+<h2 id="why-should-i-use-git-with-the-command-line">Why should I use Git with the Command Line?<a hidden class="anchor" aria-hidden="true" href="#why-should-i-use-git-with-the-command-line">#</a></h2>
+<p>Git was designed as a command-line tool, therefore it&rsquo;s considered the de-facto way to interact with Git&rsquo;s tools.</p>
+<p>Any other versions of Git are just wrappers for what Git does on the command-line. GUI type Software built &ldquo;around Git&rdquo; has tendencies to introduce bugs which are difficult to resolve.</p>
+<p>You are abstracted away from what Git is actually doing, so it&rsquo;s not possible to tell if the error was with action performed in Git or if the software was somehow glitched.</p>
+<p>Other tools may also rebrand some git commands to other names which can present communication issues if people are using different flavours of Git.</p>
+<p>But its worth building some knowledge around the concept of how to use the Shell. <em>Bash</em> (shell) scripting is worth its weight it gold if leveraged correctly. It&rsquo;s great for task automation and shell is a transferable skill to other command-line type programs, e.g. bq command-line tool for GCP.</p>
+<h1 id="connections-and-authentication">Connections and Authentication<a hidden class="anchor" aria-hidden="true" href="#connections-and-authentication">#</a></h1>
 <p>There are 2 main ways to connect to a git repository. We can either use the HTTPS or SSH protocols respectively.</p>
-<p>SSH has the advantage of having passwordless interactions with git which I strongly recommended when pushing code. Its very easy to set-up an SSH key-pair; it saves time and its very secure. (Assuming you take the right precautions to protect your ssh-keys!)</p>
-<p>I would only use HTTPS if I am cloning someone-elses public repository but not for maintaining my personal repos'.</p>
-<p>I won&rsquo;t discuss the methods of generating access tokens which can be used to authenticate an https connection. In my experience this is the inferior way to authenticate your connection unless you have some sort of specific reasons to use https with an access token.</p>
-<h3 id="create-local-repo-and-connect-to-remote-repository">Create Local Repo and Connect to Remote Repository<a hidden class="anchor" aria-hidden="true" href="#create-local-repo-and-connect-to-remote-repository">#</a></h3>
+<p>SSH has the advantage of having passwordless interactions with git which I strongly recommended when pushing code. Its trivial to set-up an SSH key-pair; it saves time and its very secure. (Assuming you take the right precautions to protect your ssh-keys!)</p>
+<p>My <strong>deep personal recommendation is to use the SSH Method</strong> and avoid using the access tokens and avoid using the access tokens.</p>
+<p>Something worth noting is that Git will search the path for the ssh-key file <strong>~/.ssh/id_rsa</strong> by default. Make you name your file <strong>id_rsa</strong> otherwise it will not work.</p>
+<h2 id="creating-ssh-keys-using-ssh-keygen">Creating SSH Keys Using ssh-keygen<a hidden class="anchor" aria-hidden="true" href="#creating-ssh-keys-using-ssh-keygen">#</a></h2>
 <ul>
-<li>Go to Github and create a new repository</li>
-<li>Go to the working directory of your machine and initialise the local repo by typing:</li>
+<li>Go to your <strong>~/.ssh</strong> directory which is storing ssh-keys</li>
+<li>Type this command to generate an SSH Keypair:</li>
 </ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git init
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">ssh-keygen -t rsa -b 4096 -C emailnae@domain.com
 </code></pre><ul>
-<li>Connect local repo to remote repo by typing:</li>
+<li>Name your SSH keys (<strong>preferably &ldquo;id_rsa&rdquo;</strong> for the default filename), and skip password prompts</li>
+<li><strong>&ldquo;Cat&rdquo;</strong> out the <strong>public key (suffixed .pub)</strong> that was generated and paste into the Github settings for SSH Keys</li>
+<li>For security purposes, permissions need to be changed for the keys, you can change them using the below command prevent external read/write access:</li>
 </ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git remote set-url origin repo_ssh_address
-</code></pre><h3 id="cloning-a-github-repo">Cloning a Github Repo<a hidden class="anchor" aria-hidden="true" href="#cloning-a-github-repo">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> ~/.ssh/id_rsa
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">600</span> ~/.ssh/id_rsa.pub
+</span></span></code></pre></div><h2 id="handling-multiple-ssh-keys-using-keychain">Handling Multiple SSH Keys Using Keychain<a hidden class="anchor" aria-hidden="true" href="#handling-multiple-ssh-keys-using-keychain">#</a></h2>
+<p>If you happen to decide to put your keys outside the default path <strong>(~/.ssh/id_rsa)</strong>, git won&rsquo;t search for them.</p>
+<p>I&rsquo;m using a program called <strong>Keychain</strong> which can help manage your SSH Keys more easily. Its driving the underlying ssh-add and ssh-agent commands.</p>
+<p>I&rsquo;ve added this line (shown below) to my <strong>.bashrc</strong> in order to add the relevant SSH key to the keychain.</p>
+<p>When I spawn a terminal, it will activate this command automatically and start a new process.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eval <span style="color:#66d9ef">$(</span>keychain --eval ~/.ssh_id_rsa/arch_vm<span style="color:#66d9ef">)</span> <span style="color:#75715e">#2&gt;/dev/null</span>
+</span></span></code></pre></div><p>In order to do the same process manually, these are the following commands:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">eval `ssh-agent`
+ssh-add path/to/your/private/ssh/key
+</code></pre><h1 id="git-basic-setup">Git Basic Setup<a hidden class="anchor" aria-hidden="true" href="#git-basic-setup">#</a></h1>
+<h2 id="setting-up-git-config">Setting Up Git Config<a hidden class="anchor" aria-hidden="true" href="#setting-up-git-config">#</a></h2>
+<p>Inside your home directory you should have a file called .gitconfig which should be empty on a fresh install.</p>
+<p>You can define the username and email of your github account in here with the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;github_user_name&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;emailname@domain.com&#34;</span>
+</span></span></code></pre></div><h2 id="create-git-repository">Create Git Repository<a hidden class="anchor" aria-hidden="true" href="#create-git-repository">#</a></h2>
+<p>This is the overall process of creating a repo on the CLI:
+<div style="text-align:center;">
+	<div class="mermaid">
+		
+	  
+graph LR;
+    subgraph Creating Git Repository
+    0[Create README with Repo Name]-->2[Initialise Git]
+    2 --> 3[Stage Changes]
+    3 --> 4[Link Local Repo to Remote Repo]
+    4 --> 5[Commit Changes]
+    end
+
+	</div>
+</div>
+</p>
+<ul>
+<li>Create a README and initialise git with these commands:</li>
+</ul>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">echo &#34;# repository_name&#34; &gt;&gt; README.md
+git init
+</code></pre><p>By default the branch is called &ldquo;master&rdquo;, however this can be renamed to anything you desire.</p>
+<p>Lets rename &ldquo;master&rdquo; to &ldquo;main&rdquo; for example using this command:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git branch -m main
+</code></pre><p>Staging is the process of preparing the changed files for the next commit.</p>
+<p>You can stage the files with add; the full stop will include all files that have changed. Or you can explictly write which files you want to add to the commit.</p>
+<p>The <strong>commit</strong> command will create the commit, (the -m flag allows you to add a commit message inline):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add.
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;first commit msg&#34;</span>
+</span></span></code></pre></div><p>To connect the remote repository to the the github server, you can write this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin git@github.com:github.com:github_username/repo_name.git
+</span></span></code></pre></div><p>To push your first commit into github, write this command (the -u flag sets a tracking reference upstream for the git pull command):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div><h2 id="cloning-a-github-repo">Cloning a Github Repo<a hidden class="anchor" aria-hidden="true" href="#cloning-a-github-repo">#</a></h2>
 <ul>
 <li>Go to Github and copy ssh address of repository</li>
 <li>Go to the directory where you want to clone the repository into and type:</li>
 </ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git clone repo_ssh_address
-</code></pre><ul>
-<li>Or if you don&rsquo;t have an ssh key-pair set-up ,you can just switch the address with the HTTPS version which works just the same:</li>
-</ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git clone repo_https_address
-</code></pre><h3 id="creating-ssh-keys-for-authentication-protocol">Creating SSH Keys for Authentication Protocol<a hidden class="anchor" aria-hidden="true" href="#creating-ssh-keys-for-authentication-protocol">#</a></h3>
-<ul>
-<li>Go to your dot ssh directory which is storing ssh-keys</li>
-<li>Type this command to generate an SSH Keypair:</li>
-</ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">ssh-keygen -t rsa -b 4096 -C youremail@yourdomain.com
-</code></pre><ul>
-<li>Name your SSH keys, and skip password prompts</li>
-<li>Copy the public key of the two that were generated and paste into the Github settings where you are saving your public keys</li>
-</ul>
-<h3 id="initialise-ssh-agent-and-add-private-ssh-key-to-key-chain">Initialise SSH-Agent and Add Private SSH Key To Key Chain<a hidden class="anchor" aria-hidden="true" href="#initialise-ssh-agent-and-add-private-ssh-key-to-key-chain">#</a></h3>
-<p>This only lasts as long as your terminal instance is open. If you close the terminal, you need to re-type the commands to restart the ssh-agent for the next terminal you spawn.</p>
-<p><em>Note: The ssh agent process only linked to the terminal you typed it in. So you will need to initialise the ssh-agent for every terminal instance you spawn (if you working on multiple terminals).</em></p>
-<p>I&rsquo;ve already saved this as an shell script to save the effort of writing these commands all the time.</p>
-<ul>
-<li>To start ssh-agent type:</li>
-</ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">eval `ssh-agent`
-</code></pre><ul>
-<li>To add the private key to the ssh agent type:</li>
-</ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">ssh-add path/to/your/private/ssh/key
-</code></pre><h3 id="commit-changes-to-github-repository">Commit Changes to Github Repository<a hidden class="anchor" aria-hidden="true" href="#commit-changes-to-github-repository">#</a></h3>
-<ul>
-<li>Pull the most recent version from the repo by typing:</li>
-</ul>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git clone git@github.com:github_username/repository_to_be_cloned.git
+</code></pre><h2 id="commit-changes-to-github-repository">Commit Changes to Github Repository<a hidden class="anchor" aria-hidden="true" href="#commit-changes-to-github-repository">#</a></h2>
+<p>After using Git for much time on personal projects it&rsquo;s become very ritualistic for me to fall into this pattern:</p>
+<div style="text-align:center;">
+	<div class="mermaid">
+		
+	  
+graph LR;
+    subgraph Basic Workflow
+    direction LR
+    0[Pull]-->1[Add]
+    1 --> 2[Commit]
+    2 --> 3[Push]
+    end
+
+	</div>
+</div>
+
 <pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git pull origin main
+git add .
+git commit -m ”add some comments here”
+git push origin main
 </code></pre><ul>
+<li>Pull the most recent changes from repo</li>
 <li>Make ammendments to your work and save it locally</li>
-<li>To queue up ALL changes to upload, type:</li>
+<li>Queue up changes to upload</li>
+<li>Commit the changes</li>
+<li>Push the changes onto the checked out branch</li>
 </ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git add .
-</code></pre><ul>
-<li>To commit the changes type:</li>
-</ul>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git commit -m ”add some comments here”
-</code></pre><p>&ldquo;To push the committed changes onto the main branch type:</p>
-<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">git push origin main
-</code></pre>
+<p>If you are working with other development branches you will need to use the <strong>git checkout</strong> command to change the branch you are working on and modify the routine accordingly.</p>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p>This guide is designed to get you up and running with git on the CLI and understand the fundamentals of interacting with git.</p>
+<p>With respect to the git&rsquo;s numerous other features, it&rsquo;s recommended to read the documentation to understand how they function and how to use those tools.</p>
+
 
 
   </div>
@@ -328,6 +399,18 @@ This allows you to direct all of your attention on effortless creating work with
       <li><a href="https://filpill.github.io/tags/shell/">shell</a></li>
       <li><a href="https://filpill.github.io/tags/programming/">programming</a></li>
     </ul>
+<nav class="paginav">
+  <a class="prev" href="https://filpill.github.io/data_projects/data_system/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Building Data Pipelines With Python: Systems Perspective</span>
+  </a>
+  <a class="next" href="https://filpill.github.io/data_projects/hugo/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Website Design with Hugo Framework</span>
+  </a>
+</nav>
 
   </footer>
 </article>

@@ -15,7 +15,7 @@
       <guid>https://filpill.github.io/eng_projects/servoturret/</guid>
       <description>Summary This project has been made to practise the use of sending instructions to various electronics via serial communications.
 I&amp;rsquo;ve segmented this project into two parts/versions:
-Arduino - Manual Control with Mouse via Serial Comms Port Raspberry Pi - AI Face Tracking with Python and Camera Module Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial comminications.</description>
+Arduino - Manual Control with Mouse via Serial Comms Port Raspberry Pi - AI Face Tracking with Python and Camera Module Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial communications.</description>
     </item>
     
   </channel>

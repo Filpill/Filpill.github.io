@@ -15,16 +15,16 @@
       <guid>https://filpill.github.io/eng_projects/servoturret/</guid>
       <description>Summary This project has been made to practise the use of sending instructions to various electronics via serial communications.
 I&amp;rsquo;ve segmented this project into two parts/versions:
-Arduino - Manual Control with Mouse via Serial Comms Port Raspberry Pi - AI Face Tracking with Python and Camera Module Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial comminications.</description>
+Arduino - Manual Control with Mouse via Serial Comms Port Raspberry Pi - AI Face Tracking with Python and Camera Module Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial communications.</description>
     </item>
     
     <item>
-      <title>3D Printed RC Tractor</title>
+      <title>3D Printed RC Road Vehicle</title>
       <link>https://filpill.github.io/eng_projects/rctractor/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/eng_projects/rctractor/</guid>
-      <description>Summary Finshed designing and building a functional 3D Printed RC car which accidently ended up assembling a tractor by chance. Thats the consequence of a lack of planning and design contraints&amp;hellip;
+      <description>Summary Finshed designing and building a functional 3D Printed RC car which accidently ended up resembling a tractor by chance. Thats the consequence of a lack of planning and design contraints&amp;hellip;
 The reason for the large wheels in the back is because of how I started my design process. The design was built around the gearbox. Since the gearbox ended up being very tall, I figured I would just mount some very large wheels to clear the ground.</description>
     </item>
     
@@ -41,10 +41,10 @@ Component Part No. Radio Controller/Transmitter FS-GT5 Radio Reciever FS-BS6 Ele
     
     <item>
       <title>3D Printed GoPro Skateboard</title>
-      <link>https://filpill.github.io/eng_projects/gopro/</link>
+      <link>https://filpill.github.io/page_archive/gopro/</link>
       <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/gopro/</guid>
+      <guid>https://filpill.github.io/page_archive/gopro/</guid>
       <description>Summary Designed a skateboard for my GoPro, experimenting with different camera perspectives; in particular with low rolling shots.
 The camera mount point is not ideal as the wheels are caught in the field of view&amp;hellip;It&amp;rsquo;s not too bad, but still a little bit distracting when shooting a wide angle. It&amp;rsquo;s hard to envision this issue when you are designing it. It&amp;rsquo;s easy to get distracted with the other design elements.</description>
     </item>
@@ -135,9 +135,9 @@ To build complete end-to-end data solutions from the data source to user. We wan
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/data_projects/github/</guid>
-      <description>Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
-In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
-This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.</description>
+      <description>Summary This article documents the most common ways I interact with git and in maintaining my programs.
+graph LR; subgraph High-Level Process direction LR 0[Installation]--&gt;1[SSH] 1 --&gt; 2[Git Configuration] 2 --&gt; 3[New Repository] 3 --&gt; 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it&amp;rsquo;s considered the de-facto way to interact with Git&amp;rsquo;s tools.
+Any other versions of Git are just wrappers for what Git does on the command-line.</description>
     </item>
     
     <item>
@@ -191,19 +191,19 @@ The first iteration of my website was manually written in HTML/CSS. It was a lit
     
     <item>
       <title>3D Printed Car - Bluetooth Controller Interface</title>
-      <link>https://filpill.github.io/eng_projects/3dcar/</link>
+      <link>https://filpill.github.io/page_archive/3dcar/</link>
       <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/3dcar/</guid>
+      <guid>https://filpill.github.io/page_archive/3dcar/</guid>
       <description>Summary Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven&amp;rsquo;t had time to iterate over the design due to the complexity and required time investment. The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects. The project requires some simplification for the desired goal of having a robust car design.</description>
     </item>
     
     <item>
       <title>2D Heat Transfer Simulation</title>
-      <link>https://filpill.github.io/eng_projects/ht_sim/</link>
+      <link>https://filpill.github.io/page_archive/ht_sim/</link>
       <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/ht_sim/</guid>
+      <guid>https://filpill.github.io/page_archive/ht_sim/</guid>
       <description>Summary Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
     </item>
     

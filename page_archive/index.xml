@@ -6,7 +6,17 @@
     <description>Recent content in Page_archives on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/page_archive/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/page_archive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D Printed GoPro Skateboard</title>
+      <link>https://filpill.github.io/page_archive/gopro/</link>
+      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/page_archive/gopro/</guid>
+      <description>Summary Designed a skateboard for my GoPro, experimenting with different camera perspectives; in particular with low rolling shots.
+The camera mount point is not ideal as the wheels are caught in the field of view&amp;hellip;It&amp;rsquo;s not too bad, but still a little bit distracting when shooting a wide angle. It&amp;rsquo;s hard to envision this issue when you are designing it. It&amp;rsquo;s easy to get distracted with the other design elements.</description>
+    </item>
+    
     <item>
       <title>Python Lottery Game</title>
       <link>https://filpill.github.io/page_archive/lottery/</link>
@@ -46,6 +56,24 @@ Though the volume of data highlighted on the website is limited compared to the 
       
       <guid>https://filpill.github.io/page_archive/aoe2/</guid>
       <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
+    </item>
+    
+    <item>
+      <title>3D Printed Car - Bluetooth Controller Interface</title>
+      <link>https://filpill.github.io/page_archive/3dcar/</link>
+      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/page_archive/3dcar/</guid>
+      <description>Summary Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven&amp;rsquo;t had time to iterate over the design due to the complexity and required time investment. The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects. The project requires some simplification for the desired goal of having a robust car design.</description>
+    </item>
+    
+    <item>
+      <title>2D Heat Transfer Simulation</title>
+      <link>https://filpill.github.io/page_archive/ht_sim/</link>
+      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/page_archive/ht_sim/</guid>
+      <description>Summary Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
     </item>
     
   </channel>

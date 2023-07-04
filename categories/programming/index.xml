@@ -60,9 +60,9 @@ To build complete end-to-end data solutions from the data source to user. We wan
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/data_projects/github/</guid>
-      <description>Summary Documenting the most common ways I interact with git and in maintaining my programs. For reference these actions are performed via the command line.
-In my opinion the main benefit of using a CLI is the added efficiency of the scripting out the majority of the process via usage of shell scripts.
-This allows you to direct all of your attention on effortless creating work without getting lost in a GUI just to push a new commit.</description>
+      <description>Summary This article documents the most common ways I interact with git and in maintaining my programs.
+graph LR; subgraph High-Level Process direction LR 0[Installation]--&gt;1[SSH] 1 --&gt; 2[Git Configuration] 2 --&gt; 3[New Repository] 3 --&gt; 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it&amp;rsquo;s considered the de-facto way to interact with Git&amp;rsquo;s tools.
+Any other versions of Git are just wrappers for what Git does on the command-line.</description>
     </item>
     
   </channel>
