@@ -6,7 +6,18 @@
     <description>Recent content in cli on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi Remote Access Guide</title>
+      <link>https://filpill.github.io/data_projects/pissh/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/pissh/</guid>
+      <description>Summary This article documents how to remotely access your Raspberry Pi using either Secure Shell (SSH) or Remote Desktop Protocol (RDP).
+The benefit of remote access is that you do not need to constantly plug in a wired keyboard and mouse to do some configuration on your Pi devices.
+The SSH access is ideal for cases with exclusive involvement of the terminal. The remote desktop acess is requied for situations using the graphical desktop environment.</description>
+    </item>
+    
     <item>
       <title>Github - Command Line Interface Procedures</title>
       <link>https://filpill.github.io/data_projects/github/</link>

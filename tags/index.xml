@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cli</title>
+      <link>https://filpill.github.io/tags/cli/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://filpill.github.io/tags/linux/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raspberry pi</title>
+      <link>https://filpill.github.io/tags/raspberry-pi/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://filpill.github.io/tags/shell/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://filpill.github.io/tags/ssh/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>3d-printing</title>
       <link>https://filpill.github.io/tags/3d-printing/</link>
@@ -53,29 +98,11 @@
     </item>
     
     <item>
-      <title>raspberry pi</title>
-      <link>https://filpill.github.io/tags/raspberry-pi/</link>
-      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/tags/raspberry-pi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>electronics</title>
       <link>https://filpill.github.io/tags/electronics/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/tags/electronics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://filpill.github.io/tags/linux/</link>
-      <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -166,24 +193,6 @@
       <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
       
       <guid>https://filpill.github.io/tags/powerpoint/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cli</title>
-      <link>https://filpill.github.io/tags/cli/</link>
-      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/tags/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>https://filpill.github.io/tags/shell/</link>
-      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/tags/shell/</guid>
       <description></description>
     </item>
     

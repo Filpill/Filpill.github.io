@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Raspberry Pi Remote Access Guide | Filip Livancic</title>
+<meta name="keywords" content="cli, shell, raspberry pi, linux, ssh">
+<meta name="description" content="Summary This article documents how to remotely access your Raspberry Pi using either Secure Shell (SSH) or Remote Desktop Protocol (RDP).
+The benefit of remote access is that you do not need to constantly plug in a wired keyboard and mouse to do some configuration on your Pi devices.
+The SSH access is ideal for cases with exclusive involvement of the terminal. The remote desktop acess is requied for situations using the graphical desktop environment.">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/data_projects/pissh/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.003c9d079ab327c0f4d881effa9b0c186b47f63444823d6eff1ad4bc669c1611.css" integrity="sha256-ADydB5qzJ8D02IHv&#43;psMGGtH9jREgj1u/xrUvGacFhE=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Raspberry Pi Remote Access Guide" />
+<meta property="og:description" content="Summary This article documents how to remotely access your Raspberry Pi using either Secure Shell (SSH) or Remote Desktop Protocol (RDP).
+The benefit of remote access is that you do not need to constantly plug in a wired keyboard and mouse to do some configuration on your Pi devices.
+The SSH access is ideal for cases with exclusive involvement of the terminal. The remote desktop acess is requied for situations using the graphical desktop environment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/data_projects/pissh/" />
+<meta property="og:image" content="https://filpill.github.io/img/piSSH/pi_ssh_rdp.png" /><meta property="article:section" content="data_projects" />
+<meta property="article:published_time" content="2023-07-06T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2023-07-06T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/piSSH/pi_ssh_rdp.png" />
+<meta name="twitter:title" content="Raspberry Pi Remote Access Guide"/>
+<meta name="twitter:description" content="Summary This article documents how to remotely access your Raspberry Pi using either Secure Shell (SSH) or Remote Desktop Protocol (RDP).
+The benefit of remote access is that you do not need to constantly plug in a wired keyboard and mouse to do some configuration on your Pi devices.
+The SSH access is ideal for cases with exclusive involvement of the terminal. The remote desktop acess is requied for situations using the graphical desktop environment."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "List of Data Projects",
+      "item": "https://filpill.github.io/data_projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Raspberry Pi Remote Access Guide",
+      "item": "https://filpill.github.io/data_projects/pissh/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Raspberry Pi Remote Access Guide",
+  "name": "Raspberry Pi Remote Access Guide",
+  "description": "Summary This article documents how to remotely access your Raspberry Pi using either Secure Shell (SSH) or Remote Desktop Protocol (RDP).\nThe benefit of remote access is that you do not need to constantly plug in a wired keyboard and mouse to do some configuration on your Pi devices.\nThe SSH access is ideal for cases with exclusive involvement of the terminal. The remote desktop acess is requied for situations using the graphical desktop environment.",
+  "keywords": [
+    "cli", "shell", "raspberry pi", "linux", "ssh"
+  ],
+  "articleBody": "Summary This article documents how to remotely access your Raspberry Pi using either Secure Shell (SSH) or Remote Desktop Protocol (RDP).\nThe benefit of remote access is that you do not need to constantly plug in a wired keyboard and mouse to do some configuration on your Pi devices.\nThe SSH access is ideal for cases with exclusive involvement of the terminal. The remote desktop acess is requied for situations using the graphical desktop environment.\nIP Address Something thats common to both processes is that they both require the IP Address of the device.\nTo get the IP address, you can type this command into the Raspberry Pi terminal:\nhostname -I # or ping rasberrypi.local # or ifconfig Secure Shell (SSH) Remote Access For the SSH Remote Acess, I will be connecting to my Raspberry Pi via my Arch Linux VM which is running a zsh terminal. But you can follow this process on any shell, it will be exactly the same.\nPre-requisites Set up wireless networking capability onto the boot disc. Obtain Raspberry Pi’s IP Address Create hostname for IP in the /etc/hosts file Setting Up Networking Assuming you are running a minimal distribution such as Raspberry Pi Lite OS, you will need a way to get access to the internet.\nGet the SD from the Pi which has the image installed onto it, and read it from your main PC.\nThe following steps will be performed in git bash, but you can also do this in your file explorer:\nNavigate to the boot device volume and create an ssh file:\ntouch ssh In the same directory (boot), we need to make a wpa_supplicant.conf file. This will provide the configuration to enable you to connect your wireless network setup.\nvim wpa_supplicant.conf Then enter the following into the configuration, and substitute the placeholders with your own network SSID and password to access the Wi-Fi.\nctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev update_config=1 country= network={ ssid=\"WIFI-NAME\" psk=\"WIFI-PASSWORD\" } You can safely remove the SD card from your PC.\nPut the SD Card back into the Pi and power it on.\nSSH Into Raspberry Pi Via Terminal From the terminal of the machine you are trying to attempt the remote access, you can SSH using this command:\nssh @ If you didn’t configure your pi user crentials, for reference these are the defaults:\nusername: pi password: raspberry So the SSH command may look like this for example:\nssh pi@192.168.1.134 You would then be prompted with a password for which you will have to enter in order to gain access.\nIf you have made your own username and password, then substitute with your own credentials.\nThe userame on the Raspberry Pi is filpill, so it would be modified like this:\nssh filpill@192.168.1.134 Replacing IP Address with Hostname SSH Protocol Now obviously its not that easy to remember an IP address everytime you want to SSH into the Pi. So we could store an alias for the IP in the /etc/hosts directory.\nsudo vim /etc/hosts You’ll want to add a line in this file with the IP Address and hostname of the Raspberry Pi. The line you will add will look similar to this:\n192.168.1.134 raspberrypi So the next time you want to SSH into the Pi, instead of writing the full IP address, you can just write this:\nssh filpill@raspberrypi The command functions all the same in additon to being much easier to remember into the future.\nRemote Desktop Access via Windows For demonstation purposes I will be using the Windows 10 Remote Desktop Connection application to provide my access. The same concepts can be applied to alternative software.\nPre-requisites There are a few of pre-requisite tasks to complete before attempting remote access:\nInstall a Graphical OS environment for the Pi Obtain the Pi’s IP Address Install xrdp on the Raspberry Pi Add a secondary user to the Raspberry Pi with Sudo privillages Enable Remote Desktop Access in the raspi-config Install xrdp To install xrdp, type this command into the Raspberry Pi terminal:\nsudo apt-get install xrdp Then you need to start the xrdp service like this:\nsudo systemctl start xrdp New/Secondary User To add a new user, type this command:\nsudo adduser Skip all the prompts to fill in user detaiils with the Enter Key.\nThen to give the user sudo privileges i.e. adding them to the sudo group:\nsudo adduser sudo Enable Remote Desktop Access To enable this access, you need to enter the command:\nsudo raspi-config You need to navigate it the interface options; you need to enable the graphical remote access on the VNC option.\nThen finish the config to apply the settings and reset the Raspberry Pi.\nWindows - Remote Desktop Connection Application Now you can switch back to the Windows PC environment.\nOpen the Remote Desktop Connection App.\nEnter the IP Address you noted earlier from the Raspberry Pi and proceed to connect.\nYou should find yourself inside a login screen for xdrp.\nFor the user credentials, you should use the username and password you created on the Raspberry Pi as the secondary user.\nYou should now have graphical access to your Raspberry Pi via your Windows Machine.\nNote: This RDP procedure only works in a graphical OS, this does not apply to minimalist operating systems without a graphical UI because the display server will have nothing to render.\n",
+  "wordCount" : "898",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/piSSH/pi_ssh_rdp.png","datePublished": "2023-07-06T00:00:00Z",
+  "dateModified": "2023-07-06T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/data_projects/pissh/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/data_projects/" title="Data Projects">
+                    <span>Data Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/eng_projects/" title="Engineering Projects">
+                    <span>Engineering Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/data_projects/">List of Data Projects</a></div>
+    <h1 class="post-title">
+      Raspberry Pi Remote Access Guide
+    </h1>
+    <div class="post-meta"><span title='2023-07-06 00:00:00 +0000 UTC'>July 6, 2023</span>
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/piSSH/pi_ssh_rdp.png" alt="Github Logo">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a><ul>
+                        
+                <li>
+                    <a href="#ip-address" aria-label="IP Address">IP Address</a></li>
+                <li>
+                    <a href="#secure-shell-ssh-remote-access" aria-label="Secure Shell (SSH) Remote Access">Secure Shell (SSH) Remote Access</a><ul>
+                        
+                <li>
+                    <a href="#pre-requisites" aria-label="Pre-requisites">Pre-requisites</a><ul>
+                        
+                <li>
+                    <a href="#setting-up-networking" aria-label="Setting Up Networking">Setting Up Networking</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ssh-into-raspberry-pi-via-terminal" aria-label="SSH Into Raspberry Pi Via Terminal">SSH Into Raspberry Pi Via Terminal</a></li>
+                <li>
+                    <a href="#replacing-ip-address-with-hostname-ssh-protocol" aria-label="Replacing IP Address with Hostname SSH Protocol">Replacing IP Address with Hostname SSH Protocol</a></li></ul>
+                </li>
+                <li>
+                    <a href="#remote-desktop-access-via-windows" aria-label="Remote Desktop Access via Windows">Remote Desktop Access via Windows</a><ul>
+                        
+                <li>
+                    <a href="#pre-requisites-1" aria-label="Pre-requisites">Pre-requisites</a><ul>
+                        
+                <li>
+                    <a href="#install-xrdp" aria-label="Install xrdp">Install xrdp</a></li>
+                <li>
+                    <a href="#newsecondary-user" aria-label="New/Secondary User">New/Secondary User</a></li>
+                <li>
+                    <a href="#enable-remote-desktop-access" aria-label="Enable Remote Desktop Access">Enable Remote Desktop Access</a></li></ul>
+                </li>
+                <li>
+                    <a href="#windows---remote-desktop-connection-application" aria-label="Windows - Remote Desktop Connection Application">Windows - Remote Desktop Connection Application</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h1>
+<p>This article documents how to remotely access your Raspberry Pi using either Secure Shell (SSH) or Remote Desktop Protocol (RDP).</p>
+<p>The benefit of remote access is that you do not need to constantly plug in a wired keyboard and mouse to do some configuration on your Pi devices.</p>
+<p>The SSH access is ideal for cases with exclusive involvement of the terminal. The remote desktop acess is requied for situations using the graphical desktop environment.</p>
+<h2 id="ip-address">IP Address<a hidden class="anchor" aria-hidden="true" href="#ip-address">#</a></h2>
+<p>Something thats common to both processes is that they both require the IP Address of the device.</p>
+<p>To get the IP address, you can type this command into the Raspberry Pi terminal:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">hostname -I
+
+# or
+
+ping rasberrypi.local
+
+# or
+
+ifconfig
+</code></pre><h2 id="secure-shell-ssh-remote-access">Secure Shell (SSH) Remote Access<a hidden class="anchor" aria-hidden="true" href="#secure-shell-ssh-remote-access">#</a></h2>
+<p>For the SSH Remote Acess, I will be connecting to my Raspberry Pi via my Arch Linux VM which is running a zsh terminal. But you can follow this process on any shell, it will be exactly the same.</p>
+<h3 id="pre-requisites">Pre-requisites<a hidden class="anchor" aria-hidden="true" href="#pre-requisites">#</a></h3>
+<ul>
+<li>Set up wireless networking capability onto the boot disc.</li>
+<li>Obtain Raspberry Pi&rsquo;s IP Address</li>
+<li>Create hostname for IP in the /etc/hosts file</li>
+</ul>
+<h4 id="setting-up-networking">Setting Up Networking<a hidden class="anchor" aria-hidden="true" href="#setting-up-networking">#</a></h4>
+<p>Assuming you are running a minimal distribution such as Raspberry Pi Lite OS, you will need a way to get access to the internet.</p>
+<p>Get the SD from the Pi which has the image installed onto it, and read it from your main PC.</p>
+<p>The following steps will be performed in git bash, but you can also do this in your file explorer:</p>
+<p>Navigate to the boot device volume and create an ssh file:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">touch ssh
+</code></pre><p>In the same directory (boot), we need to make a <strong>wpa_supplicant.conf file</strong>. This will provide the configuration to enable you to connect your wireless network setup.</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">vim wpa_supplicant.conf
+</code></pre><p>Then enter the following into the configuration, and substitute the placeholders with your own network SSID and password to access the Wi-Fi.</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=&lt;Insert 2 letter ISO 3166-1 country code here&gt;
+network={
+    ssid=&#34;WIFI-NAME&#34;
+    psk=&#34;WIFI-PASSWORD&#34;
+}
+</code></pre><p>You can safely remove the SD card from your PC.</p>
+<p>Put the SD Card back into the Pi and power it on.</p>
+<h3 id="ssh-into-raspberry-pi-via-terminal">SSH Into Raspberry Pi Via Terminal<a hidden class="anchor" aria-hidden="true" href="#ssh-into-raspberry-pi-via-terminal">#</a></h3>
+<p>From the terminal of the machine you are trying to attempt the remote access, you can SSH using this command:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">ssh &lt;USERNAME&gt;@&lt;IP_ADDRESS&gt;
+</code></pre><p>If you didn&rsquo;t configure your pi user crentials, for reference these are the defaults:</p>
+<ul>
+<li>username: pi</li>
+<li>password: raspberry</li>
+</ul>
+<p>So the SSH command may look like this for example:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">ssh pi@192.168.1.134
+</code></pre><p>You would then be prompted with a password for which you will have to enter in order to gain access.</p>
+<p>If you have made your own username and password, then substitute with your own credentials.</p>
+<p>The userame on the Raspberry Pi is <strong>filpill</strong>, so it would be modified like this:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">ssh filpill@192.168.1.134
+</code></pre><p><img loading="lazy" src="/img/piSSH/ssh_ip.jpg#center" alt="SSH IP"  />
+</p>
+<h3 id="replacing-ip-address-with-hostname-ssh-protocol">Replacing IP Address with Hostname SSH Protocol<a hidden class="anchor" aria-hidden="true" href="#replacing-ip-address-with-hostname-ssh-protocol">#</a></h3>
+<p>Now obviously its not that easy to remember an IP address everytime you want to SSH into the Pi. So we could store an alias for the IP in the <strong>/etc/hosts</strong> directory.</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">sudo vim /etc/hosts
+</code></pre><p>You&rsquo;ll want to add a line in this file with the IP Address and hostname of the Raspberry Pi. The line you will add will look similar to this:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">192.168.1.134   raspberrypi
+</code></pre><p>So the next time you want to SSH into the Pi, instead of writing the full IP address, you can just write this:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">ssh filpill@raspberrypi
+</code></pre><p><img loading="lazy" src="/img/piSSH/ssh_hostname.jpg#center" alt="SSH Hostname"  />
+</p>
+<p><img loading="lazy" src="/img/piSSH/ssh_neofetch.jpg#center" alt="SSH Neofetch"  />
+</p>
+<p>The command functions all the same in additon to being much easier to remember into the future.</p>
+<h2 id="remote-desktop-access-via-windows">Remote Desktop Access via Windows<a hidden class="anchor" aria-hidden="true" href="#remote-desktop-access-via-windows">#</a></h2>
+<p>For demonstation purposes I will be using the <strong>Windows 10 Remote Desktop Connection</strong> application to provide my access. The same concepts can be applied to alternative software.</p>
+<h3 id="pre-requisites-1">Pre-requisites<a hidden class="anchor" aria-hidden="true" href="#pre-requisites-1">#</a></h3>
+<p>There are a few of pre-requisite tasks to complete before attempting remote access:</p>
+<ul>
+<li>Install a Graphical OS environment for the Pi</li>
+<li>Obtain the Pi&rsquo;s IP Address</li>
+<li><strong>Install xrdp</strong> on the Raspberry Pi</li>
+<li>Add a secondary user to the Raspberry Pi with Sudo privillages</li>
+<li>Enable Remote Desktop Access in the raspi-config</li>
+</ul>
+<h4 id="install-xrdp">Install xrdp<a hidden class="anchor" aria-hidden="true" href="#install-xrdp">#</a></h4>
+<p>To install xrdp, type this command into the Raspberry Pi terminal:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">sudo apt-get install xrdp
+</code></pre><p>Then you need to start the xrdp service like this:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">sudo systemctl start xrdp
+</code></pre><h4 id="newsecondary-user">New/Secondary User<a hidden class="anchor" aria-hidden="true" href="#newsecondary-user">#</a></h4>
+<p>To add a new user, type this command:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">sudo adduser &lt;INSERT USERNAME&gt;
+</code></pre><p>Skip all the prompts to fill in user detaiils with the Enter Key.</p>
+<p>Then to give the user sudo privileges i.e. adding them to the sudo group:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">sudo adduser &lt;INSERT USERNAME&gt; sudo
+</code></pre><h4 id="enable-remote-desktop-access">Enable Remote Desktop Access<a hidden class="anchor" aria-hidden="true" href="#enable-remote-desktop-access">#</a></h4>
+<p>To enable this access, you need to enter the command:</p>
+<pre tabindex="0"><code class="language-[bash]" data-lang="[bash]">sudo raspi-config
+</code></pre><p>You need to navigate it the interface options; you need to enable the graphical remote access on the VNC option.</p>
+<p>Then finish the config to apply the settings and reset the Raspberry Pi.</p>
+<h3 id="windows---remote-desktop-connection-application">Windows - Remote Desktop Connection Application<a hidden class="anchor" aria-hidden="true" href="#windows---remote-desktop-connection-application">#</a></h3>
+<p>Now you can switch back to the Windows PC environment.</p>
+<p>Open the Remote Desktop Connection App.</p>
+<p><img loading="lazy" src="/img/piSSH/rdc_app.jpg#center" alt="RDC App"  />
+</p>
+<p>Enter the IP Address you noted earlier from the Raspberry Pi and proceed to connect.</p>
+<p>You should find yourself inside a login screen for xdrp.</p>
+<p><img loading="lazy" src="/img/piSSH/xrdp.jpg#center" alt="xrdp Login"  />
+</p>
+<p>For the user credentials, you should use the username and password you created on the Raspberry Pi as the secondary user.</p>
+<p>You should now have graphical access to your Raspberry Pi via your Windows Machine.</p>
+<p><img loading="lazy" src="/img/piSSH/windows_remote.jpg#center" alt="RDC App"  />
+</p>
+<p><em><strong>Note: This RDP procedure only works in a graphical OS, this does not apply to minimalist operating systems without a graphical UI because the display server will have nothing to render.</strong></em></p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/cli/">cli</a></li>
+      <li><a href="https://filpill.github.io/tags/shell/">shell</a></li>
+      <li><a href="https://filpill.github.io/tags/raspberry-pi/">raspberry pi</a></li>
+      <li><a href="https://filpill.github.io/tags/linux/">Linux</a></li>
+      <li><a href="https://filpill.github.io/tags/ssh/">ssh</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://filpill.github.io/data_projects/arch_install/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Arch Linux Installation Guide</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
