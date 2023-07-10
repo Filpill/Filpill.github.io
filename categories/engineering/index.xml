@@ -6,7 +6,17 @@
     <description>Recent content in engineering on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cyber Deck Assembly - Raspberry Pi</title>
+      <link>https://filpill.github.io/eng_projects/cyberdeck/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/eng_projects/cyberdeck/</guid>
+      <description>Summary I&amp;rsquo;ve designed out a &amp;ldquo;cyber deck&amp;rdquo;/frame for my Raspberry Pi to convert it into a usable personal computer. It features a 7 inch touch display and a web camera plugged into the boards DSI (Display Serial Interface) connectors. Should the design become more compact in the future, the ribbon cables are ideal for routing inside tight enclosures.
+The only necessary wired connection is a USB-C to provide power to the board.</description>
+    </item>
+    
     <item>
       <title>Servo Turret Control</title>
       <link>https://filpill.github.io/eng_projects/servoturret/</link>

@@ -2,13 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://filpill.github.io/categories/</loc>
-    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+    <loc>https://filpill.github.io/tags/3d-printing/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/tags/cli/</loc>
-    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+    <loc>https://filpill.github.io/categories/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/eng_projects/cyberdeck/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/design/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/categories/design/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/engineering/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/categories/engineering/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/eng_projects/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/mechanical/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/raspberry-pi/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/</loc>
+    <lastmod>2023-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://filpill.github.io/tags/cli/</loc>
     <lastmod>2023-07-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/tags/linux/</loc>
@@ -20,9 +50,6 @@
     <loc>https://filpill.github.io/categories/programming/</loc>
     <lastmod>2023-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/tags/raspberry-pi/</loc>
-    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://filpill.github.io/data_projects/pi_ssh/</loc>
     <lastmod>2023-07-06T00:00:00+00:00</lastmod>
   </url><url>
@@ -32,31 +59,7 @@
     <loc>https://filpill.github.io/tags/ssh/</loc>
     <lastmod>2023-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/tags/</loc>
-    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/3d-printing/</loc>
-    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://filpill.github.io/tags/arduino/</loc>
-    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/design/</loc>
-    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/categories/design/</loc>
-    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/engineering/</loc>
-    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/categories/engineering/</loc>
-    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/eng_projects/</loc>
-    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/tags/mechanical/</loc>
     <lastmod>2023-07-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/eng_projects/servoturret/</loc>
