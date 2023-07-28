@@ -23,9 +23,9 @@ The only necessary wired connection is a USB-C to provide power to the board.</d
       <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/eng_projects/servoturret/</guid>
-      <description>Summary This project has been made to practise the use of sending instructions to various electronics via serial communications.
+      <description>Summary This project has been made to practise the use of sending instructions to various electronics for both the Arduino and the Raspberry Pi.
 I&amp;rsquo;ve segmented this project into two parts/versions:
-Arduino - Manual Control with Mouse via Serial Comms Port Raspberry Pi - AI Face Tracking with Python and Camera Module Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial communications.</description>
+Arduino - Mouse Control via Serial Communications Port Raspberry Pi - Mouse Control via Python Tkinter Program Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial communications.</description>
     </item>
     
     <item>
