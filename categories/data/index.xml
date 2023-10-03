@@ -6,7 +6,19 @@
     <description>Recent content in data on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Web Scraping</title>
+      <link>https://filpill.github.io/data_projects/scrape/</link>
+      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/scrape/</guid>
+      <description>Summary Extracting data from public facing websites is a challenging, yet rewarding prospect.
+The data contained inside each website holds information that could help leverage better decision making: e.g. comparing various products and services with various metrics such as price and ratings.
+Modern website designs are increasingly making it more challenging to extract data due to:
+The stress put on the server with rate of requests being made. Cutting into their profit margins by using the collected data against them.</description>
+    </item>
+    
     <item>
       <title>Arch Linux Installation Guide</title>
       <link>https://filpill.github.io/data_projects/arch_install/</link>
