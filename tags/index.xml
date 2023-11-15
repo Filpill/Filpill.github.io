@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://filpill.github.io/tags/linux/</link>
+      <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>data</title>
       <link>https://filpill.github.io/tags/data/</link>
@@ -94,15 +103,6 @@
       <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/tags/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://filpill.github.io/tags/linux/</link>
-      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/tags/linux/</guid>
       <description></description>
     </item>
     

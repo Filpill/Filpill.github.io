@@ -6,7 +6,30 @@
     <description>Recent content in List of Data Projects on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/data_projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/data_projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graphical Setup For Linux Desktop</title>
+      <link>https://filpill.github.io/data_projects/linux_desktop_env/</link>
+      <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/linux_desktop_env/</guid>
+      <description>Introduction After installing a fresh copy of Arch Linux, you are probably wanting to get around to setting up some type of graphical environment.
+A black terminal screen is not necessarily conducive to an enjoyable Linux desktop experience.
+It can be difficult to setup a graphical environment for the first time if there is not much guidance. A lot of Linux advice can be very scattershot, and leaving most people quite lost.</description>
+    </item>
+    
+    <item>
+      <title>Windows to Linux VM Fileshare</title>
+      <link>https://filpill.github.io/data_projects/windows-linux-fileshare/</link>
+      <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/data_projects/windows-linux-fileshare/</guid>
+      <description>Why Share Files Directly Between Windows and Linux? Why share files between these two different operating systems? A redundant system, no?
+I think not.
+I&amp;rsquo;ll share my reasons why here:
+I have 2 seperate workstreams for windows and linux respectively on my PC: Certain tasks are more optimal to do on windows e.g. CAD, video/photo editting etc. Other tasks are more optimally accomplished on linux software: file management, code development etc.</description>
+    </item>
+    
     <item>
       <title>Python Web Scraping</title>
       <link>https://filpill.github.io/data_projects/scrape/</link>
