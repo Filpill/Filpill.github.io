@@ -9,278 +9,175 @@
     <lastBuildDate>Tue, 14 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Graphical Setup For Linux Desktop</title>
-      <link>https://filpill.github.io/data_projects/linux_desktop_env/</link>
+      <link>https://filpill.github.io/projects/2023-11-14-linux-gui-setup/</link>
       <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/linux_desktop_env/</guid>
-      <description>Introduction After installing a fresh copy of Arch Linux, you are probably wanting to get around to setting up some type of graphical environment.
-A black terminal screen is not necessarily conducive to an enjoyable Linux desktop experience.
-It can be difficult to setup a graphical environment for the first time if there is not much guidance. A lot of Linux advice can be very scattershot, and leaving most people quite lost.</description>
+      <guid>https://filpill.github.io/projects/2023-11-14-linux-gui-setup/</guid>
+      <description>Instructional guide for setting up a GUI Window Manager in Linux | DWM &#43; Alacritty</description>
     </item>
     
     <item>
       <title>Windows to Linux VM Fileshare</title>
-      <link>https://filpill.github.io/data_projects/windows-linux-fileshare/</link>
+      <link>https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/</link>
       <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/windows-linux-fileshare/</guid>
-      <description>Why Share Files Directly Between Windows and Linux? Why share files between these two different operating systems? A redundant system, no?
-I think not.
-I&amp;rsquo;ll share my reasons why here:
-I have 2 seperate workstreams for windows and linux respectively on my PC: Certain tasks are more optimal to do on windows e.g. CAD, video/photo editting etc. Other tasks are more optimally accomplished on linux software: file management, code development etc.</description>
+      <guid>https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/</guid>
+      <description>How-to guide for setting up shared folder on Windows with your Hyper-V Linux VM</description>
     </item>
     
     <item>
       <title>Python Web Scraping</title>
-      <link>https://filpill.github.io/data_projects/scrape/</link>
+      <link>https://filpill.github.io/projects/2023-10-03-python-webscrape/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/scrape/</guid>
-      <description>Summary Extracting data from public facing websites is a challenging, yet rewarding prospect.
-The data contained inside each website holds information that could help leverage better decision making: e.g. comparing various products and services with various metrics such as price and ratings.
-Modern website designs are increasingly making it more challenging to extract data due to:
-The stress put on the server with rate of requests being made. Cutting into their profit margins by using the collected data against them.</description>
+      <guid>https://filpill.github.io/projects/2023-10-03-python-webscrape/</guid>
+      <description>Showcasing webscraping and data analysis of a product website on Python</description>
     </item>
     
     <item>
       <title>Cyber Deck Assembly - Raspberry Pi</title>
-      <link>https://filpill.github.io/eng_projects/cyberdeck/</link>
+      <link>https://filpill.github.io/projects/2023-07-10-cyber-deck-design/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/cyberdeck/</guid>
-      <description>Summary I&amp;rsquo;ve designed out a &amp;ldquo;cyber deck&amp;rdquo;/frame for my Raspberry Pi to convert it into a usable personal computer. It features a 7 inch touch display and a web camera plugged into the boards DSI (Display Serial Interface) connectors. Should the design become more compact in the future, the ribbon cables are ideal for routing inside tight enclosures.
-The only necessary wired connection is a USB-C to provide power to the board.</description>
+      <guid>https://filpill.github.io/projects/2023-07-10-cyber-deck-design/</guid>
+      <description>3D Printed frame for Raspberry Pi featuring integrated camera and display</description>
     </item>
     
     <item>
       <title>Raspberry Pi Remote Access Guide</title>
-      <link>https://filpill.github.io/data_projects/pi_ssh/</link>
+      <link>https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/</link>
       <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/pi_ssh/</guid>
-      <description>Summary This article documents how to remotely access your Raspberry Pi using either Secure Shell (SSH) or Remote Desktop Protocol (RDP).
-The benefit of remote access is that you do not need to constantly plug in a wired keyboard and mouse to do some configuration on your Pi devices.
-The SSH access is ideal for cases with exclusive involvement of the terminal. The remote desktop acess is requied for situations using the graphical desktop environment.</description>
+      <guid>https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/</guid>
+      <description>Guide for remotely accessing a Raspberry Pi via SSH and RDP respectively</description>
     </item>
     
     <item>
       <title>Servo Turret Control</title>
-      <link>https://filpill.github.io/eng_projects/servoturret/</link>
+      <link>https://filpill.github.io/projects/2023-07-03-servo-turret/</link>
       <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/servoturret/</guid>
-      <description>Summary This project has been made to practise the use of sending instructions to various electronics for both the Arduino and the Raspberry Pi.
-I&amp;rsquo;ve segmented this project into two parts/versions:
-Arduino - Mouse Control via Serial Communications Port Raspberry Pi - Mouse Control via Python Tkinter Program Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial communications.</description>
+      <guid>https://filpill.github.io/projects/2023-07-03-servo-turret/</guid>
+      <description>Writing Arduino and Python software to control servo turret using mouse inputs</description>
     </item>
     
     <item>
       <title>3D Printed RC Road Vehicle</title>
-      <link>https://filpill.github.io/eng_projects/rctractor/</link>
+      <link>https://filpill.github.io/projects/2023-06-12-3d-printed-car/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/rctractor/</guid>
-      <description>Summary Finshed designing and building a functional 3D Printed RC car which accidently ended up resembling a tractor by chance. Thats the consequence of a lack of planning and design contraints&amp;hellip;
-The reason for the large wheels in the back is because of how I started my design process. The design was built around the gearbox. Since the gearbox ended up being very tall, I figured I would just mount some very large wheels to clear the ground.</description>
+      <guid>https://filpill.github.io/projects/2023-06-12-3d-printed-car/</guid>
+      <description>Showcasing design and build of the latest iteration of my 3D printed car</description>
     </item>
     
     <item>
       <title>How to Set Up Your Radio Controlled System</title>
-      <link>https://filpill.github.io/eng_projects/rcsetup/</link>
+      <link>https://filpill.github.io/projects/2023-06-07-radio-control-setup/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/rcsetup/</guid>
-      <description>Summary This article will briefly outline the basic arrangement that can be used as guidance for your DIY RC electronics.
-Parts List Any of these specific parts that are mentioned here can be interchanged for your specific needs. The list of parts outlined is the minumum number of components to have a functioning motor and servo.
-Component Part No. Radio Controller/Transmitter FS-GT5 Radio Reciever FS-BS6 Electronic Speed Controller (ESC) KYRC X60 - Brush Battery Eliminary Curcuit (BEC) KYRC X60 - Brush Lipo Voltage Indicator BX100 Brushed/Brushless Motor 550/35T Brushed Motor Servo MG-996R LiPo Battery 11.</description>
-    </item>
-    
-    <item>
-      <title>3D Printed GoPro Skateboard</title>
-      <link>https://filpill.github.io/page_archive/gopro/</link>
-      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/gopro/</guid>
-      <description>Summary Designed a skateboard for my GoPro, experimenting with different camera perspectives; in particular with low rolling shots.
-The camera mount point is not ideal as the wheels are caught in the field of view&amp;hellip;It&amp;rsquo;s not too bad, but still a little bit distracting when shooting a wide angle. It&amp;rsquo;s hard to envision this issue when you are designing it. It&amp;rsquo;s easy to get distracted with the other design elements.</description>
+      <guid>https://filpill.github.io/projects/2023-06-07-radio-control-setup/</guid>
+      <description>Instructional guide for setting up a radio control system with your motor and servo</description>
     </item>
     
     <item>
       <title>Arch Linux Installation Guide</title>
-      <link>https://filpill.github.io/data_projects/arch_install/</link>
+      <link>https://filpill.github.io/projects/2023-05-18-arch-install-guide/</link>
       <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/arch_install/</guid>
-      <description>Introduction This guide details the installation procdure of Arch onto a Virtual Machine (VM). Network configuration is not in the scope of this guide if you are installing on bare metal.
-The motivation behind this web page is to keep some guidance material for myself and also for anybody new looking to install Arch from scratch.
-The virtual machine is made with Microsofts Hyper-V program. The steps may differ slightly if you choose to use a another hypervisor such as VirtualBox.</description>
+      <guid>https://filpill.github.io/projects/2023-05-18-arch-install-guide/</guid>
+      <description>Step-by-step guide for installing Arch Linux from scratch on a VM</description>
     </item>
     
     <item>
       <title>Chess.com API - Data Visualisation</title>
-      <link>https://filpill.github.io/data_projects/chess/</link>
+      <link>https://filpill.github.io/projects/2023-04-10-chess-data/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/chess/</guid>
-      <description>Summary I&amp;rsquo;ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.
-I was interested in monitoring my rating change over the cumalative number of games played.
-Link to the project here: Chess.com - Python Analysis
-Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Chess Username Stats] end subgraph Data Extraction A--&gt;B[Requesting List of Month Endpoints] B--&gt;C[Request List Games For Each Month Endpoint] C--&gt;D[Unpack all Games into Dataframe] end subgraph Data Cleaning D--&gt;E[Filtering to Blitz Chess Games] E--&gt;F[Cleaning pgn Chess data</description>
-    </item>
-    
-    <item>
-      <title>Python Lottery Game</title>
-      <link>https://filpill.github.io/page_archive/lottery/</link>
-      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/lottery/</guid>
-      <description>Summary A game where you test your luck: Pick some numbers and try to win!
-Link to github project: https://github.com/Filpill/lottery-game
-Lottery Algorithm flowchart TD; subgraph Lottery Algorithm start(Pick \nLottery Numbers) --Check--&gt; check{Are the \ninputs valid?} check --Yes--&gt; draw[Generate Randomised\nLottery Draw] check --No--&gt; start draw --&gt; match{Do Picks Match the\n Lottery Draw?} match --Yes--&gt; win(Winner!) match --No--&gt; reroll[Chance to reroll\nthe incorrect numbers] reroll --&gt; check2{Did you hit any\n more correct picks?} check2 --No--&gt; lost(Loser!</description>
-    </item>
-    
-    <item>
-      <title>Tableau Public Profile - Filip Livancic</title>
-      <link>https://filpill.github.io/page_archive/tableau_public/</link>
-      <pubDate>Wed, 09 Nov 2022 20:14:13 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/tableau_public/</guid>
-      <description>Summary I&amp;rsquo;ve made a Tableau Public profile to showcase any public datasets I&amp;rsquo;ve analysed in Tableau:
-Link to Tableau Public: https://public.tableau.com/app/profile/filip.livancic</description>
+      <guid>https://filpill.github.io/projects/2023-04-10-chess-data/</guid>
+      <description>Chess player data extraction via API and analysing performance data on Python</description>
     </item>
     
     <item>
       <title>Codewars API - User Statistics</title>
-      <link>https://filpill.github.io/data_projects/codewars/</link>
-      <pubDate>Wed, 09 Nov 2022 20:13:56 +0000</pubDate>
+      <link>https://filpill.github.io/projects/2022-11-09-codewars-data/</link>
+      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/codewars/</guid>
-      <description>Summary I&amp;rsquo;ve been very involved in practising my programming skills in python and sql lately on codewars.
-I figured it would be a good idea to visualise my codewars progression.
-I&amp;rsquo;m utilising the codewars public API to pull out my information. The user data is processed in Python with the output being consolidated into a Excel dashboard using Xlsxwriter.
-Link to github project: https://github.com/Filpill/codewars-stats
-Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Codewars Username Stats] end subgraph Return JSON A--&gt;C[Username Profile Data] A--&gt;D[List of Compeleted Kata by User] A--&gt;E[Individual Challenge Details] end subgraph Merge Data D--&gt;F[Merge Data via the Kata ID] E--&gt;F F--&gt;G[Re-name Columns to Better Format] end subgraph Count Aggregates G--&gt;H[Categories] G--&gt;I[Monthly Completions] G--&gt;J[Kata Rank] G--&gt;K[Languages] end subgraph Visualisation H--&gt;L[Graphing Cats.</description>
+      <guid>https://filpill.github.io/projects/2022-11-09-codewars-data/</guid>
+      <description>Extracting codewars userdata and analysing metrics on Python</description>
     </item>
     
     <item>
       <title>Tableau Client Server API: Extracting Dashboard Images</title>
-      <link>https://filpill.github.io/data_projects/tableauapi/</link>
+      <link>https://filpill.github.io/projects/2022-09-16-tableau-client-server/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/tableauapi/</guid>
-      <description>Summary I&amp;rsquo;ve been in the process of developing numerous Tableau dashboards across different areas of the airline business to share safety data across the organisation.
-However, there is no easy way to download all the various charts from dashboard views you have produced to recycle for the purpose of a powerpoint presentation.
-Ideally we want to avoid duplicating the data analytics process in other systems such as Python as we don&amp;rsquo;t want to incur uncessary work to present the same information.</description>
+      <guid>https://filpill.github.io/projects/2022-09-16-tableau-client-server/</guid>
+      <description>Connecting to TCS API and collecting workbook object metadata with Python</description>
     </item>
     
     <item>
       <title>Building Data Pipelines With Python: Systems Perspective</title>
-      <link>https://filpill.github.io/data_projects/data_system/</link>
+      <link>https://filpill.github.io/projects/2022-07-23-python-pipelines/</link>
       <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/data_system/</guid>
-      <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
-This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Pipelines These are some of the goals we are trying to achieve:
-To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.</description>
+      <guid>https://filpill.github.io/projects/2022-07-23-python-pipelines/</guid>
+      <description>Python integration methods and automation practices for SQL and MS Office products</description>
     </item>
     
     <item>
       <title>Github - Command Line Interface Procedures</title>
-      <link>https://filpill.github.io/data_projects/github/</link>
+      <link>https://filpill.github.io/projects/2022-07-17-github-cli/</link>
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/github/</guid>
-      <description>Summary This article documents the most common ways I interact with git and in maintaining my programs.
-graph LR; subgraph High-Level Process direction LR 0[Installation]--&gt;1[SSH] 1 --&gt; 2[Git Configuration] 2 --&gt; 3[New Repository] 3 --&gt; 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it&amp;rsquo;s considered the de-facto way to interact with Git&amp;rsquo;s tools.
-Any other versions of Git are just wrappers for what Git does on the command-line.</description>
-    </item>
-    
-    <item>
-      <title>Valorant API - Web Scraping Project</title>
-      <link>https://filpill.github.io/page_archive/val_scrp/</link>
-      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/val_scrp/</guid>
-      <description>Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
-There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
-Though the volume of data highlighted on the website is limited compared to the actual volume of games I&amp;rsquo;ve played.</description>
+      <guid>https://filpill.github.io/projects/2022-07-17-github-cli/</guid>
+      <description>Guide book for how to execute basic git commands on the terminal</description>
     </item>
     
     <item>
       <title>Website Design with Hugo Framework</title>
-      <link>https://filpill.github.io/data_projects/hugo/</link>
+      <link>https://filpill.github.io/projects/2022-06-03-building-hugo/</link>
       <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/hugo/</guid>
-      <description>Summary I wanted to showcase my projects without devoting a large amount of time to maintaining HTML code and needed a framework to make it easy to share my projects.
-Hugo is a static site generator written in Go and compiles your documents written in markdown into cleanly formatted HTML and CSS files.
-The first iteration of my website was manually written in HTML/CSS. It was a little bit ugly compared to the second iteration which is using hugo framework.</description>
-    </item>
-    
-    <item>
-      <title>Profile</title>
-      <link>https://filpill.github.io/profile/</link>
-      <pubDate>Tue, 31 May 2022 18:15:04 +0100</pubDate>
-      
-      <guid>https://filpill.github.io/profile/</guid>
-      <description>About Me Aeronautical engineering educational background: Aero/Mechanical + Aircraft Design Self-taught data analytics programmer: Python/Microsoft SQL Server/GCP Biq Query Highly knowledgeable in airline safety management domain Interested in automation of data analytics Hobbyist 3D Print Designer Hobbyist Glider Pilot Resume Previous Next &amp;nbsp; &amp;nbsp; / [pdf] View the PDF file here. Links LinkedIn Profile Tableau Public Profile </description>
-    </item>
-    
-    <item>
-      <title>Age of Empire 2 API - Data Visualisation</title>
-      <link>https://filpill.github.io/page_archive/aoe2/</link>
-      <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/aoe2/</guid>
-      <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
+      <guid>https://filpill.github.io/projects/2022-06-03-building-hugo/</guid>
+      <description>Starter guide for building a static website using Hugo utilities</description>
     </item>
     
     <item>
       <title>Lithophane Lamp</title>
-      <link>https://filpill.github.io/eng_projects/litho/</link>
+      <link>https://filpill.github.io/projects/2021-11-13-lithophane-design/</link>
       <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/litho/</guid>
-      <description>Summary Designed a 3D printed lithophane lamp in Soldworks. Main feature: Replaceable lithophanes of chosen standard of aspect ratio/dimension. Features Top/Bottom Panels retained with three M3 screws &amp;ndash; Removing the panels gives access to replacing the printed lithophane. Wiring threads through back of assembly and socket leans on back the back panel. Forward attachment clamps the socket and constrains the foward movement of the light socket with screws. I have two slightly different designs to accomadate either an E14 lamp socket or an E27 lamp socket.</description>
-    </item>
-    
-    <item>
-      <title>3D Printed Car - Bluetooth Controller Interface</title>
-      <link>https://filpill.github.io/page_archive/3dcar/</link>
-      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/3dcar/</guid>
-      <description>Summary Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven&amp;rsquo;t had time to iterate over the design due to the complexity and required time investment. The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects. The project requires some simplification for the desired goal of having a robust car design.</description>
-    </item>
-    
-    <item>
-      <title>2D Heat Transfer Simulation</title>
-      <link>https://filpill.github.io/page_archive/ht_sim/</link>
-      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/ht_sim/</guid>
-      <description>Summary Re-writing 2D heat transfer simulation designed in MATLAB to Python. Solved using Successive Over Relaxation Algorithm and Finite Difference Method used to capture incremental changes of temeperature on grid. Animated the heat transitions in Python at each timestep using FuncAnimation component of matplotlib. LHS boundaries on the mesh and the application of the heat input on the leftmost nodes. Heat Input lasts 2 seconds in resulting simulation before being turned off.</description>
+      <guid>https://filpill.github.io/projects/2021-11-13-lithophane-design/</guid>
+      <description>3D printed build and techniques in making a lithophane lamp</description>
     </item>
     
     <item>
       <title>UAV Aircraft Design</title>
-      <link>https://filpill.github.io/eng_projects/uav/</link>
+      <link>https://filpill.github.io/projects/2018-06-17-uav-aircraft-design/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/uav/</guid>
-      <description>Summary My elected project for my 4th year in University was to design and build a UAV aircraft. The design requirements were driven out from the 2017 BMFA competition (Payload Challenge). The design had to be capable of flying some circuits with varying volumes of water weighing up to 3.5kg. As project engineer, I was responsible for coordinating the technical requirements and outputs between our sub-teams. Previous Next &amp;nbsp; &amp;nbsp; / [pdf] View the PDF file here.</description>
+      <guid>https://filpill.github.io/projects/2018-06-17-uav-aircraft-design/</guid>
+      <description>BMFA 2018: Building competitive aircraft with water ballast and flying various missions</description>
     </item>
     
     <item>
       <title>Forward Facing Step - Particle Image Velocimetry</title>
-      <link>https://filpill.github.io/eng_projects/piv/</link>
+      <link>https://filpill.github.io/projects/2017-06-01-piv-dissertation/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/piv/</guid>
-      <description>Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.
-Particle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.
-In this experiment the height of the boundary layer is similarly proportioned to the height of the step.</description>
+      <guid>https://filpill.github.io/projects/2017-06-01-piv-dissertation/</guid>
+      <description>Dissertation Project: Investigating flow field characteristics of a stepped geometry</description>
+    </item>
+    
+    <item>
+      <title>Profile - Filip Livancic</title>
+      <link>https://filpill.github.io/profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/profile/</guid>
+      <description>About Me Aeronautical Engineering Degree Airline safety management expeience Self-taught in programming and data analytics Invested in automating workflows and applying systems level thinking. Hobbies CAD Design 3D Printing Glider Pilot Goals of Website &amp;ldquo;Learning never exhausts the mind.&amp;rdquo; - Leonardo da Vinci
+There is an infinite capacity to learn from&amp;hellip;but how far will you choose to take it?
+The purpose of this website is to document my learning journey and it aims to achieve these goals:</description>
     </item>
     
     

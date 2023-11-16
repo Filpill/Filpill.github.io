@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Python Web Scraping | Filip Livancic</title>
+<meta name="keywords" content="">
+<meta name="description" content="Showcasing webscraping and data analysis of a product website on Python">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/projects/2023-10-03-python-webscrape/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa8fdcb3fde926e796b3b5a7d53394788128df89bcc404d129460bf95da53b33.css" integrity="sha256-&#43;o/cs/3pJueWs7Wn1TOUeIEo34m8xATRKUYL&#43;V2lOzM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Python Web Scraping" />
+<meta property="og:description" content="Showcasing webscraping and data analysis of a product website on Python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/2023-10-03-python-webscrape/" />
+<meta property="og:image" content="https://filpill.github.io/img/scrape/scrape_thumbnail.png" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2023-10-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-10-03T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/scrape/scrape_thumbnail.png" />
+<meta name="twitter:title" content="Python Web Scraping"/>
+<meta name="twitter:description" content="Showcasing webscraping and data analysis of a product website on Python"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "List of Articles",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Python Web Scraping",
+      "item": "https://filpill.github.io/projects/2023-10-03-python-webscrape/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python Web Scraping",
+  "name": "Python Web Scraping",
+  "description": "Showcasing webscraping and data analysis of a product website on Python",
+  "keywords": [
+    
+  ],
+  "articleBody": "Summary Extracting data from public facing websites is a challenging, yet rewarding prospect.\nThe data contained inside each website holds information that could help leverage better decision making: e.g. comparing various products and services with various metrics such as price and ratings.\nModern website designs are increasingly making it more challenging to extract data due to:\nThe stress put on the server with rate of requests being made. Cutting into their profit margins by using the collected data against them. The webscraping approach always needs to be tailored to the website your are visiting. But from my current experience, it will usually fall into these catagories:\nUsing some web-automation framework like Selenium or Playwright and then parsing the HTML (loaded via the browser automation) using something like Selectolax. If the data is being loaded dynamically with Javascript, then I’m also searching the browser for the “hidden API” which is calling the backend to fetch into the frontend. The benefit of searching for that so called “Hidden API” is that the retrieved data is already organised into a neat little JSON file.\nPreferably you will probably want the data directly from the backend to retrieve a dataset. Transforming a JSON is much easier than trying to parse through the front matter for HTML tags and containers.\nIn the example shown below, I’ve scraped the Pimoroni.com website by making requests to the back-end API to retrieve the JSON data. I’ve analysed a sample of the data here for reference:\nLink to the project here: Python Web Scraping\nAnalytics Process Flow | Pimoroni Data Flowchart below denotes my process for making requests to Pimoroni.com:\ngraph TD; subgraph Process Initiation 0([Python Notebook Executed])--\u003e A1[Select Product Collection] A1--\u003eA2[Request JSON Data via API] end subgraph Data Extraction A2--\u003eB[Return Number of Hits on Product Page] B--\u003eC[Modify Request To Return All Hits in a Single Page Request] C--\u003eD[Unpack Products from JSON\ninto Dataframe] D--\u003eE[Prune Unnecessary data from Dataframe] E--\u003eF[Loop for every Collection on Website] F--\u003eF1{Are all Product Collections Retrieved?} F1--\u003eF1y[Yes] F1--\u003eF1n[No]--Concat Results to Existing DF--\u003eA1 end subgraph Data Visualization F1y--\u003eV1[Drop Duplicate Product ID's] V1--\u003eV2[Groupby and Count Datapoints] V2--\u003eV3([Create Charts and Save Files]) end Data Visualisations | Pimoroni Data The following images are served directly from my github repository:\n",
+  "wordCount" : "370",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/scrape/scrape_thumbnail.png","datePublished": "2023-10-03T00:00:00Z",
+  "dateModified": "2023-10-03T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/2023-10-03-python-webscrape/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">List of Articles</a></div>
+    <h1 class="post-title">
+      Python Web Scraping
+    </h1>
+    <div class="post-description">
+      Showcasing webscraping and data analysis of a product website on Python
+    </div>
+    <div class="post-meta"><span title='2023-10-03 00:00:00 +0000 UTC'>October 3, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;370 words
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/scrape/scrape_thumbnail.png" alt="Scraping thumbnail">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#analytics-process-flow--pimoroni-data" aria-label="Analytics Process Flow | Pimoroni Data">Analytics Process Flow | Pimoroni Data</a></li>
+                <li>
+                    <a href="#data-visualisations--pimoroni-data" aria-label="Data Visualisations | Pimoroni Data">Data Visualisations | Pimoroni Data</a>
+                </li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h1>
+<p>Extracting data from public facing websites is a challenging, yet rewarding prospect.</p>
+<p>The data contained inside each website holds information that could help leverage better decision making: <em>e.g. comparing various products and services with various metrics such as price and ratings.</em></p>
+<p>Modern website designs are increasingly making it more challenging to extract data due to:</p>
+<ul>
+<li>The stress put on the server with rate of requests being made.</li>
+<li>Cutting into their profit margins by using the collected data against them.</li>
+</ul>
+<p>The webscraping approach always needs to be tailored to the website your are visiting. But from my current experience, it will usually fall into these catagories:</p>
+<ul>
+<li>Using some web-automation framework like Selenium or Playwright and then parsing the HTML (loaded via the browser automation) using something like Selectolax.</li>
+<li>If the data is being loaded dynamically with Javascript, then I&rsquo;m also searching the browser for the <em>&ldquo;hidden API&rdquo;</em> which is calling the backend to fetch into the frontend.</li>
+</ul>
+<p>The benefit of searching for that so called <em>&ldquo;Hidden API&rdquo;</em> is that the retrieved data is already organised into a neat little JSON file.</p>
+<p>Preferably you will probably want the data directly from the backend to retrieve a dataset. Transforming a JSON is much easier than trying to parse through the front matter for HTML tags and containers.</p>
+<p>In the example shown below, I&rsquo;ve scraped the Pimoroni.com website by making requests to the back-end API to retrieve the JSON data. I&rsquo;ve analysed a sample of the data here for reference:</p>
+<p>Link to the project here: <a href="https://github.com/Filpill/web_scraper">Python Web Scraping</a></p>
+<h3 id="analytics-process-flow--pimoroni-data">Analytics Process Flow | Pimoroni Data<a hidden class="anchor" aria-hidden="true" href="#analytics-process-flow--pimoroni-data">#</a></h3>
+<p>Flowchart below denotes my process for making requests to Pimoroni.com:</p>
+<div style="text-align:center;">
+	<div class="mermaid">
+		
+	  
+
+graph TD;
+
+    subgraph Process Initiation
+    0([Python Notebook Executed])--> A1[Select Product Collection]
+    A1-->A2[Request JSON Data via API]
+    end
+
+    subgraph Data Extraction
+    A2-->B[Return Number of Hits <br>on Product Page]
+    B-->C[Modify Request To <br>Return All Hits <br>in a Single Page Request]
+    C-->D[Unpack Products from JSON<br>into Dataframe]
+    D-->E[Prune Unnecessary data from Dataframe]
+    E-->F[Loop for every <br>Collection on Website]
+    F-->F1{Are all Product <br>Collections Retrieved?}
+    F1-->F1y[Yes]
+    F1-->F1n[No]--Concat Results <br> to Existing DF-->A1
+    end
+
+    subgraph Data Visualization
+    F1y-->V1[Drop Duplicate Product ID's]
+    V1-->V2[Groupby and Count Datapoints]
+    V2-->V3([Create Charts and Save Files])
+    end
+
+
+	</div>
+</div>
+
+<h3 id="data-visualisations--pimoroni-data">Data Visualisations | Pimoroni Data<a hidden class="anchor" aria-hidden="true" href="#data-visualisations--pimoroni-data">#</a></h3>
+<p>The following images are served directly from my github repository:</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/Filpill/web_scraper/main/pimoroni/charts/product_type.png" alt="Product Types"  />
+
+<img loading="lazy" src="https://raw.githubusercontent.com/Filpill/web_scraper/main/pimoroni/charts/vendor.png" alt="Vendors"  />
+</p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Windows to Linux VM Fileshare</span>
+  </a>
+  <a class="next" href="https://filpill.github.io/projects/2023-07-10-cyber-deck-design/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Cyber Deck Assembly - Raspberry Pi</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

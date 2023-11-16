@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Tableau Client Server API: Extracting Dashboard Images | Filip Livancic</title>
+<meta name="keywords" content="">
+<meta name="description" content="Connecting to TCS API and collecting workbook object metadata with Python">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/projects/2022-09-16-tableau-client-server/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa8fdcb3fde926e796b3b5a7d53394788128df89bcc404d129460bf95da53b33.css" integrity="sha256-&#43;o/cs/3pJueWs7Wn1TOUeIEo34m8xATRKUYL&#43;V2lOzM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Tableau Client Server API: Extracting Dashboard Images" />
+<meta property="og:description" content="Connecting to TCS API and collecting workbook object metadata with Python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/2022-09-16-tableau-client-server/" />
+<meta property="og:image" content="https://filpill.github.io/img/tableau/tableau_py.png" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2022-09-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-16T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/tableau/tableau_py.png" />
+<meta name="twitter:title" content="Tableau Client Server API: Extracting Dashboard Images"/>
+<meta name="twitter:description" content="Connecting to TCS API and collecting workbook object metadata with Python"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "List of Articles",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Tableau Client Server API: Extracting Dashboard Images",
+      "item": "https://filpill.github.io/projects/2022-09-16-tableau-client-server/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tableau Client Server API: Extracting Dashboard Images",
+  "name": "Tableau Client Server API: Extracting Dashboard Images",
+  "description": "Connecting to TCS API and collecting workbook object metadata with Python",
+  "keywords": [
+    
+  ],
+  "articleBody": "Summary I’ve been in the process of developing numerous Tableau dashboards across different areas of the airline business to share safety data across the organisation.\nHowever, there is no easy way to download all the various charts from dashboard views you have produced to recycle for the purpose of a powerpoint presentation.\nIdeally we want to avoid duplicating the data analytics process in other systems such as Python as we don’t want to incur uncessary work to present the same information.\nThe Tableau Client Server API helps solve this issue by enabling us to programatically extract dashboard images in an effcient manner.\nProcess Overview iPython/Jupyter Notebook Connecting to the Tableau Client Server API with personal access token. Collating all Projects and Views into table and utilising view id’s to extract dashboard images in conjunction with Pandas. Dashboard images cropped down to chart dimensions with a Python Image Library prepare image for presentation use. Link to the project here: Tableau Dashboard Image Extraction Notebook\nTableau Client Server API Workflow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--\u003eA[Personal Access Tokens: Authenticating Valid API Connection\nwith Tableau Server] end subgraph Get Requests: Server Object ID's A--\u003eC[Gathering Project ID's] A--\u003eD[Gathering Workbook ID's] A--\u003eE[Gathering View ID's] end subgraph Combine Data C--\u003eF[Merging ID Info into Single Pandas DataFrame] D--\u003eF E--\u003eF F--\u003eG[Filtering DataFrame to Selected Project ID] G--\u003eH[Collecting List of Server View Objects] end subgraph Process Images H--\u003eI[Saving all the Images of View Objects] I--\u003eJ[Python Image Library\nCrop Images to Correct Dimensions] J--\u003eK([Save Cropped Dashboard Images]) end Conclusion As you can see, the process for extracting the Tableau image data from dashboards is fairly straightforward.\nWith the View ID, you are able to extract the full dashboard image. The only drawback is that there is no way to pull out the individual charts from the dashboard view via this API. Therefore you need to specify all the pixel dimensions to crop the images into their respective charts.\nThe only alternative is to implement a web-scraping technique on Tableau Server and figure out a way to pull down the chart data. It would probably require something like Selenium because of the dynamic nature of the website.\nRegardless, with the Tableau Client Server API you will still benefit from the dashboard image extraction in addition to allowing you to repurpose your existing dashboards for presentation purposes.\n",
+  "wordCount" : "388",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/tableau/tableau_py.png","datePublished": "2022-09-16T00:00:00Z",
+  "dateModified": "2022-09-16T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/2022-09-16-tableau-client-server/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">List of Articles</a></div>
+    <h1 class="post-title">
+      Tableau Client Server API: Extracting Dashboard Images
+    </h1>
+    <div class="post-description">
+      Connecting to TCS API and collecting workbook object metadata with Python
+    </div>
+    <div class="post-meta"><span title='2022-09-16 00:00:00 +0000 UTC'>September 16, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;388 words
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/tableau/tableau_py.png" alt="Tableau Client Server API with Python">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a><ul>
+                        
+                <li>
+                    <a href="#process-overview" aria-label="Process Overview">Process Overview</a></li>
+                <li>
+                    <a href="#tableau-client-server-api-workflow" aria-label="Tableau Client Server API Workflow">Tableau Client Server API Workflow</a></li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h1>
+<p>I&rsquo;ve been in the process of developing numerous Tableau dashboards across different areas of the airline business to share safety data across the organisation.</p>
+<p>However, there is no easy way to download all the various charts from dashboard views you have produced to recycle for the purpose of a powerpoint presentation.</p>
+<p>Ideally we want to avoid duplicating the data analytics process in other systems such as Python as we don&rsquo;t want to incur uncessary work to present the same information.</p>
+<p>The Tableau Client Server API helps solve this issue by enabling us to programatically extract dashboard images in an effcient manner.</p>
+<h2 id="process-overview">Process Overview<a hidden class="anchor" aria-hidden="true" href="#process-overview">#</a></h2>
+<ul>
+<li>iPython/Jupyter Notebook Connecting to the Tableau Client Server API with personal access token.</li>
+<li>Collating all Projects and Views into table and utilising view id&rsquo;s to extract dashboard images in conjunction with Pandas.</li>
+<li>Dashboard images cropped down to chart dimensions with a Python Image Library prepare image for presentation use.</li>
+</ul>
+<p>Link to the project here: <a href="https://github.com/Filpill/Tableau-DashExtract">Tableau Dashboard Image Extraction Notebook</a></p>
+<h2 id="tableau-client-server-api-workflow">Tableau Client Server API Workflow<a hidden class="anchor" aria-hidden="true" href="#tableau-client-server-api-workflow">#</a></h2>
+<div style="text-align:center;">
+	<div class="mermaid">
+		
+	  
+graph TD;
+    subgraph Process Initiation
+    0([Python Notebook Executed])-->A[Personal Access Tokens: <br>Authenticating Valid API Connection<br> with Tableau Server]
+    end
+
+    subgraph Get Requests: Server Object ID's
+    A-->C[Gathering <br>Project ID's]
+    A-->D[Gathering <br>Workbook ID's]
+    A-->E[Gathering <br>View ID's]
+    end
+
+    subgraph Combine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data
+    C-->F[Merging ID Info into Single Pandas DataFrame]
+    D-->F
+    E-->F
+    F-->G[Filtering DataFrame to Selected Project ID]
+    G-->H[Collecting List of Server View Objects]
+    end
+
+    subgraph Process &nbsp;&nbsp;&nbsp;&nbsp;Images
+    H-->I[Saving all the Images of View Objects]
+    I-->J[Python Image Library<br>Crop Images to Correct Dimensions]
+    J-->K([Save Cropped Dashboard Images])
+    end
+
+	</div>
+</div>
+
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>As you can see, the process for extracting the Tableau image data from dashboards is fairly straightforward.</p>
+<p>With the View ID, you are able to extract the full dashboard image. The only drawback is that there is no way to pull out the individual charts from the dashboard view via this API. Therefore you need to specify all the pixel dimensions to crop the images into their respective charts.</p>
+<p>The only alternative is to implement a web-scraping technique on Tableau Server and figure out a way to pull down the chart data. It would probably require something like Selenium because of the dynamic nature of the website.</p>
+<p>Regardless, with the Tableau Client Server API you will still benefit from the dashboard image extraction in addition to allowing you to repurpose your existing dashboards for presentation purposes.</p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://filpill.github.io/projects/2022-11-09-codewars-data/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Codewars API - User Statistics</span>
+  </a>
+  <a class="next" href="https://filpill.github.io/projects/2022-07-23-python-pipelines/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Building Data Pipelines With Python: Systems Perspective</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

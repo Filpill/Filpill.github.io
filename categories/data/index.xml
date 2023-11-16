@@ -1,88 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>data on Filip Livancic</title>
+    <title>Data on Filip Livancic</title>
     <link>https://filpill.github.io/categories/data/</link>
-    <description>Recent content in data on Filip Livancic</description>
+    <description>Recent content in Data on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Web Scraping</title>
-      <link>https://filpill.github.io/data_projects/scrape/</link>
+      <link>https://filpill.github.io/projects/2023-10-03-python-webscrape/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/scrape/</guid>
-      <description>Summary Extracting data from public facing websites is a challenging, yet rewarding prospect.
-The data contained inside each website holds information that could help leverage better decision making: e.g. comparing various products and services with various metrics such as price and ratings.
-Modern website designs are increasingly making it more challenging to extract data due to:
-The stress put on the server with rate of requests being made. Cutting into their profit margins by using the collected data against them.</description>
-    </item>
-    
-    <item>
-      <title>Arch Linux Installation Guide</title>
-      <link>https://filpill.github.io/data_projects/arch_install/</link>
-      <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/data_projects/arch_install/</guid>
-      <description>Introduction This guide details the installation procdure of Arch onto a Virtual Machine (VM). Network configuration is not in the scope of this guide if you are installing on bare metal.
-The motivation behind this web page is to keep some guidance material for myself and also for anybody new looking to install Arch from scratch.
-The virtual machine is made with Microsofts Hyper-V program. The steps may differ slightly if you choose to use a another hypervisor such as VirtualBox.</description>
+      <guid>https://filpill.github.io/projects/2023-10-03-python-webscrape/</guid>
+      <description>Showcasing webscraping and data analysis of a product website on Python</description>
     </item>
     
     <item>
       <title>Chess.com API - Data Visualisation</title>
-      <link>https://filpill.github.io/data_projects/chess/</link>
+      <link>https://filpill.github.io/projects/2023-04-10-chess-data/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/chess/</guid>
-      <description>Summary I&amp;rsquo;ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.
-I was interested in monitoring my rating change over the cumalative number of games played.
-Link to the project here: Chess.com - Python Analysis
-Analytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--&gt;A[HTTPS Request Chess Username Stats] end subgraph Data Extraction A--&gt;B[Requesting List of Month Endpoints] B--&gt;C[Request List Games For Each Month Endpoint] C--&gt;D[Unpack all Games into Dataframe] end subgraph Data Cleaning D--&gt;E[Filtering to Blitz Chess Games] E--&gt;F[Cleaning pgn Chess data</description>
+      <guid>https://filpill.github.io/projects/2023-04-10-chess-data/</guid>
+      <description>Chess player data extraction via API and analysing performance data on Python</description>
+    </item>
+    
+    <item>
+      <title>Codewars API - User Statistics</title>
+      <link>https://filpill.github.io/projects/2022-11-09-codewars-data/</link>
+      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2022-11-09-codewars-data/</guid>
+      <description>Extracting codewars userdata and analysing metrics on Python</description>
     </item>
     
     <item>
       <title>Tableau Client Server API: Extracting Dashboard Images</title>
-      <link>https://filpill.github.io/data_projects/tableauapi/</link>
+      <link>https://filpill.github.io/projects/2022-09-16-tableau-client-server/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/tableauapi/</guid>
-      <description>Summary I&amp;rsquo;ve been in the process of developing numerous Tableau dashboards across different areas of the airline business to share safety data across the organisation.
-However, there is no easy way to download all the various charts from dashboard views you have produced to recycle for the purpose of a powerpoint presentation.
-Ideally we want to avoid duplicating the data analytics process in other systems such as Python as we don&amp;rsquo;t want to incur uncessary work to present the same information.</description>
+      <guid>https://filpill.github.io/projects/2022-09-16-tableau-client-server/</guid>
+      <description>Connecting to TCS API and collecting workbook object metadata with Python</description>
     </item>
     
     <item>
       <title>Building Data Pipelines With Python: Systems Perspective</title>
-      <link>https://filpill.github.io/data_projects/data_system/</link>
+      <link>https://filpill.github.io/projects/2022-07-23-python-pipelines/</link>
       <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
       
-      <guid>https://filpill.github.io/data_projects/data_system/</guid>
-      <description>Summary There are endless oppertunities to streamline processes and automate our data production tasks.
-This article serves as an example for the wide ranging applications I&amp;rsquo;ve been using Python to automate both simple and complex tasks with high efficiency.
-Data Pipelines These are some of the goals we are trying to achieve:
-To build complete end-to-end data solutions from the data source to user. We want to minimise manual task interventions during the data processing.</description>
-    </item>
-    
-    <item>
-      <title>Valorant API - Web Scraping Project</title>
-      <link>https://filpill.github.io/page_archive/val_scrp/</link>
-      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/val_scrp/</guid>
-      <description>Summary I was searching for a Valorant API to collect and analyse some of my own match data. However the developers are not providing personal API keys for this particular game.
-There are some websites which are publishing the Valorant data into the public domain. I decided to scrape my own match data which is being hosted on their web clients.
-Though the volume of data highlighted on the website is limited compared to the actual volume of games I&amp;rsquo;ve played.</description>
-    </item>
-    
-    <item>
-      <title>Age of Empire 2 API - Data Visualisation</title>
-      <link>https://filpill.github.io/page_archive/aoe2/</link>
-      <pubDate>Tue, 31 May 2022 00:59:13 +0100</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/aoe2/</guid>
-      <description>Summary I decided to showcase some data transformations on I game that usually play and see if I could get some cool visualisations/insights. I&amp;rsquo;m using an API to replicate a sample of data visualisations I would typically make. In my work I normally query out of a SQL database for my data ingestion but trying something new here as an experiment. This was my first time using an API to extract JSON data, but its very easy to manipulate on Python to transform into a dict/dataframe.</description>
+      <guid>https://filpill.github.io/projects/2022-07-23-python-pipelines/</guid>
+      <description>Python integration methods and automation practices for SQL and MS Office products</description>
     </item>
     
   </channel>

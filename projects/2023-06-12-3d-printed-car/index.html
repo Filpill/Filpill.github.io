@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>3D Printed RC Road Vehicle | Filip Livancic</title>
+<meta name="keywords" content="">
+<meta name="description" content="Showcasing design and build of the latest iteration of my 3D printed car">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/projects/2023-06-12-3d-printed-car/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa8fdcb3fde926e796b3b5a7d53394788128df89bcc404d129460bf95da53b33.css" integrity="sha256-&#43;o/cs/3pJueWs7Wn1TOUeIEo34m8xATRKUYL&#43;V2lOzM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="3D Printed RC Road Vehicle" />
+<meta property="og:description" content="Showcasing design and build of the latest iteration of my 3D printed car" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/2023-06-12-3d-printed-car/" />
+<meta property="og:image" content="https://filpill.github.io/img/tractor/rc_car_full.png" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2023-06-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-12T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/tractor/rc_car_full.png" />
+<meta name="twitter:title" content="3D Printed RC Road Vehicle"/>
+<meta name="twitter:description" content="Showcasing design and build of the latest iteration of my 3D printed car"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "List of Articles",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "3D Printed RC Road Vehicle",
+      "item": "https://filpill.github.io/projects/2023-06-12-3d-printed-car/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "3D Printed RC Road Vehicle",
+  "name": "3D Printed RC Road Vehicle",
+  "description": "Showcasing design and build of the latest iteration of my 3D printed car",
+  "keywords": [
+    
+  ],
+  "articleBody": "Summary Finshed designing and building a functional 3D Printed RC car which accidently ended up resembling a tractor by chance. Thats the consequence of a lack of planning and design contraints…\nThe reason for the large wheels in the back is because of how I started my design process. The design was built around the gearbox. Since the gearbox ended up being very tall, I figured I would just mount some very large wheels to clear the ground. Therefore I didn’t need to think about mounting points for the rear wheel, nor a CV jointed drive shaft. It was simply direct drive and it was all 3D printed (except the steering mechanism).\nAfter doing some testing on the rear drive-shaft, it was soon discovered to be necessary to bw printed sideways. This is to take advantage of the directional strength of the 3D printed layers so they can tolerate a degree of torque. I made them mistake of printing the shafts vertically, however this drive-train produces incredible amounts of torque such that the plastic drive shaft failed in 10 seconds of run time. Layer adhesion alone is definitely not strong enough to withstand a large torgue being applied to a small cross-section.\nI wanted to make my design as simple as reasonably possible. In my previous projects, trying to implement a suspension was fairly complicated and I had limited spare time I had outside of my 9-5. My only goal was to get a suitable functional prototype car.\nI did end up using the lessons from my previous failed car designs to incorporate into this one. I had a 2 year hiatus from designing anything mechanical, so I suprised even myself when I managed to build out a working 3D printed gearbox.\nIt’s not perfect by any stretch of the imagination; after the assembly I still had to take a dremel to various parts to shave off some millimeters in order to free up mechanisms and part fits. Even after checking for collisions in Solidworks, the clearances and fits may not be what you expect in real life.\nIf I design more cars in the future, I will try make more thoughtful and elegant designs with improved tolerancing. Even after 4 years of 3D printing, its not straightforward to nail down the tolerancing. To be honest, I think it is extremely reliant on trial an error to nail down correctly, but at least its at the point of acceptability for this design.\nGeneral Car Stats Dimensions: Approx. 300mm x 230mm Weight: Approx 1.2kg (including electronics) Motor: 550/35T Battery: 11.1V 3S LiPo Servo: MG995-R Plastic Used: PLA Design Photos Here are some renders made in Solidworks:\nFront View Side View Top View Rear View Front Wheel Hub - Close Up Gearbox - Close Up Steering Articulation Gifs ",
+  "wordCount" : "466",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/tractor/rc_car_full.png","datePublished": "2023-06-12T00:00:00Z",
+  "dateModified": "2023-06-12T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/2023-06-12-3d-printed-car/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">List of Articles</a></div>
+    <h1 class="post-title">
+      3D Printed RC Road Vehicle
+    </h1>
+    <div class="post-description">
+      Showcasing design and build of the latest iteration of my 3D printed car
+    </div>
+    <div class="post-meta"><span title='2023-06-12 00:00:00 +0000 UTC'>June 12, 2023</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;466 words
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/tractor/rc_car_full.png" alt="Solidworks Render of Tractor">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#general-car-stats" aria-label="General Car Stats">General Car Stats</a></li>
+                <li>
+                    <a href="#design-photos" aria-label="Design Photos">Design Photos</a></li>
+                <li>
+                    <a href="#front-view" aria-label="Front View">Front View</a></li>
+                <li>
+                    <a href="#side-view" aria-label="Side View">Side View</a></li>
+                <li>
+                    <a href="#top-view" aria-label="Top View">Top View</a></li>
+                <li>
+                    <a href="#rear-view" aria-label="Rear View">Rear View</a></li>
+                <li>
+                    <a href="#front-wheel-hub---close-up" aria-label="Front Wheel Hub - Close Up">Front Wheel Hub - Close Up</a></li>
+                <li>
+                    <a href="#gearbox---close-up" aria-label="Gearbox - Close Up">Gearbox - Close Up</a></li>
+                <li>
+                    <a href="#steering-articulation" aria-label="Steering Articulation">Steering Articulation</a></li>
+                <li>
+                    <a href="#gifs" aria-label="Gifs">Gifs</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>Finshed designing and building a functional 3D Printed RC car which accidently ended up resembling a tractor by chance. Thats the consequence of a lack of planning and design contraints&hellip;</p>
+<p>The reason for the large wheels in the back is because of how I started my design process. The design was built around the gearbox. Since the gearbox ended up being very tall, I figured I would just mount some very large wheels to clear the ground. Therefore I didn&rsquo;t need to think about mounting points for the rear wheel, nor a CV jointed drive shaft. It was simply direct drive and it was all 3D printed (except the steering mechanism).</p>
+<p>After doing some testing on the rear drive-shaft, it was soon discovered to be necessary to bw printed sideways. This is to take advantage of the directional strength of the 3D printed layers so they can tolerate a degree of torque. I made them mistake of printing the shafts vertically, however this drive-train produces incredible amounts of torque such that the plastic drive shaft failed in 10 seconds of run time. Layer adhesion alone is definitely not strong enough to withstand a large torgue being applied to a small cross-section.</p>
+<p>I wanted to make my design as simple as reasonably possible. In my previous projects, trying to implement a suspension was fairly complicated and I had limited spare time I had outside of my 9-5. My only goal was to get a suitable functional prototype car.</p>
+<p>I did end up using the lessons from my previous failed car designs to incorporate into this one. I had a 2 year hiatus from designing anything mechanical, so I suprised even myself when I managed to build out a working 3D printed gearbox.</p>
+<p>It&rsquo;s not perfect by any stretch of the imagination; after the assembly I still had to take a dremel to various parts to shave off some millimeters in order to free up mechanisms and part fits. Even after checking for collisions in Solidworks, the clearances and fits may not be what you expect in real life.</p>
+<p>If I design more cars in the future, I will try make more thoughtful and elegant designs with improved tolerancing. Even after 4 years of 3D printing, its not straightforward to nail down the tolerancing. To be honest, I think it is extremely reliant on trial an error to nail down correctly, but at least its at the point of acceptability for this design.</p>
+<h2 id="general-car-stats">General Car Stats<a hidden class="anchor" aria-hidden="true" href="#general-car-stats">#</a></h2>
+<ul>
+<li>Dimensions: Approx. 300mm x 230mm</li>
+<li>Weight: Approx 1.2kg (including electronics)</li>
+<li>Motor: 550/35T</li>
+<li>Battery: 11.1V 3S LiPo</li>
+<li>Servo: MG995-R</li>
+<li>Plastic Used: PLA</li>
+</ul>
+<h2 id="design-photos">Design Photos<a hidden class="anchor" aria-hidden="true" href="#design-photos">#</a></h2>
+<p>Here are some renders made in Solidworks:</p>
+<h2 id="front-view">Front View<a hidden class="anchor" aria-hidden="true" href="#front-view">#</a></h2>
+<p><img loading="lazy" src="/img/tractor/rc_car_front.png" alt="Image1"  />
+</p>
+<h2 id="side-view">Side View<a hidden class="anchor" aria-hidden="true" href="#side-view">#</a></h2>
+<p><img loading="lazy" src="/img/tractor/rc_car_side.png" alt="Image2"  />
+</p>
+<h2 id="top-view">Top View<a hidden class="anchor" aria-hidden="true" href="#top-view">#</a></h2>
+<p><img loading="lazy" src="/img/tractor/rc_car_top.png" alt="Image3"  />
+</p>
+<h2 id="rear-view">Rear View<a hidden class="anchor" aria-hidden="true" href="#rear-view">#</a></h2>
+<p><img loading="lazy" src="/img/tractor/rc_car_rear_top.png" alt="Image3"  />
+</p>
+<h2 id="front-wheel-hub---close-up">Front Wheel Hub - Close Up<a hidden class="anchor" aria-hidden="true" href="#front-wheel-hub---close-up">#</a></h2>
+<p><img loading="lazy" src="/img/tractor/rc_tractor_front_wheel.png" alt="Image4"  />
+</p>
+<h2 id="gearbox---close-up">Gearbox - Close Up<a hidden class="anchor" aria-hidden="true" href="#gearbox---close-up">#</a></h2>
+<p><img loading="lazy" src="/img/tractor/rc_tractor_gears.png" alt="Image5"  />
+</p>
+<h2 id="steering-articulation">Steering Articulation<a hidden class="anchor" aria-hidden="true" href="#steering-articulation">#</a></h2>
+<p><img loading="lazy" src="/img/tractor/rc_tractor_steeringL.png" alt="Image6"  />
+
+<img loading="lazy" src="/img/tractor/rc_tractor_steeringR.png" alt="Image7"  />
+</p>
+<h2 id="gifs">Gifs<a hidden class="anchor" aria-hidden="true" href="#gifs">#</a></h2>
+
+
+	<img src="/img/tractor/steering_range.gif" width="720"  />
+
+
+
+
+	<img src="/img/tractor/rc_turn.gif" width="720"  />
+
+
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://filpill.github.io/projects/2023-07-03-servo-turret/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Servo Turret Control</span>
+  </a>
+  <a class="next" href="https://filpill.github.io/projects/2023-06-07-radio-control-setup/">
+    <span class="title">Next »</span>
+    <br>
+    <span>How to Set Up Your Radio Controlled System</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

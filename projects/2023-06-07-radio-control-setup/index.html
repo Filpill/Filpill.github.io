@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>How to Set Up Your Radio Controlled System | Filip Livancic</title>
+<meta name="keywords" content="">
+<meta name="description" content="Instructional guide for setting up a radio control system with your motor and servo">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/projects/2023-06-07-radio-control-setup/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa8fdcb3fde926e796b3b5a7d53394788128df89bcc404d129460bf95da53b33.css" integrity="sha256-&#43;o/cs/3pJueWs7Wn1TOUeIEo34m8xATRKUYL&#43;V2lOzM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="How to Set Up Your Radio Controlled System" />
+<meta property="og:description" content="Instructional guide for setting up a radio control system with your motor and servo" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/2023-06-07-radio-control-setup/" />
+<meta property="og:image" content="https://filpill.github.io/img/rcSetUp/rc_system.jpg" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2023-06-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-07T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/rcSetUp/rc_system.jpg" />
+<meta name="twitter:title" content="How to Set Up Your Radio Controlled System"/>
+<meta name="twitter:description" content="Instructional guide for setting up a radio control system with your motor and servo"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "List of Articles",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "How to Set Up Your Radio Controlled System",
+      "item": "https://filpill.github.io/projects/2023-06-07-radio-control-setup/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Set Up Your Radio Controlled System",
+  "name": "How to Set Up Your Radio Controlled System",
+  "description": "Instructional guide for setting up a radio control system with your motor and servo",
+  "keywords": [
+    
+  ],
+  "articleBody": "Summary This article will briefly outline the basic arrangement that can be used as guidance for your DIY RC electronics.\nParts List Any of these specific parts that are mentioned here can be interchanged for your specific needs. The list of parts outlined is the minumum number of components to have a functioning motor and servo.\nComponent Part No. Radio Controller/Transmitter FS-GT5 Radio Reciever FS-BS6 Electronic Speed Controller (ESC) KYRC X60 - Brush Battery Eliminary Curcuit (BEC) KYRC X60 - Brush Lipo Voltage Indicator BX100 Brushed/Brushless Motor 550/35T Brushed Motor Servo MG-996R LiPo Battery 11.1V 3S HRB Power Battery Balence Charger/Discharger HTRC T150 Type of Electrical Connectors These are the electrical connectors used in these components.\nComponent Connector(s) ESC Traxxas, Deans, Motor Pin, Futaba Battery Traxxas, Deans Motor Motor Pin Servo Futaba Voltage Alarm JST XH Balance Charger JST XH Typically the battery connectors can come in a number of varieties which can make the matter confusing. However, you always have the option of hooking up and adapter.\nIn my case, I had to use as Deans (male) to Traxxas (female) adapter to complete the circuit.\nBlock Diagram - Connections Here is the component block diagram:\nmindmap root((ESC)) Motor BEC Reciever Servo Battery Voltage Indicator The ESC as the hub of the system in which everything connects to. The ESC on my system also happens peform the functionalilty of the BEC and can be considered as one unit.\nRadio My radio Rx/Tx system came as a package, and were already “bound” together already. As long as I could supply a current to the reciever, it automatically connect to the transmitter.\nIf you do not have binding (or need to use a new reciever), there are usually specific procedures to follow for your given controller to bind them together (in the manual for the controller).\nThere are no complicated procedures outside of this, you just need to follow the block diagram and make sure the components are rated for the supplied voltage/current.\nThe radio transmitter I used has 6 channels.\nFor reference my servo was plugged into Channel 1 (CH1), my ESC/Motor was plugged into Channel 2 (CH2).\nThere are still 4 empty channels open for other electronics such as additional servos can supplement your RC controls.\nLiPo Battery Maintenance Safety Precautions should be taken when using LiPo batteries, they can be very dangerous if mishandled.\nStorage If you are not using the LiPo’s when they are in a “charged” state, then you should consider discharging them to a “storage voltage”. A safe storage voltage per cell is somewhere between 3.6V and 3.8V.\nCharging The maximum allowable voltage of a LiPo cell is 4.2V per cell. Do not overcharge the battery as you may cause damage to the battery and reduce the lifespan; it may also become a fire hazard if consitently overcharged.\nIn terms of charging rates, I am charging my batteries at a rate of 1C. For a 2200mAH battery this equates to 2.2A.\nDischarging The inverse is true about discharging the battery too much. Do not let the LiPo voltage fall below 3.2V per cell as this will also cause internal damage to the battery which is irreversible. To mitigate this risk, you can use a voltage alarm on your circuit to warn you when the voltage is falling below a desired threshold.\nSigns to Discontinue Battery Usage A well maintenaed LiPo battery should be able to safely achieve at least 300 full charge/discharge cycles if obeying the precautions above.\nThere are a list of signals decide whether or not to discontinue use of any given LiPo:\nIf you see ballooning occur in the battery. Battery not holding a charge and voltage drop-off. Battery getting warm when charging at a rate of 1C. Physical dents or damage to the battery increasing the internal resistance. Gifs Following the block diagram, you should be able to achieve these results.\n",
+  "wordCount" : "649",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/rcSetUp/rc_system.jpg","datePublished": "2023-06-07T00:00:00Z",
+  "dateModified": "2023-06-07T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/2023-06-07-radio-control-setup/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">List of Articles</a></div>
+    <h1 class="post-title">
+      How to Set Up Your Radio Controlled System
+    </h1>
+    <div class="post-description">
+      Instructional guide for setting up a radio control system with your motor and servo
+    </div>
+    <div class="post-meta"><span title='2023-06-07 00:00:00 +0000 UTC'>June 7, 2023</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;649 words
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/rcSetUp/rc_system.jpg" alt="Image of RC Electronics">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#parts-list" aria-label="Parts List">Parts List</a></li>
+                <li>
+                    <a href="#type-of-electrical-connectors" aria-label="Type of Electrical Connectors">Type of Electrical Connectors</a></li>
+                <li>
+                    <a href="#block-diagram---connections" aria-label="Block Diagram - Connections">Block Diagram - Connections</a></li>
+                <li>
+                    <a href="#radio" aria-label="Radio">Radio</a></li>
+                <li>
+                    <a href="#lipo-battery-maintenance" aria-label="LiPo Battery Maintenance">LiPo Battery Maintenance</a><ul>
+                        
+                <li>
+                    <a href="#storage" aria-label="Storage">Storage</a></li>
+                <li>
+                    <a href="#charging" aria-label="Charging">Charging</a></li>
+                <li>
+                    <a href="#discharging" aria-label="Discharging">Discharging</a></li>
+                <li>
+                    <a href="#signs-to-discontinue-battery-usage" aria-label="Signs to Discontinue Battery Usage">Signs to Discontinue Battery Usage</a></li></ul>
+                </li>
+                <li>
+                    <a href="#gifs" aria-label="Gifs">Gifs</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>This article will briefly outline the basic arrangement that can be used as guidance for your DIY RC electronics.</p>
+<h2 id="parts-list">Parts List<a hidden class="anchor" aria-hidden="true" href="#parts-list">#</a></h2>
+<p>Any of these specific parts that are mentioned here can be interchanged for your specific needs. The list of parts outlined is the minumum number of components to have a functioning motor and servo.</p>
+<!-- raw HTML omitted -->
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Component</th>
+<th style="text-align:left">Part No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Radio Controller/Transmitter</td>
+<td style="text-align:left">FS-GT5</td>
+</tr>
+<tr>
+<td style="text-align:left">Radio Reciever</td>
+<td style="text-align:left">FS-BS6</td>
+</tr>
+<tr>
+<td style="text-align:left">Electronic Speed Controller (ESC)</td>
+<td style="text-align:left">KYRC X60 - Brush</td>
+</tr>
+<tr>
+<td style="text-align:left">Battery Eliminary Curcuit (BEC)</td>
+<td style="text-align:left">KYRC X60 - Brush</td>
+</tr>
+<tr>
+<td style="text-align:left">Lipo Voltage Indicator</td>
+<td style="text-align:left">BX100</td>
+</tr>
+<tr>
+<td style="text-align:left">Brushed/Brushless Motor</td>
+<td style="text-align:left">550/35T Brushed Motor</td>
+</tr>
+<tr>
+<td style="text-align:left">Servo</td>
+<td style="text-align:left">MG-996R</td>
+</tr>
+<tr>
+<td style="text-align:left">LiPo Battery</td>
+<td style="text-align:left">11.1V 3S HRB Power</td>
+</tr>
+<tr>
+<td style="text-align:left">Battery Balence Charger/Discharger</td>
+<td style="text-align:left">HTRC T150</td>
+</tr>
+</tbody>
+</table>
+<!-- raw HTML omitted -->
+<h2 id="type-of-electrical-connectors">Type of Electrical Connectors<a hidden class="anchor" aria-hidden="true" href="#type-of-electrical-connectors">#</a></h2>
+<p>These are the electrical connectors used in these components.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Component</th>
+<th style="text-align:left">Connector(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ESC</td>
+<td style="text-align:left">Traxxas, Deans, Motor Pin, Futaba</td>
+</tr>
+<tr>
+<td style="text-align:left">Battery</td>
+<td style="text-align:left">Traxxas, Deans</td>
+</tr>
+<tr>
+<td style="text-align:left">Motor</td>
+<td style="text-align:left">Motor Pin</td>
+</tr>
+<tr>
+<td style="text-align:left">Servo</td>
+<td style="text-align:left">Futaba</td>
+</tr>
+<tr>
+<td style="text-align:left">Voltage Alarm</td>
+<td style="text-align:left">JST XH</td>
+</tr>
+<tr>
+<td style="text-align:left">Balance Charger</td>
+<td style="text-align:left">JST XH</td>
+</tr>
+</tbody>
+</table>
+<p>Typically the battery connectors can come in a number of varieties which can make the matter confusing. However, you always have the option of hooking up and adapter.</p>
+<p>In my case, I had to use as Deans (male) to Traxxas (female) adapter to complete the circuit.</p>
+<h2 id="block-diagram---connections">Block Diagram - Connections<a hidden class="anchor" aria-hidden="true" href="#block-diagram---connections">#</a></h2>
+<p>Here is the component block diagram:</p>
+<div style="text-align:center;">
+	<div class="mermaid">
+		
+	  
+mindmap
+    root((ESC))
+        Motor
+        BEC
+            Reciever
+                Servo
+        Battery
+            Voltage Indicator
+
+
+	</div>
+</div>
+
+<p>The ESC as the hub of the system in which everything connects to. The ESC on my system also happens peform the functionalilty of the BEC and can be considered as one unit.</p>
+<h2 id="radio">Radio<a hidden class="anchor" aria-hidden="true" href="#radio">#</a></h2>
+<p>My radio Rx/Tx system came as a package, and were already &ldquo;bound&rdquo; together already. As long as I could supply a current to the reciever, it automatically connect to the transmitter.</p>
+<p>If you do not have binding (or need to use a new reciever), there are usually specific procedures to follow for your given controller to bind them together (in the manual for the controller).</p>
+<p>There are no complicated procedures outside of this, you just need to follow the block diagram and make sure the components are rated for the supplied voltage/current.</p>
+<p>The radio transmitter I used has 6 channels.</p>
+<p>For reference my servo was plugged into Channel 1 (CH1), my ESC/Motor was plugged into Channel 2 (CH2).</p>
+<p>There are still 4 empty channels open for other electronics such as additional servos can supplement your RC controls.</p>
+<h2 id="lipo-battery-maintenance">LiPo Battery Maintenance<a hidden class="anchor" aria-hidden="true" href="#lipo-battery-maintenance">#</a></h2>
+<p>Safety Precautions should be taken when using LiPo batteries, they can be very dangerous if mishandled.</p>
+<h3 id="storage">Storage<a hidden class="anchor" aria-hidden="true" href="#storage">#</a></h3>
+<p>If you are not using the LiPo&rsquo;s when they are in a &ldquo;charged&rdquo; state, then you should consider discharging them to a &ldquo;storage voltage&rdquo;. A safe storage voltage per cell is somewhere between 3.6V and 3.8V.</p>
+<h3 id="charging">Charging<a hidden class="anchor" aria-hidden="true" href="#charging">#</a></h3>
+<p>The maximum allowable voltage of a LiPo cell is 4.2V per cell. Do not overcharge the battery as you may cause damage to the battery and reduce the lifespan; it may also become a fire hazard if consitently overcharged.</p>
+<p>In terms of charging rates, I am charging my batteries at a rate of 1C. For a 2200mAH battery this equates to 2.2A.</p>
+<h3 id="discharging">Discharging<a hidden class="anchor" aria-hidden="true" href="#discharging">#</a></h3>
+<p>The inverse is true about discharging the battery too much. Do not let the LiPo voltage fall below 3.2V per cell as this will also cause internal damage to the battery which is irreversible. To mitigate this risk, you can use a voltage alarm on your circuit to warn you when the voltage is falling below a desired threshold.</p>
+<h3 id="signs-to-discontinue-battery-usage">Signs to Discontinue Battery Usage<a hidden class="anchor" aria-hidden="true" href="#signs-to-discontinue-battery-usage">#</a></h3>
+<p>A well maintenaed LiPo battery should be able to safely achieve at least 300 full charge/discharge cycles if obeying the precautions above.</p>
+<p>There are a list of signals decide whether or not to discontinue use of any given LiPo:</p>
+<ul>
+<li>If you see ballooning occur in the battery.</li>
+<li>Battery not holding a charge and voltage drop-off.</li>
+<li>Battery getting warm when charging at a rate of 1C.</li>
+<li>Physical dents or damage to the battery increasing the internal resistance.</li>
+</ul>
+<h2 id="gifs">Gifs<a hidden class="anchor" aria-hidden="true" href="#gifs">#</a></h2>
+<p>Following the block diagram, you should be able to achieve these results.</p>
+<p><img loading="lazy" src="/img/rcSetUp/servo-rc.gif" alt="Servo"  />
+
+<img loading="lazy" src="/img/rcSetUp/motor-rc.gif" alt="Motor"  />
+</p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://filpill.github.io/projects/2023-06-12-3d-printed-car/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>3D Printed RC Road Vehicle</span>
+  </a>
+  <a class="next" href="https://filpill.github.io/projects/2023-05-18-arch-install-guide/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Arch Linux Installation Guide</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

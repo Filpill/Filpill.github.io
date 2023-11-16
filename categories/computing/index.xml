@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Computing on Filip Livancic</title>
+    <link>https://filpill.github.io/categories/computing/</link>
+    <description>Recent content in Computing on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graphical Setup For Linux Desktop</title>
+      <link>https://filpill.github.io/projects/2023-11-14-linux-gui-setup/</link>
+      <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2023-11-14-linux-gui-setup/</guid>
+      <description>Instructional guide for setting up a GUI Window Manager in Linux | DWM &#43; Alacritty</description>
+    </item>
+    
+    <item>
+      <title>Windows to Linux VM Fileshare</title>
+      <link>https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/</link>
+      <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/</guid>
+      <description>How-to guide for setting up shared folder on Windows with your Hyper-V Linux VM</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Remote Access Guide</title>
+      <link>https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/</guid>
+      <description>Guide for remotely accessing a Raspberry Pi via SSH and RDP respectively</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux Installation Guide</title>
+      <link>https://filpill.github.io/projects/2023-05-18-arch-install-guide/</link>
+      <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2023-05-18-arch-install-guide/</guid>
+      <description>Step-by-step guide for installing Arch Linux from scratch on a VM</description>
+    </item>
+    
+    <item>
+      <title>Github - Command Line Interface Procedures</title>
+      <link>https://filpill.github.io/projects/2022-07-17-github-cli/</link>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2022-07-17-github-cli/</guid>
+      <description>Guide book for how to execute basic git commands on the terminal</description>
+    </item>
+    
+    <item>
+      <title>Website Design with Hugo Framework</title>
+      <link>https://filpill.github.io/projects/2022-06-03-building-hugo/</link>
+      <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2022-06-03-building-hugo/</guid>
+      <description>Starter guide for building a static website using Hugo utilities</description>
+    </item>
+    
+  </channel>
+</rss>
