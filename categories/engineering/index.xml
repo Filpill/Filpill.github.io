@@ -17,30 +17,12 @@
     </item>
     
     <item>
-      <title>Servo Turret Control</title>
-      <link>https://filpill.github.io/projects/2023-07-03-servo-turret/</link>
-      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/projects/2023-07-03-servo-turret/</guid>
-      <description>Writing Arduino and Python software to control servo turret using mouse inputs</description>
-    </item>
-    
-    <item>
       <title>3D Printed RC Road Vehicle</title>
       <link>https://filpill.github.io/projects/2023-06-12-3d-printed-car/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/2023-06-12-3d-printed-car/</guid>
       <description>Showcasing design and build of the latest iteration of my 3D printed car</description>
-    </item>
-    
-    <item>
-      <title>How to Set Up Your Radio Controlled System</title>
-      <link>https://filpill.github.io/projects/2023-06-07-radio-control-setup/</link>
-      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/projects/2023-06-07-radio-control-setup/</guid>
-      <description>Instructional guide for setting up a radio control system with your motor and servo</description>
     </item>
     
     <item>
