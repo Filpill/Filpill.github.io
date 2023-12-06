@@ -6,16 +6,7 @@
     <description>Recent content in Electronics on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/electronics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Soldering Tasks</title>
-      <link>https://filpill.github.io/files/soldering_tasks/</link>
-      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/files/soldering_tasks/</guid>
-      <description>List of things to solder cinepi camera</description>
-    </item>
-    
+    <lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/electronics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Servo Turret Control</title>
       <link>https://filpill.github.io/projects/2023-07-03-servo-turret/</link>
