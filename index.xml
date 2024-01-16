@@ -6,14 +6,14 @@
     <description>Recent content on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Dockerised Postgres Database</title>
+      <title>Dockerised Postgres Database and Ingestion</title>
       <link>https://filpill.github.io/projects/2024-01-16-docker-ingestion/</link>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/2024-01-16-docker-ingestion/</guid>
-      <description>Basics of Setting up Database in Docker Container and Analysing NBA Statistics</description>
+      <description>Basics of setting up a database and ingestion system in a series of docker containers</description>
     </item>
     
     <item>
@@ -184,8 +184,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/profile/</guid>
-      <description>About Me Aeronautical Engineering Degree Airline safety management expeience Approach problems with systems level perspective Self-taught programmer and data analyst Detest manual, repetitive tasks; invested in making automated workflows I like CAD, 3D Printing, programming and travelling Vision for the Website The purpose of this website is to document my learning journey and aims to:
-Continually build a repository of information to serve as a reference guide for myself and other people in a variety of domains.</description>
+      <description>About Me Aeronautical Engineering Degree Aviation safety management system experience Self-taught maker, programmer and data analyst Hobbies: CAD, 3D Printing, programming and travelling Vision for the Website The purpose of this website is to document my learning journey and aims to:
+Continually build a repository of information to serve as a reference guide for myself and other people in a variety of domains.
+The true value of knowledge is only unlocked when you are deeply interested in the subject matter and are able to conjure solutions to real world problems.</description>
     </item>
     
     
