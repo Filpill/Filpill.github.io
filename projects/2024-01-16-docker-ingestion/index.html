@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Dockerised Postgres Database | Filip Livancic</title>
+<meta name="keywords" content="">
+<meta name="description" content="Basics of Setting up Database in Docker Container and Analysing NBA Statistics">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/projects/2024-01-16-docker-ingestion/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa8fdcb3fde926e796b3b5a7d53394788128df89bcc404d129460bf95da53b33.css" integrity="sha256-&#43;o/cs/3pJueWs7Wn1TOUeIEo34m8xATRKUYL&#43;V2lOzM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Dockerised Postgres Database" />
+<meta property="og:description" content="Basics of Setting up Database in Docker Container and Analysing NBA Statistics" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/2024-01-16-docker-ingestion/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2024-01-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-15T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dockerised Postgres Database"/>
+<meta name="twitter:description" content="Basics of Setting up Database in Docker Container and Analysing NBA Statistics"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "List of Articles",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Dockerised Postgres Database",
+      "item": "https://filpill.github.io/projects/2024-01-16-docker-ingestion/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dockerised Postgres Database",
+  "name": "Dockerised Postgres Database",
+  "description": "Basics of Setting up Database in Docker Container and Analysing NBA Statistics",
+  "keywords": [
+    
+  ],
+  "articleBody": "Summary This article goes through the process of incorporating Docker as a tool for creating a data ingestion system into a Postgres database. We will containerise both the database and the Python ingestion scripts.\nRequired Containers We will be building 3 containers to manage the data ingestion:\nPostgres - Hosting a database PgAdmin - Managing Postgres Python - Ingesting Data into Postgres DB The Overall Plan: graph LR; subgraph Stage 1: localhost - Prepare Data 0([API - data_extraction.py]) 1([Create data_ingestion.py]) 2([Create docker-compose.yaml]) 3[Create Dockerfile] 0--\u003e3 1--\u003e3 end subgraph Stage 2: Docker Containers - Ingestion Pipeline subgraph Network 2--\u003eD0([compose Postgres DB]) 2--\u003eD1([compose PgAdmin]) 3--\u003eD2([build Python]) end subgraph ETL/ELT D0--\u003eDB[(Database)] D1--\u003eDB D2--\u003eDB end end subgraph Stage 3: Raspberry Pi - Visualisation DB--\u003edata[Connect DB to streamlit] data--\u003eviz(Visualise Data) end Stage 1 - Prepare Raw Data Retrieving data from an open-source API providing NBA data: balldontlie.io. Python scripts to request JSON data from all endpoints. Merge JSON data into a consolidated file for each endpoint. Stage 2 - Create Dockerised Data Ingestion Pipeline Create Dockerised instance of Postgres database. Create Dockerised instance of PgAdmin to connect and manage database. Create tables into Postgres DB using Dockerised Python ingestion script. Stage 3 - Analyse and Visualise Data Use SQL to create analytical tables to serve for analytical capability. Host instance of streamlit, connect to database and show visualisations Why Docker? What’s the purpose of containerise Python and Postgres?\nOne of Dockers greatest strengths is the ability to standardise a software environment in order to run a collection of applications:\nIt’s much more efficient than creating an entire Virtual Machine in order to replicate a “standardised environment”. Docker containers share its resources natively with the host, which means your application only uses the compute it needs. The container build files can be deployed easily to any computer/cloud/server and it will run identically on all instances. A virtual machine has to reserve a portion of system resources such as the Memory and Drive space. These are not scalable resources at runtime. This limits how many instance you can spin up on a given computer/server.\nIn addition to the easier code deployment, it’s more powerful and efficient to manage a collection of containers.\nData Ingestion Pipeline Building Postgres and PgAdmin Containers Simultaneously Docker has a utility called docker-compose which provides the capability of creating multiple services simultaneously from a .yaml file. All images are created simultaneously.\nA natural benefit of this utility is that docker automatically sets up a default networking configuration for containers to communicate with each other in the same config.\nI’ve decided to run Postgres and PgAdmin in the same configuration file since it would be natural to be natural to pair the database with DBMS.\nservices: pgdatabase: image: postgres:13 environment: - POSTGRES_USER=root - POSTGRES_PASSWORD=root - POSGRES_DB=nba volumes: - \"./nba_postgres_data:/var/lib/postgresql/data:rw\" ports: - \"5432:5432\" pgadmin: image: dpage/pgadmin4 environment: - PGADMIN_DEFAULT_EMAIL=admin@admin.com - PGADMIN_DEFAULT_PASSWORD=root ports: - \"8080:80\" This file must be called docker-compose.yaml in order to be able to run the command: docker compose up.\nThis will instantiate those two services under the same network so they are able to communicate with each other.\nBuilding Container for Data Ingestion Script For the purposes of my system, I have decided to keep my ingestion script separate from my other 2 containers. I don’t want to invoke the ingestion process every time I run the database. This process I’ve kept manual for now.\nWe can create an independent Docker image and connect via the default network generated by the “docker-compose” tool.\nTo create a singular docker image, you need a Dockerfile. For this project, it looks like this:\nFROM python:3.9 RUN apt-get install wget RUN pip install pandas sqlalchemy psycopg2 WORKDIR /app COPY data_ingestion.py data_ingestion.py COPY data/combined data ENTRYPOINT [ \"python\", \"data_ingestion.py\" ] In this Dockerfile I am specifying:\nThe software versions and packages. The working directory. Local files/scripts to be copied. Entering program directly through Python. To build the image from the Dockerfile, you will need to run the following Docker command:\nNote: If you are running docker from Windows, you must prefix docker commands with “winpty”\ndocker build -t nba_ingest:v001 . The build command has generated an image called nba_ingest:v001.\nHowever to run the image in a container, we can use the docker run command as follows.\nThe command is structured in a manner to pass to docker arguments to the docker tool and the python arguments to the image containing the python script.\ndocker run -it \\ --name=pyingest \\ --network=docker_sql_default \\ nba_ingest:v001 \\ --user=root \\ --password=root \\ --host=pgdatabase \\ --port=5432 \\ --db=nba \\ As per the command, we have named this container pyingest. Which means we cannot run the same run command again.\nTherefore, if the container stops and you want to run the program again; you can simply use the command:\ndocker start -i pyingest Container Summary After this entire process, you should 3 containers that look like this:\nNetworking Explanation We do not need to manually create a network as mentioned earlier.\nThis is automatically defined by the docker-compose process we ran earlier. We can simply borrow the default network name in order to connect this container to the database.\nThe default name of the network from docker-compose is the working directory of the .yaml file suffixed with \"_default\".\nYou can verify this by running the command:\ndocker network ls Since our working directory is docker_sql, the network created earlier is called “docker_sql_default”. We have simply applied this to the network argument in our docker run command to allow the connection between those containers.\nPgAdmin - Data Transformation From this point forward, you will have a data ingestion pipeline running, all you need to do is connect to the DBMS to enact transformations on the data we have ingested.\nWe can access PgAdmin in our browser via the port number we have designated: localhost:8080\n",
+  "wordCount" : "969",
+  "inLanguage": "en",
+  "datePublished": "2024-01-15T00:00:00Z",
+  "dateModified": "2024-01-15T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/2024-01-16-docker-ingestion/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="Profile">
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">List of Articles</a></div>
+    <h1 class="post-title">
+      Dockerised Postgres Database
+    </h1>
+    <div class="post-description">
+      Basics of Setting up Database in Docker Container and Analysing NBA Statistics
+    </div>
+    <div class="post-meta"><span title='2024-01-15 00:00:00 +0000 UTC'>January 15, 2024</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;969 words
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#required-containers" aria-label="Required Containers">Required Containers</a><ul>
+                        
+                <li>
+                    <a href="#the-overall-plan" aria-label="The Overall Plan:">The Overall Plan:</a><ul>
+                        
+                <li>
+                    <a href="#stage-1---prepare-raw-data" aria-label="Stage 1 - Prepare Raw Data">Stage 1 - Prepare Raw Data</a></li>
+                <li>
+                    <a href="#stage-2---create-dockerised-data-ingestion-pipeline" aria-label="Stage 2 - Create Dockerised Data Ingestion Pipeline">Stage 2 - Create Dockerised Data Ingestion Pipeline</a></li>
+                <li>
+                    <a href="#stage-3---analyse-and-visualise-data" aria-label="Stage 3 - Analyse and Visualise Data">Stage 3 - Analyse and Visualise Data</a></li></ul>
+                </li>
+                <li>
+                    <a href="#why-docker" aria-label="Why Docker?">Why Docker?</a></li>
+                <li>
+                    <a href="#data-ingestion-pipeline" aria-label="Data Ingestion Pipeline">Data Ingestion Pipeline</a><ul>
+                        
+                <li>
+                    <a href="#building-postgres-and-pgadmin-containers-simultaneously" aria-label="Building Postgres and PgAdmin Containers Simultaneously">Building Postgres and PgAdmin Containers Simultaneously</a></li>
+                <li>
+                    <a href="#building-container-for-data-ingestion-script" aria-label="Building Container for Data Ingestion Script">Building Container for Data Ingestion Script</a></li>
+                <li>
+                    <a href="#container-summary" aria-label="Container Summary">Container Summary</a></li>
+                <li>
+                    <a href="#networking-explanation" aria-label="Networking Explanation">Networking Explanation</a></li>
+                <li>
+                    <a href="#pgadmin---data-transformation" aria-label="PgAdmin - Data Transformation">PgAdmin - Data Transformation</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>This article goes through the process of incorporating Docker as a tool for creating a data ingestion system into a Postgres database. We will containerise both the database and the Python ingestion scripts.</p>
+<h2 id="required-containers">Required Containers<a hidden class="anchor" aria-hidden="true" href="#required-containers">#</a></h2>
+<p>We will be building 3 containers to manage the data ingestion:</p>
+<ul>
+<li>Postgres - Hosting a database</li>
+<li>PgAdmin - Managing Postgres</li>
+<li>Python - Ingesting Data into Postgres DB</li>
+</ul>
+<h3 id="the-overall-plan">The Overall Plan:<a hidden class="anchor" aria-hidden="true" href="#the-overall-plan">#</a></h3>
+<div style="text-align:center;">
+	<div class="mermaid">
+		
+	  
+
+graph LR;
+    subgraph Stage 1: localhost - Prepare Data
+    0([API - <br><strong>data_extraction.py</strong>])
+    1([Create <br><strong>data_ingestion.py</strong>])
+    2([Create <br><strong>docker-compose.yaml</strong>])
+    3[Create <br><strong>Dockerfile</strong>]
+    0-->3
+    1-->3
+    end
+
+    subgraph Stage 2: Docker Containers - Ingestion Pipeline
+    subgraph Network 
+    2-->D0([compose <br><strong>Postgres DB</strong>])
+    2-->D1([compose <br><strong>PgAdmin</strong>])
+    3-->D2([build <br><strong>Python</strong>])
+    end
+
+    subgraph ETL/ELT 
+    D0-->DB[(Database)]
+    D1-->DB
+    D2-->DB
+    end
+    end                                        
+
+    subgraph Stage 3: Raspberry Pi - Visualisation
+    DB-->data[Connect DB <br>to streamlit]
+    data-->viz(Visualise <br>Data)
+    end
+    
+
+	</div>
+</div>
+
+<h4 id="stage-1---prepare-raw-data">Stage 1 - Prepare Raw Data<a hidden class="anchor" aria-hidden="true" href="#stage-1---prepare-raw-data">#</a></h4>
+<ol>
+<li>Retrieving data from an open-source API providing NBA data: <a href="balldontlie.io/home.html/introduction">balldontlie.io</a>.</li>
+<li>Python scripts to request JSON data from all endpoints.</li>
+<li>Merge JSON data into a consolidated file for each endpoint.</li>
+</ol>
+<h4 id="stage-2---create-dockerised-data-ingestion-pipeline">Stage 2 - Create Dockerised Data Ingestion Pipeline<a hidden class="anchor" aria-hidden="true" href="#stage-2---create-dockerised-data-ingestion-pipeline">#</a></h4>
+<ol start="4">
+<li>Create Dockerised instance of Postgres database.</li>
+<li>Create Dockerised instance of PgAdmin to connect and manage database.</li>
+<li>Create tables into Postgres DB using Dockerised Python ingestion script.</li>
+</ol>
+<h4 id="stage-3---analyse-and-visualise-data">Stage 3 - Analyse and Visualise Data<a hidden class="anchor" aria-hidden="true" href="#stage-3---analyse-and-visualise-data">#</a></h4>
+<ol start="7">
+<li>Use SQL to create analytical tables to serve for analytical capability.</li>
+<li>Host instance of streamlit, connect to database and show visualisations</li>
+</ol>
+<h3 id="why-docker">Why Docker?<a hidden class="anchor" aria-hidden="true" href="#why-docker">#</a></h3>
+<p><em><strong>What&rsquo;s the purpose of containerise Python and Postgres?</strong></em></p>
+<p>One of Dockers greatest strengths is the ability to standardise a software environment in order to run a collection of applications:</p>
+<ul>
+<li>It&rsquo;s much more efficient than creating an entire Virtual Machine in order to replicate a &ldquo;standardised environment&rdquo;.</li>
+<li>Docker containers share its resources natively with the host, which means your application only uses the compute it needs.</li>
+<li>The container build files can be deployed easily to any computer/cloud/server and it will run identically on all instances.</li>
+</ul>
+<p>A virtual machine has to reserve a portion of system resources such as the Memory and Drive space. These are not scalable resources at runtime. This limits how many instance you can spin up on a given computer/server.</p>
+<p>In addition to the easier code deployment, it&rsquo;s more powerful and efficient to manage a collection of containers.</p>
+<h3 id="data-ingestion-pipeline">Data Ingestion Pipeline<a hidden class="anchor" aria-hidden="true" href="#data-ingestion-pipeline">#</a></h3>
+<h4 id="building-postgres-and-pgadmin-containers-simultaneously">Building Postgres and PgAdmin Containers Simultaneously<a hidden class="anchor" aria-hidden="true" href="#building-postgres-and-pgadmin-containers-simultaneously">#</a></h4>
+<p>Docker has a utility called <strong>docker-compose</strong> which provides the capability of creating multiple services simultaneously from a <strong>.yaml</strong> file. All images are created simultaneously.</p>
+<p>A natural benefit of this utility is that docker automatically sets up a default networking configuration for containers to communicate with each other in the same config.</p>
+<p>I&rsquo;ve decided to run Postgres and PgAdmin in the same configuration file since it would be natural to be natural to pair the database with DBMS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">pgdatabase</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">postgres:13</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">POSTGRES_USER=root</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">POSTGRES_PASSWORD=root</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">POSGRES_DB=nba</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#e6db74">&#34;./nba_postgres_data:/var/lib/postgresql/data:rw&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#e6db74">&#34;5432:5432&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">pgadmin</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">dpage/pgadmin4</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">PGADMIN_DEFAULT_EMAIL=admin@admin.com</span>
+</span></span><span style="display:flex;"><span>          - <span style="color:#ae81ff">PGADMIN_DEFAULT_PASSWORD=root</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#e6db74">&#34;8080:80&#34;</span>
+</span></span></code></pre></div><p>This file must be called <strong>docker-compose.yaml</strong> in order to be able to run the command: <em><strong>docker compose up</strong></em>.</p>
+<p>This will instantiate those two services under the same network so they are able to communicate with each other.</p>
+<h4 id="building-container-for-data-ingestion-script">Building Container for Data Ingestion Script<a hidden class="anchor" aria-hidden="true" href="#building-container-for-data-ingestion-script">#</a></h4>
+<p>For the purposes of my system, I have decided to keep my ingestion script separate from my other 2 containers. I don&rsquo;t want to invoke the ingestion process every time I run the database. This process I&rsquo;ve kept manual for now.</p>
+<p>We can create an independent Docker image and connect via the default network generated by the &ldquo;docker-compose&rdquo; tool.</p>
+<p>To create a singular docker image, you need a <strong>Dockerfile</strong>. For this project, it looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Docker" data-lang="Docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.9</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get install wget<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install pandas sqlalchemy psycopg2<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> data_ingestion.py data_ingestion.py<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> data/combined data<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [ <span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;data_ingestion.py&#34;</span> ]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>In this Dockerfile I am specifying:</p>
+<ul>
+<li>The software versions and packages.</li>
+<li>The working directory.</li>
+<li>Local files/scripts to be copied.</li>
+<li>Entering program directly through Python.</li>
+</ul>
+<p>To build the image from the Dockerfile, you will need to run the following Docker command:</p>
+<p><em><strong>Note: If you are running docker from Windows, you must prefix docker commands with &ldquo;winpty&rdquo;</strong></em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t nba_ingest:v001 .
+</span></span></code></pre></div><p>The build command has generated an image called <strong>nba_ingest:v001</strong>.</p>
+<p>However to run the image in a container, we can use the <strong>docker run</strong> command as follows.</p>
+<p>The command is structured in a manner to pass to docker arguments to the docker tool and the python arguments to the image containing the python script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -it <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --name<span style="color:#f92672">=</span>pyingest <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --network<span style="color:#f92672">=</span>docker_sql_default <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    nba_ingest:v001 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--user<span style="color:#f92672">=</span>root <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--password<span style="color:#f92672">=</span>root <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--host<span style="color:#f92672">=</span>pgdatabase <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--port<span style="color:#f92672">=</span><span style="color:#ae81ff">5432</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--db<span style="color:#f92672">=</span>nba <span style="color:#ae81ff">\
+</span></span></span></code></pre></div><p>As per the command, we have named this container <strong>pyingest</strong>. Which means we cannot run the same run command again.</p>
+<p>Therefore, if the container stops and you want to run the program again; you can simply use the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker start -i pyingest
+</span></span></code></pre></div><h4 id="container-summary">Container Summary<a hidden class="anchor" aria-hidden="true" href="#container-summary">#</a></h4>
+<p>After this entire process, you should 3 containers that look like this:</p>
+<p><img loading="lazy" src="/img/docker/docker_containers.jpg#center" alt="docker_containers"  />
+</p>
+<h4 id="networking-explanation">Networking Explanation<a hidden class="anchor" aria-hidden="true" href="#networking-explanation">#</a></h4>
+<p>We do not need to manually create a network as mentioned earlier.</p>
+<p>This is automatically defined by the docker-compose process we ran earlier. We can simply borrow the default network name in order to connect this container to the database.</p>
+<p>The default name of the network from docker-compose is the working directory of the .yaml file suffixed with <strong>&quot;_default&quot;</strong>.</p>
+<p>You can verify this by running the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network ls
+</span></span></code></pre></div><p>Since our working directory is <strong>docker_sql</strong>, the network created earlier is called <strong>&ldquo;docker_sql_default&rdquo;</strong>. We have simply applied this to the network argument in our docker run command to allow the connection between those containers.</p>
+<h4 id="pgadmin---data-transformation">PgAdmin - Data Transformation<a hidden class="anchor" aria-hidden="true" href="#pgadmin---data-transformation">#</a></h4>
+<p>From this point forward, you will have a data ingestion pipeline running, all you need to do is connect to the DBMS to enact transformations on the data we have ingested.</p>
+<p>We can access PgAdmin in our browser via the port number we have designated: <a href="localhost:8080">localhost:8080</a></p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://filpill.github.io/projects/2023-11-14-linux-gui-setup/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Graphical Setup For Linux Desktop</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
