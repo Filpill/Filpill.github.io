@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>⚙️ Engineering on Filip Livancic</title>
+    <link>http://localhost:1313/categories/%EF%B8%8F-engineering/</link>
+    <description>Recent content in ⚙️ Engineering on Filip Livancic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%EF%B8%8F-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cyber Deck Assembly - Raspberry Pi</title>
+      <link>http://localhost:1313/projects/2023-07-10-cyber-deck-design/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/2023-07-10-cyber-deck-design/</guid>
+      <description>3D Printed frame for Raspberry Pi featuring integrated camera and display</description>
+    </item>
+    
+    <item>
+      <title>Servo Turret Control</title>
+      <link>http://localhost:1313/projects/2023-07-03-servo-turret/</link>
+      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/2023-07-03-servo-turret/</guid>
+      <description>Writing Arduino and Python software to control servo turret using mouse inputs</description>
+    </item>
+    
+    <item>
+      <title>3D Printed RC Road Vehicle</title>
+      <link>http://localhost:1313/projects/2023-06-12-3d-printed-car/</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/2023-06-12-3d-printed-car/</guid>
+      <description>Showcasing design and build of the latest iteration of my 3D printed car</description>
+    </item>
+    
+    <item>
+      <title>How to Set Up Your Radio Controlled System</title>
+      <link>http://localhost:1313/projects/2023-06-07-radio-control-setup/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/2023-06-07-radio-control-setup/</guid>
+      <description>Instructional guide for setting up a radio control system with your motor and servo</description>
+    </item>
+    
+    <item>
+      <title>Lithophane Lamp</title>
+      <link>http://localhost:1313/projects/2021-11-13-lithophane-design/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/2021-11-13-lithophane-design/</guid>
+      <description>3D printed build and techniques in making a lithophane lamp</description>
+    </item>
+    
+    <item>
+      <title>UAV Aircraft Design</title>
+      <link>http://localhost:1313/projects/2018-06-17-uav-aircraft-design/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/2018-06-17-uav-aircraft-design/</guid>
+      <description>BMFA 2018: Building competitive aircraft with water ballast and flying various missions</description>
+    </item>
+    
+    <item>
+      <title>Soldering Tasking</title>
+      <link>http://localhost:1313/projects/draft_soldering/</link>
+      <pubDate>Fri, 26 Nov 1999 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/draft_soldering/</guid>
+      <description>Soldering for the cinepi</description>
+    </item>
+    
+  </channel>
+</rss>

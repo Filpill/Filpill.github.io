@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Python Web Scraping | Filip Livancic</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="📊 Data">
 <meta name="description" content="Showcasing webscraping and data analysis of a product website on Python">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2023-10-03-python-webscrape/">
@@ -99,7 +99,7 @@
   "name": "Python Web Scraping",
   "description": "Showcasing webscraping and data analysis of a product website on Python",
   "keywords": [
-    
+    "📊 Data"
   ],
   "articleBody": "Summary Extracting data from public facing websites is a challenging, yet rewarding prospect.\nThe data contained inside each website holds information that could help leverage better decision making: e.g. comparing various products and services with various metrics such as price and ratings.\nModern website designs are increasingly making it more challenging to extract data due to:\nThe stress put on the server with rate of requests being made. Cutting into their profit margins by using the collected data against them. The web scraping approach always needs to be tailored to the website your are visiting. But from my current experience, it will usually fall into these categories:\nUsing some web-automation framework like Selenium or Playwright and then parsing the HTML (loaded via the browser automation) using something like Selectolax. If the data is being loaded dynamically with JavaScript, then I’m also searching the browser for the “hidden API” which is calling the back-end to fetch into the front-end. The benefit of searching for that so called “Hidden API” is that the retrieved data is already organised into a neat little JSON file.\nPreferably you will probably want the data directly from the back-end to retrieve a dataset. Transforming a JSON is much easier than trying to parse through the front matter for HTML tags and containers.\nIn the example shown below, I’ve scraped the Pimoroni.com website by making requests to the back-end API to retrieve the JSON data. I’ve analysed a sample of the data here for reference:\nLink to the project here: Python Web Scraping\nAnalytics Process Flow | Pimoroni Data Flowchart below denotes my process for making requests to Pimoroni.com:\ngraph TD; subgraph Process Initiation 0([Python Notebook Executed])--\u003e A1[Select Product Collection] A1--\u003eA2[Request JSON Data via API] end subgraph Data Extraction A2--\u003eB[Return Number of Hits on Product Page] B--\u003eC[Modify Request To Return All Hits in a Single Page Request] C--\u003eD[Unpack Products from JSON\ninto Dataframe] D--\u003eE[Prune Unnecessary data from Dataframe] E--\u003eF[Loop for every Collection on Website] F--\u003eF1{Are all Product Collections Retrieved?} F1--\u003eF1y[Yes] F1--\u003eF1n[No]--Concat Results to Existing DF--\u003eA1 end subgraph Data Visualization F1y--\u003eV1[Drop Duplicate Product ID's] V1--\u003eV2[Groupby and Count Datapoints] V2--\u003eV3([Create Charts and Save Files]) end Data Visualisations | Pimoroni Data The following images are served directly from my github repository:\n",
   "wordCount" : "371",
@@ -168,18 +168,18 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/profile/" title="Profile">
-                    <span>Profile</span>
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                    <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="Archive">
-                    <span>Archive</span>
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                    <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/categories/" title="Categories">
-                    <span>Categories</span>
+                <a href="https://filpill.github.io/tags/" title="🏷️ Categories">
+                    <span>🏷️ Categories</span>
                 </a>
             </li>
         </ul>
@@ -292,6 +292,7 @@ graph TD;
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/-data/">📊 Data</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/">

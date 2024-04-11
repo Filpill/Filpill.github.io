@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Codewars API - User Statistics | Filip Livancic</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="📊 Data">
 <meta name="description" content="Extracting codewars userdata and analysing metrics on Python">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2022-11-09-codewars-data/">
@@ -99,7 +99,7 @@
   "name": "Codewars API - User Statistics",
   "description": "Extracting codewars userdata and analysing metrics on Python",
   "keywords": [
-    
+    "📊 Data"
   ],
   "articleBody": "Summary I’ve been very involved in practising my programming skills in python and SQL lately on codewars.\nI figured it would be a good idea to visualise my codewars progression.\nI’m utilising the codewars public API to pull out my information. The user data is processed in Python with the output being consolidated into a Excel dashboard using Xlsxwriter.\nLink to github project: https://github.com/Filpill/codewars-stats\nAnalytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--\u003eA[HTTPS Request Codewars Username Stats] end subgraph Return JSON A--\u003eC[Username Profile Data] A--\u003eD[List of Compeleted Kata by User] A--\u003eE[Individual Challenge Details] end subgraph Merge Data D--\u003eF[Merge Data via the Kata ID] E--\u003eF F--\u003eG[Re-name Columns to Better Format] end subgraph Count Aggregates G--\u003eH[Categories] G--\u003eI[Monthly Completions] G--\u003eJ[Kata Rank] G--\u003eK[Languages] end subgraph Visualisation H--\u003eL[Graphing Cats.] I--\u003eM[Graphing Comp.] J--\u003eN[Graphing Rank.] K--\u003eO[Graphing Lang.] end C--\u003eP subgraph XlsxDashboard L--\u003eP[Insert and Format Tabular Data] M--\u003eP N--\u003eP O--\u003eP P--\u003eQ[Insert Matplotlib Charts] Q--\u003eR([Close Xlsxwriter Workbook Object]) end Data Visualisations These images are served directly from my github repository:\n",
   "wordCount" : "163",
@@ -168,18 +168,18 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/profile/" title="Profile">
-                    <span>Profile</span>
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                    <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="Archive">
-                    <span>Archive</span>
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                    <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/categories/" title="Categories">
-                    <span>Categories</span>
+                <a href="https://filpill.github.io/tags/" title="🏷️ Categories">
+                    <span>🏷️ Categories</span>
                 </a>
             </li>
         </ul>
@@ -309,6 +309,7 @@ graph TD;
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/-data/">📊 Data</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://filpill.github.io/projects/2023-04-10-chess-data/">

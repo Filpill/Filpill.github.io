@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Servo Turret Control | Filip Livancic</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="⚙️ Engineering">
 <meta name="description" content="Writing Arduino and Python software to control servo turret using mouse inputs">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2023-07-03-servo-turret/">
@@ -99,7 +99,7 @@
   "name": "Servo Turret Control",
   "description": "Writing Arduino and Python software to control servo turret using mouse inputs",
   "keywords": [
-    
+    "⚙️ Engineering"
   ],
   "articleBody": "Summary This project has been made to practise the use of sending instructions to various electronics for both the Arduino and the Raspberry Pi.\nI’ve segmented this project into two parts/versions:\nArduino - Mouse Control via Serial Communications Port Raspberry Pi - Mouse Control via Python Tkinter Program Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in \u003c\u003e) to the Arduino via serial communications.\nA small delay of 100ms is maintained to limit the rate of data coming to the Arduino board. The Arduino has a small serial buffer, it can only read 8 bytes at a time. Therefore we need to limit the rate of data to prevent a serial buffer overflow. If this issue occurs, then the servo will not be able to effectively read the data stream.\nThe Arduino has a sketch uploaded to the board that will do a number operations.\nIt will ingest the string data character by character from ‘\u003c’ and terminate at ‘\u003e’. It will concatenate all the characters into a single string. Split the string to serve as inputs to its respective components i.e. Servo1 and Servo2 The inputs will be converted to integers to map the angle for the Servos. Actuate the Servos graph TD; subgraph Processing Program P0([Start Processing GUI Program])--\u003e P1[Mouse Inputs -- Pitch/Yaw] P1 --\u003e P2[Formulate Data String \u003c000000\u003e and send over COM Port] end subgraph Arduino Program P2--\u003eA0[Read Data Stream] A0--\u003eA1[Start Ingesting the data after reading '\u003c' character] A1--\u003eA2[Build string by ingesting characters one at a time] A2--\u003eA3[Terminate the string when reading '\u003e'] A3--\u003eA4[Split string into respective components to prep servo inputs] A4--\u003eA5[Cast servo inputs to integers and map servo angles] A5--\u003eA0 end subgraph Arduino Program A5--\u003eS1([Actuate Yaw Servo]) A5--\u003eS2([Actuate Pitch Servo]) end Raspberry Pi The Raspberry Pi project is using a Python script to drive the inputs. I’ve created a Tkinter program which maps the mouse position on the GUI to a pair of servo angles for the turret to move.\nThe mouse movements are passed into an event handler to locate mouse position on the window x,y coordinates. We use positional data on the mouse to calculate a servo angle based on the coordinate on the drawn window.\nIn order to actuate the servos, the angle inputs must be mapped to the corresponding duty cycle. The duty cycle can take any range of values between 2 and 12 for this particular servo. It handles angles in the range between 0 and 180 degrees.\nThe duty cycle can be calculated like with this calculation:\n1/18 * angle + 2 Then we send the pair of updated duty cycle values to the respective GPIO pins in order to drive the servo positions.\ngraph TD; subgraph Python Program P0([Run Python])--\u003e P1([Start Tkinter GUI]) P0 --Initialise--\u003e G0[GPIO Pins] P1 --\u003e P2[Mouse Movements Passed to Event Handler] P2 --\u003e P3[Convert X,Y Coordinates to Servo Angles] P3 --\u003e P4[Map Servo Angles to Duty Cycle Values] P4 --\u003e P5[Send Duty Cycle Values Through GPIO Pins] P5 --\u003e G0 G0 --\u003e S1([Actuate Yaw Servo]) G0 --\u003e S2([Actuate Pitch Servo]) end ",
   "wordCount" : "521",
@@ -168,18 +168,18 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/profile/" title="Profile">
-                    <span>Profile</span>
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                    <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="Archive">
-                    <span>Archive</span>
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                    <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/categories/" title="Categories">
-                    <span>Categories</span>
+                <a href="https://filpill.github.io/tags/" title="🏷️ Categories">
+                    <span>🏷️ Categories</span>
                 </a>
             </li>
         </ul>
@@ -320,6 +320,7 @@ graph TD;
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/%EF%B8%8F-engineering/">⚙️ Engineering</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/">

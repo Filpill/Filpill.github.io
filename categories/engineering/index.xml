@@ -2,54 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Engineering on Filip Livancic</title>
-    <link>https://filpill.github.io/categories/engineering/</link>
+    <link>http://localhost:1313/categories/engineering/</link>
     <description>Recent content in Engineering on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cyber Deck Assembly - Raspberry Pi</title>
-      <link>https://filpill.github.io/projects/2023-07-10-cyber-deck-design/</link>
+      <link>http://localhost:1313/projects/2023-07-10-cyber-deck-design/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/2023-07-10-cyber-deck-design/</guid>
+      <guid>http://localhost:1313/projects/2023-07-10-cyber-deck-design/</guid>
       <description>3D Printed frame for Raspberry Pi featuring integrated camera and display</description>
     </item>
     
     <item>
       <title>3D Printed RC Road Vehicle</title>
-      <link>https://filpill.github.io/projects/2023-06-12-3d-printed-car/</link>
+      <link>http://localhost:1313/projects/2023-06-12-3d-printed-car/</link>
       <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/2023-06-12-3d-printed-car/</guid>
+      <guid>http://localhost:1313/projects/2023-06-12-3d-printed-car/</guid>
       <description>Showcasing design and build of the latest iteration of my 3D printed car</description>
     </item>
     
     <item>
       <title>Lithophane Lamp</title>
-      <link>https://filpill.github.io/projects/2021-11-13-lithophane-design/</link>
+      <link>http://localhost:1313/projects/2021-11-13-lithophane-design/</link>
       <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/2021-11-13-lithophane-design/</guid>
+      <guid>http://localhost:1313/projects/2021-11-13-lithophane-design/</guid>
       <description>3D printed build and techniques in making a lithophane lamp</description>
     </item>
     
     <item>
       <title>UAV Aircraft Design</title>
-      <link>https://filpill.github.io/projects/2018-06-17-uav-aircraft-design/</link>
+      <link>http://localhost:1313/projects/2018-06-17-uav-aircraft-design/</link>
       <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/2018-06-17-uav-aircraft-design/</guid>
+      <guid>http://localhost:1313/projects/2018-06-17-uav-aircraft-design/</guid>
       <description>BMFA 2018: Building competitive aircraft with water ballast and flying various missions</description>
-    </item>
-    
-    <item>
-      <title>Forward Facing Step - Particle Image Velocimetry</title>
-      <link>https://filpill.github.io/projects/2017-06-01-piv-dissertation/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/projects/2017-06-01-piv-dissertation/</guid>
-      <description>Dissertation Project: Investigating flow field characteristics of a stepped geometry</description>
     </item>
     
   </channel>

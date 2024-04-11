@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Github - Command Line Interface Procedures | Filip Livancic</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="💻 Systems">
 <meta name="description" content="Guide book for how to execute basic git commands on the terminal">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2022-07-17-github-cli/">
@@ -99,7 +99,7 @@
   "name": "Github - Command Line Interface Procedures",
   "description": "Guide book for how to execute basic git commands on the terminal",
   "keywords": [
-    
+    "💻 Systems"
   ],
   "articleBody": "Summary This article documents the most common ways I interact with git and in maintaining my programs.\ngraph LR; subgraph High-Level Process direction LR 0[Installation]--\u003e1[SSH] 1 --\u003e 2[Git Configuration] 2 --\u003e 3[New Repository] 3 --\u003e 4[Commit Changes] end Why should I use Git with the Command Line? Git was designed as a command-line tool, therefore it’s considered the de-facto way to interact with Git’s tools.\nAny other versions of Git are just wrappers for what Git does on the command-line. GUI type Software built “around Git” has tendencies to introduce bugs which are difficult to resolve.\nYou are abstracted away from what Git is actually doing, so it’s not possible to tell if the error was with action performed in Git or if the software was somehow glitched.\nOther tools may also rebrand some git commands to other names which can present communication issues if people are using different flavours of Git.\nBut its worth building some knowledge around the concept of how to use the Shell. Bash (shell) scripting is worth its weight it gold if leveraged correctly. It’s great for task automation and shell is a transferable skill to other command-line type programs, e.g. bq command-line tool for GCP.\nConnections and Authentication There are 2 main ways to connect to a git repository. We can either use the HTTPS or SSH protocols respectively.\nSSH has the advantage of having password-less interactions with git which I strongly recommended when pushing code. Its trivial to set-up an SSH key-pair; it saves time and its very secure. (Assuming you take the right precautions to protect your ssh-keys!)\nMy deep personal recommendation is to use the SSH Method and avoid using the access tokens for authentications.\nSomething worth noting is that Git will search the path for the ssh-key file ~/.ssh/id_rsa by default. Make you name your file id_rsa otherwise it will not work.\nCreating SSH Keys Using ssh-keygen Go to your ~/.ssh directory which is storing ssh-keys Type this command to generate an SSH Keypair: ssh-keygen -t rsa -b 4096 -C emailname@domain.com Name your SSH keys (preferably “id_rsa” for the default filename), and skip password prompts “Cat” out the public key (suffixed .pub) that was generated and paste into the Github settings for SSH Keys For security purposes, permissions need to be changed for the keys, you can change them using the below command prevent external read/write access: chmod 600 ~/.ssh/id_rsa chmod 600 ~/.ssh/id_rsa.pub Handling Multiple SSH Keys Using Keychain If you happen to decide to put your keys outside the default path (~/.ssh/id_rsa), git won’t search for them.\nI’m using a program called Keychain which can help manage your SSH Keys more easily. Its driving the underlying ssh-add and ssh-agent commands.\nI’ve added this line (shown below) to my .bashrc in order to add the relevant SSH key to the keychain.\nWhen I spawn a terminal, it will activate this command automatically and start a new process.\neval $(keychain --eval ~/.ssh/keys/arch_vm) #2\u003e/dev/null In order to do the same process manually, these are the following commands:\neval `ssh-agent` ssh-add ~/.ssh/keys/arch_vm Git Basic Setup Setting Up Git Config Inside your home directory you should have a file called .gitconfig which should be empty on a fresh install.\nYou can define the username and email of your github account in here with the following commands:\ngit config --global user.name \"github_user_name\" git config --global user.email \"emailname@domain.com\" Create Git Repository This is the overall process of creating a repo on the CLI: graph LR; subgraph Creating Git Repository 0[Create README with Repo Name]--\u003e2[Initialise Git] 2 --\u003e 3[Stage Changes] 3 --\u003e 4[Link Local Repo to Remote Repo] 4 --\u003e 5[Commit Changes] end Create a README and initialise git with these commands: echo \"# repository_name\" \u003e\u003e README.md git init By default the branch is called “master”, however this can be renamed to anything you desire.\nLets rename “master” to “main” for example using this command:\ngit branch -m main Staging is the process of preparing the changed files for the next commit.\nYou can stage the files with add; the full stop will include all files that have changed. Or you can explicitly write which files you want to add to the commit.\nThe commit command will create the commit, (the -m flag allows you to add a commit message inline):\ngit add. git commit -m \"first commit msg\" To connect the remote repository to the Github server, you can write this command:\ngit remote add origin git@github.com:github.com:github_username/repo_name.git To push your first commit into Github, write this command (the -u flag sets a tracking reference upstream for the git pull command):\ngit push -u origin main Cloning a Github Repo Go to Github and copy ssh address of repository Go to the directory where you want to clone the repository into and type: git clone git@github.com:github_username/repository_to_be_cloned.git Commit Changes to Github Repository After using Git for much time on personal projects it’s become very ritualistic for me to fall into this pattern:\ngraph LR; subgraph Basic Workflow direction LR 0[Pull]--\u003e1[Add] 1 --\u003e 2[Commit] 2 --\u003e 3[Push] end git pull origin main git add . git commit -m \"add some comments here\" git push origin main Pull the most recent changes from repo Make amendments to your work and save it locally Queue up changes to upload Commit the changes Push the changes onto the checked out branch Working with branches In most scenarios, you will not be working directly with the main/master branch. Working directly on main can be fraught with peril as you are constantly pushing every change into a production environment.\nThe purpose of branching off the main branch is to create an isolated development environment where you can safely change and push code to that branch without changing the production state. Especially if you haven’t fully tested or validated your code/commits.\nYou can can call branches whatever you want, but lets say you want to create development branch called “dev” from the branch you are currently on, you can do so with the git checkout command:\ngit checkout -b dev Now you have a dev branch. The -b flag essentially tells git that you want to create a new branch.\nAny commits you make on the dev branch will have to be pushed up to the dev server branch. This can be done like so:\ngit add . git commit -m git push origin dev When you think your development is complete and you commits are ready to be put into production, you must perform a git merge operation.\nIn order for this to occur, you must switch back to the main branch of your repository before applying the merge:\ngit checkout main git merge dev And now all your “development commits” should be merged into the main branch.\nIf you want to see what other branches currently exist in your repository, you can simply type:\ngit branch -a Conclusion This guide is designed to get you up and running with git on the CLI and understand the fundamentals of interacting with git.\nWith respect to the git’s numerous other features, it’s recommended to read git’s documentation to understand how to use the tool in more depth.\n",
   "wordCount" : "1192",
@@ -168,18 +168,18 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/profile/" title="Profile">
-                    <span>Profile</span>
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                    <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="Archive">
-                    <span>Archive</span>
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                    <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/categories/" title="Categories">
-                    <span>Categories</span>
+                <a href="https://filpill.github.io/tags/" title="🏷️ Categories">
+                    <span>🏷️ Categories</span>
                 </a>
             </li>
         </ul>
@@ -400,6 +400,7 @@ git push origin main
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/-systems/">💻 Systems</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://filpill.github.io/projects/2022-07-23-python-pipelines/">

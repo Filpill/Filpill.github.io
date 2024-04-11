@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on Filip Livancic</title>
+    <title>🏷️ Tags on Filip Livancic</title>
     <link>https://filpill.github.io/tags/</link>
-    <description>Recent content in Tags on Filip Livancic</description>
+    <description>Recent content in 🏷️ Tags on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>💻 Systems</title>
+      <link>https://filpill.github.io/tags/-systems/</link>
+      <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>📊 Data</title>
+      <link>https://filpill.github.io/tags/-data/</link>
+      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>⚙️ Engineering</title>
+      <link>https://filpill.github.io/tags/%EF%B8%8F-engineering/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/tags/%EF%B8%8F-engineering/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Chess.com API - Data Visualisation | Filip Livancic</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="📊 Data">
 <meta name="description" content="Chess player data extraction via API and analysing performance data on Python">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2023-04-10-chess-data/">
@@ -99,7 +99,7 @@
   "name": "Chess.com API - Data Visualisation",
   "description": "Chess player data extraction via API and analysing performance data on Python",
   "keywords": [
-    
+    "📊 Data"
   ],
   "articleBody": "Summary I’ve played a decent number of chess games on the chess.com platform since 2019 and all my chess data can be explored using the API endpoints documented inside the website.\nI was interested in monitoring my rating change over the cumulative number of games played.\nLink to the project here: Chess.com - Python Analysis\nAnalytics Process Flow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--\u003eA[HTTPS Request Chess Username Stats] end subgraph Data Extraction A--\u003eB[Requesting List of Month Endpoints] B--\u003eC[Request List Games For Each Month Endpoint] C--\u003eD[Unpack all Games into Dataframe] end subgraph Data Cleaning D--\u003eE[Filtering to Blitz Chess Games] E--\u003eF[Cleaning pgn Chess data\nand Merging Additional Attributes] F--\u003eG[Extracting Player Ratings\nand Game Results] G--\u003eH[Curating List of Columns] end subgraph Data Aggregation H--\u003eJ[Top Openings] H--\u003eK[Time of Day] H--\u003eL[Monthly Volume] H--\u003eM[Game Result] end subgraph Visualisation J--\u003eN[Graphing Openings] K--\u003eO[Graphing Time of Day] L--\u003eP[Graphing Monthly Volume] M--\u003eQ[Graphing Game Result] end subgraph XlsxDashboard N--\u003eR[Insert and Format Tabular Data] O--\u003eR P--\u003eR Q--\u003eR R--\u003eS[Insert Matplotlib Charts] S--\u003eT([Close Xlsxwriter Workbook Object]) end Data Visualisations The following images are served directly from my github repository:\n",
   "wordCount" : "177",
@@ -168,18 +168,18 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/profile/" title="Profile">
-                    <span>Profile</span>
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                    <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="Archive">
-                    <span>Archive</span>
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                    <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/categories/" title="Categories">
-                    <span>Categories</span>
+                <a href="https://filpill.github.io/tags/" title="🏷️ Categories">
+                    <span>🏷️ Categories</span>
                 </a>
             </li>
         </ul>
@@ -301,6 +301,7 @@ graph TD;
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/-data/">📊 Data</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://filpill.github.io/projects/2023-05-18-arch-install-guide/">

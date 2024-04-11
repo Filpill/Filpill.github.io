@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Tableau Client Server API: Extracting Dashboard Images | Filip Livancic</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="📊 Data">
 <meta name="description" content="Connecting to TCS API and collecting workbook object metadata with Python">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2022-09-16-tableau-client-server/">
@@ -99,7 +99,7 @@
   "name": "Tableau Client Server API: Extracting Dashboard Images",
   "description": "Connecting to TCS API and collecting workbook object metadata with Python",
   "keywords": [
-    
+    "📊 Data"
   ],
   "articleBody": "Summary I’ve been in the process of developing numerous Tableau dashboards across different areas of the airline business to share safety data across the organisation.\nHowever, there is no easy way to download all the various charts from dashboard views you have produced to recycle for the purpose of a PowerPoint presentation.\nIdeally we want to avoid duplicating the data analytics process in other systems such as Python as we don’t want to incur unnecessary work to present the same information.\nThe Tableau Client Server API helps solve this issue by enabling us to programmatically extract dashboard images in an efficient manner.\nProcess Overview iPython/Jupyter Notebook Connecting to the Tableau Client Server API with personal access token. Collating all Projects and Views into table and utilising view id’s to extract dashboard images in conjunction with Pandas. Dashboard images cropped down to chart dimensions with a Python Image Library prepare image for presentation use. Link to the project here: Tableau Dashboard Image Extraction Notebook\nTableau Client Server API Workflow graph TD; subgraph Process Initiation 0([Python Notebook Executed])--\u003eA[Personal Access Tokens: Authenticating Valid API Connection\nwith Tableau Server] end subgraph Get Requests: Server Object ID's A--\u003eC[Gathering Project ID's] A--\u003eD[Gathering Workbook ID's] A--\u003eE[Gathering View ID's] end subgraph Combine Data C--\u003eF[Merging ID Info into Single Pandas DataFrame] D--\u003eF E--\u003eF F--\u003eG[Filtering DataFrame to Selected Project ID] G--\u003eH[Collecting List of Server View Objects] end subgraph Process Images H--\u003eI[Saving all the Images of View Objects] I--\u003eJ[Python Image Library\nCrop Images to Correct Dimensions] J--\u003eK([Save Cropped Dashboard Images]) end Conclusion As you can see, the process for extracting the Tableau image data from dashboards is fairly straightforward.\nWith the View ID, you are able to extract the full dashboard image. The only drawback is that there is no way to pull out the individual charts from the dashboard view via this API. Therefore you need to specify all the pixel dimensions to crop the images into their respective charts.\nThe only alternative is to implement a web-scraping technique on Tableau Server and figure out a way to pull down the chart data. It would probably require something like Selenium because of the dynamic nature of the website.\nRegardless, with the Tableau Client Server API you will still benefit from the dashboard image extraction in addition to allowing you to repurpose your existing dashboards for presentation purposes.\n",
   "wordCount" : "388",
@@ -168,18 +168,18 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/profile/" title="Profile">
-                    <span>Profile</span>
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                    <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="Archive">
-                    <span>Archive</span>
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                    <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/categories/" title="Categories">
-                    <span>Categories</span>
+                <a href="https://filpill.github.io/tags/" title="🏷️ Categories">
+                    <span>🏷️ Categories</span>
                 </a>
             </li>
         </ul>
@@ -284,6 +284,7 @@ graph TD;
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/-data/">📊 Data</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://filpill.github.io/projects/2022-11-09-codewars-data/">

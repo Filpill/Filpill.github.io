@@ -2,10 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://filpill.github.io/categories/</loc>
-    <lastmod>2024-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/categories/computing/</loc>
+    <loc>https://filpill.github.io/tags/-systems/</loc>
     <lastmod>2024-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/projects/2024-01-16-docker-ingestion/</loc>
@@ -17,29 +14,29 @@
     <loc>https://filpill.github.io/projects/</loc>
     <lastmod>2024-01-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://filpill.github.io/tags/</loc>
+    <lastmod>2024-01-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://filpill.github.io/projects/2023-11-14-linux-gui-setup/</loc>
     <lastmod>2023-11-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/</loc>
     <lastmod>2023-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/categories/data/</loc>
+    <loc>https://filpill.github.io/tags/-data/</loc>
     <lastmod>2023-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/projects/2023-10-03-python-webscrape/</loc>
     <lastmod>2023-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/projects/2023-07-10-cyber-deck-design/</loc>
+    <loc>https://filpill.github.io/tags/%EF%B8%8F-engineering/</loc>
     <lastmod>2023-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/categories/engineering/</loc>
+    <loc>https://filpill.github.io/projects/2023-07-10-cyber-deck-design/</loc>
     <lastmod>2023-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/</loc>
     <lastmod>2023-07-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://filpill.github.io/categories/electronics/</loc>
-    <lastmod>2023-07-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://filpill.github.io/projects/2023-07-03-servo-turret/</loc>
     <lastmod>2023-07-03T00:00:00+00:00</lastmod>
@@ -80,12 +77,12 @@
     <loc>https://filpill.github.io/projects/2017-06-01-piv-dissertation/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://filpill.github.io/archives/</loc>
-  </url><url>
     <loc>https://filpill.github.io/profile/</loc>
   </url><url>
-    <loc>https://filpill.github.io/search/</loc>
+    <loc>https://filpill.github.io/archives/</loc>
   </url><url>
-    <loc>https://filpill.github.io/tags/</loc>
+    <loc>https://filpill.github.io/categories/</loc>
+  </url><url>
+    <loc>https://filpill.github.io/search/</loc>
   </url>
 </urlset>

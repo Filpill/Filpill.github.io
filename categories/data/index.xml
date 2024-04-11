@@ -2,53 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Data on Filip Livancic</title>
-    <link>https://filpill.github.io/categories/data/</link>
+    <link>http://localhost:1313/categories/data/</link>
     <description>Recent content in Data on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/categories/data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Web Scraping</title>
-      <link>https://filpill.github.io/projects/2023-10-03-python-webscrape/</link>
+      <link>http://localhost:1313/projects/2023-10-03-python-webscrape/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/2023-10-03-python-webscrape/</guid>
+      <guid>http://localhost:1313/projects/2023-10-03-python-webscrape/</guid>
       <description>Showcasing webscraping and data analysis of a product website on Python</description>
     </item>
     
     <item>
-      <title>Chess.com API - Data Visualisation</title>
-      <link>https://filpill.github.io/projects/2023-04-10-chess-data/</link>
-      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/projects/2023-04-10-chess-data/</guid>
-      <description>Chess player data extraction via API and analysing performance data on Python</description>
-    </item>
-    
-    <item>
       <title>Codewars API - User Statistics</title>
-      <link>https://filpill.github.io/projects/2022-11-09-codewars-data/</link>
+      <link>http://localhost:1313/projects/2022-11-09-codewars-data/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/2022-11-09-codewars-data/</guid>
+      <guid>http://localhost:1313/projects/2022-11-09-codewars-data/</guid>
       <description>Extracting codewars userdata and analysing metrics on Python</description>
     </item>
     
     <item>
       <title>Tableau Client Server API: Extracting Dashboard Images</title>
-      <link>https://filpill.github.io/projects/2022-09-16-tableau-client-server/</link>
+      <link>http://localhost:1313/projects/2022-09-16-tableau-client-server/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/2022-09-16-tableau-client-server/</guid>
+      <guid>http://localhost:1313/projects/2022-09-16-tableau-client-server/</guid>
       <description>Connecting to TCS API and collecting workbook object metadata with Python</description>
     </item>
     
     <item>
       <title>Building Data Pipelines With Python: Systems Perspective</title>
-      <link>https://filpill.github.io/projects/2022-07-23-python-pipelines/</link>
+      <link>http://localhost:1313/projects/2022-07-23-python-pipelines/</link>
       <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
       
-      <guid>https://filpill.github.io/projects/2022-07-23-python-pipelines/</guid>
+      <guid>http://localhost:1313/projects/2022-07-23-python-pipelines/</guid>
       <description>Python integration methods and automation practices for SQL and MS Office products</description>
     </item>
     
