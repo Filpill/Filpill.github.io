@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Chess.com API - Data Visualisation</title>
+      <link>http://localhost:1313/projects/2023-04-10-chess-data/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/projects/2023-04-10-chess-data/</guid>
+      <description>Chess player data extraction via API and analysing performance data on Python</description>
+    </item>
+    
+    <item>
       <title>Codewars API - User Statistics</title>
       <link>http://localhost:1313/projects/2022-11-09-codewars-data/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
