@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>WireGuard VPN Server | Filip Livancic</title>
+<meta name="keywords" content="💻 Systems">
+<meta name="description" content="How to Setup an Encrypted VPN Tunnel To Access Your Home Network">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/projects/2024-04-16-wireguard-vpn/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.655e31e5f2a68813836a80ebda575f730895aae7b904bad3f80dbb089f3a6420.css" integrity="sha256-ZV4x5fKmiBODaoDr2ldfcwiVque5BLrT&#43;A27CJ86ZCA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/2024-04-16-wireguard-vpn/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="WireGuard VPN Server" />
+<meta property="og:description" content="How to Setup an Encrypted VPN Tunnel To Access Your Home Network" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/2024-04-16-wireguard-vpn/" />
+<meta property="og:image" content="https://filpill.github.io/img/vpn/wireguard_banner.png" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2024-04-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-04-16T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/vpn/wireguard_banner.png" />
+<meta name="twitter:title" content="WireGuard VPN Server"/>
+<meta name="twitter:description" content="How to Setup an Encrypted VPN Tunnel To Access Your Home Network"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "WireGuard VPN Server",
+      "item": "https://filpill.github.io/projects/2024-04-16-wireguard-vpn/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WireGuard VPN Server",
+  "name": "WireGuard VPN Server",
+  "description": "How to Setup an Encrypted VPN Tunnel To Access Your Home Network",
+  "keywords": [
+    "💻 Systems"
+  ],
+  "articleBody": "Summary This guide will quickly provide instructions on how to set up a self-hosted WireGuard VPN encrypted tunnel to access you home network. This will be especially handy if you are on a public Wi-Fi connection and need your data to remain secure.\nWe will also go through the steps of adding pi-hole to the device to include network wide adblock by blocking a list of domains which will try to render unnecessary advertising to us.\nFor this exercise I will be installing WireGuard onto a RaspberryPi, but you can do this ostensibly with any computer. I will assume that you already know how to SSH into your target device, because we are going to do this all on the command line.\nWhy Do I Need A Self-Hosted VPN? You will need a VPN if you are trying to access your home network/home devices from another location. The VPN will “tunnel” the connection to your home’s local network allowing you to access devices via SSH or RDP. You only need to expose a single port in your router that is accessible to the public.\nWireGuard - Server Host Visit PIVPN Website for WireGuard installation instructions - Has Installer Script For WireGuard or OpenVPN sudo apt-get update \u0026\u0026 apt-get upgrade Use following command curl -L https://install.pivpn.io | bash Follow install instructions: Identify if DHCP Reservation is Enabled - DCHP is a protocol where each device connected on a local network is assigned a separate IP address. You will want to make sure that its enabled such that we can do the port forwarding for it. In the Router I later define a IP address reservation so I can maintain the same IP address for the RaspberryPi. Select static IP address - again, we will make an IP address reservation for the device (on the router). Choose WireGuard VPN Select user which will store WireGuard configurations Select DNS provider - I picked Quad9 DNS, but the choice is yours. Select the port RaspberryPi will be listening through (for UDP protocol/traffic) - By default its 51820 - it can be changed - but we need to open the port on the router firewall We are connecting via a public IP address which is fine since we have chosen a static IP Reboot pivvpn -a to add user (client machine aka pc or mobile define for example) This will generate a config file in /home/pi/config/ You can copy this config to client by running the Secure Copy Protocol for example or any other method you like. scp raspberrypi@192.—.—.–:/home/pi/config/ /path/to/folder/in/client/machine You can also copy configurations with QR codes if you want. Router Firewall and Port Forwarding Router firewall procedures will be very specific to your model router and internet service provider. But we want to set the firewall rules and port to enable traffic to the VPN Server.\nIn your browser enter the IP address of the router i.e. the “Default Gateway” address. Go to LAN TCP/IP Setup and a “Address Reservation” - IP of device, Device Name and MAC address of device. The device in question could be one of your PC’s or mobile phones. Reboot Hub Create service type UDP that listens in on Port 51820:51820 (the raspberrypi vpn port we set earlier) Firewall rules add INBOUND firewall rule for the service we just created and add an action to ALLOW always and if you want you can specify applicable IP address that it can connect from. Apply the changes to the router. WireGuard - Client Machine Now we just need the configuration file that we copied earlier which contains keys (and config) to connect the client to the VPN server.\nDownload WireGuard for Windows Client and Install to Computer Take the client configuration and “Add Tunnel” – The configuration contains the relevant keys for connecting to the VPN Server. The VPN tunnel will allow the client to encrypt the traffic and sent it to the Pi which then pipes into the router and thus keeping your data packets encrypted and secure. From a VPN perspective, that’s it, you should be able to connect to your home network externally. And since we’ve gone through the trouble of creating a VPN, you may as well enable adblocking in addition to a locally hosted recursive DNS Server.\nPi-hole - Adblocker Pihole will help prevent intrusive ads that try to target your device. This can be configure as a network-wide adblock capture to protect all devices.\nVisit Pi-hole Website for installation instructions. To install pihole:\ncurl -sSL https://install.pi-hole.net | bash Go through installation process and also ensure that you have a static IP address selected We will later create our own DNS Server using unbound after the installation Pihole will give you a password by default but you can change it with sudo pihole -a -p Go into the browser and login into pihole by accessing your Pi’s IP address via the browser: i.e. http://192.—.–.–/admin Use you pihole credentials to login Unbound - Self Hosted Recursive DNS Server If you value your privacy, you may consider hosting your own DNS server. Why? Because your internet traffic gets routed to DNS servers such as CloudFlare or Google which are resolving your queries (even if you have a VPN tunnel enabled!).\nThe companies who own the DNS servers can see which IP addresses are querying which domains, so essentially they have a full view of your query history which all links back to your IP address.\nEven if you are “private browsing” all these queries are hitting their servers and its a mystery what DNS server providers are doing with your data:\nAre they collecting/storing it? Are they selling it to companies? Do they themselves “profile” individuals? Do they provide data to various government entities? How much should I trust these companies? At the end of the day, you should already know how valuable your data is, because all the advertising designed to manipulate you into a non-stop consumer.\nAnd here’s food for though, if this data is worth millions or billions, then we should not give it away for freely – at least make them work for it…\nAnyways, if you are still interested in setting up this DNS server, see below instructions:\nVisit Unbound Installation for installation instructions.\nTo install unbound:\nsudo apt-get install unbound Create file /etc/unbound/unbound.conf.d/pi-hole.conf Change the port number to 5335. Pihole is using port 53 so we dont want to share the same port, hence the usage of port 5335. Save and quit Restart the service by using command: sudo service unbound restart Check its working with command: dig pi-hole.net @127.0.0.1 -p 5335 DNS Settings on Pi-Hole Website Interface Go to the DNS settings and uncheck all the 3rd party Upstream DNS servers Add a custom IPv4 Address: 127.0.0.1#5335 Save and apply the changes DNS Settings on Client Machine We need to route the DNS requests via the RaspberryPi.\nAccess your clients network connections and remove all the other DNS values. Replace with preferred DNS IP address: aka. IP address of RaspberryPi – This will now become your recursive DNS Server. Check your Pihole and you should see that queries are routing though the Pi as you use the internet and a percentage of them are getting blocked by the adblocker. ",
+  "wordCount" : "1209",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/vpn/wireguard_banner.png","datePublished": "2024-04-16T00:00:00Z",
+  "dateModified": "2024-04-16T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/2024-04-16-wireguard-vpn/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                    <span>👤 Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                    <span>📁 Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
+                    <span>🏷️ Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <h1 class="post-title">
+      WireGuard VPN Server
+    </h1>
+    <div class="post-description">
+      How to Setup an Encrypted VPN Tunnel To Access Your Home Network
+    </div>
+    <div class="post-meta"><span title='2024-04-16 00:00:00 +0000 UTC'>April 16, 2024</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;1209 words
+
+</div>
+  </header> 
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/vpn/wireguard_banner.png" alt="Image of wireguard banner">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#why-do-i-need-a-self-hosted-vpn" aria-label="Why Do I Need A Self-Hosted VPN?">Why Do I Need A Self-Hosted VPN?</a></li>
+                <li>
+                    <a href="#wireguard---server-host" aria-label="WireGuard - Server Host">WireGuard - Server Host</a></li>
+                <li>
+                    <a href="#router-firewall-and-port-forwarding" aria-label="Router Firewall and Port Forwarding">Router Firewall and Port Forwarding</a></li>
+                <li>
+                    <a href="#wireguard---client-machine" aria-label="WireGuard - Client Machine">WireGuard - Client Machine</a></li>
+                <li>
+                    <a href="#pi-hole---adblocker" aria-label="Pi-hole - Adblocker">Pi-hole - Adblocker</a></li>
+                <li>
+                    <a href="#unbound---self-hosted-recursive-dns-server" aria-label="Unbound - Self Hosted Recursive DNS Server">Unbound - Self Hosted Recursive DNS Server</a></li>
+                <li>
+                    <a href="#dns-settings-on-pi-hole-website-interface" aria-label="DNS Settings on Pi-Hole Website Interface">DNS Settings on Pi-Hole Website Interface</a></li>
+                <li>
+                    <a href="#dns-settings-on-client-machine" aria-label="DNS Settings on Client Machine">DNS Settings on Client Machine</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>This guide will quickly provide instructions on how to set up a self-hosted WireGuard VPN encrypted tunnel to access you home network. This will be especially handy if you are on a public Wi-Fi connection and need your data to remain secure.</p>
+<p>We will also go through the steps of adding pi-hole to the device to include network wide adblock by blocking a list of domains which will try to render unnecessary advertising to us.</p>
+<p>For this exercise I will be installing WireGuard onto a RaspberryPi, but you can do this ostensibly with any computer. I will assume that you already know how to SSH into your target device, because we are going to do this all on the command line.</p>
+<h2 id="why-do-i-need-a-self-hosted-vpn">Why Do I Need A Self-Hosted VPN?<a hidden class="anchor" aria-hidden="true" href="#why-do-i-need-a-self-hosted-vpn">#</a></h2>
+<p>You will need a VPN if you are trying to access your home network/home devices from another location. The VPN will &ldquo;tunnel&rdquo; the connection to your home&rsquo;s local network allowing you to access devices via SSH or RDP. You only need to expose a single port in your router that is accessible to the public.</p>
+<h2 id="wireguard---server-host">WireGuard - Server Host<a hidden class="anchor" aria-hidden="true" href="#wireguard---server-host">#</a></h2>
+<ul>
+<li>Visit <a href="https://pivpn.io">PIVPN Website</a> for WireGuard installation instructions - Has Installer Script For WireGuard or OpenVPN</li>
+<li>sudo apt-get update &amp;&amp; apt-get upgrade</li>
+<li>Use following command curl -L <a href="https://install.pivpn.io">https://install.pivpn.io</a> | bash</li>
+<li>Follow install instructions:
+<ul>
+<li>Identify if DHCP Reservation is Enabled - DCHP is a protocol where each device connected on a local network is assigned a separate IP address. You will want to make sure that its enabled such that we can do the port forwarding for it.</li>
+<li>In the Router I later define a IP address reservation so I can maintain the same IP address for the RaspberryPi.</li>
+<li>Select static IP address  - again, we will make an IP address reservation for the device (on the router).</li>
+<li>Choose WireGuard VPN</li>
+<li>Select user which will store WireGuard configurations</li>
+<li>Select DNS provider - I picked Quad9 DNS, but the choice is yours.</li>
+<li>Select the port RaspberryPi will be listening through (for UDP protocol/traffic) - By default its 51820 - it can be changed - but we need to open the port on the router firewall</li>
+<li>We are connecting via a public IP address which is fine since we have chosen a static IP</li>
+<li>Reboot</li>
+</ul>
+</li>
+<li>pivvpn -a to add user (client machine aka pc or mobile define for example)</li>
+<li>This will generate a config file in /home/pi/config/&lt;NAMEofCLIENTCONFIG.conf&gt;</li>
+<li>You can copy this config to client by running the Secure Copy Protocol for example or any other method you like.</li>
+<li>scp raspberrypi@192.&mdash;.&mdash;.&ndash;:/home/pi/config/&lt;NAMEofCLIENTCONFIG.conf&gt; /path/to/folder/in/client/machine</li>
+<li>You can also copy configurations with QR codes if you want.</li>
+</ul>
+<h2 id="router-firewall-and-port-forwarding">Router Firewall and Port Forwarding<a hidden class="anchor" aria-hidden="true" href="#router-firewall-and-port-forwarding">#</a></h2>
+<p>Router firewall procedures will be very specific to your model router and internet service provider. But we want to set the firewall rules and port to enable traffic to the VPN Server.</p>
+<ul>
+<li>In your browser enter the IP address of the router i.e. the &ldquo;Default Gateway&rdquo; address.</li>
+<li>Go to LAN TCP/IP Setup and a &ldquo;Address Reservation&rdquo; - IP of device, Device Name and MAC address of device. The device in question could be one of your PC&rsquo;s or mobile phones.</li>
+<li>Reboot Hub</li>
+<li>Create service type UDP that listens in on Port 51820:51820 (the raspberrypi vpn port we set earlier)</li>
+<li>Firewall rules add INBOUND firewall rule for the service we just created and add an action to ALLOW always and if you want you can specify applicable IP address that it can connect from.</li>
+<li>Apply the changes to the router.</li>
+</ul>
+<h2 id="wireguard---client-machine">WireGuard - Client Machine<a hidden class="anchor" aria-hidden="true" href="#wireguard---client-machine">#</a></h2>
+<p>Now we just need the configuration file that we copied earlier which contains keys (and config) to connect the client to the VPN server.</p>
+<ul>
+<li>Download WireGuard for Windows Client and Install to Computer</li>
+<li>Take the client configuration and &ldquo;Add Tunnel&rdquo; &ndash; The configuration contains the relevant keys for connecting to the VPN Server.</li>
+<li>The VPN tunnel will allow the client to encrypt the traffic and sent it to the Pi which then pipes into the router and thus keeping your data packets encrypted and secure.</li>
+<li>From a VPN perspective, that&rsquo;s it, you should be able to connect to your home network externally.</li>
+</ul>
+<p>And since we&rsquo;ve gone through the trouble of creating a VPN, you may as well enable adblocking in addition to a locally hosted recursive DNS Server.</p>
+<h2 id="pi-hole---adblocker">Pi-hole - Adblocker<a hidden class="anchor" aria-hidden="true" href="#pi-hole---adblocker">#</a></h2>
+<p>Pihole will help prevent intrusive ads that try to target your device. This can be configure as a network-wide adblock capture to protect all devices.</p>
+<p>Visit <a href="https://pi-hole.net">Pi-hole Website</a> for installation instructions.
+To install pihole:</p>
+<ul>
+<li>curl -sSL <a href="https://install.pi-hole.net">https://install.pi-hole.net</a> | bash</li>
+<li>Go through installation process and also ensure that you have a static IP address selected</li>
+<li>We will later create our own DNS Server using unbound after the installation</li>
+<li>Pihole will give you a password by default but you can change it with sudo pihole -a -p <!-- raw HTML omitted --></li>
+<li>Go into the browser and login into pihole by accessing your Pi&rsquo;s IP address via the browser: i.e. http://192.&mdash;.&ndash;.&ndash;/admin</li>
+<li>Use you pihole credentials to login</li>
+</ul>
+<h2 id="unbound---self-hosted-recursive-dns-server">Unbound - Self Hosted Recursive DNS Server<a hidden class="anchor" aria-hidden="true" href="#unbound---self-hosted-recursive-dns-server">#</a></h2>
+<p>If you value your privacy, you may consider hosting your own DNS server. Why? Because your internet traffic gets routed to DNS servers such as CloudFlare or Google which are resolving your queries (even if you have a VPN tunnel enabled!).</p>
+<p>The companies who own the DNS servers can see which IP addresses are querying which domains, so essentially they have a full view of your query history which all links back to your IP address.</p>
+<p>Even if you are &ldquo;private browsing&rdquo; all these queries are hitting their servers and its a mystery what DNS server providers are doing with your data:</p>
+<ul>
+<li>Are they collecting/storing it?</li>
+<li>Are they selling it to companies?</li>
+<li>Do they themselves &ldquo;profile&rdquo; individuals?</li>
+<li>Do they provide data to various government entities?</li>
+<li>How much should I trust these companies?</li>
+</ul>
+<p>At the end of the day, you should already know how valuable your data is, because all the advertising designed to manipulate you into a non-stop consumer.</p>
+<p>And here&rsquo;s food for though, if this data is worth millions or billions, then we should not give it away for freely &ndash; at least make them work for it&hellip;</p>
+<p>Anyways, if you are still interested in setting up this DNS server, see below instructions:</p>
+<p>Visit <a href="https://docs.pi-hole.net/guides/dns/unbound/">Unbound Installation</a> for installation instructions.</p>
+<p>To install unbound:</p>
+<ul>
+<li>sudo apt-get install unbound</li>
+<li>Create file /etc/unbound/unbound.conf.d/pi-hole.conf</li>
+<li>Change the port number to 5335. Pihole is using port 53 so we dont want to share the same port, hence the usage of port 5335.</li>
+<li>Save and quit</li>
+<li>Restart the service by using command: sudo service unbound restart</li>
+<li>Check its working with command: dig pi-hole.net @127.0.0.1 -p 5335</li>
+</ul>
+<h2 id="dns-settings-on-pi-hole-website-interface">DNS Settings on Pi-Hole Website Interface<a hidden class="anchor" aria-hidden="true" href="#dns-settings-on-pi-hole-website-interface">#</a></h2>
+<ul>
+<li>Go to the DNS settings and uncheck all the 3rd party Upstream DNS servers</li>
+<li>Add a custom IPv4 Address: 127.0.0.1#5335</li>
+<li>Save and apply the changes</li>
+</ul>
+<h2 id="dns-settings-on-client-machine">DNS Settings on Client Machine<a hidden class="anchor" aria-hidden="true" href="#dns-settings-on-client-machine">#</a></h2>
+<p>We need to route the DNS requests via the RaspberryPi.</p>
+<ul>
+<li>Access your clients network connections and remove all the other DNS values.</li>
+<li>Replace with preferred DNS IP address: aka. IP address of RaspberryPi &ndash; This will now become your recursive DNS Server.</li>
+<li>Check your Pihole and you should see that queries are routing though the Pi as you use the internet and a percentage of them are getting blocked by the adblocker.</li>
+</ul>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://filpill.github.io/tags/-systems/">💻 Systems</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://filpill.github.io/projects/2024-01-16-docker-ingestion/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Dockerised Postgres Database and Ingestion</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

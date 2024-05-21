@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>List of Articles on Filip Livancic</title>
+    <title>Projects on Filip Livancic</title>
     <link>https://filpill.github.io/projects/</link>
-    <description>Recent content in List of Articles on Filip Livancic</description>
+    <description>Recent content in Projects on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WireGuard VPN Server</title>
+      <link>https://filpill.github.io/projects/2024-04-16-wireguard-vpn/</link>
+      <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2024-04-16-wireguard-vpn/</guid>
+      <description>How to Setup an Encrypted VPN Tunnel To Access Your Home Network</description>
+    </item>
+    
     <item>
       <title>Dockerised Postgres Database and Ingestion</title>
       <link>https://filpill.github.io/projects/2024-01-16-docker-ingestion/</link>
@@ -176,6 +185,15 @@
       
       <guid>https://filpill.github.io/projects/2017-06-01-piv-dissertation/</guid>
       <description>Dissertation Project: Investigating flow field characteristics of a stepped geometry</description>
+    </item>
+    
+    <item>
+      <title>2024 05 21 Flight_tracking</title>
+      <link>https://filpill.github.io/projects/draft_articles/2024-05-21-flight-tracking/</link>
+      <pubDate>Fri, 21 May 1999 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/draft_articles/2024-05-21-flight-tracking/</guid>
+      <description>--- Insert Description Here ---</description>
     </item>
     
   </channel>

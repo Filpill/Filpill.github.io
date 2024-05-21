@@ -1,100 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>engineering on Filip Livancic</title>
-    <link>https://filpill.github.io/tags/engineering/</link>
-    <description>Recent content in engineering on Filip Livancic</description>
+    <title>Engineering on Filip Livancic</title>
+    <link>http://localhost:1313/tags/engineering/</link>
+    <description>Recent content in Engineering on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 1999 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cyber Deck Assembly - Raspberry Pi</title>
-      <link>https://filpill.github.io/eng_projects/cyberdeck/</link>
-      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      <title>2024 05 21 Flight_tracking</title>
+      <link>http://localhost:1313/projects/draft_articles/2024-05-21-flight-tracking/</link>
+      <pubDate>Fri, 21 May 1999 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/eng_projects/cyberdeck/</guid>
-      <description>Summary I&amp;rsquo;ve designed out a &amp;ldquo;cyber deck&amp;rdquo;/frame for my Raspberry Pi to convert it into a usable personal computer. It features a 7 inch touch display and a web camera plugged into the boards DSI (Display Serial Interface) connectors. Should the design become more compact in the future, the ribbon cables are ideal for routing inside tight enclosures.
-The only necessary wired connection is a USB-C to provide power to the board.</description>
-    </item>
-    
-    <item>
-      <title>Servo Turret Control</title>
-      <link>https://filpill.github.io/eng_projects/servoturret/</link>
-      <pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/eng_projects/servoturret/</guid>
-      <description>Summary This project has been made to practise the use of sending instructions to various electronics for both the Arduino and the Raspberry Pi.
-I&amp;rsquo;ve segmented this project into two parts/versions:
-Arduino - Mouse Control via Serial Communications Port Raspberry Pi - Mouse Control via Python Tkinter Program Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in &amp;lt;&amp;gt;) to the Arduino via serial communications.</description>
-    </item>
-    
-    <item>
-      <title>3D Printed RC Road Vehicle</title>
-      <link>https://filpill.github.io/eng_projects/rctractor/</link>
-      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/eng_projects/rctractor/</guid>
-      <description>Summary Finshed designing and building a functional 3D Printed RC car which accidently ended up resembling a tractor by chance. Thats the consequence of a lack of planning and design contraints&amp;hellip;
-The reason for the large wheels in the back is because of how I started my design process. The design was built around the gearbox. Since the gearbox ended up being very tall, I figured I would just mount some very large wheels to clear the ground.</description>
-    </item>
-    
-    <item>
-      <title>How to Set Up Your Radio Controlled System</title>
-      <link>https://filpill.github.io/eng_projects/rcsetup/</link>
-      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/eng_projects/rcsetup/</guid>
-      <description>Summary This article will briefly outline the basic arrangement that can be used as guidance for your DIY RC electronics.
-Parts List Any of these specific parts that are mentioned here can be interchanged for your specific needs. The list of parts outlined is the minumum number of components to have a functioning motor and servo.
-Component Part No. Radio Controller/Transmitter FS-GT5 Radio Reciever FS-BS6 Electronic Speed Controller (ESC) KYRC X60 - Brush Battery Eliminary Curcuit (BEC) KYRC X60 - Brush Lipo Voltage Indicator BX100 Brushed/Brushless Motor 550/35T Brushed Motor Servo MG-996R LiPo Battery 11.</description>
-    </item>
-    
-    <item>
-      <title>3D Printed GoPro Skateboard</title>
-      <link>https://filpill.github.io/page_archive/gopro/</link>
-      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/gopro/</guid>
-      <description>Summary Designed a skateboard for my GoPro, experimenting with different camera perspectives; in particular with low rolling shots.
-The camera mount point is not ideal as the wheels are caught in the field of view&amp;hellip;It&amp;rsquo;s not too bad, but still a little bit distracting when shooting a wide angle. It&amp;rsquo;s hard to envision this issue when you are designing it. It&amp;rsquo;s easy to get distracted with the other design elements.</description>
-    </item>
-    
-    <item>
-      <title>Lithophane Lamp</title>
-      <link>https://filpill.github.io/eng_projects/litho/</link>
-      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/eng_projects/litho/</guid>
-      <description>Summary Designed a 3D printed lithophane lamp in Soldworks. Main feature: Replaceable lithophanes of chosen standard of aspect ratio/dimension. Features Top/Bottom Panels retained with three M3 screws &amp;ndash; Removing the panels gives access to replacing the printed lithophane. Wiring threads through back of assembly and socket leans on back the back panel. Forward attachment clamps the socket and constrains the foward movement of the light socket with screws. I have two slightly different designs to accomadate either an E14 lamp socket or an E27 lamp socket.</description>
-    </item>
-    
-    <item>
-      <title>3D Printed Car - Bluetooth Controller Interface</title>
-      <link>https://filpill.github.io/page_archive/3dcar/</link>
-      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/page_archive/3dcar/</guid>
-      <description>Summary Personal project to design and build a 3D printed car from scratch. Project status is currently dormant as I haven&amp;rsquo;t had time to iterate over the design due to the complexity and required time investment. The project was gradually being built over the course of 2020 and 2021. Though incomplete, I may return to this project at a later stage (with a smaller scope) after finishing some other projects. The project requires some simplification for the desired goal of having a robust car design.</description>
-    </item>
-    
-    <item>
-      <title>UAV Aircraft Design</title>
-      <link>https://filpill.github.io/eng_projects/uav/</link>
-      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/eng_projects/uav/</guid>
-      <description>Summary My elected project for my 4th year in University was to design and build a UAV aircraft. The design requirements were driven out from the 2017 BMFA competition (Payload Challenge). The design had to be capable of flying some circuits with varying volumes of water weighing up to 3.5kg. As project engineer, I was responsible for coordinating the technical requirements and outputs between our sub-teams. Previous Next &amp;nbsp; &amp;nbsp; / [pdf] View the PDF file here.</description>
-    </item>
-    
-    <item>
-      <title>Forward Facing Step - Particle Image Velocimetry</title>
-      <link>https://filpill.github.io/eng_projects/piv/</link>
-      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/eng_projects/piv/</guid>
-      <description>Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.
-Particle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.
-In this experiment the height of the boundary layer is similarly proportioned to the height of the step.</description>
+      <guid>http://localhost:1313/projects/draft_articles/2024-05-21-flight-tracking/</guid>
+      <description>--- Insert Description Here ---</description>
     </item>
     
   </channel>
