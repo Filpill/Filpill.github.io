@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>2024 05 21 Flight_tracking | Filip Livancic</title>
-<meta name="keywords" content="💻 Systems, ⚙️ Engineering, 📊 Data">
-<meta name="description" content="--- Insert Description Here ---">
+<meta name="robots" content="index, follow">
+<title>Airspace Tracking Visualisations | Filip Livancic</title>
+<meta name="keywords" content="📊 Data">
+<meta name="description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/projects/2024-05-21-flight-tracking/">
+<link rel="canonical" href="https://filpill.github.io/projects/2024-05-21-flight-tracking/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.655e31e5f2a68813836a80ebda575f730895aae7b904bad3f80dbb089f3a6420.css" integrity="sha256-ZV4x5fKmiBODaoDr2ldfcwiVque5BLrT&#43;A27CJ86ZCA=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/2024-05-21-flight-tracking/">
+<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/2024-05-21-flight-tracking/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,6 +58,71 @@
 
     </style>
 </noscript>
+  
+
+<meta property="og:title" content="Airspace Tracking Visualisations" />
+<meta property="og:description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/2024-05-21-flight-tracking/" />
+<meta property="og:image" content="https://filpill.github.io/img/flight/airspace_visualiser.png" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2024-05-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-05-05T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://filpill.github.io/img/flight/airspace_visualiser.png" />
+<meta name="twitter:title" content="Airspace Tracking Visualisations"/>
+<meta name="twitter:description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Airspace Tracking Visualisations",
+      "item": "https://filpill.github.io/projects/2024-05-21-flight-tracking/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Airspace Tracking Visualisations",
+  "name": "Airspace Tracking Visualisations",
+  "description": "Retrieving airspace states via OpenSky REST API and animating data using Python + FFMPEG",
+  "keywords": [
+    "📊 Data"
+  ],
+  "articleBody": "Summary This article will quickly show you the process of how I obtained the world airspace data using the OpenSky REST API and how I was able to visualise the data. But I will focus on North American airspace since it seems to be the region that captures the most aircraft.\nThe link to my “flight_tracking” GitHub project is here should you wish to peruse the scripts I’ve created.\nThe totality of the airspace depends much maintenance of the OpenSky network. The majority of the data is recorded via ADS-B receivers, which are distributed over the land mass.\nI’m not too well acquainted with aircraft surveillance, but I presume we lose visibility of aircraft (in the data) as they fly out of range of ground stations over the sea or mountainous regions. Otherwise it would be interesting to monitor the full flight path across the globe.\nAircraft also require a transponder to provide GPS data to the receivers. Any flying aircraft with no transponder are not being captured in this view.\nI am sure there are more accurate flight data providers selling more accurate views and better coverage, but this is purely an illustrative exercise for curiosities sake.\nTimelapse Video Here is a video illustrating a 16-hour time-lapse of a scatter plot of aircraft flying over North America. Processes and Procedures I’ll go through details of my data collection, storing and processing.\nI’ve considered creating a database and dumping the results in there, but this is something I’ll consider in a future iteration if we decide to have a more long-term permanent data collection solution.\nThis going to be a fairly quick and dirty version, however, I still ensure there is a semblance of structure in the folders storing the data.\nOverall View The workflow looks something like this:\nStore raw csv data - collection of csv partitioned by date Process image data - split collection by visualisations e.g.: contourf, quiver, scatter etc. Post-process data - image re-sizing and cropping data to final dimensions Animate collection of processed images - using ffmpeg shell script Data Collection This is the overall process of how the data is collected:\nCreate Python script to request airspace state every 60s Recursively store the aircraft positions in a list individual timestamped csv’s Actually it’s as simple as that. The time delta between each snapshot not too large to lose detail in the movements and not too small to overload the API with requests. The latter is probably more important to consider, because you don’t want to bombard the API and risk taking it completely out of commission due to high frequency request intervals.\nSomething that is important to note is that anonymous users are limited to 80 requests to the OpenSky API per day. This is no good for us since we are trying to make a time lapse over an extended period of time.\nWe can circumvent this issue by using rotating IP addresses, since each API call will be distributed over a pool of IP addresses and thus prevent our request timing out (since they can’t pin down our real IP identity).\nThough this methodology is typically requires the use of a paid service to provide high quality proxies. In my scenario, I chose to use OxyLabs which have a web scrapping proxy tool. You can pipe you Python request via their proxy it will automagically handle the proxies for you. I was able to run my script overnight with not a single failure and retrieved over 850 requests.\nEach request produces a 1.1MB csv file. So over 16 hours, we were able to hoover about 1GB of data all together. Unfortunately, my script crashed in the late stages of the execution (probably because I was running it out of a jupyter notebook). I’ll convert it into a Python script another time, it just so happens its easier to read the data in Jupyter when doing data exploration.\nData Visualisation Part of the inspiration of the visualisation is that I imagine the aircraft movements would have a strong resemblance to a “fluid displacement” in a aero/mechanical context. So I just wanted to explore the 2D visualisation options and see if this is true.\nto be continued\nData Animation This segment is fairly straightforward. Using ffmpeg, we can simply point to a folder with a collection of images and ask the program to splice them together into a mp4 file.\nAs long as all the images are timestamped, the files should be sorted in chronological order so you don’t need to fiddle with passing additional sort arguments into your command.\nIt only takes a few minutes on my machine to splice together 850 images together.\nto be continued\n",
+  "wordCount" : "784",
+  "inLanguage": "en",
+  "image":"https://filpill.github.io/img/flight/airspace_visualiser.png","datePublished": "2024-05-05T00:00:00Z",
+  "dateModified": "2024-05-05T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/2024-05-21-flight-tracking/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -78,7 +143,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -106,17 +171,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/profile/" title="👤 Profile">
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
                     <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="📁 Archive">
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
                     <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="🏷️ Tags">
+                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
                     <span>🏷️ Tags</span>
                 </a>
             </li>
@@ -127,34 +192,113 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
     <h1 class="post-title">
-      2024 05 21 Flight_tracking
+      Airspace Tracking Visualisations
     </h1>
     <div class="post-description">
-      --- Insert Description Here ---
+      Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG
     </div>
-    <div class="post-meta"><span title='2024-05-21 15:19:49 +0000 UTC'>May 21, 2024</span>&nbsp;·&nbsp;0 min&nbsp;·&nbsp;0 words
+    <div class="post-meta"><span title='2024-05-05 00:00:00 +0000 UTC'>May 5, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;784 words
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="http://localhost:1313/img/folder_name" alt="">
+<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/flight/airspace_visualiser.png" alt="">
         
-</figure>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
+        <div class="inner"><ul>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#timelapse-video" aria-label="Timelapse Video">Timelapse Video</a></li>
+                <li>
+                    <a href="#processes-and-procedures" aria-label="Processes and Procedures">Processes and Procedures</a><ul>
+                        
+                <li>
+                    <a href="#overall-view" aria-label="Overall View">Overall View</a></li>
+                <li>
+                    <a href="#data-collection" aria-label="Data Collection">Data Collection</a></li>
+                <li>
+                    <a href="#data-visualisation" aria-label="Data Visualisation">Data Visualisation</a></li>
+                <li>
+                    <a href="#data-animation" aria-label="Data Animation">Data Animation</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>This article will quickly show you the process of how I obtained the world airspace data using the OpenSky REST API and how I was able to visualise the data. But I will focus on North American airspace since it seems to be the region that captures the most aircraft.</p>
+<p>The link to my <a href="https://github.com/Filpill/flight_tracking">&ldquo;flight_tracking&rdquo; GitHub project is here</a> should you wish to peruse the scripts I&rsquo;ve created.</p>
+<p>The totality of the airspace depends much maintenance of the OpenSky network. The majority of the data is recorded via ADS-B receivers, which are distributed over the land mass.</p>
+<p>I&rsquo;m not too well acquainted with aircraft surveillance, but I presume we lose visibility of aircraft (in the data) as they fly out of range of ground stations over the sea or mountainous regions. Otherwise it would be interesting to monitor the full flight path across the globe.</p>
+<p>Aircraft also require a transponder to provide GPS data to the receivers. Any flying aircraft with no transponder are not being captured in this view.</p>
+<p>I am sure there are more accurate flight data providers selling more accurate views and better coverage, but this is purely an illustrative exercise for curiosities sake.</p>
+<h2 id="timelapse-video">Timelapse Video<a hidden class="anchor" aria-hidden="true" href="#timelapse-video">#</a></h2>
+<p>Here is a video illustrating a 16-hour time-lapse of a scatter plot of aircraft flying over North America.
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wC3WE-jOU0w?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+</p>
+<h2 id="processes-and-procedures">Processes and Procedures<a hidden class="anchor" aria-hidden="true" href="#processes-and-procedures">#</a></h2>
+<p>I&rsquo;ll go through details of my data collection, storing and processing.</p>
+<p>I&rsquo;ve considered creating a database and dumping the results in there, but this is something I&rsquo;ll consider in a future iteration if we decide to have a more long-term permanent data collection solution.</p>
+<p>This going to be a fairly quick and dirty version, however, I still ensure there is a semblance of structure in the folders storing the data.</p>
+<h3 id="overall-view">Overall View<a hidden class="anchor" aria-hidden="true" href="#overall-view">#</a></h3>
+<p>The workflow looks something like this:</p>
+<ol>
+<li>Store raw csv data - collection of csv partitioned by date</li>
+<li>Process image data - split collection by visualisations e.g.: contourf, quiver, scatter etc.</li>
+<li>Post-process data - image re-sizing and cropping data to final dimensions</li>
+<li>Animate collection of processed images - using ffmpeg shell script</li>
+</ol>
+<h3 id="data-collection">Data Collection<a hidden class="anchor" aria-hidden="true" href="#data-collection">#</a></h3>
+<p>This is the overall process of how the data is collected:</p>
+<ol>
+<li>Create Python script to request airspace state every 60s</li>
+<li>Recursively store the aircraft positions in a list individual timestamped csv&rsquo;s</li>
+<li>Actually it&rsquo;s as simple as that.</li>
+</ol>
+<p>The time delta between each snapshot not too large to lose detail in the movements and not too small to overload the API with requests. The latter is probably more important to consider, because you don&rsquo;t want to bombard the API and risk taking it completely out of commission due to high frequency request intervals.</p>
+<p>Something that is important to note is that anonymous users are limited to 80 requests to the OpenSky API per day. This is no good for us since we are trying to make a time lapse over an extended period of time.</p>
+<p>We can circumvent this issue by using rotating IP addresses, since each API call will be distributed over a pool of IP addresses and thus prevent our request timing out (since they can&rsquo;t pin down our real IP identity).</p>
+<p>Though this methodology is typically requires the use of a paid service to provide high quality proxies. In my scenario, I chose to use <strong>OxyLabs</strong> which have a web scrapping proxy tool. You can pipe you Python request via their proxy it will automagically handle the proxies for you. I was able to run my script overnight with not a single failure and retrieved over 850 requests.</p>
+<p>Each request produces a 1.1MB csv file. So over 16 hours, we were able to hoover about 1GB of data all together. Unfortunately, my script crashed in the late stages of the execution (probably because I was running it out of a jupyter notebook). I&rsquo;ll convert it into a Python script another time, it just so happens its easier to read the data in Jupyter when doing data exploration.</p>
+<h3 id="data-visualisation">Data Visualisation<a hidden class="anchor" aria-hidden="true" href="#data-visualisation">#</a></h3>
+<p>Part of the inspiration of the visualisation is that I imagine the aircraft movements would have a strong resemblance to a &ldquo;fluid displacement&rdquo; in a aero/mechanical context. So I just wanted to explore the 2D visualisation options and see if this is true.</p>
+<p><em>to be continued</em></p>
+<h3 id="data-animation">Data Animation<a hidden class="anchor" aria-hidden="true" href="#data-animation">#</a></h3>
+<p>This segment is fairly straightforward. Using <strong>ffmpeg</strong>, we can simply point to a folder with a collection of images and ask the program to splice them together into a mp4 file.</p>
+<p>As long as all the images are timestamped, the files should be sorted in chronological order so you don&rsquo;t need to fiddle with passing additional sort arguments into your command.</p>
+<p>It only takes a few minutes on my machine to splice together 850 images together.</p>
+<p><em>to be continued</em></p>
+
+
+
+  </div>
 
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/-systems/">💻 Systems</a></li>
-      <li><a href="http://localhost:1313/tags/%EF%B8%8F-engineering/">⚙️ Engineering</a></li>
-      <li><a href="http://localhost:1313/tags/-data/">📊 Data</a></li>
+      <li><a href="https://filpill.github.io/tags/-data/">📊 Data</a></li>
     </ul>
 <nav class="paginav">
-  <a class="next" href="http://localhost:1313/projects/2024-01-16-docker-ingestion/">
+  <a class="next" href="https://filpill.github.io/projects/2024-04-16-wireguard-vpn/">
     <span class="title">Next »</span>
     <br>
-    <span>Dockerised Postgres Database and Ingestion</span>
+    <span>WireGuard VPN Server</span>
   </a>
 </nav>
 
@@ -163,7 +307,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">Filip Livancic</a></span>
+    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

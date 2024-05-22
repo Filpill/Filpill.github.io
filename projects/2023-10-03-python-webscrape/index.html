@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Python Web Scraping | Filip Livancic</title>
 <meta name="keywords" content="📊 Data">
 <meta name="description" content="Showcasing webscraping and data analysis of a product website on Python">
 <meta name="author" content="">
-<link rel="canonical" href="https://filpill.github.io/projects/2023-10-03-python-webscrape/">
+<link rel="canonical" href="http://localhost:1313/projects/2023-10-03-python-webscrape/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.655e31e5f2a68813836a80ebda575f730895aae7b904bad3f80dbb089f3a6420.css" integrity="sha256-ZV4x5fKmiBODaoDr2ldfcwiVque5BLrT&#43;A27CJ86ZCA=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://filpill.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/2023-10-03-python-webscrape/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/2023-10-03-python-webscrape/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,71 +58,6 @@
 
     </style>
 </noscript>
-  
-
-<meta property="og:title" content="Python Web Scraping" />
-<meta property="og:description" content="Showcasing webscraping and data analysis of a product website on Python" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://filpill.github.io/projects/2023-10-03-python-webscrape/" />
-<meta property="og:image" content="https://filpill.github.io/img/scrape/scrape_thumbnail.png" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2023-10-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-10-03T00:00:00+00:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://filpill.github.io/img/scrape/scrape_thumbnail.png" />
-<meta name="twitter:title" content="Python Web Scraping"/>
-<meta name="twitter:description" content="Showcasing webscraping and data analysis of a product website on Python"/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Projects",
-      "item": "https://filpill.github.io/projects/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Python Web Scraping",
-      "item": "https://filpill.github.io/projects/2023-10-03-python-webscrape/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Python Web Scraping",
-  "name": "Python Web Scraping",
-  "description": "Showcasing webscraping and data analysis of a product website on Python",
-  "keywords": [
-    "📊 Data"
-  ],
-  "articleBody": "Summary Extracting data from public facing websites is a challenging, yet rewarding prospect.\nThe data contained inside each website holds information that could help leverage better decision making: e.g. comparing various products and services with various metrics such as price and ratings.\nModern website designs are increasingly making it more challenging to extract data due to:\nThe stress put on the server with rate of requests being made. Cutting into their profit margins by using the collected data against them. The web scraping approach always needs to be tailored to the website your are visiting. But from my current experience, it will usually fall into these categories:\nUsing some web-automation framework like Selenium or Playwright and then parsing the HTML (loaded via the browser automation) using something like Selectolax. If the data is being loaded dynamically with JavaScript, then I’m also searching the browser for the “hidden API” which is calling the back-end to fetch into the front-end. The benefit of searching for that so called “Hidden API” is that the retrieved data is already organised into a neat little JSON file.\nPreferably you will probably want the data directly from the back-end to retrieve a dataset. Transforming a JSON is much easier than trying to parse through the front matter for HTML tags and containers.\nIn the example shown below, I’ve scraped the Pimoroni.com website by making requests to the back-end API to retrieve the JSON data. I’ve analysed a sample of the data here for reference:\nLink to the project here: Python Web Scraping\nAnalytics Process Flow | Pimoroni Data Flowchart below denotes my process for making requests to Pimoroni.com:\ngraph TD; subgraph Process Initiation 0([Python Notebook Executed])--\u003e A1[Select Product Collection] A1--\u003eA2[Request JSON Data via API] end subgraph Data Extraction A2--\u003eB[Return Number of Hits on Product Page] B--\u003eC[Modify Request To Return All Hits in a Single Page Request] C--\u003eD[Unpack Products from JSON\ninto Dataframe] D--\u003eE[Prune Unnecessary data from Dataframe] E--\u003eF[Loop for every Collection on Website] F--\u003eF1{Are all Product Collections Retrieved?} F1--\u003eF1y[Yes] F1--\u003eF1n[No]--Concat Results to Existing DF--\u003eA1 end subgraph Data Visualization F1y--\u003eV1[Drop Duplicate Product ID's] V1--\u003eV2[Groupby and Count Datapoints] V2--\u003eV3([Create Charts and Save Files]) end Data Visualisations | Pimoroni Data The following images are served directly from my github repository:\n",
-  "wordCount" : "371",
-  "inLanguage": "en",
-  "image":"https://filpill.github.io/img/scrape/scrape_thumbnail.png","datePublished": "2023-10-03T00:00:00Z",
-  "dateModified": "2023-10-03T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://filpill.github.io/projects/2023-10-03-python-webscrape/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Filip Livancic",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://filpill.github.io/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 
 <body class="" id="top">
@@ -143,7 +78,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -171,17 +106,17 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                <a href="http://localhost:1313/profile/" title="👤 Profile">
                     <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                <a href="http://localhost:1313/archives/" title="📁 Archive">
                     <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
+                <a href="http://localhost:1313/tags/" title="🏷️ Tags">
                     <span>🏷️ Tags</span>
                 </a>
             </li>
@@ -192,7 +127,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
     <h1 class="post-title">
       Python Web Scraping
     </h1>
@@ -203,7 +138,7 @@
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/scrape/scrape_thumbnail.png" alt="Scraping thumbnail">
+<figure class="entry-cover"><img loading="lazy" src="http://localhost:1313/img/scrape/scrape_thumbnail.png" alt="Scraping thumbnail">
         
 </figure><div class="toc">
     <details >
@@ -295,15 +230,15 @@ graph TD;
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://filpill.github.io/tags/-data/">📊 Data</a></li>
+      <li><a href="http://localhost:1313/tags/-data/">📊 Data</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/">
+  <a class="prev" href="http://localhost:1313/projects/2023-11-13-windows-linux-fileshare/">
     <span class="title">« Prev</span>
     <br>
     <span>Windows to Linux VM Fileshare</span>
   </a>
-  <a class="next" href="https://filpill.github.io/projects/2023-07-10-cyber-deck-design/">
+  <a class="next" href="http://localhost:1313/projects/2023-07-10-cyber-deck-design/">
     <span class="title">Next »</span>
     <br>
     <span>Cyber Deck Assembly - Raspberry Pi</span>
@@ -315,7 +250,7 @@ graph TD;
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>&copy; 2024 <a href="http://localhost:1313/">Filip Livancic</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

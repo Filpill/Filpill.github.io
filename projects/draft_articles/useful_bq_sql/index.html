@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Filip Livancic</title>
+<meta name="keywords" content="">
+<meta name="description" content="Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
+WITH project_procedures AS ( select CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
+Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s.">
+<meta name="author" content="">
+<link rel="canonical" href="https://filpill.github.io/projects/draft_articles/useful_bq_sql/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.655e31e5f2a68813836a80ebda575f730895aae7b904bad3f80dbb089f3a6420.css" integrity="sha256-ZV4x5fKmiBODaoDr2ldfcwiVque5BLrT&#43;A27CJ86ZCA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://filpill.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/draft_articles/useful_bq_sql/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
+WITH project_procedures AS ( select CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
+Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filpill.github.io/projects/draft_articles/useful_bq_sql/" /><meta property="article:section" content="projects" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
+WITH project_procedures AS ( select CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
+Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://filpill.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "https://filpill.github.io/projects/draft_articles/useful_bq_sql/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.\nWITH project_procedures AS ( select CONCAT(routine_catalog,\u0026#39;.\u0026#39;,routine_schema,\u0026#39;.\u0026#39;,routine_name) AS stored_procedure_path ,\u0026#39;\u0026#34;\u0026#39; || ddl || \u0026#39;\u0026#34;\u0026#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It\u0026rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.\nCreating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD\u0026rsquo;s.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.\nWITH project_procedures AS ( select CONCAT(routine_catalog,'.',routine_schema,'.',routine_name) AS stored_procedure_path ,'\"' || ddl || '\"' AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It’s worth considering that BigQuery does not save a history of revised Stored Procedures.\nCreating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD’s.\nSELECT\njbp.destination_table.project_id || ‘.’ || jbp.destination_table.dataset_id || ‘.’ || jbp.destination_table.table_id AS table_name FROM region-eu.INFORMATION_SCHEMA.JOBS_BY_PROJECT jbp ,UNNEST(referenced_tables) rt WHERE job_type = “QUERY” AND user_email = “firstname.lastname@email.com” AND DATE(creation_time) \u003e= CURRENT_DATE() ORDER BY creation_time DESC LIMIT 1\nSELECT jbp.job_id ,jbp.creation_time ,jbp.user_email ,jbp.statement_type ,jbp.priority ,jbp.start_time ,jbp.end_time ,jbp.state ,jbp.reservation_id ,jbp.total_bytes_processed ,jbp.total_slot_ms ,jbp.cache_hit ,rt.* ,jbp.destination_table.project_id as destination_project_id ,jbp.destination_table.dataset_id as destination_dataset_id ,jbp.destination_table.table_id as destination_table_id FROM region-eu.INFORMATION_SCHEMA.JOBS_BY_PROJECT jbp ,unnest(referenced_tables) rt WHERE job_type = “QUERY” AND user_email = “filip.livancic@sky.uk” AND DATE(creation_time) \u003e= ‘2023-05-17’\nORDER BY creation_time DESC\nColumnar Array - Storage Compression BEGIN CREATE OR REPLACE TEMP TABLE array_table AS ( SELECT t.* except(comcast_rolloff_week,weekly_discount_value), ARRAY_AGG( STRUCT(comcast_rolloff_week,weekly_discount_value) ) AS rolloff_data FROM skyuk-uk-vis-cust-res-u1-lab.tableau_broadband_team.bb_offer_rolloff t GROUP BY ALL ); END\nDynamic SQL SET rolloff_weeks = ( SELECT CONCAT(’(\"’, STRING_AGG(DISTINCT comcast_rolloff_week, ‘\", “’), ‘”)’) FROM rolloff_calendar ORDER BY 1 ASC );\nEXECUTE IMMEDIATE format(\"\"\" CREATE OR REPLACE TABLE skyuk-uk-vis-cust-res-d1-lab.tableau_broadband_team.bb_offer_rolloff_pivot AS ( SELECT * FROM skyuk-uk-vis-cust-res-d1-lab.tableau_broadband_team.bb_offer_rolloff_tableau PIVOT(SUM(weekly_rolloff_value) FOR comcast_rolloff_week IN %s) )\n“”\", rolloff_weeks);\nAuto Expire ALTER TABLE project.dataset.table` SET OPTIONS(expiration_timestamp=TIMESTAMP ‘2024-05-01 00:00:00 UTC’, description = ‘Temp clone to enable SP testing due to object access issues.’) ;\nPermissions select * from skyuk-uk-viewing-pres-prod.region-eu.INFORMATION_SCHEMA.OBJECT_PRIVILEGES where object_name = ‘uk_pres_content_viewing_is’ and grantee like ‘%consumer%’ Column Search SELECT * FROM skyuk-uk-viewing-pres-prod.uk_pres_content_viewing_is.INFORMATION_SCHEMA.COLUMNS WHERE column_name like ‘%nk%’ ORDER BY table_name,column_name DESC;\nExcept Distinct\nIdentifies distinct rows which are not matching between the two tables\nSELECT table_catalog, table_schema, table_name, column_name, data_type, is_nullable, is_partitioning_column, clustering_ordinal_position, ordinal_position, collation_name column_comment FROM – skyuk-uk-vis-cust-res-p1-lab.key_tables.INFORMATION_SCHEMA.COLUMNS skyuk-uk-customer-pres-dev.uk_pub_customer_assurance_is.INFORMATION_SCHEMA.COLUMNS WHERE lower(table_name) IN (‘dim_assurance_case_management_guarantee_details’)\nEXCEPT DISTINCT\nSELECT table_catalog, table_schema, table_name, column_name, data_type, is_nullable, is_partitioning_column, clustering_ordinal_position, ordinal_position, collation_name column_comment FROM – skyuk-uk-vis-cust-res-p1-lab.key_tables.INFORMATION_SCHEMA.COLUMNS skyuk-uk-customer-pres-u01.uk_pub_customer_assurance_is.INFORMATION_SCHEMA.COLUMNS WHERE lower(table_name) IN (‘dim_assurance_case_management_guarantee_details’ ) ;\nInfo Schema Routines\nThe routine_definition col contains the data for the SP design.\nselect specific_catalog ,specific_schema ,specific_name ,routine_catalog ,routine_schema ,routine_name ,routine_type ,data_type ,routine_body ,routine_definition ,external_language ,is_deterministic ,security_type ,created ,last_altered ,ddl from –skyuk-uk-vis-cust-res-p1-lab.batch_processing.INFORMATION_SCHEMA.ROUTINES skyuk-uk-vis-cust-res-p1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES ; Data Lineage\nSample SQL for “dbfiddle” designed for postGres database in order trace lineage of a set of id values\nCREATE TABLE test ( id INTEGER, parent_project_id INTEGER );\nINSERT INTO test (id, parent_project_id) VALUES (2, 1), (3, 1), (7, 2), (8, 3), (9, 3), (10, 8), (11, 8);\nCREATE TABLE path_names ( id INTEGER, path_name VARCHAR );\nINSERT INTO path_names (id, path_name) VALUES (1,‘A’), (2,‘B’), (3,‘C’), (4,‘D’), (5,‘E’), (6,‘F’), (7,‘G’), (8,‘H’), (9,‘I’), (10,‘J’), (11,‘K’);\n/* Need to join back to the project name */ WITH RECURSIVE c AS ( –SELECT 1 AS leaf, – 1 AS parent, – 0 AS n –UNION ALL SELECT id AS leaf, id AS parent, 0 AS n FROM test UNION ALL SELECT leaf, t.parent_project_id AS parent, c.n + 1 FROM test AS t INNER JOIN c ON c.parent = t.id ) SELECT leaf AS id, array_agg(parent ORDER BY n DESC) FILTER (WHERE parent IS NOT NULL) AS ancestry, max(parent) FILTER (WHERE n = 1) AS parent, STRING_AGG(parent::text,’\u003e’ order by n DESC) FILTER (WHERE parent IS NOT NULL) as path FROM c GROUP BY leaf ORDER BY leaf;\n",
+  "wordCount" : "556",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://filpill.github.io/projects/draft_articles/useful_bq_sql/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Filip Livancic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://filpill.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, securityLevel: 'loose'}});</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                    <span>👤 Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                    <span>📁 Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
+                    <span>🏷️ Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <h1 class="post-title">
+      
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="retrieve-stored-procedures">Retrieve Stored Procedures<a hidden class="anchor" aria-hidden="true" href="#retrieve-stored-procedures">#</a></h2>
+<p>Takes a snapshot of procedure names and DDL contents from the Google BigQuery.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> project_procedures <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span>
+</span></span><span style="display:flex;"><span>    CONCAT(<span style="color:#66d9ef">routine_catalog</span>,<span style="color:#e6db74">&#39;.&#39;</span>,<span style="color:#66d9ef">routine_schema</span>,<span style="color:#e6db74">&#39;.&#39;</span>,<span style="color:#66d9ef">routine_name</span>) <span style="color:#66d9ef">AS</span> stored_procedure_path
+</span></span><span style="display:flex;"><span>   ,<span style="color:#e6db74">&#39;&#34;&#39;</span> <span style="color:#f92672">||</span> ddl <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;&#34;&#39;</span> <span style="color:#66d9ef">AS</span> ddl,
+</span></span><span style="display:flex;"><span>   last_altered
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> <span style="color:#f92672">`</span>skyuk<span style="color:#f92672">-</span>uk<span style="color:#f92672">-</span>vis<span style="color:#f92672">-</span>cust<span style="color:#f92672">-</span>res<span style="color:#f92672">-</span>d1<span style="color:#f92672">-</span>lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES<span style="color:#f92672">`</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> project_procedures
+</span></span></code></pre></div><p>It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.</p>
+<p>Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s.</p>
+<p>SELECT<br>
+jbp.destination_table.project_id || &lsquo;.&rsquo; || jbp.destination_table.dataset_id || &lsquo;.&rsquo; || jbp.destination_table.table_id AS table_name
+FROM <code>region-eu</code>.INFORMATION_SCHEMA.JOBS_BY_PROJECT jbp
+,UNNEST(referenced_tables) rt
+WHERE
+job_type = &ldquo;QUERY&rdquo;
+AND user_email = &ldquo;<a href="mailto:firstname.lastname@email.com">firstname.lastname@email.com</a>&rdquo;
+AND DATE(creation_time) &gt;= CURRENT_DATE()
+ORDER BY creation_time DESC
+LIMIT 1</p>
+<p>SELECT
+jbp.job_id
+,jbp.creation_time
+,jbp.user_email
+,jbp.statement_type
+,jbp.priority
+,jbp.start_time
+,jbp.end_time
+,jbp.state
+,jbp.reservation_id
+,jbp.total_bytes_processed
+,jbp.total_slot_ms
+,jbp.cache_hit
+,rt.*
+,jbp.destination_table.project_id as destination_project_id
+,jbp.destination_table.dataset_id as destination_dataset_id
+,jbp.destination_table.table_id   as destination_table_id
+FROM
+<code>region-eu</code>.INFORMATION_SCHEMA.JOBS_BY_PROJECT jbp
+,unnest(referenced_tables) rt
+WHERE
+job_type = &ldquo;QUERY&rdquo;
+AND
+user_email = &ldquo;<a href="mailto:filip.livancic@sky.uk">filip.livancic@sky.uk</a>&rdquo;
+AND
+DATE(creation_time) &gt;= &lsquo;2023-05-17&rsquo;</p>
+<p>ORDER BY creation_time DESC</p>
+<p>Columnar Array - Storage Compression
+BEGIN
+CREATE OR REPLACE TEMP TABLE array_table AS (
+SELECT
+t.* except(comcast_rolloff_week,weekly_discount_value),
+ARRAY_AGG(
+STRUCT(comcast_rolloff_week,weekly_discount_value)
+) AS rolloff_data
+FROM <code>skyuk-uk-vis-cust-res-u1-lab.tableau_broadband_team.bb_offer_rolloff</code> t
+GROUP BY ALL
+);
+END</p>
+<p>Dynamic SQL
+SET rolloff_weeks = (
+SELECT
+CONCAT(&rsquo;(&quot;&rsquo;, STRING_AGG(DISTINCT comcast_rolloff_week, &lsquo;&quot;, &ldquo;&rsquo;), &lsquo;&rdquo;)&rsquo;)
+FROM rolloff_calendar ORDER BY 1 ASC
+);</p>
+<p>EXECUTE IMMEDIATE format(&quot;&quot;&quot;
+CREATE OR REPLACE TABLE <code>skyuk-uk-vis-cust-res-d1-lab.tableau_broadband_team.bb_offer_rolloff_pivot</code> AS (
+SELECT
+*
+FROM <code>skyuk-uk-vis-cust-res-d1-lab.tableau_broadband_team.bb_offer_rolloff_tableau</code>
+PIVOT(SUM(weekly_rolloff_value) FOR comcast_rolloff_week IN %s)
+)</p>
+<p>&ldquo;&rdquo;&quot;, rolloff_weeks);</p>
+<p>Auto Expire
+ALTER TABLE
+<code>project.</code>dataset<code>.</code>table`
+SET
+OPTIONS(expiration_timestamp=TIMESTAMP &lsquo;2024-05-01 00:00:00 UTC&rsquo;,
+description = &lsquo;Temp clone to enable SP testing due to object access issues.&rsquo;)
+;</p>
+<p>Permissions
+select  *
+from  skyuk-uk-viewing-pres-prod.<code>region-eu</code>.INFORMATION_SCHEMA.OBJECT_PRIVILEGES
+where  object_name = &lsquo;uk_pres_content_viewing_is&rsquo;
+and grantee like &lsquo;%consumer%&rsquo;
+Column Search
+SELECT *
+FROM skyuk-uk-viewing-pres-prod.uk_pres_content_viewing_is.INFORMATION_SCHEMA.COLUMNS
+WHERE column_name like &lsquo;%nk%&rsquo;
+ORDER BY table_name,column_name DESC;</p>
+<p>Except Distinct</p>
+<p>Identifies distinct rows which are not matching between the two tables</p>
+<p>SELECT
+table_catalog,
+table_schema,
+table_name,
+column_name,
+data_type,
+is_nullable,
+is_partitioning_column,
+clustering_ordinal_position,
+ordinal_position,
+collation_name
+column_comment
+FROM
+&ndash; <code>skyuk-uk-vis-cust-res-p1-lab.key_tables.INFORMATION_SCHEMA.COLUMNS</code>
+<code>skyuk-uk-customer-pres-dev.uk_pub_customer_assurance_is.INFORMATION_SCHEMA.COLUMNS</code>
+WHERE
+lower(table_name) IN (&lsquo;dim_assurance_case_management_guarantee_details&rsquo;)</p>
+<p>EXCEPT DISTINCT</p>
+<p>SELECT
+table_catalog,
+table_schema,
+table_name,
+column_name,
+data_type,
+is_nullable,
+is_partitioning_column,
+clustering_ordinal_position,
+ordinal_position,
+collation_name
+column_comment
+FROM
+&ndash; <code>skyuk-uk-vis-cust-res-p1-lab.key_tables.INFORMATION_SCHEMA.COLUMNS</code>
+<code>skyuk-uk-customer-pres-u01.uk_pub_customer_assurance_is.INFORMATION_SCHEMA.COLUMNS</code>
+WHERE
+lower(table_name) IN (&lsquo;dim_assurance_case_management_guarantee_details&rsquo; )
+;</p>
+<p>Info Schema Routines</p>
+<p>The routine_definition col contains the data for the SP design.</p>
+<p>select
+specific_catalog
+,specific_schema
+,specific_name
+,routine_catalog
+,routine_schema
+,routine_name
+,routine_type
+,data_type
+,routine_body
+,routine_definition
+,external_language
+,is_deterministic
+,security_type
+,created
+,last_altered
+,ddl
+from
+&ndash;<code>skyuk-uk-vis-cust-res-p1-lab.batch_processing.INFORMATION_SCHEMA.ROUTINES</code>
+<code>skyuk-uk-vis-cust-res-p1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES</code>
+;
+Data Lineage</p>
+<p>Sample SQL for &ldquo;dbfiddle&rdquo; designed for postGres database in order trace lineage of a set of id values</p>
+<p>CREATE TABLE test
+(
+id INTEGER,
+parent_project_id INTEGER
+);</p>
+<p>INSERT INTO test (id, parent_project_id) VALUES
+(2, 1),
+(3, 1),
+(7, 2),
+(8, 3),
+(9, 3),
+(10, 8),
+(11, 8);</p>
+<p>CREATE TABLE path_names
+(
+id INTEGER,
+path_name VARCHAR
+);</p>
+<p>INSERT INTO path_names (id, path_name) VALUES
+(1,&lsquo;A&rsquo;),
+(2,&lsquo;B&rsquo;),
+(3,&lsquo;C&rsquo;),
+(4,&lsquo;D&rsquo;),
+(5,&lsquo;E&rsquo;),
+(6,&lsquo;F&rsquo;),
+(7,&lsquo;G&rsquo;),
+(8,&lsquo;H&rsquo;),
+(9,&lsquo;I&rsquo;),
+(10,&lsquo;J&rsquo;),
+(11,&lsquo;K&rsquo;);</p>
+<p>/* Need to join back to the project name */
+WITH RECURSIVE
+c
+AS
+(
+&ndash;SELECT 1 AS leaf,
+&ndash;       1 AS parent,
+&ndash;       0 AS n
+&ndash;UNION ALL
+SELECT id AS leaf,
+id AS parent,
+0 AS n
+FROM test
+UNION ALL
+SELECT leaf,
+t.parent_project_id AS parent,
+c.n + 1
+FROM test AS t
+INNER JOIN c
+ON c.parent = t.id
+)
+SELECT leaf AS id,
+array_agg(parent ORDER BY n DESC) FILTER (WHERE parent IS NOT NULL) AS ancestry,
+max(parent) FILTER (WHERE n = 1) AS parent,
+STRING_AGG(parent::text,&rsquo;&gt;&rsquo; order by n DESC) FILTER (WHERE parent IS NOT NULL) as path
+FROM c
+GROUP BY leaf
+ORDER BY leaf;</p>
+
+
+
+  </div>
+
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://filpill.github.io/projects/2017-06-01-piv-dissertation/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Forward Facing Step - Particle Image Velocimetry</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

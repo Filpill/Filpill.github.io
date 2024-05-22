@@ -6,7 +6,16 @@
     <description>Recent content in Projects on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Airspace Tracking Visualisations</title>
+      <link>https://filpill.github.io/projects/2024-05-21-flight-tracking/</link>
+      <pubDate>Sun, 05 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://filpill.github.io/projects/2024-05-21-flight-tracking/</guid>
+      <description>Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG</description>
+    </item>
+    
     <item>
       <title>WireGuard VPN Server</title>
       <link>https://filpill.github.io/projects/2024-04-16-wireguard-vpn/</link>
@@ -41,15 +50,6 @@
       
       <guid>https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/</guid>
       <description>How-to guide for setting up shared folder on Windows with your Hyper-V Linux VM</description>
-    </item>
-    
-    <item>
-      <title>Python Web Scraping</title>
-      <link>https://filpill.github.io/projects/2023-10-03-python-webscrape/</link>
-      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/projects/2023-10-03-python-webscrape/</guid>
-      <description>Showcasing webscraping and data analysis of a product website on Python</description>
     </item>
     
     <item>
@@ -188,12 +188,14 @@
     </item>
     
     <item>
-      <title>2024 05 21 Flight_tracking</title>
-      <link>https://filpill.github.io/projects/draft_articles/2024-05-21-flight-tracking/</link>
-      <pubDate>Fri, 21 May 1999 00:00:00 +0000</pubDate>
+      <title></title>
+      <link>https://filpill.github.io/projects/draft_articles/useful_bq_sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/draft_articles/2024-05-21-flight-tracking/</guid>
-      <description>--- Insert Description Here ---</description>
+      <guid>https://filpill.github.io/projects/draft_articles/useful_bq_sql/</guid>
+      <description>Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
+WITH project_procedures AS ( select CONCAT(routine_catalog,&amp;#39;.&amp;#39;,routine_schema,&amp;#39;.&amp;#39;,routine_name) AS stored_procedure_path ,&amp;#39;&amp;#34;&amp;#39; || ddl || &amp;#39;&amp;#34;&amp;#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It&amp;rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
+Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&amp;rsquo;s.</description>
     </item>
     
   </channel>

@@ -6,14 +6,14 @@
     <description>Recent content in 📊 Data on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/-data/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/-data/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Python Web Scraping</title>
-      <link>https://filpill.github.io/projects/2023-10-03-python-webscrape/</link>
-      <pubDate>Tue, 03 Oct 2023 00:00:00 +0000</pubDate>
+      <title>Airspace Tracking Visualisations</title>
+      <link>https://filpill.github.io/projects/2024-05-21-flight-tracking/</link>
+      <pubDate>Sun, 05 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://filpill.github.io/projects/2023-10-03-python-webscrape/</guid>
-      <description>Showcasing webscraping and data analysis of a product website on Python</description>
+      <guid>https://filpill.github.io/projects/2024-05-21-flight-tracking/</guid>
+      <description>Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG</description>
     </item>
     
     <item>
@@ -50,15 +50,6 @@
       
       <guid>https://filpill.github.io/projects/2022-07-23-python-pipelines/</guid>
       <description>Python integration methods and automation practices for SQL and MS Office products</description>
-    </item>
-    
-    <item>
-      <title>2024 05 21 Flight_tracking</title>
-      <link>https://filpill.github.io/projects/draft_articles/2024-05-21-flight-tracking/</link>
-      <pubDate>Fri, 21 May 1999 00:00:00 +0000</pubDate>
-      
-      <guid>https://filpill.github.io/projects/draft_articles/2024-05-21-flight-tracking/</guid>
-      <description>--- Insert Description Here ---</description>
     </item>
     
   </channel>
