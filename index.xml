@@ -6,11 +6,11 @@
     <description>Recent content on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Airspace Tracking Visualisations</title>
+      <title>Flight Tracking Animations</title>
       <link>https://filpill.github.io/projects/2024-05-21-flight-tracking/</link>
-      <pubDate>Sun, 05 May 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/2024-05-21-flight-tracking/</guid>
       <description>Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG</description>
