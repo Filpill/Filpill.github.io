@@ -6,7 +6,7 @@
     <description>Recent content on Filip Livancic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Sep 2024 17:44:58 +0000</lastBuildDate><atom:link href="https://filpill.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flight Tracking Animations</title>
       <link>https://filpill.github.io/projects/2024-05-21-flight-tracking/</link>
@@ -193,9 +193,17 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/projects/draft_articles/useful_bq_sql/</guid>
-      <description>Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
-WITH project_procedures AS ( select CONCAT(routine_catalog,&amp;#39;.&amp;#39;,routine_schema,&amp;#39;.&amp;#39;,routine_name) AS stored_procedure_path ,&amp;#39;&amp;#34;&amp;#39; || ddl || &amp;#39;&amp;#34;&amp;#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It&amp;rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
-Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&amp;rsquo;s.</description>
+      <description>&lt;h2 id=&#34;retrieve-stored-procedures&#34;&gt;Retrieve Stored Procedures&lt;/h2&gt;
+&lt;p&gt;Takes a snapshot of procedure names and DDL contents from the Google BigQuery.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SQL&#34; data-lang=&#34;SQL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WITH&lt;/span&gt; project_procedures &lt;span style=&#34;color:#66d9ef&#34;&gt;AS&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;select&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    CONCAT(&lt;span style=&#34;color:#66d9ef&#34;&gt;routine_catalog&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;routine_schema&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;routine_name&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;AS&lt;/span&gt; stored_procedure_path
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   ,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; ddl &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AS&lt;/span&gt; ddl,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   last_altered
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;skyuk&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;uk&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;vis&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;cust&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;res&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;d1&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; project_procedures
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pr</description>
     </item>
     
     <item>
@@ -204,9 +212,18 @@ Creating a change history is down to you to create through some kind of Git-base
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://filpill.github.io/profile/</guid>
-      <description>&amp;#x1f636;&amp;zwj;&amp;#x1f32b;&amp;#xfe0f; About Me Aeronautical Engineering Degree Aviation safety management system experience Self-taught maker, programmer and data analyst Hobbies: CAD, 3D Printing, gliding, programming and travelling &amp;#x1f52d; Vision for the Website The purpose of this website is to document my learning journey and aims to:
-Continually build a repository of information to serve as a reference guide for myself and other people in a variety of domains.
-The true value of knowledge is only unlocked when you are deeply interested in the subject matter and are able to conjure solutions to real world problems.</description>
+      <description>&lt;h3 id=&#34;face_in_clouds-about-me&#34;&gt;&amp;#x1f636;&amp;zwj;&amp;#x1f32b;&amp;#xfe0f; About Me&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Aeronautical Engineering Degree&lt;/li&gt;
+&lt;li&gt;Aviation safety management system experience&lt;/li&gt;
+&lt;li&gt;Self-taught maker, programmer and data analyst&lt;/li&gt;
+&lt;li&gt;Hobbies: CAD, 3D Printing, gliding, programming and travelling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;telescope-vision-for-the-website&#34;&gt;&amp;#x1f52d; Vision for the Website&lt;/h3&gt;
+&lt;p&gt;The purpose of this website is to document my learning journey and aims to:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Continually build a repository of information to serve as a reference guide for myself and other people in a variety of domains.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
     

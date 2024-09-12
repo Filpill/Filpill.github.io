@@ -7,9 +7,17 @@
 <meta name="robots" content="index, follow">
 <title>Filip Livancic</title>
 <meta name="keywords" content="">
-<meta name="description" content="Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
-WITH project_procedures AS ( select CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
-Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s.">
+<meta name="description" content="Retrieve Stored Procedures
+Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
+WITH project_procedures AS (
+select
+    CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path
+   ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl,
+   last_altered
+from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES`
+)
+SELECT * FROM project_procedures
+">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/draft_articles/useful_bq_sql/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b97b539aa25740381c9dc83f76b08bd5df6cb62b114e54ba5efab1bdfa743666.css" integrity="sha256-uXtTmqJXQDgcncg/drCL1d9stisRTlS6Xvqxvfp0NmY=" rel="preload stylesheet" as="style">
@@ -59,13 +67,18 @@ Creating a change history is down to you to create through some kind of Git-base
         }
 
     </style>
-</noscript>
-  
-
-<meta property="og:title" content="" />
-<meta property="og:description" content="Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
-WITH project_procedures AS ( select CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
-Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s." />
+</noscript><meta property="og:title" content="" />
+<meta property="og:description" content="Retrieve Stored Procedures
+Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
+WITH project_procedures AS (
+select
+    CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path
+   ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl,
+   last_altered
+from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES`
+)
+SELECT * FROM project_procedures
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://filpill.github.io/projects/draft_articles/useful_bq_sql/" /><meta property="article:section" content="projects" />
 
@@ -73,9 +86,17 @@ Creating a change history is down to you to create through some kind of Git-base
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
-WITH project_procedures AS ( select CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
-Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s."/>
+<meta name="twitter:description" content="Retrieve Stored Procedures
+Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
+WITH project_procedures AS (
+select
+    CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path
+   ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl,
+   last_altered
+from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES`
+)
+SELECT * FROM project_procedures
+"/>
 
 
 <script type="application/ld+json">
@@ -104,7 +125,7 @@ Creating a change history is down to you to create through some kind of Git-base
   "@type": "BlogPosting",
   "headline": "",
   "name": "",
-  "description": "Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.\nWITH project_procedures AS ( select CONCAT(routine_catalog,\u0026#39;.\u0026#39;,routine_schema,\u0026#39;.\u0026#39;,routine_name) AS stored_procedure_path ,\u0026#39;\u0026#34;\u0026#39; || ddl || \u0026#39;\u0026#34;\u0026#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It\u0026rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.\nCreating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD\u0026rsquo;s.",
+  "description": "Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.\nWITH project_procedures AS ( select CONCAT(routine_catalog,\u0026#39;.\u0026#39;,routine_schema,\u0026#39;.\u0026#39;,routine_name) AS stored_procedure_path ,\u0026#39;\u0026#34;\u0026#39; || ddl || \u0026#39;\u0026#34;\u0026#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures ",
   "keywords": [
     
   ],
