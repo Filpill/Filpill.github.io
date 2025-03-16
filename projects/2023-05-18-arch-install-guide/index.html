@@ -10,9 +10,7 @@
 <meta name="description" content="Step-by-step guide for installing Arch Linux from scratch on a VM">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2023-05-18-arch-install-guide/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b97b539aa25740381c9dc83f76b08bd5df6cb62b114e54ba5efab1bdfa743666.css" integrity="sha256-uXtTmqJXQDgcncg/drCL1d9stisRTlS6Xvqxvfp0NmY=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://filpill.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
@@ -38,7 +36,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -57,18 +55,21 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Arch Linux Installation Guide" />
-<meta property="og:description" content="Step-by-step guide for installing Arch Linux from scratch on a VM" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://filpill.github.io/projects/2023-05-18-arch-install-guide/" />
-<meta property="og:image" content="https://filpill.github.io/img/arch/install_process/45.jpg" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2023-05-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-05-18T00:00:00+00:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://filpill.github.io/img/arch/install_process/45.jpg" />
-<meta name="twitter:title" content="Arch Linux Installation Guide"/>
-<meta name="twitter:description" content="Step-by-step guide for installing Arch Linux from scratch on a VM"/>
+</noscript><meta property="og:url" content="https://filpill.github.io/projects/2023-05-18-arch-install-guide/">
+  <meta property="og:site_name" content="Filip Livancic">
+  <meta property="og:title" content="Arch Linux Installation Guide">
+  <meta property="og:description" content="Step-by-step guide for installing Arch Linux from scratch on a VM">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2023-05-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-05-18T00:00:00+00:00">
+    <meta property="article:tag" content="💻 Systems">
+    <meta property="og:image" content="https://filpill.github.io/img/arch/install_process/45.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://filpill.github.io/img/arch/install_process/45.jpg">
+<meta name="twitter:title" content="Arch Linux Installation Guide">
+<meta name="twitter:description" content="Step-by-step guide for installing Arch Linux from scratch on a VM">
 
 
 <script type="application/ld+json">
@@ -205,8 +206,8 @@
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/arch/install_process/45.jpg" alt="Arch Linux Neofetch">
-        
+<figure class="entry-cover">
+        <img loading="lazy" src="https://filpill.github.io/img/arch/install_process/45.jpg" alt="Arch Linux Neofetch">
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -298,12 +299,8 @@
 <p>The virtual machine is made with Microsoft&rsquo;s Hyper-V program. The steps may differ slightly if you choose to use a another hypervisor such as VirtualBox.</p>
 <h2 id="video-tutorial">Video Tutorial<a hidden class="anchor" aria-hidden="true" href="#video-tutorial">#</a></h2>
 <p>This video tutorial will closely follow the installation process described in this article:</p>
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/K5ubNttIhaw?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/K5ubNttIhaw?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
 <h2 id="arch-linux-iso-download-link">Arch Linux ISO Download Link<a hidden class="anchor" aria-hidden="true" href="#arch-linux-iso-download-link">#</a></h2>
@@ -313,40 +310,31 @@
 <h2 id="creating-a-hyper-v-virtual-machine">Creating a Hyper-V Virtual Machine<a hidden class="anchor" aria-hidden="true" href="#creating-a-hyper-v-virtual-machine">#</a></h2>
 <h3 id="1-create-new-virtual-machine">1. Create New Virtual Machine<a hidden class="anchor" aria-hidden="true" href="#1-create-new-virtual-machine">#</a></h3>
 <p>The first step is to open up Hyper-V and create a new virtual machine
-<img loading="lazy" src="/img/arch/install_process/1.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/1.jpg#center"></p>
 <h3 id="2-select-vm-generation">2. Select VM Generation<a hidden class="anchor" aria-hidden="true" href="#2-select-vm-generation">#</a></h3>
 <p>You will be asked which generation of VM to create. I would reccommend to select &ldquo;Generation 2&rdquo;. It supports UEFI firmware and it should be better from a cyber-security standpoint.
-<img loading="lazy" src="/img/arch/install_process/2.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/2.jpg#center"></p>
 <h3 id="3-allocate-memory">3. Allocate Memory<a hidden class="anchor" aria-hidden="true" href="#3-allocate-memory">#</a></h3>
 <p>You can specify how much memory to allocate to the VM. I decided to allocate 4000MB in my use case.
-<img loading="lazy" src="/img/arch/install_process/3.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/3.jpg#center"></p>
 <h3 id="4-configure-network-adapter">4. Configure Network Adapter<a hidden class="anchor" aria-hidden="true" href="#4-configure-network-adapter">#</a></h3>
 <p>Hyper-V has a built in network adapter that works out of the box, so you&rsquo;d want to select &ldquo;Default Switch&rdquo; to have it enabled.
-<img loading="lazy" src="/img/arch/install_process/4.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/4.jpg#center"></p>
 <h3 id="5-create-virtual-hard-disk">5. Create Virtual Hard Disk<a hidden class="anchor" aria-hidden="true" href="#5-create-virtual-hard-disk">#</a></h3>
 <p>For the VM you should create a virtual hard disk to store the data. I decided to allocate 30GB of storage space.
-<img loading="lazy" src="/img/arch/install_process/5.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/5.jpg#center"></p>
 <h3 id="6-select-iso-image">6. Select .iso Image<a hidden class="anchor" aria-hidden="true" href="#6-select-iso-image">#</a></h3>
 <p>You need to select the arch linux ISO file to boot from and then you can finalise the VM creation.
-<img loading="lazy" src="/img/arch/install_process/6.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/6.jpg#center"></p>
 <h3 id="7-go-to-settings">7. Go to Settings<a hidden class="anchor" aria-hidden="true" href="#7-go-to-settings">#</a></h3>
 <p>We are not done yet, we still need to configure 2 more things in the settings panel of this VM we just created.
-<img loading="lazy" src="/img/arch/install_process/7.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/7.jpg#center"></p>
 <h3 id="8-disable-secure-boot">8. Disable Secure Boot<a hidden class="anchor" aria-hidden="true" href="#8-disable-secure-boot">#</a></h3>
 <p>We need to <strong>disable Secure Boot</strong>, if you do not do this step, it will interfere with your ability to boot the ISO image.
-<img loading="lazy" src="/img/arch/install_process/8.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/8.jpg#center"></p>
 <h3 id="9-change-boot-priority">9. Change Boot Priority<a hidden class="anchor" aria-hidden="true" href="#9-change-boot-priority">#</a></h3>
 <p>Next we need to <strong>bump the Hard Drive to the first priority of boot loading</strong>. Its very important that you do this step before you start installing linux otherwise the Grub will fail down the line because it will be trying to boot from the DVD Drive. You will not be able to retroactively change the boot order at a later stage.
-<img loading="lazy" src="/img/arch/install_process/9.jpg#center" alt=""  />
-
+<img loading="lazy" src="/img/arch/install_process/9.jpg#center">
 After applying the changes:</p>
 <h3 id="10-fixing-hyper-v-resolution-powershell">10. Fixing Hyper-V Resolution (Powershell)<a hidden class="anchor" aria-hidden="true" href="#10-fixing-hyper-v-resolution-powershell">#</a></h3>
 <p>Oddly enough we do not have GUI setting for adjusting the resolution of the VM which is bizzare for a windows tool. Therefore we will need to use Powershell (with Admin permissions) to fix this.</p>
@@ -354,23 +342,18 @@ After applying the changes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-VMVideo -VMName <span style="color:#e6db74">&#39;ArchVM&#39;</span> -HorizontalResolution <span style="color:#ae81ff">1920</span> -VerticalResolution <span style="color:#ae81ff">1080</span> -ResolutionType Single
 </span></span></code></pre></div><h3 id="11-start-the-vm">11. Start the VM<a hidden class="anchor" aria-hidden="true" href="#11-start-the-vm">#</a></h3>
 <p>Connect to the VM:
-<img loading="lazy" src="/img/arch/install_process/10.jpg#center" alt=""  />
-
+<img loading="lazy" src="/img/arch/install_process/10.jpg#center">
 Start the VM:
-<img loading="lazy" src="/img/arch/install_process/11.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/11.jpg#center"></p>
 <h2 id="installing-arch-linux">Installing Arch Linux<a hidden class="anchor" aria-hidden="true" href="#installing-arch-linux">#</a></h2>
 <p>From this screen select the highlighted option to load the ISO image
-<img loading="lazy" src="/img/arch/install_process/12.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/12.jpg#center"></p>
 <p>The install process starts here:
-<img loading="lazy" src="/img/arch/install_process/13.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/13.jpg#center"></p>
 <h3 id="1-verify-internet-connection">1. Verify Internet Connection<a hidden class="anchor" aria-hidden="true" href="#1-verify-internet-connection">#</a></h3>
 <p>Before going any further, you should ping a website to test your internet connection:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping archlinux.org
-</span></span></code></pre></div><p><img loading="lazy" src="/img/arch/install_process/14.jpg#center" alt=""  />
-
+</span></span></code></pre></div><p><img loading="lazy" src="/img/arch/install_process/14.jpg#center">
 The Hyper-V default network switch should automatically provide your VM with the internet connection. If not, you will probably need to configure Hyper-V to alleviate networking issues.</p>
 <h3 id="2-synchronise-system-clock">2. Synchronise System Clock<a hidden class="anchor" aria-hidden="true" href="#2-synchronise-system-clock">#</a></h3>
 <p>We also need to synchronise the systems clock with the network time:</p>
@@ -378,28 +361,24 @@ The Hyper-V default network switch should automatically provide your VM with the
 </span></span></code></pre></div><h3 id="3-drive-partitioning">3. Drive Partitioning<a hidden class="anchor" aria-hidden="true" href="#3-drive-partitioning">#</a></h3>
 <p>Now we need to start partitioning our drives and creating our file system.</p>
 <p>The <strong>lsblk</strong> command indicates which drives and partitions are on your system. And we can use <strong>cfdisk</strong> to partition the drives.
-<img loading="lazy" src="/img/arch/install_process/16.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/16.jpg#center"></p>
 <p>Type the command to start partitioning your virtualised disk:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cfdisk /dev/sda
-</span></span></code></pre></div><p><img loading="lazy" src="/img/arch/install_process/18.jpg#center" alt=""  />
-</p>
+</span></span></code></pre></div><p><img loading="lazy" src="/img/arch/install_process/18.jpg#center"></p>
 <p>At this juncture we need to assign the disk label type and it comes down to two options mainly:</p>
 <ul>
 <li>If the hardware is new and the drive &gt;= 2TB, use <strong>gpt</strong>.</li>
 <li>Otherwise use <strong>dos</strong>.</li>
 </ul>
 <blockquote>
-<p><em><strong>For our scenario we are using dos</strong></em></p>
-</blockquote>
+<p><em><strong>For our scenario we are using dos</strong></em></p></blockquote>
 <p>Decide on a partition scheme. I will keep it simple and reduce it to a <strong>boot and root partition</strong>:</p>
 <ul>
 <li><strong>/dev/sda1 (boot partition)</strong> only needs about <strong>128MB</strong> of space and needs to be bootable. You can <strong>press b to enable the boot flag</strong> after making the partition.</li>
 <li><strong>/dev/sda2 (root partition)</strong> can be assigned the <strong>remaining space of the disk</strong>.</li>
 </ul>
 <p>Write the changes and quit out of cfdisk.
-<img loading="lazy" src="/img/arch/install_process/19.jpg#center" alt=""  />
-
+<img loading="lazy" src="/img/arch/install_process/19.jpg#center">
 If you <strong>lsblk</strong> now, you will now see that 2 partitions have been made which are called <strong>sda1 and sda2</strong>.</p>
 <h3 id="4-creating-file-systems">4. Creating File Systems<a hidden class="anchor" aria-hidden="true" href="#4-creating-file-systems">#</a></h3>
 <p>We also need to make the file systems for each partition:</p>
@@ -418,8 +397,7 @@ mkfs.ext4 /dev/sda2
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount /dev/sda2 /mnt
 </span></span></code></pre></div><blockquote>
-<p><strong>Warning:</strong> If you mount in reverse order, the install will fail!</p>
-</blockquote>
+<p><strong>Warning:</strong> If you mount in reverse order, the install will fail!</p></blockquote>
 <p>For the boot partition, you will need to make a directory with this path <strong>/mnt/boot/efi</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt
 </span></span><span style="display:flex;"><span>mkdir boot
@@ -457,8 +435,7 @@ mkfs.ext4 /dev/sda2
 </span></span></code></pre></div><p>We need to edit this grub file:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/default/grub
 </span></span></code></pre></div><p>Uncomment the line &ldquo;GRUB_DISABLE_OS_PROBER=false&rdquo; and then save the file.</p>
-<p><img loading="lazy" src="/img/arch/install_process/31.jpg#center" alt=""  />
-</p>
+<p><img loading="lazy" src="/img/arch/install_process/31.jpg#center"></p>
 <p>You may also want to edit the following grub variables if you wish to change the resolution of grub:</p>
 <ul>
 <li>GRUB_CMD_LINUX_DEFAULT</li>
@@ -473,14 +450,12 @@ mkfs.ext4 /dev/sda2
 </span></span></code></pre></div><p>After rebooting your Linux machine, your terminal should automatically scale to the 1080p resolution without having to make changes using commands like <strong>xrandr -s 1920x1080</strong> inside the display server.</p>
 <h3 id="12-set-root-password">12. Set Root Password<a hidden class="anchor" aria-hidden="true" href="#12-set-root-password">#</a></h3>
 <p>Run the passwd command to set a root password for the machine
-<img loading="lazy" src="/img/arch/install_process/32.jpg#center" alt=""  />
-</p>
+<img loading="lazy" src="/img/arch/install_process/32.jpg#center"></p>
 <h3 id="13-localization">13. Localization<a hidden class="anchor" aria-hidden="true" href="#13-localization">#</a></h3>
 <p>Edit <strong>/etc/locale.gen</strong> to change the language settings of the machine.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/locale.gen
 </span></span></code></pre></div><p>Uncomment the lines that apply to your language of choice.
-<img loading="lazy" src="/img/arch/install_process/34.jpg#center" alt=""  />
-
+<img loading="lazy" src="/img/arch/install_process/34.jpg#center">
 Run <strong>locale-gen</strong> command to generate the locales you have selected:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>locale-gen
 </span></span></code></pre></div><p>Edit /etc/locale.conf and set the language being used:</p>
@@ -501,13 +476,11 @@ Run <strong>locale-gen</strong> command to generate the locales you have selecte
 </span></span><span style="display:flex;"><span>umount -R /mnt
 </span></span><span style="display:flex;"><span>reboot
 </span></span></code></pre></div><p>If successful you should be greeted with this screen. You can select <strong>Arch Linux</strong> to boot into the system.
-<img loading="lazy" src="/img/arch/install_process/42.jpg#center" alt=""  />
-
+<img loading="lazy" src="/img/arch/install_process/42.jpg#center">
 And you should see a tty appear on your screen.</p>
 <p>We do not have any users set up on the system (yet).</p>
 <p>Simply login as the <strong>root</strong> user. The root password is what you set earlier in the setup process.</p>
-<p><img loading="lazy" src="/img/arch/install_process/45.jpg#center" alt=""  />
-
+<p><img loading="lazy" src="/img/arch/install_process/45.jpg#center">
 That&rsquo;s about it, you now have a base install of Arch Linux.</p>
 <p>From this point you are free to customise your desktop to your liking.</p>
 
@@ -538,7 +511,8 @@ That&rsquo;s about it, you now have a base install of Arch Linux.</p>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

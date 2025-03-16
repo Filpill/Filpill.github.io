@@ -17,12 +17,11 @@ select
 from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES`
 )
 SELECT * FROM project_procedures
-">
+It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
+Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s.">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/draft_articles/useful_bq_sql/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b97b539aa25740381c9dc83f76b08bd5df6cb62b114e54ba5efab1bdfa743666.css" integrity="sha256-uXtTmqJXQDgcncg/drCL1d9stisRTlS6Xvqxvfp0NmY=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://filpill.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
@@ -48,7 +47,7 @@ SELECT * FROM project_procedures
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -67,25 +66,17 @@ SELECT * FROM project_procedures
         }
 
     </style>
-</noscript><meta property="og:title" content="" />
-<meta property="og:description" content="Retrieve Stored Procedures
-Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
-WITH project_procedures AS (
-select
-    CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path
-   ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl,
-   last_altered
-from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES`
-)
-SELECT * FROM project_procedures
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://filpill.github.io/projects/draft_articles/useful_bq_sql/" /><meta property="article:section" content="projects" />
-
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
+</noscript><meta property="og:url" content="https://filpill.github.io/projects/draft_articles/useful_bq_sql/">
+  <meta property="og:site_name" content="Filip Livancic">
+  <meta property="og:title" content="Filip Livancic">
+  <meta property="og:description" content="Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
+WITH project_procedures AS ( select CONCAT(routine_catalog,&#39;.&#39;,routine_schema,&#39;.&#39;,routine_name) AS stored_procedure_path ,&#39;&#34;&#39; || ddl || &#39;&#34;&#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It’s worth considering that BigQuery does not save a history of revised Stored Procedures.
+Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD’s.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
 <meta name="twitter:description" content="Retrieve Stored Procedures
 Takes a snapshot of procedure names and DDL contents from the Google BigQuery.
 WITH project_procedures AS (
@@ -96,7 +87,8 @@ select
 from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES`
 )
 SELECT * FROM project_procedures
-"/>
+It&rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.
+Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&rsquo;s.">
 
 
 <script type="application/ld+json">
@@ -125,7 +117,7 @@ SELECT * FROM project_procedures
   "@type": "BlogPosting",
   "headline": "",
   "name": "",
-  "description": "Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.\nWITH project_procedures AS ( select CONCAT(routine_catalog,\u0026#39;.\u0026#39;,routine_schema,\u0026#39;.\u0026#39;,routine_name) AS stored_procedure_path ,\u0026#39;\u0026#34;\u0026#39; || ddl || \u0026#39;\u0026#34;\u0026#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures ",
+  "description": "Retrieve Stored Procedures Takes a snapshot of procedure names and DDL contents from the Google BigQuery.\nWITH project_procedures AS ( select CONCAT(routine_catalog,\u0026#39;.\u0026#39;,routine_schema,\u0026#39;.\u0026#39;,routine_name) AS stored_procedure_path ,\u0026#39;\u0026#34;\u0026#39; || ddl || \u0026#39;\u0026#34;\u0026#39; AS ddl, last_altered from `skyuk-uk-vis-cust-res-d1-lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES` ) SELECT * FROM project_procedures It\u0026rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.\nCreating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD\u0026rsquo;s.\n",
   "keywords": [
     
   ],
@@ -465,7 +457,8 @@ ORDER BY leaf;</p>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

@@ -4,89 +4,79 @@
     <title>💻 Systems on Filip Livancic</title>
     <link>https://filpill.github.io/tags/-systems/</link>
     <description>Recent content in 💻 Systems on Filip Livancic</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Sep 2024 17:44:58 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/-systems/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://filpill.github.io/tags/-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch Linux - Nvidia Driver Installation</title>
+      <link>https://filpill.github.io/projects/2025-03-15-arch-nvidia-drivers/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://filpill.github.io/projects/2025-03-15-arch-nvidia-drivers/</guid>
+      <description>How to install NVIDIA Drivers on an Arch Linux System</description>
+    </item>
     <item>
       <title>Understanding dbt Cloud Fundamentals</title>
       <link>https://filpill.github.io/projects/2024-09-09-learning-dbt/</link>
       <pubDate>Mon, 09 Sep 2024 17:44:58 +0000</pubDate>
-      
       <guid>https://filpill.github.io/projects/2024-09-09-learning-dbt/</guid>
       <description>Covering all the basic aspects of maintaining dbt infrastructure</description>
     </item>
-    
     <item>
       <title>WireGuard VPN Server</title>
       <link>https://filpill.github.io/projects/2024-04-16-wireguard-vpn/</link>
       <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/projects/2024-04-16-wireguard-vpn/</guid>
       <description>How to Setup an Encrypted VPN Tunnel To Access Your Home Network</description>
     </item>
-    
     <item>
       <title>Dockerised Postgres Database and Ingestion</title>
       <link>https://filpill.github.io/projects/2024-01-16-docker-ingestion/</link>
       <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/projects/2024-01-16-docker-ingestion/</guid>
       <description>Basics of setting up a database and ingestion system in a series of docker containers</description>
     </item>
-    
     <item>
       <title>Setting Up Linux Desktop Environment</title>
       <link>https://filpill.github.io/projects/2023-11-14-linux-gui-setup/</link>
       <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/projects/2023-11-14-linux-gui-setup/</guid>
       <description>Instructional guide for setting up a Window Manager in Linux | dwm &#43; st</description>
     </item>
-    
     <item>
       <title>Windows to Linux VM Fileshare</title>
       <link>https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/</link>
       <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/projects/2023-11-13-windows-linux-fileshare/</guid>
       <description>How-to guide for setting up shared folder on Windows with your Hyper-V Linux VM</description>
     </item>
-    
     <item>
       <title>Raspberry Pi Remote Access Guide</title>
       <link>https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/</link>
       <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/</guid>
       <description>Guide for remotely accessing a Raspberry Pi via SSH and RDP respectively</description>
     </item>
-    
     <item>
       <title>Arch Linux Installation Guide</title>
       <link>https://filpill.github.io/projects/2023-05-18-arch-install-guide/</link>
       <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/projects/2023-05-18-arch-install-guide/</guid>
       <description>Step-by-step guide for installing Arch Linux from scratch on a VM</description>
     </item>
-    
     <item>
       <title>Github - Command Line Interface Procedures</title>
       <link>https://filpill.github.io/projects/2022-07-17-github-cli/</link>
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/projects/2022-07-17-github-cli/</guid>
       <description>Guide book for how to execute basic git commands on the terminal</description>
     </item>
-    
     <item>
       <title>Website Design with Hugo Framework</title>
       <link>https://filpill.github.io/projects/2022-06-03-building-hugo/</link>
       <pubDate>Fri, 03 Jun 2022 12:29:15 +0100</pubDate>
-      
       <guid>https://filpill.github.io/projects/2022-06-03-building-hugo/</guid>
       <description>Starter guide for building a static website using Hugo utilities</description>
     </item>
-    
   </channel>
 </rss>

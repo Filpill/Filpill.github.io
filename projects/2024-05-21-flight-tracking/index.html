@@ -10,9 +10,7 @@
 <meta name="description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2024-05-21-flight-tracking/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b97b539aa25740381c9dc83f76b08bd5df6cb62b114e54ba5efab1bdfa743666.css" integrity="sha256-uXtTmqJXQDgcncg/drCL1d9stisRTlS6Xvqxvfp0NmY=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://filpill.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
@@ -38,7 +36,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -57,18 +55,21 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Flight Tracking Animations" />
-<meta property="og:description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://filpill.github.io/projects/2024-05-21-flight-tracking/" />
-<meta property="og:image" content="https://filpill.github.io/img/flight/airspace_visualiser.png" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2024-05-26T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-05-26T00:00:00+00:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://filpill.github.io/img/flight/airspace_visualiser.png" />
-<meta name="twitter:title" content="Flight Tracking Animations"/>
-<meta name="twitter:description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG"/>
+</noscript><meta property="og:url" content="https://filpill.github.io/projects/2024-05-21-flight-tracking/">
+  <meta property="og:site_name" content="Filip Livancic">
+  <meta property="og:title" content="Flight Tracking Animations">
+  <meta property="og:description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-05-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-05-26T00:00:00+00:00">
+    <meta property="article:tag" content="📊 Data">
+    <meta property="og:image" content="https://filpill.github.io/img/flight/airspace_visualiser.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://filpill.github.io/img/flight/airspace_visualiser.png">
+<meta name="twitter:title" content="Flight Tracking Animations">
+<meta name="twitter:description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG">
 
 
 <script type="application/ld+json">
@@ -205,8 +206,8 @@
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/flight/airspace_visualiser.png" alt="">
-        
+<figure class="entry-cover">
+        <img loading="lazy" src="https://filpill.github.io/img/flight/airspace_visualiser.png" alt="">
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -248,11 +249,9 @@
   <div class="post-content"><h2 id="-summary">🗺️ Summary<a hidden class="anchor" aria-hidden="true" href="#-summary">#</a></h2>
 <p>This article will quickly show you the process of obtaining airspace data using the OpenSky REST API and how I was able to visualise on a map. I will focus on North American airspace as it seems this region captures the highest volume of aircraft.</p>
 <blockquote>
-<p>The <a href="https://github.com/Filpill/flight_tracking">Flight Tracking GitHub Project link</a> is here should you wish to examine my scripts and get some context for the commentary in this article.</p>
-</blockquote>
+<p>The <a href="https://github.com/Filpill/flight_tracking">Flight Tracking GitHub Project link</a> is here should you wish to examine my scripts and get some context for the commentary in this article.</p></blockquote>
 <p>The totality of the airspace depends on the maintenance of the OpenSky network. The majority of the data is recorded via ADS-B receivers, which are distributed over the land mass.</p>
-<p><img loading="lazy" src="https://global.discourse-cdn.com/infiniteflight/original/4X/c/e/8/ce82d1b284d206ad24e395beaf56a63209fbee15.jpeg" alt="ADS-B Infographic"  />
-</p>
+<p><img alt="ADS-B Infographic" loading="lazy" src="https://global.discourse-cdn.com/infiniteflight/original/4X/c/e/8/ce82d1b284d206ad24e395beaf56a63209fbee15.jpeg"></p>
 <p>Regarding aircraft surveillance, I presume we lose visibility of aircraft (in the data) outside the range of ground stations such as the sea or mountainous terrain. Otherwise it would&rsquo;ve been interesting to monitor the full extent of flight paths across the globe.</p>
 <p>Aircraft require a transponder to retrieve the GPS data i.e. communicating between satellites and ground stations. Any aircraft flying with no transponder are not captured in this view.</p>
 <p>I am sure there are other flight data providers selling more accurate views and more reliable aircraft coverage, but this is purely an illustrative exercise for curiosities sake.</p>
@@ -357,15 +356,12 @@ graph LR;
 </ul>
 <p>For a quiver plot, we need to split the speed into its horizontal and vertical components. We can do some basic trigonometry to figure that out.</p>
 <p>In the quiver example below, we see the direction and speed (relative to it&rsquo;s arrow size) of each individual aircraft. When this data is animated, we can see the arrows get smaller for aircraft on the approach, and grow as they are taking off. It has a very interesting appearance.
-<img loading="lazy" src="/img/flight/quiver_airspace.png" alt="Quiver Plot Airspace"  />
-</p>
+<img alt="Quiver Plot Airspace" loading="lazy" src="/img/flight/quiver_airspace.png"></p>
 <p>We also can map this out is by creating a scatter distribution and embed the Gaussian KDE (Kernel Density Estimation) mapping onto the individual points themselves to get a feel for the distribution as there is a lot of overlap at this scale:</p>
-<p><img loading="lazy" src="/img/flight/gaussian_scatter.png" alt="Gaussian Quiver Plot Airspace"  />
-</p>
+<p><img alt="Gaussian Quiver Plot Airspace" loading="lazy" src="/img/flight/gaussian_scatter.png"></p>
 <p>And we can map the KDE over the entire map itself, however, we must create a &ldquo;meshgrid&rdquo; over the plot. The aircraft exist between the grids native resolution, therefore we would need to re-shape the data into a 2-dimensional array containing the aircraft density distribution.</p>
 <p>We can combine the 2D KDE mapping with the quiver plot to reveal a bit more information on aircraft density distribution, like so:</p>
-<p><img loading="lazy" src="/img/flight/gaussian_quiver.png" alt="Gaussian Quiver Plot Airspace"  />
-</p>
+<p><img alt="Gaussian Quiver Plot Airspace" loading="lazy" src="/img/flight/gaussian_quiver.png"></p>
 <p>The plotting process is iterated over the folder of timestamped csv&rsquo;s to generate the incremental aircraft movements over time.</p>
 <h4 id="map-data-struggles">Map Data Struggles<a hidden class="anchor" aria-hidden="true" href="#map-data-struggles">#</a></h4>
 <p>Something that left me completely stumped for a while is that I was not able to directly use the Stadia Maps API within in <strong>Cartopy 0.22.0</strong> which was confusing and frustrating.</p>
@@ -397,20 +393,12 @@ graph LR;
 </span></span></code></pre></div><p>Other video processing was down on Kdenlive to add in the musical audio transitions.</p>
 <h3 id="-data-time-lapse">📽️ Data Time-lapse<a hidden class="anchor" aria-hidden="true" href="#-data-time-lapse">#</a></h3>
 <p>Videos illustrating the 16-hour scatter plot time-lapse of aircraft flying over North America.
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wC3WE-jOU0w?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wC3WE-jOU0w?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RLNOIJgDLgw?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RLNOIJgDLgw?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 </p>
 
@@ -441,7 +429,8 @@ graph LR;
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

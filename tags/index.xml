@@ -4,35 +4,30 @@
     <title>🏷️ Tags on Filip Livancic</title>
     <link>https://filpill.github.io/tags/</link>
     <description>Recent content in 🏷️ Tags on Filip Livancic</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Sep 2024 17:44:58 +0000</lastBuildDate><atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://filpill.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>💻 Systems</title>
       <link>https://filpill.github.io/tags/-systems/</link>
-      <pubDate>Mon, 09 Sep 2024 17:44:58 +0000</pubDate>
-      
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
       <guid>https://filpill.github.io/tags/-systems/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>📊 Data</title>
       <link>https://filpill.github.io/tags/-data/</link>
       <pubDate>Sun, 26 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/tags/-data/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>⚙️ Engineering</title>
       <link>https://filpill.github.io/tags/%EF%B8%8F-engineering/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://filpill.github.io/tags/%EF%B8%8F-engineering/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -10,9 +10,7 @@
 <meta name="description" content="Guide book for how to execute basic git commands on the terminal">
 <meta name="author" content="">
 <link rel="canonical" href="https://filpill.github.io/projects/2022-07-17-github-cli/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b97b539aa25740381c9dc83f76b08bd5df6cb62b114e54ba5efab1bdfa743666.css" integrity="sha256-uXtTmqJXQDgcncg/drCL1d9stisRTlS6Xvqxvfp0NmY=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://filpill.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
@@ -38,7 +36,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -57,18 +55,21 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Github - Command Line Interface Procedures" />
-<meta property="og:description" content="Guide book for how to execute basic git commands on the terminal" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://filpill.github.io/projects/2022-07-17-github-cli/" />
-<meta property="og:image" content="https://filpill.github.io/img/github/github_terminal.png" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2022-07-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-07-17T00:00:00+00:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://filpill.github.io/img/github/github_terminal.png" />
-<meta name="twitter:title" content="Github - Command Line Interface Procedures"/>
-<meta name="twitter:description" content="Guide book for how to execute basic git commands on the terminal"/>
+</noscript><meta property="og:url" content="https://filpill.github.io/projects/2022-07-17-github-cli/">
+  <meta property="og:site_name" content="Filip Livancic">
+  <meta property="og:title" content="Github - Command Line Interface Procedures">
+  <meta property="og:description" content="Guide book for how to execute basic git commands on the terminal">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2022-07-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-07-17T00:00:00+00:00">
+    <meta property="article:tag" content="💻 Systems">
+    <meta property="og:image" content="https://filpill.github.io/img/github/github_terminal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://filpill.github.io/img/github/github_terminal.png">
+<meta name="twitter:title" content="Github - Command Line Interface Procedures">
+<meta name="twitter:description" content="Guide book for how to execute basic git commands on the terminal">
 
 
 <script type="application/ld+json">
@@ -205,8 +206,8 @@
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://filpill.github.io/img/github/github_terminal.png" alt="Github Logo">
-        
+<figure class="entry-cover">
+        <img loading="lazy" src="https://filpill.github.io/img/github/github_terminal.png" alt="Github Logo">
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -375,8 +376,7 @@ git push origin main
 <h2 id="working-with-branches">Working with branches<a hidden class="anchor" aria-hidden="true" href="#working-with-branches">#</a></h2>
 <p>In most scenarios, you will not be working directly with the <strong>main/master</strong> branch. Working directly on main can be fraught with peril as you are constantly pushing every change into a production environment.</p>
 <p>The purpose of branching off the main branch is to create an isolated development environment where you can safely change and push code to that branch without changing the production state. Especially if you haven&rsquo;t fully tested or validated your code/commits.</p>
-<p><img loading="lazy" src="/img/github/git-branch.png#center" alt="Git Branch Commits"  />
-</p>
+<p><img alt="Git Branch Commits" loading="lazy" src="/img/github/git-branch.png#center"></p>
 <p>You can can call branches whatever you want, but lets say you want to create development branch called <em><strong>&ldquo;dev&rdquo;</strong></em> from the branch you are currently on, you can do so with the <strong>git checkout</strong> command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout -b dev
 </span></span></code></pre></div><p>Now you have a dev branch. The <em><strong>-b flag</strong></em> essentially tells git that you want to create a new branch.</p>
@@ -422,7 +422,8 @@ git push origin main
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://filpill.github.io/">Filip Livancic</a></span>
+        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
