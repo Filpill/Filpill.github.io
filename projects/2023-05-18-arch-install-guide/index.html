@@ -9,16 +9,16 @@
 <meta name="keywords" content="💻 Systems">
 <meta name="description" content="Step-by-step guide for installing Arch Linux from scratch on a VM">
 <meta name="author" content="">
-<link rel="canonical" href="https://filpill.github.io/projects/2023-05-18-arch-install-guide/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://filpill.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="https://filiplivancic.com/projects/2023-05-18-arch-install-guide/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.443acfee7a7607f3bfbfe4a96456047004d869c057f1c39b6740a1dc3b735240.css" integrity="sha256-RDrP7np2B/O/v&#43;SpZFYEcATYacBX8cObZ0Ch3DtzUkA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://filiplivancic.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filiplivancic.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filiplivancic.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filiplivancic.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filiplivancic.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/2023-05-18-arch-install-guide/">
+<link rel="alternate" hreflang="en" href="https://filiplivancic.com/projects/2023-05-18-arch-install-guide/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://filpill.github.io/projects/2023-05-18-arch-install-guide/">
+</noscript><meta property="og:url" content="https://filiplivancic.com/projects/2023-05-18-arch-install-guide/">
   <meta property="og:site_name" content="Filip Livancic">
   <meta property="og:title" content="Arch Linux Installation Guide">
   <meta property="og:description" content="Step-by-step guide for installing Arch Linux from scratch on a VM">
@@ -65,9 +65,9 @@
     <meta property="article:published_time" content="2023-05-18T00:00:00+00:00">
     <meta property="article:modified_time" content="2023-05-18T00:00:00+00:00">
     <meta property="article:tag" content="💻 Systems">
-    <meta property="og:image" content="https://filpill.github.io/img/arch/install_process/45.jpg">
+    <meta property="og:image" content="https://filiplivancic.com/img/arch/install_process/45.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://filpill.github.io/img/arch/install_process/45.jpg">
+<meta name="twitter:image" content="https://filiplivancic.com/img/arch/install_process/45.jpg">
 <meta name="twitter:title" content="Arch Linux Installation Guide">
 <meta name="twitter:description" content="Step-by-step guide for installing Arch Linux from scratch on a VM">
 
@@ -81,13 +81,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Projects",
-      "item": "https://filpill.github.io/projects/"
+      "item": "https://filiplivancic.com/projects/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Arch Linux Installation Guide",
-      "item": "https://filpill.github.io/projects/2023-05-18-arch-install-guide/"
+      "item": "https://filiplivancic.com/projects/2023-05-18-arch-install-guide/"
     }
   ]
 }
@@ -105,18 +105,18 @@
   "articleBody": "Introduction This guide details the installation procedure of Arch onto a Virtual Machine (VM). Network configuration is not in the scope of this guide if you are installing on bare metal.\nThe motivation behind this web page is to keep some guidance material for myself and also for anybody new looking to install Arch from scratch.\nThe virtual machine is made with Microsoft’s Hyper-V program. The steps may differ slightly if you choose to use a another hypervisor such as VirtualBox.\nVideo Tutorial This video tutorial will closely follow the installation process described in this article:\nArch Linux ISO Download Link You can find the download link to the Arch Linux ISO here: https://archlinux.org/download/\nThe recommended way to pull down the ISO file is by torrenting it from the referenced magnet link.\nWhen the download is complete, you can configure your virtual machine.\nCreating a Hyper-V Virtual Machine 1. Create New Virtual Machine The first step is to open up Hyper-V and create a new virtual machine 2. Select VM Generation You will be asked which generation of VM to create. I would reccommend to select “Generation 2”. It supports UEFI firmware and it should be better from a cyber-security standpoint. 3. Allocate Memory You can specify how much memory to allocate to the VM. I decided to allocate 4000MB in my use case. 4. Configure Network Adapter Hyper-V has a built in network adapter that works out of the box, so you’d want to select “Default Switch” to have it enabled. 5. Create Virtual Hard Disk For the VM you should create a virtual hard disk to store the data. I decided to allocate 30GB of storage space. 6. Select .iso Image You need to select the arch linux ISO file to boot from and then you can finalise the VM creation. 7. Go to Settings We are not done yet, we still need to configure 2 more things in the settings panel of this VM we just created. 8. Disable Secure Boot We need to disable Secure Boot, if you do not do this step, it will interfere with your ability to boot the ISO image. 9. Change Boot Priority Next we need to bump the Hard Drive to the first priority of boot loading. Its very important that you do this step before you start installing linux otherwise the Grub will fail down the line because it will be trying to boot from the DVD Drive. You will not be able to retroactively change the boot order at a later stage. After applying the changes:\n10. Fixing Hyper-V Resolution (Powershell) Oddly enough we do not have GUI setting for adjusting the resolution of the VM which is bizzare for a windows tool. Therefore we will need to use Powershell (with Admin permissions) to fix this.\nIn powershell you can run the following command to set the maximum resolution of the VM (Please replace the respective VMName in quotations with the VM you just created.):\nSet-VMVideo -VMName 'ArchVM' -HorizontalResolution 1920 -VerticalResolution 1080 -ResolutionType Single 11. Start the VM Connect to the VM: Start the VM: Installing Arch Linux From this screen select the highlighted option to load the ISO image The install process starts here: 1. Verify Internet Connection Before going any further, you should ping a website to test your internet connection:\nping archlinux.org The Hyper-V default network switch should automatically provide your VM with the internet connection. If not, you will probably need to configure Hyper-V to alleviate networking issues.\n2. Synchronise System Clock We also need to synchronise the systems clock with the network time:\ntimedatectl set-ntp true 3. Drive Partitioning Now we need to start partitioning our drives and creating our file system.\nThe lsblk command indicates which drives and partitions are on your system. And we can use cfdisk to partition the drives. Type the command to start partitioning your virtualised disk:\ncfdisk /dev/sda At this juncture we need to assign the disk label type and it comes down to two options mainly:\nIf the hardware is new and the drive \u003e= 2TB, use gpt. Otherwise use dos. For our scenario we are using dos\nDecide on a partition scheme. I will keep it simple and reduce it to a boot and root partition:\n/dev/sda1 (boot partition) only needs about 128MB of space and needs to be bootable. You can press b to enable the boot flag after making the partition. /dev/sda2 (root partition) can be assigned the remaining space of the disk. Write the changes and quit out of cfdisk. If you lsblk now, you will now see that 2 partitions have been made which are called sda1 and sda2.\n4. Creating File Systems We also need to make the file systems for each partition:\nsda1 (boot) is FAT32 file system. sda2 (root) is ext4 file system. Run these commands to create the file systems respectively:\nmkfs.fat -F 32 /dev/sda1 mkfs.ext4 /dev/sda2 5. Mounting the File Systems Now the mounting procedure MUST go in a specific order:\nsda2 (root) is mounted first to /mnt sda1 (boot) is mounted last to /mnt/boot/efi mount /dev/sda2 /mnt Warning: If you mount in reverse order, the install will fail!\nFor the boot partition, you will need to make a directory with this path /mnt/boot/efi:\ncd /mnt mkdir boot cd /mnt/boot mkdir efi Since we have a UEFI system config, we need this extra efi directory (normally we do not). Now we can mount the filesystem for boot:\nmount /dev/sda1 /mnt/boot/efi 6. Installing Essential Packages At this stage, you are ready install the base tools for the system in addition to the Linux kernel.\nUse the pacstrap command to install the following tools to /mnt:\npacstrap /mnt base base-devel linux linux-firmware vim 7. Generate fstab Configuration Run the following command to generate your fstab configuration:\ngenfstab -U /mnt \u003e\u003e /mnt/etc/fstab genfstab -U /mnt 8. Chroot Change root into new system by running this command:\narch-chroot /mnt /bin/bash 9. Install Key Packages Pacman is our package manager and we can use it to install some key packages:\nnetworkmanager - Detection and configuration of systems to connect to networks grub - Bootloader for the computer efibootmgr - Package dependency for grub’s installation command pacman -S networkmanager grub efibootmgr 10. Auto-enable Internet on Startup We can use systemctl to enable network manager as a service which starts automatically when you boot the computer (which is very useful to have).\nsystemctl enable NetworkManager 11. Install and Configure Grub Next we run the grub-install command on /dev/sda; it should run with no errors:\ngrub-install /dev/sda We need to make a config file for grub, with the following command:\ngrub-mkconfig -o /boot/grub/grub.cfg We need to edit this grub file:\nvim /etc/default/grub Uncomment the line “GRUB_DISABLE_OS_PROBER=false” and then save the file.\nYou may also want to edit the following grub variables if you wish to change the resolution of grub:\nGRUB_CMD_LINUX_DEFAULT GRUB_GFXMODE GRUB_CMD_LINUX_DEFAULT=\"quiet splash video=hyperv_fb:1920x1080\" GRUB_GFXMODE=1920x1080 Note: The video parameter may be different if you are doing this bare metal or are using another VM software.\nSave and exit from the grub file.\nNow you will need to enact those changes onto the grub.cfg file which is read at boot time. So you will need to run the following command:\ngrub-mkconfig -o /boot/grub/grub.cfg After rebooting your Linux machine, your terminal should automatically scale to the 1080p resolution without having to make changes using commands like xrandr -s 1920x1080 inside the display server.\n12. Set Root Password Run the passwd command to set a root password for the machine 13. Localization Edit /etc/locale.gen to change the language settings of the machine.\nvim /etc/locale.gen Uncomment the lines that apply to your language of choice. Run locale-gen command to generate the locales you have selected:\nlocale-gen Edit /etc/locale.conf and set the language being used:\nvim /etc/locale.conf Enter the LANG variable into the file with the relevant language setting:\nLANG=en_GB.UTF-8 14. Hostname Edit /etc/hostname:\nvim /etc/hostname The word you type in here will be the name of your computer. I decided to call mine arch. But it can be anything you want. Save and close the file.\n15. Timezone You can set the time zone with the following command:\nln -sf /usr/share/zoneinfo/Greenwich /etc/localtime Greenwich can be substituted for any region within that zoneinfo directory.\n15. Rebooting We are ready to reboot the system. First we need to exit the root environment and to unmount all the partitions. Then we can reboot.\nexit umount -R /mnt reboot Bonus - 16. Booting From Grub Shell In case you forgot to set up your genfstab to automatically mount your drive in the boot process. You still can boot into Arch using the Grub shell and fix any steps that were missed:\n# List out drives and partitions ls -l # Set root var to root partition set root=(hd0,msdos2) # Load linux kernal linux /boot/vmlinuz-linux root=/dev/sda2 rw # Load the initramfs initrd /boot/initramfs-linux.img # Boot into system boot If successful you should be greeted with this screen. You can select Arch Linux to boot into the system. And you should see a tty appear on your screen.\nWe do not have any users set up on the system (yet).\nSimply login as the root user. The root password is what you set earlier in the setup process.\nThat’s about it, you now have a base install of Arch Linux.\nFrom this point you are free to customise your desktop to your liking.\n",
   "wordCount" : "1570",
   "inLanguage": "en",
-  "image":"https://filpill.github.io/img/arch/install_process/45.jpg","datePublished": "2023-05-18T00:00:00Z",
+  "image":"https://filiplivancic.com/img/arch/install_process/45.jpg","datePublished": "2023-05-18T00:00:00Z",
   "dateModified": "2023-05-18T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://filpill.github.io/projects/2023-05-18-arch-install-guide/"
+    "@id": "https://filiplivancic.com/projects/2023-05-18-arch-install-guide/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Filip Livancic",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://filpill.github.io/favicon.ico"
+      "url": "https://filiplivancic.com/favicon.ico"
     }
   }
 }
@@ -141,7 +141,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <a href="https://filiplivancic.com/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -169,22 +169,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/" title="🏠 Home">
+                <a href="https://filiplivancic.com/" title="🏠 Home">
                     <span>🏠 Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                <a href="https://filiplivancic.com/profile/" title="👤 Profile">
                     <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                <a href="https://filiplivancic.com/archives/" title="📁 Archive">
                     <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
+                <a href="https://filiplivancic.com/tags/" title="🏷️ Tags">
                     <span>🏷️ Tags</span>
                 </a>
             </li>
@@ -195,7 +195,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <div class="breadcrumbs"><a href="https://filiplivancic.com/">Home</a>&nbsp;»&nbsp;<a href="https://filiplivancic.com/projects/">Projects</a></div>
     <h1 class="post-title">
       Arch Linux Installation Guide
     </h1>
@@ -207,7 +207,7 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="lazy" src="https://filpill.github.io/img/arch/install_process/45.jpg" alt="Arch Linux Neofetch">
+        <img loading="lazy" src="https://filiplivancic.com/img/arch/install_process/45.jpg" alt="Arch Linux Neofetch">
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -509,15 +509,15 @@ That&rsquo;s about it, you now have a base install of Arch Linux.</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://filpill.github.io/tags/-systems/">💻 Systems</a></li>
+      <li><a href="https://filiplivancic.com/tags/-systems/">💻 Systems</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://filpill.github.io/projects/2023-06-07-radio-control-setup/">
+  <a class="prev" href="https://filiplivancic.com/projects/2023-06-07-radio-control-setup/">
     <span class="title">« Prev</span>
     <br>
     <span>How to Set Up Your Radio Controlled System</span>
   </a>
-  <a class="next" href="https://filpill.github.io/projects/2023-04-10-chess-data/">
+  <a class="next" href="https://filiplivancic.com/projects/2023-04-10-chess-data/">
     <span class="title">Next »</span>
     <br>
     <span>Chess.com API - Data Visualisation</span>
@@ -529,7 +529,7 @@ That&rsquo;s about it, you now have a base install of Arch Linux.</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by

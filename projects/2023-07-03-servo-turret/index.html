@@ -9,16 +9,16 @@
 <meta name="keywords" content="⚙️ Engineering">
 <meta name="description" content="Writing Arduino and Python software to control servo turret using mouse inputs">
 <meta name="author" content="">
-<link rel="canonical" href="https://filpill.github.io/projects/2023-07-03-servo-turret/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://filpill.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="https://filiplivancic.com/projects/2023-07-03-servo-turret/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.443acfee7a7607f3bfbfe4a96456047004d869c057f1c39b6740a1dc3b735240.css" integrity="sha256-RDrP7np2B/O/v&#43;SpZFYEcATYacBX8cObZ0Ch3DtzUkA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://filiplivancic.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filiplivancic.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filiplivancic.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filiplivancic.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filiplivancic.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/2023-07-03-servo-turret/">
+<link rel="alternate" hreflang="en" href="https://filiplivancic.com/projects/2023-07-03-servo-turret/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://filpill.github.io/projects/2023-07-03-servo-turret/">
+</noscript><meta property="og:url" content="https://filiplivancic.com/projects/2023-07-03-servo-turret/">
   <meta property="og:site_name" content="Filip Livancic">
   <meta property="og:title" content="Servo Turret Control">
   <meta property="og:description" content="Writing Arduino and Python software to control servo turret using mouse inputs">
@@ -65,9 +65,9 @@
     <meta property="article:published_time" content="2023-07-03T00:00:00+00:00">
     <meta property="article:modified_time" content="2023-07-03T00:00:00+00:00">
     <meta property="article:tag" content="⚙️ Engineering">
-    <meta property="og:image" content="https://filpill.github.io/img/servoTurret/mouse_setup.jpg">
+    <meta property="og:image" content="https://filiplivancic.com/img/servoTurret/mouse_setup.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://filpill.github.io/img/servoTurret/mouse_setup.jpg">
+<meta name="twitter:image" content="https://filiplivancic.com/img/servoTurret/mouse_setup.jpg">
 <meta name="twitter:title" content="Servo Turret Control">
 <meta name="twitter:description" content="Writing Arduino and Python software to control servo turret using mouse inputs">
 
@@ -81,13 +81,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Projects",
-      "item": "https://filpill.github.io/projects/"
+      "item": "https://filiplivancic.com/projects/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Servo Turret Control",
-      "item": "https://filpill.github.io/projects/2023-07-03-servo-turret/"
+      "item": "https://filiplivancic.com/projects/2023-07-03-servo-turret/"
     }
   ]
 }
@@ -105,18 +105,18 @@
   "articleBody": "Summary This project has been made to practise the use of sending instructions to various electronics for both the Arduino and the Raspberry Pi.\nI’ve segmented this project into two parts/versions:\nArduino - Mouse Control via Serial Communications Port Raspberry Pi - Mouse Control via Python Tkinter Program Arduino The arduino project is very simple, there is a program written in Processing which takes the mouse inputs send strings (enclosed in \u003c\u003e) to the Arduino via serial communications.\nA small delay of 100ms is maintained to limit the rate of data coming to the Arduino board. The Arduino has a small serial buffer, it can only read 8 bytes at a time. Therefore we need to limit the rate of data to prevent a serial buffer overflow. If this issue occurs, then the servo will not be able to effectively read the data stream.\nThe Arduino has a sketch uploaded to the board that will do a number operations.\nIt will ingest the string data character by character from ‘\u003c’ and terminate at ‘\u003e’. It will concatenate all the characters into a single string. Split the string to serve as inputs to its respective components i.e. Servo1 and Servo2 The inputs will be converted to integers to map the angle for the Servos. Actuate the Servos graph TD; subgraph Processing Program P0([Start Processing GUI Program])--\u003e P1[Mouse Inputs -- Pitch/Yaw] P1 --\u003e P2[Formulate Data String \u003c000000\u003e and send over COM Port] end subgraph Arduino Program P2--\u003eA0[Read Data Stream] A0--\u003eA1[Start Ingesting the data after reading '\u003c' character] A1--\u003eA2[Build string by ingesting characters one at a time] A2--\u003eA3[Terminate the string when reading '\u003e'] A3--\u003eA4[Split string into respective components to prep servo inputs] A4--\u003eA5[Cast servo inputs to integers and map servo angles] A5--\u003eA0 end subgraph Arduino Program A5--\u003eS1([Actuate Yaw Servo]) A5--\u003eS2([Actuate Pitch Servo]) end Raspberry Pi The Raspberry Pi project is using a Python script to drive the inputs. I’ve created a Tkinter program which maps the mouse position on the GUI to a pair of servo angles for the turret to move.\nThe mouse movements are passed into an event handler to locate mouse position on the window x,y coordinates. We use positional data on the mouse to calculate a servo angle based on the coordinate on the drawn window.\nIn order to actuate the servos, the angle inputs must be mapped to the corresponding duty cycle. The duty cycle can take any range of values between 2 and 12 for this particular servo. It handles angles in the range between 0 and 180 degrees.\nThe duty cycle can be calculated like with this calculation:\n1/18 * angle + 2 Then we send the pair of updated duty cycle values to the respective GPIO pins in order to drive the servo positions.\ngraph TD; subgraph Python Program P0([Run Python])--\u003e P1([Start Tkinter GUI]) P0 --Initialise--\u003e G0[GPIO Pins] P1 --\u003e P2[Mouse Movements Passed to Event Handler] P2 --\u003e P3[Convert X,Y Coordinates to Servo Angles] P3 --\u003e P4[Map Servo Angles to Duty Cycle Values] P4 --\u003e P5[Send Duty Cycle Values Through GPIO Pins] P5 --\u003e G0 G0 --\u003e S1([Actuate Yaw Servo]) G0 --\u003e S2([Actuate Pitch Servo]) end ",
   "wordCount" : "521",
   "inLanguage": "en",
-  "image":"https://filpill.github.io/img/servoTurret/mouse_setup.jpg","datePublished": "2023-07-03T00:00:00Z",
+  "image":"https://filiplivancic.com/img/servoTurret/mouse_setup.jpg","datePublished": "2023-07-03T00:00:00Z",
   "dateModified": "2023-07-03T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://filpill.github.io/projects/2023-07-03-servo-turret/"
+    "@id": "https://filiplivancic.com/projects/2023-07-03-servo-turret/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Filip Livancic",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://filpill.github.io/favicon.ico"
+      "url": "https://filiplivancic.com/favicon.ico"
     }
   }
 }
@@ -141,7 +141,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <a href="https://filiplivancic.com/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -169,22 +169,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/" title="🏠 Home">
+                <a href="https://filiplivancic.com/" title="🏠 Home">
                     <span>🏠 Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                <a href="https://filiplivancic.com/profile/" title="👤 Profile">
                     <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                <a href="https://filiplivancic.com/archives/" title="📁 Archive">
                     <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
+                <a href="https://filiplivancic.com/tags/" title="🏷️ Tags">
                     <span>🏷️ Tags</span>
                 </a>
             </li>
@@ -195,7 +195,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <div class="breadcrumbs"><a href="https://filiplivancic.com/">Home</a>&nbsp;»&nbsp;<a href="https://filiplivancic.com/projects/">Projects</a></div>
     <h1 class="post-title">
       Servo Turret Control
     </h1>
@@ -207,7 +207,7 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="lazy" src="https://filpill.github.io/img/servoTurret/mouse_setup.jpg" alt="Arduino Server Turret Setup">
+        <img loading="lazy" src="https://filiplivancic.com/img/servoTurret/mouse_setup.jpg" alt="Arduino Server Turret Setup">
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -323,15 +323,15 @@ graph TD;
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://filpill.github.io/tags/%EF%B8%8F-engineering/">⚙️ Engineering</a></li>
+      <li><a href="https://filiplivancic.com/tags/%EF%B8%8F-engineering/">⚙️ Engineering</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://filpill.github.io/projects/2023-07-06-raspberry-pi-ssh/">
+  <a class="prev" href="https://filiplivancic.com/projects/2023-07-06-raspberry-pi-ssh/">
     <span class="title">« Prev</span>
     <br>
     <span>Raspberry Pi Remote Access Guide</span>
   </a>
-  <a class="next" href="https://filpill.github.io/projects/2023-06-12-3d-printed-car/">
+  <a class="next" href="https://filiplivancic.com/projects/2023-06-12-3d-printed-car/">
     <span class="title">Next »</span>
     <br>
     <span>3D Printed RC Road Vehicle</span>
@@ -343,7 +343,7 @@ graph TD;
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by

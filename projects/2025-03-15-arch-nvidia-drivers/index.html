@@ -9,16 +9,16 @@
 <meta name="keywords" content="💻 Systems">
 <meta name="description" content="How to install NVIDIA Drivers on an Arch Linux System">
 <meta name="author" content="">
-<link rel="canonical" href="https://filpill.github.io/projects/2025-03-15-arch-nvidia-drivers/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://filpill.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="https://filiplivancic.com/projects/2025-03-15-arch-nvidia-drivers/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.443acfee7a7607f3bfbfe4a96456047004d869c057f1c39b6740a1dc3b735240.css" integrity="sha256-RDrP7np2B/O/v&#43;SpZFYEcATYacBX8cObZ0Ch3DtzUkA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://filiplivancic.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filiplivancic.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filiplivancic.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filiplivancic.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filiplivancic.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/2025-03-15-arch-nvidia-drivers/">
+<link rel="alternate" hreflang="en" href="https://filiplivancic.com/projects/2025-03-15-arch-nvidia-drivers/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://filpill.github.io/projects/2025-03-15-arch-nvidia-drivers/">
+</noscript><meta property="og:url" content="https://filiplivancic.com/projects/2025-03-15-arch-nvidia-drivers/">
   <meta property="og:site_name" content="Filip Livancic">
   <meta property="og:title" content="Arch Linux - Nvidia Driver Installation">
   <meta property="og:description" content="How to install NVIDIA Drivers on an Arch Linux System">
@@ -65,9 +65,9 @@
     <meta property="article:published_time" content="2025-03-15T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-03-15T00:00:00+00:00">
     <meta property="article:tag" content="💻 Systems">
-    <meta property="og:image" content="https://filpill.github.io/img/arch/nvidia/arch_nvidia.png">
+    <meta property="og:image" content="https://filiplivancic.com/img/arch/nvidia/arch_nvidia.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://filpill.github.io/img/arch/nvidia/arch_nvidia.png">
+<meta name="twitter:image" content="https://filiplivancic.com/img/arch/nvidia/arch_nvidia.png">
 <meta name="twitter:title" content="Arch Linux - Nvidia Driver Installation">
 <meta name="twitter:description" content="How to install NVIDIA Drivers on an Arch Linux System">
 
@@ -81,13 +81,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Projects",
-      "item": "https://filpill.github.io/projects/"
+      "item": "https://filiplivancic.com/projects/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Arch Linux - Nvidia Driver Installation",
-      "item": "https://filpill.github.io/projects/2025-03-15-arch-nvidia-drivers/"
+      "item": "https://filiplivancic.com/projects/2025-03-15-arch-nvidia-drivers/"
     }
   ]
 }
@@ -105,18 +105,18 @@
   "articleBody": "🚙 Intro I decided to bite the bullet and install Arch on my main desktop so I can now dual-boot both Windows and Linux. Pretty cool eh.\nAlthough in the process I’ve had the joy of dancing with NVIDIA drivers. Spoiler alert – it was not that fun.\nDuring the first couple of attempts of installing drivers, I thought I completely “bricked” my system due to freezing issues in the boot-up process.\nA couple of times I’ve tried to skirt around the issue by re-installing Arch from scratch, but I would encounter the same issues time and time again.\nAfter murking my PC one too many times, the time finally came to fix the problem with brute force.\nThankfully, the USB live installation media saved my ass by allowing me to chroot back into my system and alter the configurations. This god forsaken process allowed me to mount my drives manually to incrementally test various changes.\nAnd after a lot of faff, pulling my hair out, and raging at the computer…we finally crossed the finish line 😌.\nIn retrospect it wasn’t too bad after implementing the correct steps, though I still only partially understand most of what I’ve done. In any case I would still rather have this experience to leverage for future builds which should go more smoothly.\nFor now I’ll attempt to encapsulate all the steps I’ve taken in this article for people who may encounter the same issues.\n🍗 Ingredients Here is the recipe for installing NVIDIA drivers, you’ll need to consider the following:\nEnable the multilib repo Installing drivers and utilties Ammending initramfs configuration Adding pacman hooks to keep initramfs updated Adding kernel parameters to the boot loader 📗 Pacman - Enable Multilib Inside /etc/pacman.conf scroll down and uncomment the following lines:\n[multilib] Include = /etc/pacman.d/mirrorlist This should give you access to additional nvidia related packages listed below.\n🏗️ Installing Utilities You’ll likely need to refer to the official Arch Documentation to adjust for specific hardware dependancies: https://wiki.archlinux.org/title/NVIDIA\nYou’ll need to run the following to determine the family of your NVIDIA card:\nlspci -k -d ::03xx I’m currently running an NVIDIA GTX 1070TI which is part of the NV130 family (Pascal) to which I decided to install the nvidia and nvidia-dkms packages.\nYou’ll need the following packages on your system, including any depedencies:\nsudo pacman -S linux-headers nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-open-cl-nvidia nvidia 🏃 Updating mkinitcpio The initramfs is loaded by the bootloader, and the kernel then mounts the root filesystem. We need to update this file to include all the nvidia modules so they can be loaded early in the boot process.\nEdit the following file: /etc/mkinitcpio.conf and add the following to the modules:\nMODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm) Regerate initramfs by running the command:\nmkinitcpio -P 🪝 Adding Pacman Hooks To avoid the possibility of forgetting to update initramfs after an NVIDIA driver upgrade, you may want to use a pacman hook.\nCreate a fresh file called /etc/pacman.d/hooks/nvidia.hook and add the following minimal configuration.\n[Trigger] Operation=Install Operation=Upgrade Operation=Remove Type=Package Target=nvidia [Action] Depends=mkinitcpio When=PostTransaction Exec=/usr/bin/mkinitcpio -P Everytime a driver updates, this hook will update your initramfs, and prevent your system from breaking.\n🐛 GRUB - Adding Kernel Parameters Grub is my bootloader of choice and you can enter the following file /etc/default/grub and append the following kernel parameters to GRUB_CMDLINE_LINUX_DEFAULT:\nnvidia_drm.modeset=1 nvidia_drm.fbdev=0 Mine looks like this:\nGRUB_CMDLINE_LINUX_DEFAULT=\"loglevel=3 quiet nvidia_drm.modeset=1 nvidia_drm.fbdev=0\" Regenerate your grub boot config with the command:\ngrub-mkconfig -o /boot/grub/grub.cfg 🏁 Outro These are the minimum considerations you should incorporate to have a fully functional NVIDIA GPU on an Arch system. It may vary depending on your system set-up.\nAfter implementing all these elements, hopefully your system will boot correctly without experiencing system freezing.\nMy system is now running silky smooth with these drivers and previous graphical glitches are all completely gone.\n",
   "wordCount" : "639",
   "inLanguage": "en",
-  "image":"https://filpill.github.io/img/arch/nvidia/arch_nvidia.png","datePublished": "2025-03-15T00:00:00Z",
+  "image":"https://filiplivancic.com/img/arch/nvidia/arch_nvidia.png","datePublished": "2025-03-15T00:00:00Z",
   "dateModified": "2025-03-15T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://filpill.github.io/projects/2025-03-15-arch-nvidia-drivers/"
+    "@id": "https://filiplivancic.com/projects/2025-03-15-arch-nvidia-drivers/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Filip Livancic",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://filpill.github.io/favicon.ico"
+      "url": "https://filiplivancic.com/favicon.ico"
     }
   }
 }
@@ -141,7 +141,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <a href="https://filiplivancic.com/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -169,22 +169,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/" title="🏠 Home">
+                <a href="https://filiplivancic.com/" title="🏠 Home">
                     <span>🏠 Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                <a href="https://filiplivancic.com/profile/" title="👤 Profile">
                     <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                <a href="https://filiplivancic.com/archives/" title="📁 Archive">
                     <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
+                <a href="https://filiplivancic.com/tags/" title="🏷️ Tags">
                     <span>🏷️ Tags</span>
                 </a>
             </li>
@@ -195,7 +195,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <div class="breadcrumbs"><a href="https://filiplivancic.com/">Home</a>&nbsp;»&nbsp;<a href="https://filiplivancic.com/projects/">Projects</a></div>
     <h1 class="post-title">
       Arch Linux - Nvidia Driver Installation
     </h1>
@@ -207,7 +207,7 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="lazy" src="https://filpill.github.io/img/arch/nvidia/arch_nvidia.png" alt="Arch Nvidia Driver Cover">
+        <img loading="lazy" src="https://filiplivancic.com/img/arch/nvidia/arch_nvidia.png" alt="Arch Nvidia Driver Cover">
 </figure>
   <div class="post-content"><h1 id="-intro">🚙 Intro<a hidden class="anchor" aria-hidden="true" href="#-intro">#</a></h1>
 <p>I decided to bite the bullet and install Arch on my main desktop so I can now dual-boot both Windows and Linux. Pretty cool eh.</p>
@@ -285,15 +285,15 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://filpill.github.io/tags/-systems/">💻 Systems</a></li>
+      <li><a href="https://filiplivancic.com/tags/-systems/">💻 Systems</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://filpill.github.io/projects/2025-05-15-gcp-chess-development-saga/">
+  <a class="prev" href="https://filiplivancic.com/projects/2025-05-15-gcp-chess-development-saga/">
     <span class="title">« Prev</span>
     <br>
     <span>GCP Chess.com Data Engineering Saga</span>
   </a>
-  <a class="next" href="https://filpill.github.io/projects/2024-09-09-learning-dbt/">
+  <a class="next" href="https://filiplivancic.com/projects/2024-09-09-learning-dbt/">
     <span class="title">Next »</span>
     <br>
     <span>Understanding dbt Cloud Fundamentals</span>
@@ -305,7 +305,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by

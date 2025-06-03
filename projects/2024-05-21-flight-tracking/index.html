@@ -9,16 +9,16 @@
 <meta name="keywords" content="📊 Data">
 <meta name="description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG">
 <meta name="author" content="">
-<link rel="canonical" href="https://filpill.github.io/projects/2024-05-21-flight-tracking/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://filpill.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="https://filiplivancic.com/projects/2024-05-21-flight-tracking/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.443acfee7a7607f3bfbfe4a96456047004d869c057f1c39b6740a1dc3b735240.css" integrity="sha256-RDrP7np2B/O/v&#43;SpZFYEcATYacBX8cObZ0Ch3DtzUkA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://filiplivancic.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filiplivancic.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filiplivancic.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filiplivancic.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filiplivancic.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/2024-05-21-flight-tracking/">
+<link rel="alternate" hreflang="en" href="https://filiplivancic.com/projects/2024-05-21-flight-tracking/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://filpill.github.io/projects/2024-05-21-flight-tracking/">
+</noscript><meta property="og:url" content="https://filiplivancic.com/projects/2024-05-21-flight-tracking/">
   <meta property="og:site_name" content="Filip Livancic">
   <meta property="og:title" content="Flight Tracking Animations">
   <meta property="og:description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG">
@@ -65,9 +65,9 @@
     <meta property="article:published_time" content="2024-05-26T00:00:00+00:00">
     <meta property="article:modified_time" content="2024-05-26T00:00:00+00:00">
     <meta property="article:tag" content="📊 Data">
-    <meta property="og:image" content="https://filpill.github.io/img/flight/airspace_visualiser.png">
+    <meta property="og:image" content="https://filiplivancic.com/img/flight/airspace_visualiser.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://filpill.github.io/img/flight/airspace_visualiser.png">
+<meta name="twitter:image" content="https://filiplivancic.com/img/flight/airspace_visualiser.png">
 <meta name="twitter:title" content="Flight Tracking Animations">
 <meta name="twitter:description" content="Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG">
 
@@ -81,13 +81,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Projects",
-      "item": "https://filpill.github.io/projects/"
+      "item": "https://filiplivancic.com/projects/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Flight Tracking Animations",
-      "item": "https://filpill.github.io/projects/2024-05-21-flight-tracking/"
+      "item": "https://filiplivancic.com/projects/2024-05-21-flight-tracking/"
     }
   ]
 }
@@ -105,18 +105,18 @@
   "articleBody": "🗺️ Summary This article will quickly show you the process of obtaining airspace data using the OpenSky REST API and how I was able to visualise on a map. I will focus on North American airspace as it seems this region captures the highest volume of aircraft.\nThe Flight Tracking GitHub Project link is here should you wish to examine my scripts and get some context for the commentary in this article.\nThe totality of the airspace depends on the maintenance of the OpenSky network. The majority of the data is recorded via ADS-B receivers, which are distributed over the land mass.\nRegarding aircraft surveillance, I presume we lose visibility of aircraft (in the data) outside the range of ground stations such as the sea or mountainous terrain. Otherwise it would’ve been interesting to monitor the full extent of flight paths across the globe.\nAircraft require a transponder to retrieve the GPS data i.e. communicating between satellites and ground stations. Any aircraft flying with no transponder are not captured in this view.\nI am sure there are other flight data providers selling more accurate views and more reliable aircraft coverage, but this is purely an illustrative exercise for curiosities sake.\n💬 Data Processing Commentary I’ll go through details of my data collection, storage and processing.\nThis was a fairly quick and dirty version, however, I still ensured a reasonable folder structure to manipulate the data in my workflow.\nLong-term we can look at dumping this info into a SQLite or Postgres database.\n🖼️ Overall View The workflow looks something like this:\ngraph LR; classDef blue fill:#2374f7,stroke:#8ec1f5,stroke-width:7px, color:#fff,stroke-dasharray: 4 1 classDef yellow fill:#e6d00b,stroke:#f5eb5b,stroke-width:7px, color:#000,stroke-dasharray: 4 1 classDef green fill:#10ad0a,stroke:#7feb4d,stroke-width:7px, color:#000,stroke-dasharray: 4 1 classDef red fill:#db3b1f,stroke:#eb654d,stroke-width:7px, color:#fff,stroke-dasharray: 4 1 1([Request aircraft positions]):::blue --o 2([Store raw csv]):::yellow--o3([Process images]):::green--o4([Create Video]):::red linkStyle 0 stroke:#8ec1f5,stroke-width:11px linkStyle 1 stroke:#f5eb5b,stroke-width:11px linkStyle 2 stroke:#7feb4d,stroke-width:11px API Request Every 60s for worldwide airspace snapshots. Data Storage Dumping series of snapshots into timestamped csv’s. Image Processing Read/prepare/filter data and draw visualisation onto map. Animating Splice image collection with ffmpeg shell script ⏱️ Procedural Timings To put some perspective in time required to process this data:\nIt takes about 16 hours to make 850 requests (@60s intervals). It takes about 5-10 mins to create all 850 image visualisations with quiver plot. It takes about 20 hours to create all 850 image visualisations with the KDE plot. I’m pretty sure the script slowed down over time. I was only removing the quiver artist but not the KDE artist (by omission). Probably too many chart element variables were being stored in the memory over time. Another 4-7 mins to crops all the white space from the images. Splicing images takes about 3-5 ish mins into a neat .mp4. And lastly the video edit takes around 30 mins to overlay music. All in all it roughly takes a full day with the PC running essentially non-stop. And I was manually driving the scripts since I didn’t build any monitoring tools in this workflow.\n🚜 Data Collection The goal here is simple: recursively request and store the aircraft positions in a list of timestamped csv’s. This is how we will build our data repository.\nWe have to balance the time delta between each snapshot (API call); not too large to lose movement details and not too small to overload the API with requests. The latter is probably more important to consider, because we don’t want to bombard the API and risk taking it completely out of commission with high frequency requests.\nIt’s worth noting that that anonymous OpenSky API users are limited to 80 requests per day. This is no good for us since we are trying to make an extended time lapse over a period of time.\nWe can circumvent this issue through IP address rotation. Each API call will be distributed over a pool of IP addresses and thus prevent our request timing out (since they can’t pin down our real identity).\nThis typically requires the use of a paid service to provide a set of high quality proxies. In my scenario, I chose to use OxyLabs which have a dedicated web scrapping proxy tool. You can route your Python request via the OxyLabs web-scrapping tool and it will automagically handle the proxies for you. I was able to run my script overnight with zero failures and retrieved over 850 requests.\nEach request produces a 1.1MB csv file. Over the course of 16 hours, we were able to hoover about 1GB of data all together. Unfortunately, my script crashed in the late stages of the execution probably because I was running it out of a jupyter notebook and recursively printing output messages. Otherwise we could’ve captured more. I’ll convert it into a Python script eventually, it just so happens its easier to do data exploration in Jupyter.\nYou may notice also that the git history doesn’t have an extensive list of csv data which because there is no reason to have a volume of csv’s saved on the git history. Therefore it’s simply added to the .gitignore and we are storing the files locally for the most part.\n📊 Data Visualisation I think the most interesting component to visualising this type of data is monitoring the density of air traffic at various times of day. Especially in North America where the time zone from east coast to west coast varies by a 6-hour difference. As the country approaches the early hours of the morning, the entire east coast essentially “go to sleep” with respect to the density of the traffic. Then it flips vice-versa as time progresses.\nAdditionally, we can see commercial flight routes and airport hubs where these flight networks are connecting each other. There is a multitude of ways to visualise this information, all the way from a contourf plot to a quiver plot to some kind of color mesh plot. Alternative 2D visualisations will reveal different information about air traffic behaviour, so it’s good to compare and contrast.\nAvailable GPS Data sourced from OpenSky API:\nLongitude Latitude Speed Bearing Various other data points including callsigns. For a quiver plot, we need to split the speed into its horizontal and vertical components. We can do some basic trigonometry to figure that out.\nIn the quiver example below, we see the direction and speed (relative to it’s arrow size) of each individual aircraft. When this data is animated, we can see the arrows get smaller for aircraft on the approach, and grow as they are taking off. It has a very interesting appearance. We also can map this out is by creating a scatter distribution and embed the Gaussian KDE (Kernel Density Estimation) mapping onto the individual points themselves to get a feel for the distribution as there is a lot of overlap at this scale:\nAnd we can map the KDE over the entire map itself, however, we must create a “meshgrid” over the plot. The aircraft exist between the grids native resolution, therefore we would need to re-shape the data into a 2-dimensional array containing the aircraft density distribution.\nWe can combine the 2D KDE mapping with the quiver plot to reveal a bit more information on aircraft density distribution, like so:\nThe plotting process is iterated over the folder of timestamped csv’s to generate the incremental aircraft movements over time.\nMap Data Struggles Something that left me completely stumped for a while is that I was not able to directly use the Stadia Maps API within in Cartopy 0.22.0 which was confusing and frustrating.\nI chose to use the Stadia Maps API via the Cartopy as it had already build the classes to plug into the API and it had a high contrast map tile that thought was suitable. But it doesn’t work on Cartopy 0.22.0… It really was a head scratcher for me. After reading the site-packages I realised that the API class I was using was completely defunct within a matter of months.\nAlthough, I discovered a revised class object sitting (which works) in Cartopy 0.23.0 which was unavailable as a wheel/conda package. So, this was the first time I had to go build the package from source in the git repo just for this specific use case. But when they eventually package the final version of 0.23.0 in conda, this issue will no longer be the case…\nAlthough I came across some issues since each API call for the mapping data costs credits to use. And since the map is completely static, it doesn’t make sense to make multiple API calls for each set of data from a cost perspective.\nEven from a time perspective, it takes a very long time to render the map, about 13s for each snapshot which is way too long. Instead, the process I have created is to only clear the relevant “artists” on the matplotlib figure whilst retaining the map image on the plot. So we can save a lot of time.\nPlotting the scatterpoints takes a trivial amount of time in comparison, about 1-2s or so per iteration.\nSlow Color Mesh Plotting Plotting the 2D Gaussian KDE plot was much more intensive as we are drawing a high resolution color mapping across the entire grid. Each iteration was about 20-25s to render but it tended to slow down to over 1m per iteration. The filled color grid mapping took about 20 hours to create all 850 images. Probably because I was not removing the artist itself per iteration, but this is just a working assumption. I’ll have a look at optimising in the future.\nBearing in mind we are purely talking about single core processing. Splitting the load across the rest of the CPU cores, and spawning the data processes in parallel would’ve cut the time significantly. I’ll investigate this setup in the near future to optimise the compute power since Python is pretty slow in general.\n✈️ Data Animation This is the key component where we can physically see how the aircraft are moving over time.\nThis animation procedure is fairly straightforward when using ffmpeg in a bash script. We can point to a folder with a collection of images and ask the program to splice them together into a mp4 file (or whatever file type).\nAssuming the images are timestamped, the files should be sorted in chronological order so you don’t need to fiddle with passing additional sort arguments into your command.\nIt only takes a few minutes on my machine to splice together 850 images together.\nMy file structure is segmented into multiple folders partitioned by “date” and “visualisation type”, I simply pass those parameters into my bash script to generate the spliced video.\nThe script is only a few lines and looks like this:\n#!/bin/sh # $1 Specifies the Date of the folder to be accessed - E.g. '2024-08-24' # $2 Specifies the Image Folder To Be Accessed - E.g. 'scatter' or 'quiver' or 'contourf' # Example of how to run bash script: $(./mkvideo '2024-08-24' 'scatter') base_folder=\"$(dirname $(pwd))\" output=\"$base_folder/animate/videos\" image_data=\"$base_folder/data/get_states/$1/$2/crop\" ffmpeg -framerate 24 -pattern_type glob -i \"${image_data}/*.png\" $output/$1_$2_movements.mp4 Other video processing was down on Kdenlive to add in the musical audio transitions.\n📽️ Data Time-lapse Videos illustrating the 16-hour scatter plot time-lapse of aircraft flying over North America. ",
   "wordCount" : "1875",
   "inLanguage": "en",
-  "image":"https://filpill.github.io/img/flight/airspace_visualiser.png","datePublished": "2024-05-26T00:00:00Z",
+  "image":"https://filiplivancic.com/img/flight/airspace_visualiser.png","datePublished": "2024-05-26T00:00:00Z",
   "dateModified": "2024-05-26T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://filpill.github.io/projects/2024-05-21-flight-tracking/"
+    "@id": "https://filiplivancic.com/projects/2024-05-21-flight-tracking/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Filip Livancic",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://filpill.github.io/favicon.ico"
+      "url": "https://filiplivancic.com/favicon.ico"
     }
   }
 }
@@ -141,7 +141,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <a href="https://filiplivancic.com/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -169,22 +169,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/" title="🏠 Home">
+                <a href="https://filiplivancic.com/" title="🏠 Home">
                     <span>🏠 Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                <a href="https://filiplivancic.com/profile/" title="👤 Profile">
                     <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                <a href="https://filiplivancic.com/archives/" title="📁 Archive">
                     <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
+                <a href="https://filiplivancic.com/tags/" title="🏷️ Tags">
                     <span>🏷️ Tags</span>
                 </a>
             </li>
@@ -195,7 +195,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <div class="breadcrumbs"><a href="https://filiplivancic.com/">Home</a>&nbsp;»&nbsp;<a href="https://filiplivancic.com/projects/">Projects</a></div>
     <h1 class="post-title">
       Flight Tracking Animations
     </h1>
@@ -207,7 +207,7 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="lazy" src="https://filpill.github.io/img/flight/airspace_visualiser.png" alt="">
+        <img loading="lazy" src="https://filiplivancic.com/img/flight/airspace_visualiser.png" alt="">
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -409,15 +409,15 @@ graph LR;
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://filpill.github.io/tags/-data/">📊 Data</a></li>
+      <li><a href="https://filiplivancic.com/tags/-data/">📊 Data</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://filpill.github.io/projects/2024-09-09-learning-dbt/">
+  <a class="prev" href="https://filiplivancic.com/projects/2024-09-09-learning-dbt/">
     <span class="title">« Prev</span>
     <br>
     <span>Understanding dbt Cloud Fundamentals</span>
   </a>
-  <a class="next" href="https://filpill.github.io/projects/2024-04-16-wireguard-vpn/">
+  <a class="next" href="https://filiplivancic.com/projects/2024-04-16-wireguard-vpn/">
     <span class="title">Next »</span>
     <br>
     <span>WireGuard VPN Server</span>
@@ -429,7 +429,7 @@ graph LR;
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by

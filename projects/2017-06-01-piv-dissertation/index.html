@@ -9,16 +9,16 @@
 <meta name="keywords" content="⚙️ Engineering">
 <meta name="description" content="Dissertation Project: Investigating flow field characteristics of a stepped geometry">
 <meta name="author" content="">
-<link rel="canonical" href="https://filpill.github.io/projects/2017-06-01-piv-dissertation/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://filpill.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://filpill.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://filpill.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://filpill.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://filpill.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="https://filiplivancic.com/projects/2017-06-01-piv-dissertation/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.443acfee7a7607f3bfbfe4a96456047004d869c057f1c39b6740a1dc3b735240.css" integrity="sha256-RDrP7np2B/O/v&#43;SpZFYEcATYacBX8cObZ0Ch3DtzUkA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://filiplivancic.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://filiplivancic.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://filiplivancic.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://filiplivancic.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://filiplivancic.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://filpill.github.io/projects/2017-06-01-piv-dissertation/">
+<link rel="alternate" hreflang="en" href="https://filiplivancic.com/projects/2017-06-01-piv-dissertation/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,7 +55,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://filpill.github.io/projects/2017-06-01-piv-dissertation/">
+</noscript><meta property="og:url" content="https://filiplivancic.com/projects/2017-06-01-piv-dissertation/">
   <meta property="og:site_name" content="Filip Livancic">
   <meta property="og:title" content="Forward Facing Step - Particle Image Velocimetry">
   <meta property="og:description" content="Dissertation Project: Investigating flow field characteristics of a stepped geometry">
@@ -65,9 +65,9 @@
     <meta property="article:published_time" content="2017-06-01T00:00:00+00:00">
     <meta property="article:modified_time" content="2017-06-01T00:00:00+00:00">
     <meta property="article:tag" content="⚙️ Engineering">
-    <meta property="og:image" content="https://filpill.github.io/img/piv/ffs-bl-diagram.png">
+    <meta property="og:image" content="https://filiplivancic.com/img/piv/ffs-bl-diagram.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://filpill.github.io/img/piv/ffs-bl-diagram.png">
+<meta name="twitter:image" content="https://filiplivancic.com/img/piv/ffs-bl-diagram.png">
 <meta name="twitter:title" content="Forward Facing Step - Particle Image Velocimetry">
 <meta name="twitter:description" content="Dissertation Project: Investigating flow field characteristics of a stepped geometry">
 
@@ -81,13 +81,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Projects",
-      "item": "https://filpill.github.io/projects/"
+      "item": "https://filiplivancic.com/projects/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Forward Facing Step - Particle Image Velocimetry",
-      "item": "https://filpill.github.io/projects/2017-06-01-piv-dissertation/"
+      "item": "https://filiplivancic.com/projects/2017-06-01-piv-dissertation/"
     }
   ]
 }
@@ -105,18 +105,18 @@
   "articleBody": "Summary My 3rd year project in University was to design a Forward Facing Step and perform wind tunnel experiments to analyse flow characteristics on that geometry using PIV.\nParticle Image Velocimetry is a practical tool for Aerodynamics analyse flow fields without intrusions in the wind tunnel environment such as sensors or pitot probes.\nIn this experiment the height of the boundary layer is similarly proportioned to the height of the step. In results shown below you will notice two distinct separation regions on the aerofoil. One at the bottom of the step due to the sudden adverse pressure gradient. And another at the top of the step as the flow is unable to sharply turn the corner.\nPrevious Next / [pdf] View the PDF file here. Link to PIV Python Code For Results Post Processing\nExperimental Procedure Wind Tunnel Experiment The experimental procedure involves diffusing small oil droplets into the freestream flow and having a sheet of laser light illuminating a cross-section of the airflow. Hundreds of images are captured in the process a high speed camera. Due to the limited field of vision, the results from the top and bottom of the step were recorded separately. Image Post-Processing Images need some further preparation to enable reliable PIV results. Usually this involves enhancing contrast of the images to make the particles visible. Additionally any background noise picked up by the camera needs to be subtracted from the image as we want to isolate the airflow as much as possible. OpenPIV and Python Post-Process Scripts Particle displacements on the images can be determined by performing a cross-correlation on the series of image pairs. In my case, I used OpenPIV software written in Python to extract all the velocity fields at all the times steps recorded. Additionally, I’ve written some post-processing scripts for the velocity data text files in Python to animate experimental results. (I used MATLAB equivalents for my dissertation at the time of the project). Experimental Arrangement Illustration of camera and laser positioning to capture wind tunnel data. Raw wind tunnel image with imageJ enhancements - Capturing illuminated particles moving over step within laser plane. Particle Image Velocimetry Results Instantaneous Velocity Streamplot Front Step Top Step Time Averaged Velocity Contours Front Step Top Step Turbulence Intensity Contours Front Step Top Step ",
   "wordCount" : "383",
   "inLanguage": "en",
-  "image":"https://filpill.github.io/img/piv/ffs-bl-diagram.png","datePublished": "2017-06-01T00:00:00Z",
+  "image":"https://filiplivancic.com/img/piv/ffs-bl-diagram.png","datePublished": "2017-06-01T00:00:00Z",
   "dateModified": "2017-06-01T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://filpill.github.io/projects/2017-06-01-piv-dissertation/"
+    "@id": "https://filiplivancic.com/projects/2017-06-01-piv-dissertation/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Filip Livancic",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://filpill.github.io/favicon.ico"
+      "url": "https://filiplivancic.com/favicon.ico"
     }
   }
 }
@@ -141,7 +141,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://filpill.github.io/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
+            <a href="https://filiplivancic.com/" accesskey="h" title="Filip Livancic (Alt + H)">Filip Livancic</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -169,22 +169,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://filpill.github.io/" title="🏠 Home">
+                <a href="https://filiplivancic.com/" title="🏠 Home">
                     <span>🏠 Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/profile/" title="👤 Profile">
+                <a href="https://filiplivancic.com/profile/" title="👤 Profile">
                     <span>👤 Profile</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/archives/" title="📁 Archive">
+                <a href="https://filiplivancic.com/archives/" title="📁 Archive">
                     <span>📁 Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://filpill.github.io/tags/" title="🏷️ Tags">
+                <a href="https://filiplivancic.com/tags/" title="🏷️ Tags">
                     <span>🏷️ Tags</span>
                 </a>
             </li>
@@ -195,7 +195,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://filpill.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://filpill.github.io/projects/">Projects</a></div>
+    <div class="breadcrumbs"><a href="https://filiplivancic.com/">Home</a>&nbsp;»&nbsp;<a href="https://filiplivancic.com/projects/">Projects</a></div>
     <h1 class="post-title">
       Forward Facing Step - Particle Image Velocimetry
     </h1>
@@ -207,7 +207,7 @@
 </div>
   </header> 
 <figure class="entry-cover">
-        <img loading="lazy" src="https://filpill.github.io/img/piv/ffs-bl-diagram.png" alt="PIV BL Diagram">
+        <img loading="lazy" src="https://filiplivancic.com/img/piv/ffs-bl-diagram.png" alt="PIV BL Diagram">
 </figure><div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
@@ -403,7 +403,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-6a61455e" href="
 
     
     if (pdfjsLib.GlobalWorkerOptions.workerSrc == '')
-      pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/filpill.github.io\/" + 'js/pdf-js/build/pdf.worker.js';
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/filiplivancic.com\/" + 'js/pdf-js/build/pdf.worker.js';
 
     
     var pdfDoc = null,
@@ -604,15 +604,15 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-6a61455e" href="
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://filpill.github.io/tags/%EF%B8%8F-engineering/">⚙️ Engineering</a></li>
+      <li><a href="https://filiplivancic.com/tags/%EF%B8%8F-engineering/">⚙️ Engineering</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://filpill.github.io/projects/2018-06-17-uav-aircraft-design/">
+  <a class="prev" href="https://filiplivancic.com/projects/2018-06-17-uav-aircraft-design/">
     <span class="title">« Prev</span>
     <br>
     <span>UAV Aircraft Design</span>
   </a>
-  <a class="next" href="https://filpill.github.io/projects/draft_articles/useful_bq_sql/">
+  <a class="next" href="https://filiplivancic.com/projects/draft_articles/useful_bq_sql/">
     <span class="title">Next »</span>
     <br>
     <span></span>
@@ -624,7 +624,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-6a61455e" href="
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filpill.github.io/">Filip Livancic</a></span> · 
+        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by
