@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>🏷️ Tags on Filip Livancic</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://filiplivancic.com/tags/</link>
     <description>Recent content in 🏷️ Tags on Filip Livancic</description>
-    <generator>Hugo -- 0.147.1</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://filiplivancic.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>💻 Systems</title>
-      <link>http://localhost:1313/tags/-systems/</link>
-      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/-systems/</guid>
+      <title>📊 Data</title>
+      <link>https://filiplivancic.com/tags/-data/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://filiplivancic.com/tags/-data/</guid>
       <description></description>
     </item>
     <item>
-      <title>📊 Data</title>
-      <link>http://localhost:1313/tags/-data/</link>
-      <pubDate>Sun, 26 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/-data/</guid>
+      <title>💻 Systems</title>
+      <link>https://filiplivancic.com/tags/-systems/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://filiplivancic.com/tags/-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>⚙️ Engineering</title>
-      <link>http://localhost:1313/tags/%EF%B8%8F-engineering/</link>
+      <link>https://filiplivancic.com/tags/%EF%B8%8F-engineering/</link>
       <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%EF%B8%8F-engineering/</guid>
+      <guid>https://filiplivancic.com/tags/%EF%B8%8F-engineering/</guid>
       <description></description>
     </item>
   </channel>

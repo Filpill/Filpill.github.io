@@ -1,19 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>💻 Data on Filip Livancic</title>
-    <link>http://localhost:1313/tags/-data/</link>
-    <description>Recent content in 💻 Data on Filip Livancic</description>
-    <generator>Hugo -- 0.147.1</generator>
+    <title>📊 Data on Filip Livancic</title>
+    <link>https://filiplivancic.com/tags/-data/</link>
+    <description>Recent content in 📊 Data on Filip Livancic</description>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/-data/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://filiplivancic.com/tags/-data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCP Chess.com Data Engineering Saga</title>
-      <link>http://localhost:1313/projects/2025-05-15-gcp-chess-development-saga/</link>
+      <link>https://filiplivancic.com/projects/2025-05-15-gcp-chess-development-saga/</link>
       <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/2025-05-15-gcp-chess-development-saga/</guid>
+      <guid>https://filiplivancic.com/projects/2025-05-15-gcp-chess-development-saga/</guid>
       <description>Youtube series documenting progress on developing ETL process for chess.com API</description>
+    </item>
+    <item>
+      <title>Flight Tracking Animations</title>
+      <link>https://filiplivancic.com/projects/2024-05-21-flight-tracking/</link>
+      <pubDate>Sun, 26 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://filiplivancic.com/projects/2024-05-21-flight-tracking/</guid>
+      <description>Retrieving airspace states via OpenSky REST API and animating data using Python &#43; FFMPEG</description>
+    </item>
+    <item>
+      <title>Chess.com API - Data Visualisation</title>
+      <link>https://filiplivancic.com/projects/2023-04-10-chess-data/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://filiplivancic.com/projects/2023-04-10-chess-data/</guid>
+      <description>Chess player data extraction via API and analysing performance data on Python</description>
+    </item>
+    <item>
+      <title>Codewars API - User Statistics</title>
+      <link>https://filiplivancic.com/projects/2022-11-09-codewars-data/</link>
+      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://filiplivancic.com/projects/2022-11-09-codewars-data/</guid>
+      <description>Extracting codewars userdata and analysing metrics on Python</description>
+    </item>
+    <item>
+      <title>Tableau Client Server API: Extracting Dashboard Images</title>
+      <link>https://filiplivancic.com/projects/2022-09-16-tableau-client-server/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://filiplivancic.com/projects/2022-09-16-tableau-client-server/</guid>
+      <description>Connecting to TCS API and collecting workbook object metadata with Python</description>
+    </item>
+    <item>
+      <title>Building Data Pipelines With Python: Systems Perspective</title>
+      <link>https://filiplivancic.com/projects/2022-07-23-python-pipelines/</link>
+      <pubDate>Sat, 23 Jul 2022 21:12:42 +0100</pubDate>
+      <guid>https://filiplivancic.com/projects/2022-07-23-python-pipelines/</guid>
+      <description>Python integration methods and automation practices for SQL and MS Office products</description>
     </item>
   </channel>
 </rss>
