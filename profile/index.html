@@ -328,36 +328,36 @@ The true value of knowledge is only unlocked when you are deeply interested in t
   @-webkit-keyframes spin {
     to { -webkit-transform: rotate(360deg); }
   }
-  </style><div class="embed-pdf-container" id="embed-pdf-container-e6b439ee">
-    <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-e6b439ee">
-        <div class="pdf-loading" id="pdf-loading-e6b439ee"></div>
+  </style><div class="embed-pdf-container" id="embed-pdf-container-7227da21">
+    <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-7227da21">
+        <div class="pdf-loading" id="pdf-loading-7227da21"></div>
     </div>
     <div id="overlayText">
-      <a href="/files/filip_cv.pdf" aria-label="Download" download>
+      <a href="/files/filip-livancic-cv.pdf" aria-label="Download" download>
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
             <path d="M9 13c.3 0 .5-.1.7-.3L15.4 7 14 5.6l-4 4V1H8v8.6l-4-4L2.6 7l5.7 5.7c.2.2.4.3.7.3zm-7 2h14v2H2z" />
         </svg>
       </a>
     </div>
-    <canvas class="pdf-canvas" id="pdf-canvas-e6b439ee"></canvas>
+    <canvas class="pdf-canvas" id="pdf-canvas-7227da21"></canvas>
 </div>
 
-<div class="pdf-paginator" id="pdf-paginator-e6b439ee">
-    <button id="pdf-prev-e6b439ee">Previous</button>
-    <button id="pdf-next-e6b439ee">Next</button> &nbsp; &nbsp;
+<div class="pdf-paginator" id="pdf-paginator-7227da21">
+    <button id="pdf-prev-7227da21">Previous</button>
+    <button id="pdf-next-7227da21">Next</button> &nbsp; &nbsp;
     <span>
-      <span class="pdf-pagenum" id="pdf-pagenum-e6b439ee"></span> / <span class="pdf-pagecount" id="pdf-pagecount-e6b439ee"></span>
+      <span class="pdf-pagenum" id="pdf-pagenum-7227da21"></span> / <span class="pdf-pagecount" id="pdf-pagecount-7227da21"></span>
     </span>
-    <a class="pdf-source" id="pdf-source-e6b439ee" href="/files/filip_cv.pdf">[pdf]</a>
+    <a class="pdf-source" id="pdf-source-7227da21" href="/files/filip-livancic-cv.pdf">[pdf]</a>
 </div>
 
 <noscript>
-View the PDF file <a class="pdf-source" id="pdf-source-noscript-e6b439ee" href="/files/filip_cv.pdf">here</a>.
+View the PDF file <a class="pdf-source" id="pdf-source-noscript-7227da21" href="/files/filip-livancic-cv.pdf">here</a>.
 </noscript>
 
 <script type="text/javascript">
     (function(){
-    var url = '\/files\/filip_cv.pdf';
+    var url = '\/files\/filip-livancic-cv.pdf';
 
     var hidePaginator = "" === "true";
     var hideLoader = "false" === "true";
@@ -376,10 +376,10 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-e6b439ee" href="
         pageRendering = false,
         pageNumPending = null,
         scale = 3,
-        canvas = document.getElementById('pdf-canvas-e6b439ee'),
+        canvas = document.getElementById('pdf-canvas-7227da21'),
         ctx = canvas.getContext('2d'),
-        paginator = document.getElementById("pdf-paginator-e6b439ee"),
-        loadingWrapper = document.getElementById('pdf-loadingWrapper-e6b439ee');
+        paginator = document.getElementById("pdf-paginator-7227da21"),
+        loadingWrapper = document.getElementById('pdf-loadingWrapper-7227da21');
 
 
     
@@ -417,7 +417,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-e6b439ee" href="
       });
 
       
-      document.getElementById('pdf-pagenum-e6b439ee').textContent = num;
+      document.getElementById('pdf-pagenum-7227da21').textContent = num;
     }
 
     
@@ -461,7 +461,7 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-e6b439ee" href="
       pageNum--;
       queueRenderPage(pageNum);
     }
-    document.getElementById('pdf-prev-e6b439ee').addEventListener('click', onPrevPage);
+    document.getElementById('pdf-prev-7227da21').addEventListener('click', onPrevPage);
 
     
 
@@ -472,14 +472,14 @@ View the PDF file <a class="pdf-source" id="pdf-source-noscript-e6b439ee" href="
       pageNum++;
       queueRenderPage(pageNum);
     }
-    document.getElementById('pdf-next-e6b439ee').addEventListener('click', onNextPage);
+    document.getElementById('pdf-next-7227da21').addEventListener('click', onNextPage);
 
     
 
     pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
       pdfDoc = pdfDoc_;
       var numPages = pdfDoc.numPages;
-      document.getElementById('pdf-pagecount-e6b439ee').textContent = numPages;
+      document.getElementById('pdf-pagecount-7227da21').textContent = numPages;
 
       
       if(pageNum > numPages) {
