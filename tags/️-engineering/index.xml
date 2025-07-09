@@ -4,17 +4,10 @@
     <title>⚙️ Engineering on Filip Livancic</title>
     <link>https://filiplivancic.com/tags/%EF%B8%8F-engineering/</link>
     <description>Recent content in ⚙️ Engineering on Filip Livancic</description>
-    <generator>Hugo -- 0.147.8</generator>
+    <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://filiplivancic.com/tags/%EF%B8%8F-engineering/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cyber Deck Assembly - Raspberry Pi</title>
-      <link>https://filiplivancic.com/projects/2023-07-10-cyber-deck-design/</link>
-      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://filiplivancic.com/projects/2023-07-10-cyber-deck-design/</guid>
-      <description>3D Printed frame for Raspberry Pi featuring integrated camera and display</description>
-    </item>
     <item>
       <title>Servo Turret Control</title>
       <link>https://filiplivancic.com/projects/2023-07-03-servo-turret/</link>

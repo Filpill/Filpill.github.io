@@ -4,7 +4,7 @@
     <title>💻 Systems on Filip Livancic</title>
     <link>https://filiplivancic.com/tags/-systems/</link>
     <description>Recent content in 💻 Systems on Filip Livancic</description>
-    <generator>Hugo -- 0.147.8</generator>
+    <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://filiplivancic.com/tags/-systems/index.xml" rel="self" type="application/rss+xml" />
@@ -21,20 +21,6 @@
       <pubDate>Mon, 09 Sep 2024 17:44:58 +0000</pubDate>
       <guid>https://filiplivancic.com/projects/2024-09-09-learning-dbt/</guid>
       <description>Covering all the basic aspects of maintaining dbt infrastructure</description>
-    </item>
-    <item>
-      <title>WireGuard VPN Server</title>
-      <link>https://filiplivancic.com/projects/2024-04-16-wireguard-vpn/</link>
-      <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://filiplivancic.com/projects/2024-04-16-wireguard-vpn/</guid>
-      <description>How to Setup an Encrypted VPN Tunnel To Access Your Home Network</description>
-    </item>
-    <item>
-      <title>Dockerised Postgres Database and Ingestion</title>
-      <link>https://filiplivancic.com/projects/2024-01-16-docker-ingestion/</link>
-      <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://filiplivancic.com/projects/2024-01-16-docker-ingestion/</guid>
-      <description>Basics of setting up a database and ingestion system in a series of docker containers</description>
     </item>
     <item>
       <title>Setting Up Linux Desktop Environment</title>
