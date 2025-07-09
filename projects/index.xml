@@ -120,23 +120,5 @@
       <guid>https://filiplivancic.com/projects/2017-06-01-piv-dissertation/</guid>
       <description>Dissertation Project: Investigating flow field characteristics of a stepped geometry</description>
     </item>
-    <item>
-      <title></title>
-      <link>https://filiplivancic.com/projects/draft_articles/useful_bq_sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://filiplivancic.com/projects/draft_articles/useful_bq_sql/</guid>
-      <description>&lt;h2 id=&#34;retrieve-stored-procedures&#34;&gt;Retrieve Stored Procedures&lt;/h2&gt;
-&lt;p&gt;Takes a snapshot of procedure names and DDL contents from the Google BigQuery.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SQL&#34; data-lang=&#34;SQL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WITH&lt;/span&gt; project_procedures &lt;span style=&#34;color:#66d9ef&#34;&gt;AS&lt;/span&gt; (
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;select&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    CONCAT(&lt;span style=&#34;color:#66d9ef&#34;&gt;routine_catalog&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;routine_schema&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;routine_name&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;AS&lt;/span&gt; stored_procedure_path
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   ,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; ddl &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;AS&lt;/span&gt; ddl,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   last_altered
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;skyuk&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;uk&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;vis&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;cust&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;res&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;d1&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;lab.stored_procedures.INFORMATION_SCHEMA.ROUTINES&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; project_procedures
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It&amp;rsquo;s worth considering that BigQuery does not save a history of revised Stored Procedures.&lt;/p&gt;
-&lt;p&gt;Creating a change history is down to you to create through some kind of Git-based CI/CD or by potentially creating a table with Type 2 SCD&amp;rsquo;s.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
