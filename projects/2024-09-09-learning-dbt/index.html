@@ -295,7 +295,7 @@
 <p>All data sources are denoted clearly, with all the connections between staging models and dependencies flowing into production models.</p>
 <p><img alt="dbt data lineage" loading="lazy" src="/img/dbt/dbt_data_lineage.png#center"></p>
 <p>I&rsquo;ll list out a brief summary of the components you will most frequently work with:</p>
-<h4 id="hahahugoshortcode17s0hbhb"><span style="
+<h4 id="hahahugoshortcode14s0hbhb"><span style="
       background-color:#702963;
       color:#FFF;
       padding:1px;
@@ -317,7 +317,7 @@
 <p>Data Freshness Checks:
 <img alt="dbt data freshness check" loading="lazy" src="/img/dbt/dbt_data_freshness.png#center"></p>
 <p>Configuration files are crucial to effectively segmenting, testing and documenting your dbt models.</p>
-<h4 id="hahahugoshortcode17s1hbhb"><span style="
+<h4 id="hahahugoshortcode14s1hbhb"><span style="
       background-color:#8ec1f5;
       color:#0A0A0A;
       padding:1px;
@@ -345,7 +345,7 @@
 <p>Notice how we are able to easily replace in the targets very easily. This make deployments to other environments almost trivial to implement.</p>
 <blockquote>
 <p><em><strong>Raw BigQuery SQL typically has difficulty in having dynamic project/dataset/tables names (unless you are happy to implement a heavy dose of dynamic SQL) &ndash; Dbt on the other hand makes this process trivial to deal with.</strong></em></p></blockquote>
-<h4 id="hahahugoshortcode17s2hbhb"><span style="
+<h4 id="hahahugoshortcode14s2hbhb"><span style="
       background-color:#f5eb5b;
       color:#000;
       padding:1px;
@@ -373,7 +373,7 @@
 <img alt="dbt macro compiled SQL" loading="lazy" src="/img/dbt/dbt_macro_compiled.png#center"></p>
 <blockquote>
 <p><em><strong>You will benefit from macros in a range of implementations. It really comes down to a degree of creativity in reducing repeatability.</strong></em></p></blockquote>
-<h4 id="hahahugoshortcode17s3hbhb"><span style="
+<h4 id="hahahugoshortcode14s3hbhb"><span style="
       background-color:#7feb4d;
       color:#000;
       padding:1px;
@@ -426,7 +426,7 @@
 <blockquote>
 <p><em><strong>The term &ldquo;project&rdquo; is used here interchangably with &ldquo;database&rdquo;. The terminology is specific to BigQuery.</strong></em></p></blockquote>
 <p>In order to push to separate projects, we must utilise some specific features in dbt to enable it:</p>
-<h4 id="hahahugoshortcode17s4hbhb"><span style="
+<h4 id="hahahugoshortcode14s4hbhb"><span style="
       background-color:#006666;
       color:#FFF;
       padding:1px;
@@ -440,7 +440,7 @@
 <p>When creating a dbt production environment for instance, we are able to specify a target name (which refers to the dbt environments) and the project name which relates to the target environment:</p>
 <p><img alt="dbt extended attributes" loading="lazy" src="/img/dbt/dbt_extended_attr_target.png#center"></p>
 <p>Effectively what we are doing is creating an override to the destination project for production. If we did not specify these overrides, the output would land in the default project you defined in your data warehouse connector.</p>
-<h4 id="hahahugoshortcode17s5hbhb"><span style="
+<h4 id="hahahugoshortcode14s5hbhb"><span style="
       background-color:#a98600;
       color:#000;
       padding:1px;
