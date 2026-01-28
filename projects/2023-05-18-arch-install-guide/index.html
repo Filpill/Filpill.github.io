@@ -373,7 +373,8 @@ The Hyper-V default network switch should automatically provide your VM with the
 <li>Otherwise use <strong>dos</strong>.</li>
 </ul>
 <blockquote>
-<p><em><strong>For our scenario we are using dos</strong></em></p></blockquote>
+<p><em><strong>For our scenario we are using dos</strong></em></p>
+</blockquote>
 <p>Decide on a partition scheme. I will keep it simple and reduce it to a <strong>boot and root partition</strong>:</p>
 <ul>
 <li><strong>/dev/sda1 (boot partition)</strong> only needs about <strong>128MB</strong> of space and needs to be bootable. You can <strong>press b to enable the boot flag</strong> after making the partition.</li>
@@ -399,7 +400,8 @@ mkfs.ext4 /dev/sda2
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount /dev/sda2 /mnt
 </span></span></code></pre></div><blockquote>
-<p><strong>Warning:</strong> If you mount in reverse order, the install will fail!</p></blockquote>
+<p><strong>Warning:</strong> If you mount in reverse order, the install will fail!</p>
+</blockquote>
 <p>For the boot partition, you will need to make a directory with this path <strong>/mnt/boot/efi</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt
 </span></span><span style="display:flex;"><span>mkdir boot
@@ -529,7 +531,7 @@ That&rsquo;s about it, you now have a base install of Arch Linux.</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
+        <span>&copy; 2026 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by

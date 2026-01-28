@@ -256,7 +256,8 @@
 </ul>
 <p>If you are interested in building data with dbt, I highly recommend taking the <em><strong><a href="https://learn.getdbt.com/courses/dbt-fundamentals">dbt fundamentals course</a></strong></em> in conjunction with reading the documentation which was formative in writing this article.</p>
 <blockquote>
-<p>You can check out this repository to see how I structure my personal dbt project: <em><strong><a href="https://github.com/Filpill/dbt_learn">https://github.com/Filpill/dbt_learn</a></strong></em></p></blockquote>
+<p>You can check out this repository to see how I structure my personal dbt project: <em><strong><a href="https://github.com/Filpill/dbt_learn">https://github.com/Filpill/dbt_learn</a></strong></em></p>
+</blockquote>
 <p>You can connect dbt to any database or data warehouse instance, but I will walk through my experience with using the tool and how it integrates with the <em><strong>BigQuery data warehouse.</strong></em></p>
 <h2 id="-installing-dbt-cloud-cli-tool">🛠️ Installing dbt Cloud CLI tool<a hidden class="anchor" aria-hidden="true" href="#-installing-dbt-cloud-cli-tool">#</a></h2>
 <p>The CLI tool can be a pretty handy way to interface with dbt cloud. You will conveniently be able to run dbt commands through your own customized environment which is neat. And to an extent its more convenient to deal with merge conflicts when you are already embedded in a terminal-like environment.</p>
@@ -274,7 +275,8 @@
 <p>Service accounts should have their permissions sufficiently restricted to the tasks they are supposed to perform. At a minimum the account should have <strong>BigQuery Editor</strong> and <strong>BigQuery Job User</strong> permissions.</p>
 <p><img alt="GCP Service Account Permissons" loading="lazy" src="/img/dbt/gcp_service_account_perms.png#center"></p>
 <blockquote>
-<p><em><strong>In this educational scenario, I&rsquo;m using the same service account across the multiple dev/uat/prod projects setups.</strong></em></p></blockquote>
+<p><em><strong>In this educational scenario, I&rsquo;m using the same service account across the multiple dev/uat/prod projects setups.</strong></em></p>
+</blockquote>
 <h2 id="-connecting-to-data-warehouse">🏭 Connecting to Data Warehouse<a hidden class="anchor" aria-hidden="true" href="#-connecting-to-data-warehouse">#</a></h2>
 <p>Provided you have a service account and GCP project created, you can fill out the connections form on dbt cloud to create the interface.</p>
 <p>Simply attaching the private JSON key from your service account will auto populate all the fields leaving you only needing to fill the project ID field.</p>
@@ -295,7 +297,7 @@
 <p>All data sources are denoted clearly, with all the connections between staging models and dependencies flowing into production models.</p>
 <p><img alt="dbt data lineage" loading="lazy" src="/img/dbt/dbt_data_lineage.png#center"></p>
 <p>I&rsquo;ll list out a brief summary of the components you will most frequently work with:</p>
-<h4 id="hahahugoshortcode18s0hbhb"><span style="
+<h4 id="hahahugoshortcode21s0hbhb"><span style="
       background-color:#702963;
       color:#FFF;
       padding:1px;
@@ -317,7 +319,7 @@
 <p>Data Freshness Checks:
 <img alt="dbt data freshness check" loading="lazy" src="/img/dbt/dbt_data_freshness.png#center"></p>
 <p>Configuration files are crucial to effectively segmenting, testing and documenting your dbt models.</p>
-<h4 id="hahahugoshortcode18s1hbhb"><span style="
+<h4 id="hahahugoshortcode21s1hbhb"><span style="
       background-color:#8ec1f5;
       color:#0A0A0A;
       padding:1px;
@@ -344,8 +346,9 @@
 <p><img alt="dbt data ref funcs" loading="lazy" src="/img/dbt/dbt_reference_compiled.png#center"></p>
 <p>Notice how we are able to easily replace in the targets very easily. This make deployments to other environments almost trivial to implement.</p>
 <blockquote>
-<p><em><strong>Raw BigQuery SQL typically has difficulty in having dynamic project/dataset/tables names (unless you are happy to implement a heavy dose of dynamic SQL) &ndash; Dbt on the other hand makes this process trivial to deal with.</strong></em></p></blockquote>
-<h4 id="hahahugoshortcode18s2hbhb"><span style="
+<p><em><strong>Raw BigQuery SQL typically has difficulty in having dynamic project/dataset/tables names (unless you are happy to implement a heavy dose of dynamic SQL) &ndash; Dbt on the other hand makes this process trivial to deal with.</strong></em></p>
+</blockquote>
+<h4 id="hahahugoshortcode21s2hbhb"><span style="
       background-color:#f5eb5b;
       color:#000;
       padding:1px;
@@ -372,8 +375,9 @@
 <p><strong>Resulting compiled SQL:</strong>
 <img alt="dbt macro compiled SQL" loading="lazy" src="/img/dbt/dbt_macro_compiled.png#center"></p>
 <blockquote>
-<p><em><strong>You will benefit from macros in a range of implementations. It really comes down to a degree of creativity in reducing repeatability.</strong></em></p></blockquote>
-<h4 id="hahahugoshortcode18s3hbhb"><span style="
+<p><em><strong>You will benefit from macros in a range of implementations. It really comes down to a degree of creativity in reducing repeatability.</strong></em></p>
+</blockquote>
+<h4 id="hahahugoshortcode21s3hbhb"><span style="
       background-color:#7feb4d;
       color:#000;
       padding:1px;
@@ -398,7 +402,8 @@
 <p><img alt="dbt test" loading="lazy" src="/img/dbt/dbt_test.png#center"></p>
 <p>Generic tests should take you fairly far in monitoring pipeline data quality. <strong>Singular tests</strong> should be reserved for <strong>special transformation/logic that needs to be rigorously assessed.</strong></p>
 <blockquote>
-<p>The dbt testing feature is really powerful, you are able to able to have full test coverage at every stage of your data pipeline and clearly identify quality issues to be fixed.</p></blockquote>
+<p>The dbt testing feature is really powerful, you are able to able to have full test coverage at every stage of your data pipeline and clearly identify quality issues to be fixed.</p>
+</blockquote>
 <h2 id="-documentation">📝 Documentation<a hidden class="anchor" aria-hidden="true" href="#-documentation">#</a></h2>
 <p>Documentation occurs inside the configuration files to record information about sources, data models, business context, columns, data types and more.</p>
 <p>Additionally, within the <strong>models</strong> directory, you are able to create a <em><strong>_docs.md</strong></em> file which can store multi-line text blocks or tables in markdown.</p>
@@ -411,7 +416,8 @@
 <p>This is much better than filing information onto a completely separate system where no doubt somebody will forget to update the docs.</p>
 <p>Dbt documentation is a more natural and procedural approach to documenting your data models and overall feels less of chore to do vs other corporate solutions such as <strong>confluence</strong>. Its also easier to clean up after you decide to deprecate certain dbt projects/solutions. <em>Less rotting documentation&hellip;</em></p>
 <blockquote>
-<p><em><strong>Running documentation directly in dbt keeps it alive and significantly less likely to get orphaned in your development cycles.</strong></em></p></blockquote>
+<p><em><strong>Running documentation directly in dbt keeps it alive and significantly less likely to get orphaned in your development cycles.</strong></em></p>
+</blockquote>
 <h2 id="-environments">🌥 Environments<a hidden class="anchor" aria-hidden="true" href="#-environments">#</a></h2>
 <p>There are a plethora of ways to manage environments in your data warehouse and it&rsquo;s completely up to you to decide how to create environmental segmentation.</p>
 <p>Dbt will <strong>always mandate a dedicated development environment</strong> within a project which is where you will be developing your dbt models. Typically, when you run development models, they will land in a user schema/dataset e.g. <strong>dbt_filip_livancic</strong>. This will isolate your outputs and avoid collisions with other developers building in parallel.</p>
@@ -424,9 +430,10 @@
 <li><strong>Production</strong> - for analytical consumption</li>
 </ul>
 <blockquote>
-<p><em><strong>The term &ldquo;project&rdquo; is used here interchangably with &ldquo;database&rdquo;. The terminology is specific to BigQuery.</strong></em></p></blockquote>
+<p><em><strong>The term &ldquo;project&rdquo; is used here interchangably with &ldquo;database&rdquo;. The terminology is specific to BigQuery.</strong></em></p>
+</blockquote>
 <p>In order to push to separate projects, we must utilise some specific features in dbt to enable it:</p>
-<h4 id="hahahugoshortcode18s4hbhb"><span style="
+<h4 id="hahahugoshortcode21s4hbhb"><span style="
       background-color:#006666;
       color:#FFF;
       padding:1px;
@@ -440,7 +447,7 @@
 <p>When creating a dbt production environment for instance, we are able to specify a target name (which refers to the dbt environments) and the project name which relates to the target environment:</p>
 <p><img alt="dbt extended attributes" loading="lazy" src="/img/dbt/dbt_extended_attr_target.png#center"></p>
 <p>Effectively what we are doing is creating an override to the destination project for production. If we did not specify these overrides, the output would land in the default project you defined in your data warehouse connector.</p>
-<h4 id="hahahugoshortcode18s5hbhb"><span style="
+<h4 id="hahahugoshortcode21s5hbhb"><span style="
       background-color:#a98600;
       color:#000;
       padding:1px;
@@ -495,7 +502,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
+        <span>&copy; 2026 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by

@@ -249,7 +249,8 @@
   <div class="post-content"><h2 id="-summary">🗺️ Summary<a hidden class="anchor" aria-hidden="true" href="#-summary">#</a></h2>
 <p>This article will quickly show you the process of obtaining airspace data using the OpenSky REST API and how I was able to visualise on a map. I will focus on North American airspace as it seems this region captures the highest volume of aircraft.</p>
 <blockquote>
-<p>The <a href="https://github.com/Filpill/flight_tracking">Flight Tracking GitHub Project link</a> is here should you wish to examine my scripts and get some context for the commentary in this article.</p></blockquote>
+<p>The <a href="https://github.com/Filpill/flight_tracking">Flight Tracking GitHub Project link</a> is here should you wish to examine my scripts and get some context for the commentary in this article.</p>
+</blockquote>
 <p>The totality of the airspace depends on the maintenance of the OpenSky network. The majority of the data is recorded via ADS-B receivers, which are distributed over the land mass.</p>
 <p><img alt="ADS-B Infographic" loading="lazy" src="https://global.discourse-cdn.com/infiniteflight/original/4X/c/e/8/ce82d1b284d206ad24e395beaf56a63209fbee15.jpeg"></p>
 <p>Regarding aircraft surveillance, I presume we lose visibility of aircraft (in the data) outside the range of ground stations such as the sea or mountainous terrain. Otherwise it would&rsquo;ve been interesting to monitor the full extent of flight paths across the globe.</p>
@@ -381,7 +382,7 @@ graph LR;
 <p>My file structure is segmented into multiple folders partitioned by &ldquo;date&rdquo; and &ldquo;visualisation type&rdquo;, I simply pass those parameters into my bash script to generate the spliced video.</p>
 <p>The script is only a few lines and looks like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># $1 Specifies the Date of the folder to be accessed - E.g. &#39;2024-08-24&#39;</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># $1 Specifies the Date of the folder to be accessed - E.g. &#39;2024-08-24&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># $2 Specifies the Image Folder To Be Accessed - E.g. &#39;scatter&#39; or &#39;quiver&#39; or &#39;contourf&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Example of how to run bash script: $(./mkvideo &#39;2024-08-24&#39; &#39;scatter&#39;)</span>
 </span></span><span style="display:flex;"><span>
@@ -429,7 +430,7 @@ graph LR;
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
+        <span>&copy; 2026 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by

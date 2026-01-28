@@ -292,7 +292,7 @@
 </span></span></code></pre></div><p><em><strong>Reminder that you Ip address can be bundled into a variable using &mdash;-&gt; nmblookup DESKTOP-R1B3P7P | head -n 1 | cut -d &rsquo; &rsquo; -f 1</strong></em></p>
 <p>A potential mounting script can look like this, but you can customise to your liking:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>desktop<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DESKTOP-R1B3P7P&#34;</span>
+</span></span></span><span style="display:flex;"><span>desktop<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DESKTOP-R1B3P7P&#34;</span>
 </span></span><span style="display:flex;"><span>windows_folder<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vm_share_folder&#34;</span>
 </span></span><span style="display:flex;"><span>linux_folder<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/mnt/Hyper-V&#34;</span>
 </span></span><span style="display:flex;"><span>desktop_ip<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>nmblookup $desktop | head -n <span style="color:#ae81ff">1</span> | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1<span style="color:#66d9ef">)</span>
@@ -329,7 +329,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
+        <span>&copy; 2026 <a href="https://filiplivancic.com/">Filip Livancic</a></span> · 
 
     <span>
         Powered by
