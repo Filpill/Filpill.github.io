@@ -10,7 +10,7 @@
 <meta name="description" content="Instructional guide for setting up a Window Manager in Linux | dwm &#43; st">
 <meta name="author" content="">
 <link rel="canonical" href="https://filiplivancic.com/projects/2023-11-14-linux-gui-setup/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e2877ab88332b380def17e011d0616342cb0880113e8cd56b93e63d462ca341c.css" integrity="sha256-4od6uIMys4De8X4BHQYWNCywiAET6M1WuT5j1GLKNBw=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.ae71d7316e0e7d0078c5afc2bd14984c0fac82667e59fc0001cd0cc9d9a7e0ee.css" integrity="sha256-rnHXMW4OfQB4xa/CvRSYTA&#43;sgmZ&#43;WfwAAc0Mydmn4O4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://filiplivancic.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://filiplivancic.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://filiplivancic.com/favicon-32x32.png">
@@ -270,13 +270,13 @@
 <p>I setting up a window manger as the foundation for this guide. My system is running Arch Linux running under Hyper-V.</p>
 <h1 id="creating-a-user---getting-sudo-permissions">Creating a User - Getting Sudo Permissions<a hidden class="anchor" aria-hidden="true" href="#creating-a-user---getting-sudo-permissions">#</a></h1>
 <p>At this stage, you probably only have a root user on a fresh install, so it would be a good idea to create a user for yourself:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd -mg wheel filpill
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>useradd -mg wheel filpill
 </span></span></code></pre></div><p>You want to add yourself to the wheel group as we will make some changes to enable you to have access to the sudo command i.e. allow admin privileges.</p>
 <p>Add a password for that your using this command (and follow the prompts):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>passwd filpill
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>passwd filpill
 </span></span></code></pre></div><p>Next you will need to edit the sudoers file in order to give the wheel group the relevant access.</p>
 <p>You can find the file at /etc/sudoers.d and you will need to uncomment the following line:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%wheel ALL<span style="color:#f92672">=(</span>ALL<span style="color:#f92672">)</span> ALL
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%wheel ALL<span style="color:#f92672">=(</span>ALL<span style="color:#f92672">)</span> ALL
 </span></span></code></pre></div><p>Now you will be able to execute commands as root after being prompted for a password.</p>
 <h1 id="x11---display-server">X11 - Display Server<a hidden class="anchor" aria-hidden="true" href="#x11---display-server">#</a></h1>
 <p>Since we are using a window manager as the graphical environment, we are going to need to have some kind of display server.</p>
@@ -292,17 +292,17 @@
 </ul>
 <p>If you are installing on bare metal, then you will probably require a different video driver, so just research the one you need depending on the hardware you have.</p>
 <p>Using pacman, you can install with is command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S picom xorg xorg-server xorg-init xf86-video-fbdev
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S picom xorg xorg-server xorg-init xf86-video-fbdev
 </span></span></code></pre></div><h1 id="dwm---window-manager">dwm - Window Manager<a hidden class="anchor" aria-hidden="true" href="#dwm---window-manager">#</a></h1>
 <p>Dwm is a <em>Suckless software</em> and will be forming the backbone for the environment we are building.</p>
 <p>However, the install procedure and configuration is a little different compared to other programs.</p>
 <p>We cannot run a simple pacman command to install it. The program is written in C and needs to be compiled directly from those C files.</p>
 <p>You will need to visit the <a href="https://suckless.org/">Suckless Website</a> to get the source files and relevant patches.</p>
 <p>They have the base version of dwm on git, so you will need to run a git clone command to pull it down onto your machine. Run the git command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git://git.suckless.org/dwm
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git://git.suckless.org/dwm
 </span></span></code></pre></div><p>If you need to change the configuration, you can do all the changes inside the file **config.h&quot;.</p>
 <p>To compile the dwm configuration:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo make clean install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo make clean install
 </span></span></code></pre></div><p>It&rsquo;s fairly straightforward, if no errors occur, you have successfully installed dwm.</p>
 <p>However, if you ever need to change the config, you will need to re-compile those C-files.</p>
 <p>It would also be advisable to host a copy of your own dwm configuration on your own git repository so that you are able to deploy onto any machine very easily.</p>
@@ -310,10 +310,10 @@
 <p>There are many terminal emulators you can use as an option to supplement dwm.</p>
 <p>However, for continuity I would go for st which is also a <em>Suckless utility</em> and follows a similar procedure.</p>
 <p>Clone from the suckless website:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git://git.suckless.org/st
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git://git.suckless.org/st
 </span></span></code></pre></div><p>Configuration changes occur in the file called <strong>config.h</strong>.</p>
 <p>Compiling st into your desktop is done via this command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo make clean install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo make clean install
 </span></span></code></pre></div><p>Exact same procedure as dwm. Again, you can save the st configuration onto your own git repository.</p>
 <h1 id="config-files---xinitrc-and-bash_profile">Config Files - .xinitrc and .bash_profile<a hidden class="anchor" aria-hidden="true" href="#config-files---xinitrc-and-bash_profile">#</a></h1>
 <h3 id="xinitrc">.xinitrc<a hidden class="anchor" aria-hidden="true" href="#xinitrc">#</a></h3>
@@ -323,7 +323,7 @@
 <li>Start dwm</li>
 </ul>
 <p>After vimming into ~/.xinitrc; add these two lines in:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>picom -b
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>picom -b
 </span></span><span style="display:flex;"><span>exec dwm
 </span></span></code></pre></div><p><em><strong>Note: Exec dwm MUST be the last executed command of the xinitrc file</strong></em></p>
 <h3 id="bash_profile">.bash_profile<a hidden class="anchor" aria-hidden="true" href="#bash_profile">#</a></h3>
@@ -331,7 +331,7 @@
 <p>Depending on which shell you are using, the filename may be different. E.g. for <strong>zsh</strong>, the corresponding file would be called <strong>.zprofile</strong></p>
 <p>What you need to do in this file is essentially add a command to start the display server. The command for starting the display server is <strong>exec startx</strong>.</p>
 <p>After adding that command, your .bash_profile would look something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># ~/.bash_profile</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span>
@@ -344,7 +344,7 @@
 <h1 id="lf---terminal-file-explorer">lf - Terminal File Explorer<a hidden class="anchor" aria-hidden="true" href="#lf---terminal-file-explorer">#</a></h1>
 <p>The file explorer I recommend using is called <strong>lf</strong>. It&rsquo;s handy for exploring the terminal more efficiently. Also very useful for bulk operations.</p>
 <p>You can install using pacman:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S lf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S lf
 </span></span></code></pre></div><p>To open lf, simply type: <strong>lf</strong> into your terminal window.</p>
 <h2 id="extending-lf">Extending lf<a hidden class="anchor" aria-hidden="true" href="#extending-lf">#</a></h2>
 <p>I also recommend extending this program to get some more functionality from it by:</p>
@@ -359,14 +359,14 @@
 <li>Install a <strong>&ldquo;nerdfont&rdquo;</strong></li>
 </ul>
 <p>You can make the <strong>icons</strong> file inside <em><strong>~/.config/lf</strong></em> with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch ~/.config/lf/icons
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch ~/.config/lf/icons
 </span></span></code></pre></div><p>Go to the <a href="https://github.com/gokcehan/lf/blob/master/etc/icons.example">Gokcehan - lf git repo - icons.example</a>, copy the entire contents and paste directly into your newly created <strong>icons</strong> file.</p>
 <p>You will notice that you terminal is unable to read the iconography. This is solved by installing a <strong>&ldquo;nerdfont&rdquo;.</strong></p>
 <p>Go to <a href="https://www.nerdfonts.com">Nerd Fonts Website</a> and download any font of your choosing.</p>
 <p>Unzip the downloaded font and paste the contents into <em><strong>~/.local/share/fonts</strong></em>.</p>
 <p>In order for st to change the font being used, you must edit the <strong>config.h</strong> of st.</p>
 <p>There should be a line in config.h which defines the font name, simply edit the line with the new name. For example my st font is configured like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>font <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;GeistMonoNerdFont-Medium:pixelsize=14:antialias=true:autohint=true&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>font <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;GeistMonoNerdFont-Medium:pixelsize=14:antialias=true:autohint=true&#34;</span>;
 </span></span></code></pre></div><p>Run <strong>sudo make clean install</strong> to re-compile st and you should now be able to read those characters in the <strong>icons</strong> file.</p>
 <p>The next time you run lf on a fresh instance of st, you should be able to see icons of the various files in your system.</p>
 <p><img alt="f Icons" loading="lazy" src="/img/arch/gui/lf_icons.jpg"></p>
@@ -376,12 +376,12 @@
 <p>ctpv is program made by NikitaIvanovV and is designed to be integrated directly into lf to avoid the use of wrapper scripts.</p>
 <p>We will only need to make some minor additions to our <strong>lfrc</strong>.</p>
 <p>To install ctpv, run these commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/NikitaIvanovV/ctpv
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/NikitaIvanovV/ctpv
 </span></span><span style="display:flex;"><span>cd ctpv
 </span></span><span style="display:flex;"><span>make
 </span></span><span style="display:flex;"><span>sudo make install
 </span></span></code></pre></div><p>Go to your lfrc located in <em><strong>~.config/lf/lfrc</strong></em> and add these lines:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set previewer ctpv
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set previewer ctpv
 </span></span><span style="display:flex;"><span>set cleaner ctpvclear
 </span></span><span style="display:flex;"><span>&amp;ctpv -s $id
 </span></span><span style="display:flex;"><span>&amp;ctpvquit $id
@@ -398,13 +398,13 @@
 </ul>
 <p>This is by no means an exhaustive list. You can configure your shell to have as many or as little features as you want.</p>
 <p>You can install zsh using the pacman command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S zsh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S zsh
 </span></span></code></pre></div><p>The first time you run zsh (by typing <strong>zsh</strong> into the terminal), you will be greeted with CLI configuration menu to perform a first time set up. Once that&rsquo;s complete, the setup menu will not appear again, it will just launch zsh.</p>
 <p>However, if you want to change your default shell from bash to zsh when you login, you will need to run some extra commands.</p>
 <p>First you will need to list all the available shells installed on the machine:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chsh -l
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chsh -l
 </span></span></code></pre></div><p>After finding the one you wish to use by default, you can type the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chsh -s /bin/zsh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chsh -s /bin/zsh
 </span></span></code></pre></div><p>You will be prompted for your password and after this stage the default shell is now zsh. The next time you login, it will spawn a zsh shell within st.</p>
 <p>Don&rsquo;t forget to migrate all the configuration you have down in ~/.bash_profile to ~/.zprofile as bash and zsh don&rsquo;t share the same config files.</p>
 <h1 id="adding-terminal-based-copy-paste-bindings">Adding Terminal Based Copy-Paste Bindings<a hidden class="anchor" aria-hidden="true" href="#adding-terminal-based-copy-paste-bindings">#</a></h1>
@@ -424,9 +424,9 @@ map  &lt;leader&gt;&lt;F7&gt; mz:-1r !xclip -o -sel clip&lt;CR&gt;
 </blockquote>
 <h1 id="adding-a-wallpaper">Adding a wallpaper<a hidden class="anchor" aria-hidden="true" href="#adding-a-wallpaper">#</a></h1>
 <p>You need the <strong>xwallpaper</strong> program to run a command to change the wallpaper:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S xwallpaper
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S xwallpaper
 </span></span></code></pre></div><p>Add a line inside your <strong>~/.xinitrc</strong> file to apply a chosen wallpaper every time your computer logs on:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xwallpaper --output Virtual-1 --stretch ~/desktop_setup/wallpaper/cartoon_cove.jpg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xwallpaper --output Virtual-1 --stretch ~/desktop_setup/wallpaper/cartoon_cove.jpg
 </span></span></code></pre></div><p>You would need to adjust the arguments to output to the correct display and path to your chosen image.</p>
 <p><img alt="Wallpaper" loading="lazy" src="/img/arch/gui/wallpaper.jpg">
 <img alt="Wallpaper" loading="lazy" src="/img/arch/gui/wallpaper_with_terminal.jpg"></p>
